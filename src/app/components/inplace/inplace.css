@@ -1,4 +1,4 @@
-.ui-inplace .ui-inplace-display {
+.ng-inplace .ng-inplace-display {
     display: inline;
     cursor: pointer;
     border: 0 none;
@@ -6,6 +6,6 @@
     font-weight: normal;
 }
 
-.ui-inplace .ui-inplace-content {
+.ng-inplace .ng-inplace-content {
     display: inline;
 }

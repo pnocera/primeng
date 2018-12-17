@@ -39,7 +39,7 @@ describe('Inplace', () => {
         const inplaceEl = fixture.debugElement.query(By.css('div'));
         const closableButton = fixture.debugElement.query(By.css('button'));
         expect(inplaceEl.nativeElement.className).toContain("Primeng ROCKS!");
-        expect(inplaceEl.nativeElement.className).toContain("ui-inplace-closable");
+        expect(inplaceEl.nativeElement.className).toContain("ng-inplace-closable");
         expect(inplaceEl.nativeElement.style.primeng).toContain("rocks!");
         expect(closableButton).toBeTruthy();
     });
@@ -50,7 +50,7 @@ describe('Inplace', () => {
   
         const activateSpy = spyOn(inplace,'activate').and.callThrough();
         const deactivateSpy = spyOn(inplace,'deactivate').and.callThrough();
-        const displayEl = fixture.debugElement.query(By.css('.ui-inplace-display'));
+        const displayEl = fixture.debugElement.query(By.css('.ng-inplace-display'));
         displayEl.nativeElement.click();
         fixture.detectChanges();
 
@@ -71,7 +71,7 @@ describe('Inplace', () => {
   
         const activateSpy = spyOn(inplace,'activate').and.callThrough();
         const deactivateSpy = spyOn(inplace,'deactivate').and.callThrough();
-        const displayEl = fixture.debugElement.query(By.css('.ui-inplace-display'));
+        const displayEl = fixture.debugElement.query(By.css('.ng-inplace-display'));
         displayEl.nativeElement.click();
         fixture.detectChanges();
 

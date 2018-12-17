@@ -1,41 +1,41 @@
-.ui-datatable {
+.ng-datatable {
     position: relative;
 }
 
-.ui-datatable table {
+.ng-datatable table {
 	border-collapse:collapse;
     width: 100%;
     table-layout: fixed;
 }
 
-.ui-datatable .ui-datatable-header,
-.ui-datatable .ui-datatable-caption,
-.ui-datatable .ui-datatable-footer {
+.ng-datatable .ng-datatable-header,
+.ng-datatable .ng-datatable-caption,
+.ng-datatable .ng-datatable-footer {
     text-align: center;
 	padding: .5em .75em;
     box-sizing: border-box;
 }
 
-.ui-datatable .ui-datatable-caption,
-.ui-datatable .ui-datatable-header {
+.ng-datatable .ng-datatable-caption,
+.ng-datatable .ng-datatable-header {
     border-bottom: 0 none;
 }
 
-.ui-datatable .ui-datatable-footer {
+.ng-datatable .ng-datatable-footer {
     border-top: 0 none;
 }
 
-.ui-datatable thead th, .ui-datatable tfoot td {
+.ng-datatable thead th, .ng-datatable tfoot td {
     text-align: center;
 }
 
-.ui-datatable thead tr {
+.ng-datatable thead tr {
     border-width: 0;
 }
 
-.ui-datatable .ui-datatable-thead > tr > th,
-.ui-datatable .ui-datatable-tfoot > tr > td,
-.ui-datatable .ui-datatable-data > tr > td {
+.ng-datatable .ng-datatable-thead > tr > th,
+.ng-datatable .ng-datatable-tfoot > tr > td,
+.ng-datatable .ng-datatable-data > tr > td {
     border-color: inherit;
     box-sizing: border-box;
     padding: .25em .5em;
@@ -44,83 +44,83 @@
 }
 
 
-.ui-datatable.ui-datatable-resizable .ui-datatable-thead > tr > th,
-.ui-datatable.ui-datatable-resizable .ui-datatable-tfoot > tr > td,
-.ui-datatable.ui-datatable-resizable .ui-datatable-data > tr > td {
+.ng-datatable.ng-datatable-resizable .ng-datatable-thead > tr > th,
+.ng-datatable.ng-datatable-resizable .ng-datatable-tfoot > tr > td,
+.ng-datatable.ng-datatable-resizable .ng-datatable-data > tr > td {
     overflow: hidden;
 }
 
-.ui-datatable .ui-datatable-thead > tr > th,
-.ui-datatable .ui-datatable-tfoot > tr > td {
+.ng-datatable .ng-datatable-thead > tr > th,
+.ng-datatable .ng-datatable-tfoot > tr > td {
     font-weight: normal;
 }
 
-.ui-datatable tbody {
+.ng-datatable tbody {
     outline: 0;
 }
 
-.ui-datatable .ui-sortable-column {
+.ng-datatable .ng-sortable-column {
     cursor: pointer;
 }
 
-.ui-datatable .ui-sortable-column-icon {
+.ng-datatable .ng-sortable-column-icon {
     display: inline-block;
     margin-left: .125em;
 }
 
-.ui-datatable tr.ui-state-highlight {
+.ng-datatable tr.ng-state-highlight {
     cursor: pointer;
 }
 
 /* Scrollable */
-.ui-datatable-scrollable-body {
+.ng-datatable-scrollable-body {
     overflow: auto;
     overflow-anchor: none;
     min-height: 0%;
 }
 
-.ui-datatable-scrollable-header,
-.ui-datatable-scrollable-footer {
+.ng-datatable-scrollable-header,
+.ng-datatable-scrollable-footer {
     overflow: hidden;
 }
 
-.ui-datatable-scrollable .ui-datatable-scrollable-header,
-.ui-datatable-scrollable .ui-datatable-scrollable-footer {
+.ng-datatable-scrollable .ng-datatable-scrollable-header,
+.ng-datatable-scrollable .ng-datatable-scrollable-footer {
     position: relative;
     border: 0 none;
 }
 
-.ui-datatable-scrollable .ui-datatable-scrollable-header td {
+.ng-datatable-scrollable .ng-datatable-scrollable-header td {
     font-weight: normal;
 }
 
-.ui-datatable-scrollable-body .ui-datatable-data,
-.ui-datatable-scrollable-body .ui-datatable-data > tr:first-child {
+.ng-datatable-scrollable-body .ng-datatable-data,
+.ng-datatable-scrollable-body .ng-datatable-data > tr:first-child {
     border-top-color: transparent;
 }
 
-.ui-datatable .ui-datatable-data tr.ui-state-hover,
-.ui-datatable .ui-datatable-data tr.ui-state-highlight {
+.ng-datatable .ng-datatable-data tr.ng-state-hover,
+.ng-datatable .ng-datatable-data tr.ng-state-highlight {
     border-color: inherit;
     font-weight: inherit;
     cursor: pointer;
 }
 
-.ui-datatable .ui-datatable-data tr.ui-rowgroup-header td a,
-.ui-datatable .ui-datatable-data tr.ui-rowgroup-header td span.ui-rowgroup-header-name {
+.ng-datatable .ng-datatable-data tr.ng-rowgroup-header td a,
+.ng-datatable .ng-datatable-data tr.ng-rowgroup-header td span.ng-rowgroup-header-name {
     display: inline-block;
     vertical-align: middle;
 }
 
-.ui-datatable-scrollable-theadclone {
+.ng-datatable-scrollable-theadclone {
     height: 0;
 }
 
-.ui-datatable-scrollable-theadclone tr {
+.ng-datatable-scrollable-theadclone tr {
     height: 0;
 }
 
-.ui-datatable-scrollable-theadclone th.ui-state-default {
+.ng-datatable-scrollable-theadclone th.ng-state-default {
     height: 0;
     border-bottom-width: 0;
     border-top-width: 0;
@@ -129,39 +129,39 @@
     outline: 0 none;
 }
 
-.ui-datatable-scrollable-theadclone th span.ui-column-title {
+.ng-datatable-scrollable-theadclone th span.ng-column-title {
   display: block;
   height: 0;
 }
 
-.ui-datatable .ui-paginator {
+.ng-datatable .ng-paginator {
     padding: .125em;
 }
 
-.ui-datatable .ui-paginator-top {
+.ng-datatable .ng-paginator-top {
     border-bottom-width: 0;
 }
 
-.ui-datatable .ui-paginator-bottom {
+.ng-datatable .ng-paginator-bottom {
     border-top-width: 0;
 }
 
-.ui-datatable-rtl {
+.ng-datatable-rtl {
     direction: rtl;
 }
 
-.ui-datatable-rtl.ui-datatable thead th,
-.ui-datatable-rtl.ui-datatable tfoot td {
+.ng-datatable-rtl.ng-datatable thead th,
+.ng-datatable-rtl.ng-datatable tfoot td {
     text-align: right;
 }
 
 /* Row Toggler */
-.ui-row-toggler {
+.ng-row-toggler {
     cursor: pointer;
 }
 
 /* Resizable */
-.ui-datatable .ui-column-resizer {
+.ng-datatable .ng-column-resizer {
     display: block;
     position: absolute !important;
     top: 0;
@@ -174,36 +174,36 @@
     border: 1px solid transparent;
 }
 
-.ui-datatable .ui-column-resizer-helper {
+.ng-datatable .ng-column-resizer-helper {
     width: 1px;
     position: absolute;
     z-index: 10;
     display: none;
 }
 
-.ui-datatable-resizable {
+.ng-datatable-resizable {
     padding-bottom: 1px;     /*fix for webkit overlow*/
     overflow:auto;
 }
 
-.ui-datatable-resizable thead th,
-.ui-datatable-resizable tbody td,
-.ui-datatable-resizable tfoot td {
+.ng-datatable-resizable thead th,
+.ng-datatable-resizable tbody td,
+.ng-datatable-resizable tfoot td {
     white-space: nowrap;
 }
 
-.ui-datatable-resizable th.ui-resizable-column {
+.ng-datatable-resizable th.ng-resizable-column {
     background-clip: padding-box;
     position: relative;
 }
 
 /** Reflow **/
-.ui-datatable-reflow .ui-datatable-data td .ui-column-title {
+.ng-datatable-reflow .ng-datatable-data td .ng-column-title {
     display: none;
 }
 
 /* Filter */
-.ui-datatable .ui-column-filter {
+.ng-datatable .ng-column-filter {
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -211,37 +211,37 @@
 }
 
 /* Editing */
-.ui-datatable .ui-editable-column input {
+.ng-datatable .ng-editable-column input {
     width: 100%;
     outline: 0;
 }
 
-.ui-datatable .ui-datatable-data > tr > td.ui-editable-column {
+.ng-datatable .ng-datatable-data > tr > td.ng-editable-column {
     padding: .5em;
 }
 
-.ui-datatable .ui-editable-column > .ui-cell-editor {
+.ng-datatable .ng-editable-column > .ng-cell-editor {
     display: none;
 }
 
-.ui-datatable .ui-datatable-data > tr > td.ui-editable-column.ui-cell-editing {
+.ng-datatable .ng-datatable-data > tr > td.ng-editable-column.ng-cell-editing {
     padding: 1px;
 }
 
-.ui-datatable .ui-editable-column.ui-cell-editing > .ui-cell-editor {
+.ng-datatable .ng-editable-column.ng-cell-editing > .ng-cell-editor {
     display: block;
 }
 
-.ui-datatable .ui-editable-column.ui-cell-editing > .ui-cell-data {
+.ng-datatable .ng-editable-column.ng-cell-editing > .ng-cell-data {
     display: none;
 }
 
-.ui-datatable-stacked thead th,
-.ui-datatable-stacked tfoot td {
+.ng-datatable-stacked thead th,
+.ng-datatable-stacked tfoot td {
     display: none !important;
 }
 
-.ui-datatable.ui-datatable-stacked .ui-datatable-data > tr > td {
+.ng-datatable.ng-datatable-stacked .ng-datatable-data > tr > td {
     text-align: left;
     display: block;
     border: 0 none;
@@ -253,16 +253,16 @@
     clear: left;
 }
 
-.ui-datatable.ui-datatable-stacked .ui-datatable-data.ui-widget-content {
+.ng-datatable.ng-datatable-stacked .ng-datatable-data.ng-widget-content {
     border: 0 none;
 }
 
-.ui-datatable-stacked .ui-datatable-data tr.ui-widget-content {
+.ng-datatable-stacked .ng-datatable-data tr.ng-widget-content {
     border-left: 0 none;
     border-right: 0 none;
 }
 
-.ui-datatable-stacked .ui-datatable-data td .ui-column-title {
+.ng-datatable-stacked .ng-datatable-data td .ng-column-title {
     padding: .4em;
     min-width: 30%;
     display: inline-block;
@@ -270,50 +270,50 @@
     font-weight: bold;
 }
 
-.ui-datatable .ui-selection-column .ui-chkbox,
-.ui-datatable .ui-selection-column .ui-radiobutton {
+.ng-datatable .ng-selection-column .ng-chkbox,
+.ng-datatable .ng-selection-column .ng-radiobutton {
      margin: 0;
      display: block;
 }
 
-.ui-datatable .ui-selection-column .ui-chkbox-box,
-.ui-datatable .ui-selection-column .ui-radiobutton-box {
+.ng-datatable .ng-selection-column .ng-chkbox-box,
+.ng-datatable .ng-selection-column .ng-radiobutton-box {
     display: block;
     box-sizing: border-box;
     margin: 0;
 }
 
-.ui-datatable-scrollable-wrapper {
+.ng-datatable-scrollable-wrapper {
     position: relative;
 }
 
-.ui-datatable-scrollable-view {
+.ng-datatable-scrollable-view {
     
 }
 
-.ui-datatable-frozen-view .ui-datatable-scrollable-body {
+.ng-datatable-frozen-view .ng-datatable-scrollable-body {
     overflow: hidden;
 }
 
-.ui-datatable-unfrozen-view {
+.ng-datatable-unfrozen-view {
     position: absolute;
     top: 0px;
 }
 
-.ui-datatable .ui-datatable-load-status {
+.ng-datatable .ng-datatable-load-status {
     width: 100%;
     height: 100%;
     top: 0px;
     left: 0px;
 }
 
-.ui-datatable .ui-datatable-virtual-table {
+.ng-datatable .ng-datatable-virtual-table {
     position: absolute;
     top: 0px;
     left: 0px;
 }
 
-.ui-datatable .ui-datatable-loading {
+.ng-datatable .ng-datatable-loading {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -322,7 +322,7 @@
     z-index: 1;
 }
 
-.ui-datatable .ui-datatable-loading-content {
+.ng-datatable .ng-datatable-loading-content {
     position: absolute;
     left: 50%;
     top: 25%;
@@ -330,12 +330,12 @@
 }
 
 @media ( max-width: 35em ) {
-    .ui-datatable-reflow thead th,
-    .ui-datatable-reflow tfoot td {
+    .ng-datatable-reflow thead th,
+    .ng-datatable-reflow tfoot td {
         display: none !important;
     }
 
-    .ui-datatable-reflow .ui-datatable-data > tr > td {
+    .ng-datatable-reflow .ng-datatable-data > tr > td {
         text-align: left;
         display: block;
         border: 0 none;
@@ -347,16 +347,16 @@
 		clear: left;
     }
 
-    .ui-datatable-reflow .ui-datatable-data.ui-widget-content {
+    .ng-datatable-reflow .ng-datatable-data.ng-widget-content {
         border: 0 none;
     }
 
-    .ui-datatable-reflow .ui-datatable-data tr.ui-widget-content {
+    .ng-datatable-reflow .ng-datatable-data tr.ng-widget-content {
         border-left: 0 none;
         border-right: 0 none;
     }
 
-    .ui-datatable-reflow .ui-datatable-data td .ui-column-title {
+    .ng-datatable-reflow .ng-datatable-data td .ng-column-title {
         padding: .4em;
         min-width: 30%;
         display: inline-block;
@@ -364,7 +364,7 @@
         font-weight: bold;
     }
     
-    .ui-datatable-reflow.ui-datatable-scrollable .ui-datatable-scrollable-body colgroup {
+    .ng-datatable-reflow.ng-datatable-scrollable .ng-datatable-scrollable-body colgroup {
         display: block;
     }
 }

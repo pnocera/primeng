@@ -10,24 +10,24 @@ import {RouterModule} from '@angular/router';
 @Component({
     selector: 'p-splitButton',
     template: `
-        <div #container [ngClass]="{'ui-splitbutton ui-buttonset ui-widget':true,'ui-state-disabled':disabled}" [ngStyle]="style" [class]="styleClass">
-            <button #defaultbtn type="button" pButton [icon]="icon" [iconPos]="iconPos" [label]="label" [cornerStyleClass]="dir === 'rtl' ? 'ui-corner-right': 'ui-corner-left'" (click)="onDefaultButtonClick($event)" [disabled]="disabled" [attr.tabindex]="tabindex">
-            </button><button type="button" pButton class="ui-splitbutton-menubutton" icon="pi pi-caret-down" [cornerStyleClass]="dir === 'rtl' ? 'ui-corner-left': 'ui-corner-right'" (click)="onDropdownButtonClick($event)" [disabled]="disabled"></button>
-            <div #overlay [ngClass]="'ui-menu ui-menu-dynamic ui-widget ui-widget-content ui-corner-all ui-helper-clearfix ui-shadow'" *ngIf="overlayVisible"
+        <div #container [ngClass]="{'ng-splitbutton ng-buttonset ng-widget':true,'ng-state-disabled':disabled}" [ngStyle]="style" [class]="styleClass">
+            <button #defaultbtn type="button" pButton [icon]="icon" [iconPos]="iconPos" [label]="label" [cornerStyleClass]="dir === 'rtl' ? 'ng-corner-right': 'ng-corner-left'" (click)="onDefaultButtonClick($event)" [disabled]="disabled" [attr.tabindex]="tabindex">
+            </button><button type="button" pButton class="ng-splitbutton-menubutton" icon="pi pi-caret-down" [cornerStyleClass]="dir === 'rtl' ? 'ng-corner-left': 'ng-corner-right'" (click)="onDropdownButtonClick($event)" [disabled]="disabled"></button>
+            <div #overlay [ngClass]="'ng-menu ng-menu-dynamic ng-widget ng-widget-content ng-corner-all ng-helper-clearfix ng-shadow'" *ngIf="overlayVisible"
                     [ngStyle]="menuStyle" [class]="menuStyleClass"
                     [@overlayAnimation]="{value: 'visible', params: {showTransitionParams: showTransitionOptions, hideTransitionParams: hideTransitionOptions}}" (@overlayAnimation.start)="onOverlayAnimationStart($event)">
-                <ul class="ui-menu-list ui-helper-reset">
+                <ul class="ng-menu-list ng-helper-reset">
                     <ng-template ngFor let-item [ngForOf]="model">
-                        <li class="ui-menuitem ui-widget ui-corner-all" role="menuitem" *ngIf="item.visible !== false">
-                            <a *ngIf="!item.routerLink" [href]="item.url||'#'" class="ui-menuitem-link ui-corner-all" [attr.target]="item.target"
-                                [ngClass]="{'ui-state-disabled':item.disabled}" (click)="itemClick($event, item)">
-                                <span [ngClass]="'ui-menuitem-icon'" [class]="item.icon" *ngIf="item.icon"></span>
-                                <span class="ui-menuitem-text">{{item.label}}</span>
+                        <li class="ng-menuitem ng-widget ng-corner-all" role="menuitem" *ngIf="item.visible !== false">
+                            <a *ngIf="!item.routerLink" [href]="item.url||'#'" class="ng-menuitem-link ng-corner-all" [attr.target]="item.target"
+                                [ngClass]="{'ng-state-disabled':item.disabled}" (click)="itemClick($event, item)">
+                                <span [ngClass]="'ng-menuitem-icon'" [class]="item.icon" *ngIf="item.icon"></span>
+                                <span class="ng-menuitem-text">{{item.label}}</span>
                             </a>
                             <a *ngIf="item.routerLink" [routerLink]="item.routerLink" [queryParams]="item.queryParams"
-                                class="ui-menuitem-link ui-corner-all" [attr.target]="item.target" [ngClass]="{'ui-state-disabled':item.disabled}" (click)="itemClick($event, item)">
-                                <span [ngClass]="'ui-menuitem-icon'" [class]="item.icon" *ngIf="item.icon"></span>
-                                <span class="ui-menuitem-text">{{item.label}}</span>
+                                class="ng-menuitem-link ng-corner-all" [attr.target]="item.target" [ngClass]="{'ng-state-disabled':item.disabled}" (click)="itemClick($event, item)">
+                                <span [ngClass]="'ng-menuitem-icon'" [class]="item.icon" *ngIf="item.icon"></span>
+                                <span class="ng-menuitem-text">{{item.label}}</span>
                             </a>
                         </li>
                     </ng-template>

@@ -6,8 +6,8 @@ describe('Growl', () => {
 
     beforeEach(() => {
         browser.get('#/growl');
-        successButton = element(by.css('.implementation .ui-button-success'));
-        growlItemContainer = element.all(by.css('.implementation .ui-growl .ui-growl-item-container .ui-growl-item'));
+        successButton = element(by.css('.implementation .ng-button-success'));
+        growlItemContainer = element.all(by.css('.implementation .ng-growl .ng-growl-item-container .ng-growl-item'));
     });
 
     it('should show and hide success messages', () => {

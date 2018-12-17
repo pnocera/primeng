@@ -29,10 +29,10 @@ describe('Dropdown', () => {
       dropdown.editable=true;
       fixture.detectChanges();
 
-      const containerEl = fixture.debugElement.query(By.css('.ui-dropdown')).nativeElement;
-      const hiddenEl = fixture.debugElement.queryAll(By.css('.ui-helper-hidden-accessible'))[1].children[0].nativeElement;
-      const editableInputEl = fixture.debugElement.query(By.css('.ui-dropdown')).children[2].nativeElement;
-      expect(containerEl.className).toContain('ui-state-disabled')
+      const containerEl = fixture.debugElement.query(By.css('.ng-dropdown')).nativeElement;
+      const hiddenEl = fixture.debugElement.queryAll(By.css('.ng-helper-hidden-accessible'))[1].children[0].nativeElement;
+      const editableInputEl = fixture.debugElement.query(By.css('.ng-dropdown')).children[2].nativeElement;
+      expect(containerEl.className).toContain('ng-state-disabled')
       expect(hiddenEl.disabled).toEqual(true);
       expect(editableInputEl.disabled).toEqual(true);
     });
@@ -41,7 +41,7 @@ describe('Dropdown', () => {
       dropdown.name = "Primeng";
       fixture.detectChanges();
 
-      const selectEl = fixture.debugElement.query(By.css('.ui-helper-hidden-accessible')).children[0].nativeElement;     
+      const selectEl = fixture.debugElement.query(By.css('.ng-helper-hidden-accessible')).children[0].nativeElement;     
       expect(selectEl.name).toEqual("Primeng")
     });
 
@@ -49,7 +49,7 @@ describe('Dropdown', () => {
       dropdown.dropdownIcon = "Primeng";
       fixture.detectChanges();
 
-      const dropdownSpanEl = fixture.debugElement.query(By.css('.ui-dropdown-trigger-icon.ui-clickable')).nativeElement;
+      const dropdownSpanEl = fixture.debugElement.query(By.css('.ng-dropdown-trigger-icon.ng-clickable')).nativeElement;
       expect(dropdownSpanEl.className).toContain("Primeng")
     });
 
@@ -58,7 +58,7 @@ describe('Dropdown', () => {
       dropdown.style = {'primeng':'rocks'}
       fixture.detectChanges();
 
-      const containerEl = fixture.debugElement.query(By.css('.ui-dropdown'));
+      const containerEl = fixture.debugElement.query(By.css('.ng-dropdown'));
       expect(containerEl.nativeElement.className).toContain("Primeng");
       expect(containerEl.nativeElement.style.primeng).toEqual("rocks");
     });
@@ -76,7 +76,7 @@ describe('Dropdown', () => {
       container.click();
       fixture.detectChanges();
 
-      const dropdownPanel = fixture.debugElement.query(By.css('.ui-dropdown-panel'));
+      const dropdownPanel = fixture.debugElement.query(By.css('.ng-dropdown-panel'));
       expect(dropdownPanel).toBeTruthy();
       expect(dropdownPanel.nativeElement.className).toContain("Primeng");
     });
@@ -91,12 +91,12 @@ describe('Dropdown', () => {
       ];
       fixture.detectChanges();
       
-      const container = fixture.debugElement.query(By.css('.ui-dropdown')).nativeElement;
+      const container = fixture.debugElement.query(By.css('.ng-dropdown')).nativeElement;
       container.click();
       fixture.detectChanges();
 
-      const dropdownPanel = fixture.debugElement.query(By.css('.ui-dropdown-panel'));
-      expect(container.className).toContain('ui-dropdown-open');
+      const dropdownPanel = fixture.debugElement.query(By.css('.ng-dropdown-panel'));
+      expect(container.className).toContain('ng-dropdown-open');
       expect(dropdownPanel).toBeTruthy();
     });
 
@@ -110,15 +110,15 @@ describe('Dropdown', () => {
       ];
       fixture.detectChanges();
       
-      const container = fixture.debugElement.query(By.css('.ui-dropdown')).nativeElement;
+      const container = fixture.debugElement.query(By.css('.ng-dropdown')).nativeElement;
       container.click();
       fixture.detectChanges();
 
       container.click();
       fixture.detectChanges();
 
-      const dropdownPanel = fixture.debugElement.query(By.css('.ui-dropdown-panel'));
-      expect(container.className).not.toContain('ui-dropdown-open');
+      const dropdownPanel = fixture.debugElement.query(By.css('.ng-dropdown-panel'));
+      expect(container.className).not.toContain('ng-dropdown-open');
       expect(dropdownPanel).toBeFalsy();
     });
 
@@ -132,15 +132,15 @@ describe('Dropdown', () => {
       ];
       fixture.detectChanges();
       
-      const container = fixture.debugElement.query(By.css('.ui-dropdown')).nativeElement;
+      const container = fixture.debugElement.query(By.css('.ng-dropdown')).nativeElement;
       container.click();
       fixture.detectChanges();
 
-      const items = fixture.debugElement.query(By.css('.ui-dropdown-items'));
+      const items = fixture.debugElement.query(By.css('.ng-dropdown-items'));
       items.children[2].nativeElement.click();
       fixture.detectChanges();
       expect(dropdown.selectedOption.name).toEqual('London');
-      expect(items.children[2].nativeElement.className).toContain('ui-state-highlight')
+      expect(items.children[2].nativeElement.className).toContain('ng-state-highlight')
     });
 
     it('should item clear', () => {
@@ -155,19 +155,19 @@ describe('Dropdown', () => {
       dropdown.showClear=true;
       fixture.detectChanges();
       
-      const container = fixture.debugElement.query(By.css('.ui-dropdown')).nativeElement;
+      const container = fixture.debugElement.query(By.css('.ng-dropdown')).nativeElement;
       container.click();
       fixture.detectChanges();
 
-      const items = fixture.debugElement.query(By.css('.ui-dropdown-items'));
+      const items = fixture.debugElement.query(By.css('.ng-dropdown-items'));
       items.children[2].nativeElement.click();
       fixture.detectChanges();
-      const itemCloseIcon = fixture.debugElement.query(By.css('.ui-dropdown-clear-icon'));
+      const itemCloseIcon = fixture.debugElement.query(By.css('.ng-dropdown-clear-icon'));
       itemCloseIcon.nativeElement.click();
       fixture.detectChanges();
 
       expect(dropdown.selectedOption).toEqual({ label: 'Select City', value: null });
-      expect(items.children[2].nativeElement.className).not.toContain('ui-state-highlight')
+      expect(items.children[2].nativeElement.className).not.toContain('ng-state-highlight')
     });
 
     it('should filtered', async(() => {
@@ -181,20 +181,20 @@ describe('Dropdown', () => {
       dropdown.filter = true;
       fixture.detectChanges();
       
-      const container = fixture.debugElement.query(By.css('.ui-dropdown')).nativeElement;
+      const container = fixture.debugElement.query(By.css('.ng-dropdown')).nativeElement;
       container.click();
       fixture.detectChanges();
 
-      const filterDiv = fixture.debugElement.query(By.css('.ui-dropdown-filter-container'));
+      const filterDiv = fixture.debugElement.query(By.css('.ng-dropdown-filter-container'));
       expect(filterDiv).toBeTruthy();
-      const filterInputEl = fixture.debugElement.query(By.css('.ui-dropdown-filter'));
+      const filterInputEl = fixture.debugElement.query(By.css('.ng-dropdown-filter'));
       filterInputEl.nativeElement.value = "n";
       filterInputEl.nativeElement.dispatchEvent(new Event('keydown'));
       const event = {'target':{'value':'n'}};
       dropdown.onFilter(event)
       fixture.detectChanges();
 
-      const items=fixture.debugElement.query(By.css('.ui-dropdown-items'));
+      const items=fixture.debugElement.query(By.css('.ng-dropdown-items'));
       expect(items.nativeElement.children.length).toEqual(3);
     }));
 
@@ -209,20 +209,20 @@ describe('Dropdown', () => {
       dropdown.filter = true;
       fixture.detectChanges();
       
-      const container = fixture.debugElement.query(By.css('.ui-dropdown')).nativeElement;
+      const container = fixture.debugElement.query(By.css('.ng-dropdown')).nativeElement;
       container.click();
       fixture.detectChanges();
 
-      const filterDiv = fixture.debugElement.query(By.css('.ui-dropdown-filter-container'));
+      const filterDiv = fixture.debugElement.query(By.css('.ng-dropdown-filter-container'));
       expect(filterDiv).toBeTruthy();
-      const filterInputEl = fixture.debugElement.query(By.css('.ui-dropdown-filter'));
+      const filterInputEl = fixture.debugElement.query(By.css('.ng-dropdown-filter'));
       filterInputEl.nativeElement.value = "primeng";
       filterInputEl.nativeElement.dispatchEvent(new Event('keydown'));
       const event = {'target':{'value':'primeng'}};
       dropdown.onFilter(event)
       fixture.detectChanges();
 
-      const items = fixture.debugElement.query(By.css('.ui-dropdown-items'));
+      const items = fixture.debugElement.query(By.css('.ng-dropdown-items'));
       const emptyMesage = items.children[0]; 
       expect(items.nativeElement.children.length).toEqual(1);
       expect(emptyMesage).toBeTruthy();

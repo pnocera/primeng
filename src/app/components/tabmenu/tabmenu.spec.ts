@@ -51,8 +51,8 @@ describe('TabMenu', () => {
       fixture.detectChanges();
 
       const itemList = fixture.debugElement.query(By.css('ul'));
-      expect(itemList.children[0].nativeElement.className).toContain("ui-helper-hidden");
-      expect(itemList.children[1].nativeElement.className).toContain("ui-helper-hidden");
+      expect(itemList.children[0].nativeElement.className).toContain("ng-helper-hidden");
+      expect(itemList.children[1].nativeElement.className).toContain("ng-helper-hidden");
     });
 
     it('should show disabled items ', () => {
@@ -63,8 +63,8 @@ describe('TabMenu', () => {
       fixture.detectChanges();
 
       const itemList = fixture.debugElement.query(By.css('ul'));
-      expect(itemList.children[0].nativeElement.className).toContain("ui-state-disabled");
-      expect(itemList.children[1].nativeElement.className).toContain("ui-state-disabled");
+      expect(itemList.children[0].nativeElement.className).toContain("ng-state-disabled");
+      expect(itemList.children[1].nativeElement.className).toContain("ng-state-disabled");
     });
 
     it('should show items and icons (url)', () => {
@@ -79,8 +79,8 @@ describe('TabMenu', () => {
 
       const itemList = fixture.debugElement.query(By.css('ul'));
       expect(itemList.children.length).toEqual(5);
-      expect(itemList.query(By.css('.ui-menuitem-icon'))).toBeTruthy();
-      expect(itemList.query(By.css('.ui-menuitem-text'))).toBeTruthy();
+      expect(itemList.query(By.css('.ng-menuitem-icon'))).toBeTruthy();
+      expect(itemList.query(By.css('.ng-menuitem-text'))).toBeTruthy();
     });
 
     it('should show items and icons (routerLink)', () => {
@@ -98,8 +98,8 @@ describe('TabMenu', () => {
       for(let x = 0; x<5; x++){
         expect(itemList.children[x].nativeElement.innerHTML).toContain("ng-reflect-router-link");
       }
-      expect(itemList.query(By.css('.ui-menuitem-icon'))).toBeTruthy();
-      expect(itemList.query(By.css('.ui-menuitem-text'))).toBeTruthy();
+      expect(itemList.query(By.css('.ng-menuitem-icon'))).toBeTruthy();
+      expect(itemList.query(By.css('.ng-menuitem-text'))).toBeTruthy();
     });
 
     it('should select item when click (url)', () => {
@@ -118,7 +118,7 @@ describe('TabMenu', () => {
       calenderItem.click();
       fixture.detectChanges();
 
-      expect(itemList.children[1].nativeElement.className).toContain("ui-state-active")
+      expect(itemList.children[1].nativeElement.className).toContain("ng-state-active")
       expect(tabmenu.activeItem.label).toEqual('Calendar');
       expect(tabmenu.activeItem.icon).toContain('fa-calendar');
       expect(itemClickSpy).toHaveBeenCalled();
@@ -140,7 +140,7 @@ describe('TabMenu', () => {
       calenderItem.click();
       fixture.detectChanges();
 
-      expect(itemList.children[1].nativeElement.className).toContain("ui-state-active")
+      expect(itemList.children[1].nativeElement.className).toContain("ng-state-active")
       expect(tabmenu.activeItem.label).toEqual('Calendar');
       expect(tabmenu.activeItem.icon).toContain('fa-calendar');
       expect(itemClickSpy).toHaveBeenCalled();

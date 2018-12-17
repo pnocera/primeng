@@ -1,10 +1,10 @@
-.ui-terminal {
+.ng-terminal {
     height: 18em;
     overflow: auto;
     padding: .25em;
 }
 
-.ui-terminal-input {
+.ng-terminal-input {
     border: 0 none;
     background-color: transparent;
     color: inherit;
@@ -15,11 +15,11 @@
     vertical-align: baseline;
 }
 
-.ui-terminal-command {
+.ng-terminal-command {
     margin-left: .125em;
     -moz-margin-start: .125em;
 }
 
-.ui-terminal-input::-ms-clear {
+.ng-terminal-input::-ms-clear {
     display: none;
 }

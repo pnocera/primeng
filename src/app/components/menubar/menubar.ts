@@ -8,27 +8,27 @@ import { RouterModule } from '@angular/router';
 @Component({
     selector: 'p-menubarSub',
     template: `
-        <ul [ngClass]="{'ui-menubar-root-list':root, 'ui-widget-content ui-corner-all ui-submenu-list ui-shadow':!root}"
+        <ul [ngClass]="{'ng-menubar-root-list':root, 'ng-widget-content ng-corner-all ng-submenu-list ng-shadow':!root}"
             (click)="listClick($event)">
             <ng-template ngFor let-child [ngForOf]="(root ? item : item.items)">
-                <li *ngIf="child.separator" class="ui-menu-separator ui-widget-content" [ngClass]="{'ui-helper-hidden': child.visible === false}">
-                <li *ngIf="!child.separator" #listItem [ngClass]="{'ui-menuitem ui-corner-all':true,
-                        'ui-menu-parent':child.items,'ui-menuitem-active':listItem==activeItem,'ui-helper-hidden': child.visible === false}"
+                <li *ngIf="child.separator" class="ng-menu-separator ng-widget-content" [ngClass]="{'ng-helper-hidden': child.visible === false}">
+                <li *ngIf="!child.separator" #listItem [ngClass]="{'ng-menuitem ng-corner-all':true,
+                        'ng-menu-parent':child.items,'ng-menuitem-active':listItem==activeItem,'ng-helper-hidden': child.visible === false}"
                         (mouseenter)="onItemMouseEnter($event,listItem,child)" (mouseleave)="onItemMouseLeave($event)" (click)="onItemMenuClick($event, listItem, child)">
                     <a *ngIf="!child.routerLink" [href]="child.url||'#'" [attr.data-automationid]="child.automationId" [attr.target]="child.target" [attr.title]="child.title" [attr.id]="child.id" (click)="itemClick($event, child)"
-                         [ngClass]="{'ui-menuitem-link ui-corner-all':true,'ui-state-disabled':child.disabled}" [ngStyle]="child.style" [class]="child.styleClass">
-                        <span class="ui-menuitem-icon" *ngIf="child.icon" [ngClass]="child.icon"></span>
-                        <span class="ui-menuitem-text">{{child.label}}</span>
-                        <span class="ui-submenu-icon pi pi-fw" *ngIf="child.items" [ngClass]="{'pi-caret-down':root,'pi-caret-right':!root}"></span>
+                         [ngClass]="{'ng-menuitem-link ng-corner-all':true,'ng-state-disabled':child.disabled}" [ngStyle]="child.style" [class]="child.styleClass">
+                        <span class="ng-menuitem-icon" *ngIf="child.icon" [ngClass]="child.icon"></span>
+                        <span class="ng-menuitem-text">{{child.label}}</span>
+                        <span class="ng-submenu-icon pi pi-fw" *ngIf="child.items" [ngClass]="{'pi-caret-down':root,'pi-caret-right':!root}"></span>
                     </a>
-                    <a *ngIf="child.routerLink" [routerLink]="child.routerLink" [attr.data-automationid]="child.automationId" [queryParams]="child.queryParams" [routerLinkActive]="'ui-state-active'" [routerLinkActiveOptions]="child.routerLinkActiveOptions||{exact:false}"
+                    <a *ngIf="child.routerLink" [routerLink]="child.routerLink" [attr.data-automationid]="child.automationId" [queryParams]="child.queryParams" [routerLinkActive]="'ng-state-active'" [routerLinkActiveOptions]="child.routerLinkActiveOptions||{exact:false}"
                         [attr.target]="child.target" [attr.title]="child.title" [attr.id]="child.id"
-                        (click)="itemClick($event, child)" [ngClass]="{'ui-menuitem-link ui-corner-all':true,'ui-state-disabled':child.disabled}" [ngStyle]="child.style" [class]="child.styleClass">
-                        <span class="ui-menuitem-icon" *ngIf="child.icon" [ngClass]="child.icon"></span>
-                        <span class="ui-menuitem-text">{{child.label}}</span>
-                        <span class="ui-submenu-icon pi pi-fw" *ngIf="child.items" [ngClass]="{'pi-caret-down':root,'pi-caret-right':!root}"></span>
+                        (click)="itemClick($event, child)" [ngClass]="{'ng-menuitem-link ng-corner-all':true,'ng-state-disabled':child.disabled}" [ngStyle]="child.style" [class]="child.styleClass">
+                        <span class="ng-menuitem-icon" *ngIf="child.icon" [ngClass]="child.icon"></span>
+                        <span class="ng-menuitem-text">{{child.label}}</span>
+                        <span class="ng-submenu-icon pi pi-fw" *ngIf="child.items" [ngClass]="{'pi-caret-down':root,'pi-caret-right':!root}"></span>
                     </a>
-                    <p-menubarSub class="ui-submenu" [item]="child" *ngIf="child.items" [autoDisplay]="true"></p-menubarSub>
+                    <p-menubarSub class="ng-submenu" [item]="child" *ngIf="child.items" [autoDisplay]="true"></p-menubarSub>
                 </li>
             </ng-template>
         </ul>
@@ -184,11 +184,11 @@ export class MenubarSub implements OnDestroy {
 @Component({
     selector: 'p-menubar',
     template: `
-        <div [ngClass]="{'ui-menubar ui-widget ui-widget-content ui-corner-all':true}" [class]="styleClass" [ngStyle]="style">
+        <div [ngClass]="{'ng-menubar ng-widget ng-widget-content ng-corner-all':true}" [class]="styleClass" [ngStyle]="style">
             <p-menubarSub [item]="model" root="root" [autoDisplay]="autoDisplay" [baseZIndex]="baseZIndex" [autoZIndex]="autoZIndex">
                 <ng-content></ng-content>
             </p-menubarSub>
-            <div class="ui-menubar-custom">
+            <div class="ng-menubar-custom">
                 <ng-content></ng-content>
             </div>
         </div>

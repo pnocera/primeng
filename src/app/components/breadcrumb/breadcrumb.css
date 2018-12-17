@@ -1,33 +1,33 @@
 /** Breadcrumb **/
-.ui-breadcrumb {
+.ng-breadcrumb {
     margin: 0;
     padding: 0;
     padding: .5em;
 }
 
-.ui-breadcrumb ul {
+.ng-breadcrumb ul {
     margin: 0;
     padding: 0;
 }
 
-.ui-breadcrumb ul li {
+.ng-breadcrumb ul li {
     display: inline-block;
     margin: 0 .25em;
 }
 
-.ui-breadcrumb-chevron, .ui-breadcrumb-home {
+.ng-breadcrumb-chevron, .ng-breadcrumb-home {
     vertical-align: middle;
 }
 
-.ui-breadcrumb ul li .ui-menuitem-link {
+.ng-breadcrumb ul li .ng-menuitem-link {
     text-decoration: none;
 }
 
-.ui-breadcrumb .ui-menuitem-icon {
+.ng-breadcrumb .ng-menuitem-icon {
     margin-right: .25em;
     vertical-align: middle;
 }
 
-.ui-breadcrumb .ui-menuitem-text {
+.ng-breadcrumb .ng-menuitem-text {
     vertical-align: middle;
 }

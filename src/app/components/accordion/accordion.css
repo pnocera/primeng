@@ -1,49 +1,49 @@
-.ui-accordion { 
+.ng-accordion { 
     width: 100%; 
 }
 
-.ui-accordion .ui-accordion-header { 
+.ng-accordion .ng-accordion-header { 
     cursor: pointer; 
     position: relative; 
     margin-top: 1px; 
     zoom: 1; 
 }
 
-.ui-accordion .ui-accordion-header a { 
+.ng-accordion .ng-accordion-header a { 
     display: block; 
     padding: .5em;
 }
 
-.ui-accordion .ui-accordion-toggle-icon,
-.ui-accordion .ui-accordion-header-text {
+.ng-accordion .ng-accordion-toggle-icon,
+.ng-accordion .ng-accordion-header-text {
     vertical-align: middle;   
 }
 
-.ui-accordion .ui-accordion-content { 
+.ng-accordion .ng-accordion-content { 
     padding: 1em;
     border-top: 0; 
     overflow: visible;
     zoom: 1; 
 }
 
-.ui-accordion .ui-accordion-header.ui-state-disabled, 
-.ui-accordion .ui-accordion-header.ui-state-disabled a { 
+.ng-accordion .ng-accordion-header.ng-state-disabled, 
+.ng-accordion .ng-accordion-header.ng-state-disabled a { 
     cursor: default; 
 }
 
-.ui-accordion-content-wrapper-overflown {
+.ng-accordion-content-wrapper-overflown {
     overflow: hidden;
 }
 
-.ui-rtl .ui-accordion .ui-accordion-header a {
+.ng-rtl .ng-accordion .ng-accordion-header a {
     padding: .5em 2em .5em .5em;
 }
  
-.ui-rtl .ui-accordion .ui-accordion-toggle-icon {
+.ng-rtl .ng-accordion .ng-accordion-toggle-icon {
     left: initial;
     right: .5em;
 }
 
-.ui-rtl .ui-accordion .ui-accordion-toggle-icon.pi-caret-right:before {
+.ng-rtl .ng-accordion .ng-accordion-toggle-icon.pi-caret-right:before {
     content: '\e904';
 }

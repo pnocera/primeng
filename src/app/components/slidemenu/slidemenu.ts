@@ -8,30 +8,30 @@ import {RouterModule} from '@angular/router';
 @Component({
     selector: 'p-slideMenuSub',
     template: `
-        <ul [ngClass]="{'ui-slidemenu-rootlist':root, 'ui-submenu-list':!root, 'ui-active-submenu': (-slideMenu.left == (index * menuWidth))}"
+        <ul [ngClass]="{'ng-slidemenu-rootlist':root, 'ng-submenu-list':!root, 'ng-active-submenu': (-slideMenu.left == (index * menuWidth))}"
             [style.width.px]="menuWidth" [style.left.px]="root ? slideMenu.left : slideMenu.menuWidth"
             [style.transitionProperty]="root ? 'left' : 'none'" [style.transitionDuration]="effectDuration + 'ms'" [style.transitionTimingFunction]="easing">
             <ng-template ngFor let-child [ngForOf]="(root ? item : item.items)">
-                <li *ngIf="child.separator" class="ui-menu-separator ui-widget-content" [ngClass]="{'ui-helper-hidden': child.visible === false}">
-                <li *ngIf="!child.separator" #listitem [ngClass]="{'ui-menuitem ui-widget ui-corner-all':true,'ui-menuitem-active':listitem==activeItem,'ui-helper-hidden': child.visible === false}"
+                <li *ngIf="child.separator" class="ng-menu-separator ng-widget-content" [ngClass]="{'ng-helper-hidden': child.visible === false}">
+                <li *ngIf="!child.separator" #listitem [ngClass]="{'ng-menuitem ng-widget ng-corner-all':true,'ng-menuitem-active':listitem==activeItem,'ng-helper-hidden': child.visible === false}"
                     [class]="child.styleClass" [ngStyle]="child.style">
-                    <a *ngIf="!child.routerLink" [href]="child.url||'#'" class="ui-menuitem-link ui-corner-all" [attr.target]="child.target" [attr.title]="child.title" [attr.id]="child.id"
-                        [ngClass]="{'ui-state-disabled':child.disabled}" 
+                    <a *ngIf="!child.routerLink" [href]="child.url||'#'" class="ng-menuitem-link ng-corner-all" [attr.target]="child.target" [attr.title]="child.title" [attr.id]="child.id"
+                        [ngClass]="{'ng-state-disabled':child.disabled}" 
                         (click)="itemClick($event, child, listitem)">
-                        <span class="ui-menuitem-icon" *ngIf="child.icon" [ngClass]="child.icon"></span>
-                        <span class="ui-menuitem-text">{{child.label}}</span>
-                        <span class="ui-submenu-icon pi pi-fw pi-caret-right" *ngIf="child.items"></span>
+                        <span class="ng-menuitem-icon" *ngIf="child.icon" [ngClass]="child.icon"></span>
+                        <span class="ng-menuitem-text">{{child.label}}</span>
+                        <span class="ng-submenu-icon pi pi-fw pi-caret-right" *ngIf="child.items"></span>
                     </a>
-                    <a *ngIf="child.routerLink" [routerLink]="child.routerLink" [queryParams]="child.queryParams" [routerLinkActive]="'ui-state-active'" 
-                        [routerLinkActiveOptions]="child.routerLinkActiveOptions||{exact:false}" [href]="child.url||'#'" class="ui-menuitem-link ui-corner-all" 
+                    <a *ngIf="child.routerLink" [routerLink]="child.routerLink" [queryParams]="child.queryParams" [routerLinkActive]="'ng-state-active'" 
+                        [routerLinkActiveOptions]="child.routerLinkActiveOptions||{exact:false}" [href]="child.url||'#'" class="ng-menuitem-link ng-corner-all" 
                         [attr.target]="child.target" [attr.title]="child.title" [attr.id]="child.id"
-                        [ngClass]="{'ui-state-disabled':child.disabled}" 
+                        [ngClass]="{'ng-state-disabled':child.disabled}" 
                         (click)="itemClick($event, child, listitem)">
-                        <span class="ui-menuitem-icon" *ngIf="child.icon" [ngClass]="child.icon"></span>
-                        <span class="ui-menuitem-text">{{child.label}}</span>
-                        <span class="ui-submenu-icon pi pi-fw pi-caret-right" *ngIf="child.items"></span>
+                        <span class="ng-menuitem-icon" *ngIf="child.icon" [ngClass]="child.icon"></span>
+                        <span class="ng-menuitem-text">{{child.label}}</span>
+                        <span class="ng-submenu-icon pi pi-fw pi-caret-right" *ngIf="child.items"></span>
                     </a>
-                    <p-slideMenuSub class="ui-submenu" [item]="child" [index]="index + 1" [menuWidth]="menuWidth" *ngIf="child.items"></p-slideMenuSub>
+                    <p-slideMenuSub class="ng-submenu" [item]="child" [index]="index + 1" [menuWidth]="menuWidth" *ngIf="child.items"></p-slideMenuSub>
                 </li>
             </ng-template>
         </ul>
@@ -94,15 +94,15 @@ export class SlideMenuSub implements OnDestroy {
 @Component({
     selector: 'p-slideMenu',
     template: `
-        <div #container [ngClass]="{'ui-slidemenu ui-widget ui-widget-content ui-corner-all':true, 'ui-slidemenu-dynamic ui-shadow':popup}" 
+        <div #container [ngClass]="{'ng-slidemenu ng-widget ng-widget-content ng-corner-all':true, 'ng-slidemenu-dynamic ng-shadow':popup}" 
             [class]="styleClass" [ngStyle]="style" (click)="onClick($event)"
             [@overlayAnimation]="{value: 'visible', params: {showTransitionParams: showTransitionOptions, hideTransitionParams: hideTransitionOptions}}" [@.disabled]="popup !== true" (@overlayAnimation.start)="onOverlayAnimationStart($event)" *ngIf="!popup || visible">
-            <div class="ui-slidemenu-wrapper" [style.height.px]="viewportHeight">
-                <div #slideMenuContent class="ui-slidemenu-content">
+            <div class="ng-slidemenu-wrapper" [style.height.px]="viewportHeight">
+                <div #slideMenuContent class="ng-slidemenu-content">
                     <p-slideMenuSub [item]="model" root="root" [index]="0" [menuWidth]="menuWidth" [effectDuration]="effectDuration" [easing]="easing"></p-slideMenuSub>
                 </div>
-                <div #backward class="ui-slidemenu-backward ui-widget-header ui-corner-all" [style.display]="left ? 'block' : 'none'" (click)="goBack()">
-                    <span class="ui-slidemenu-backward-icon pi pi-fw pi-caret-left"></span><span>{{backLabel}}</span>
+                <div #backward class="ng-slidemenu-backward ng-widget-header ng-corner-all" [style.display]="left ? 'block' : 'none'" (click)="goBack()">
+                    <span class="ng-slidemenu-backward-icon pi pi-fw pi-caret-left"></span><span>{{backLabel}}</span>
                 </div>
             </div>
         </div>

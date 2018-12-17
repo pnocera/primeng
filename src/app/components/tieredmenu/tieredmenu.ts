@@ -8,28 +8,28 @@ import {RouterModule} from '@angular/router';
 @Component({
     selector: 'p-tieredMenuSub',
     template: `
-        <ul [ngClass]="{'ui-widget-content ui-corner-all ui-shadow ui-submenu-list': !root}" (click)="listClick($event)">
+        <ul [ngClass]="{'ng-widget-content ng-corner-all ng-shadow ng-submenu-list': !root}" (click)="listClick($event)">
             <ng-template ngFor let-child [ngForOf]="(root ? item : item.items)">
-                <li *ngIf="child.separator" class="ui-menu-separator ui-widget-content" [ngClass]="{'ui-helper-hidden': child.visible === false}">
-                <li *ngIf="!child.separator" #listItem [ngClass]="{'ui-menuitem ui-widget ui-corner-all':true,'ui-menuitem-active':listItem==activeItem,'ui-helper-hidden': child.visible === false}"
+                <li *ngIf="child.separator" class="ng-menu-separator ng-widget-content" [ngClass]="{'ng-helper-hidden': child.visible === false}">
+                <li *ngIf="!child.separator" #listItem [ngClass]="{'ng-menuitem ng-widget ng-corner-all':true,'ng-menuitem-active':listItem==activeItem,'ng-helper-hidden': child.visible === false}"
                     [class]="child.styleClass" [ngStyle]="child.style"
                     (mouseenter)="onItemMouseEnter($event, listItem, child)" (mouseleave)="onItemMouseLeave($event)">
-                    <a *ngIf="!child.routerLink" [href]="child.url||'#'" class="ui-menuitem-link ui-corner-all" [attr.target]="child.target" [attr.title]="child.title" [attr.id]="child.id"
-                        [ngClass]="{'ui-state-disabled':child.disabled}" (click)="itemClick($event, child)">
-                        <span class="ui-menuitem-icon" *ngIf="child.icon" [ngClass]="child.icon"></span>
-                        <span class="ui-menuitem-text">{{child.label}}</span>
-                        <span class="ui-submenu-icon pi pi-fw pi-caret-right" *ngIf="child.items"></span>
+                    <a *ngIf="!child.routerLink" [href]="child.url||'#'" class="ng-menuitem-link ng-corner-all" [attr.target]="child.target" [attr.title]="child.title" [attr.id]="child.id"
+                        [ngClass]="{'ng-state-disabled':child.disabled}" (click)="itemClick($event, child)">
+                        <span class="ng-menuitem-icon" *ngIf="child.icon" [ngClass]="child.icon"></span>
+                        <span class="ng-menuitem-text">{{child.label}}</span>
+                        <span class="ng-submenu-icon pi pi-fw pi-caret-right" *ngIf="child.items"></span>
                     </a>
-                    <a *ngIf="child.routerLink" [routerLink]="child.routerLink" [queryParams]="child.queryParams" [routerLinkActive]="'ui-state-active'" 
+                    <a *ngIf="child.routerLink" [routerLink]="child.routerLink" [queryParams]="child.queryParams" [routerLinkActive]="'ng-state-active'" 
                         [routerLinkActiveOptions]="child.routerLinkActiveOptions||{exact:false}" [href]="child.url||'#'" 
-                        class="ui-menuitem-link ui-corner-all" [attr.target]="child.target" [attr.title]="child.title" [attr.id]="child.id"
-                        [ngClass]="{'ui-state-disabled':child.disabled}" (click)="itemClick($event, child)">
+                        class="ng-menuitem-link ng-corner-all" [attr.target]="child.target" [attr.title]="child.title" [attr.id]="child.id"
+                        [ngClass]="{'ng-state-disabled':child.disabled}" (click)="itemClick($event, child)">
                         
-                        <span class="ui-menuitem-icon" *ngIf="child.icon" [ngClass]="child.icon"></span>
-                        <span class="ui-menuitem-text">{{child.label}}</span>
-                        <span class="ui-submenu-icon pi pi-fw pi-caret-right" *ngIf="child.items"></span>
+                        <span class="ng-menuitem-icon" *ngIf="child.icon" [ngClass]="child.icon"></span>
+                        <span class="ng-menuitem-text">{{child.label}}</span>
+                        <span class="ng-submenu-icon pi pi-fw pi-caret-right" *ngIf="child.items"></span>
                     </a>
-                    <p-tieredMenuSub class="ui-submenu" [item]="child" *ngIf="child.items" [baseZIndex]="baseZIndex" [autoZIndex]="autoZIndex" [hideDelay]="hideDelay"></p-tieredMenuSub>
+                    <p-tieredMenuSub class="ng-submenu" [item]="child" *ngIf="child.items" [baseZIndex]="baseZIndex" [autoZIndex]="autoZIndex" [hideDelay]="hideDelay"></p-tieredMenuSub>
                 </li>
             </ng-template>
         </ul>
@@ -114,7 +114,7 @@ export class TieredMenuSub {
 @Component({
     selector: 'p-tieredMenu',
     template: `
-        <div [ngClass]="{'ui-tieredmenu ui-widget ui-widget-content ui-corner-all':true, 'ui-tieredmenu-dynamic ui-shadow':popup}" [class]="styleClass" [ngStyle]="style"
+        <div [ngClass]="{'ng-tieredmenu ng-widget ng-widget-content ng-corner-all':true, 'ng-tieredmenu-dynamic ng-shadow':popup}" [class]="styleClass" [ngStyle]="style"
             [@overlayAnimation]="{value: 'visible', params: {showTransitionParams: showTransitionOptions, hideTransitionParams: hideTransitionOptions}}" [@.disabled]="popup !== true" (@overlayAnimation.start)="onOverlayAnimationStart($event)" *ngIf="!popup || visible">
             <p-tieredMenuSub [item]="model" root="root" [baseZIndex]="baseZIndex" [autoZIndex]="autoZIndex" [hideDelay]="hideDelay"></p-tieredMenuSub>
         </div>

@@ -7,8 +7,8 @@ describe('Accordion', () => {
     describe('Header Click', () => {
         beforeEach(() => {
           browser.get('#/accordion');
-          accordionContents = element.all(by.css('.ui-accordion-content-wrapper'));
-          accordionHeaders = element.all(by.css('.ui-accordion-header'));
+          accordionContents = element.all(by.css('.ng-accordion-content-wrapper'));
+          accordionHeaders = element.all(by.css('.ng-accordion-header'));
         });
 
         it('should close active content', () => {

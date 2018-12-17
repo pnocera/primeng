@@ -9,21 +9,21 @@ import { DynamicDialogRef } from './dynamicdialog-ref';
 @Component({
 	selector: 'p-dynamicDialog',
 	template: `
-		<div #mask class="ui-widget-overlay ui-dialog-mask ui-dialog-mask-scrollblocker" *ngIf="visible" (click)="onMaskClick()"></div>
-		<div [ngClass]="{'ui-dialog ui-dynamicdialog ui-widget ui-widget-content ui-corner-all ui-shadow':true, 'ui-dialog-rtl': config.rtl}" [ngStyle]="config.style" [class]="config.styleClass"
+		<div #mask class="ng-widget-overlay ng-dialog-mask ng-dialog-mask-scrollblocker" *ngIf="visible" (click)="onMaskClick()"></div>
+		<div [ngClass]="{'ng-dialog ng-dynamicdialog ng-widget ng-widget-content ng-corner-all ng-shadow':true, 'ng-dialog-rtl': config.rtl}" [ngStyle]="config.style" [class]="config.styleClass"
 			[@animation]="{value: 'visible', params: {transitionParams: config.transitionOptions || '400ms cubic-bezier(0.25, 0.8, 0.25, 1)'}}" 
 			(@animation.start)="onAnimationStart($event)" (@animation.done)="onAnimationEnd($event)" role="dialog" *ngIf="visible"
 			[style.width]="config.width" [style.height]="config.height">
-            <div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top" *ngIf="config.showHeader === false ? false: true">
-                <span class="ui-dialog-title">{{config.header}}</span>
-                <a [ngClass]="'ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all'" tabindex="0" role="button" (click)="close()" (keydown.enter)="close()" *ngIf="config.closable === false ? false : true">
+            <div class="ng-dialog-titlebar ng-widget-header ng-helper-clearfix ng-corner-top" *ngIf="config.showHeader === false ? false: true">
+                <span class="ng-dialog-title">{{config.header}}</span>
+                <a [ngClass]="'ng-dialog-titlebar-icon ng-dialog-titlebar-close ng-corner-all'" tabindex="0" role="button" (click)="close()" (keydown.enter)="close()" *ngIf="config.closable === false ? false : true">
                     <span class="pi pi-times"></span>
                 </a>
             </div>
-            <div class="ui-dialog-content ui-widget-content" [ngStyle]="config.contentStyle">
+            <div class="ng-dialog-content ng-widget-content" [ngStyle]="config.contentStyle">
 				<ng-template pDynamicDialogContent></ng-template>
 			</div>
-			<div class="ui-dialog-footer ui-widget-content" *ngIf="config.footer">
+			<div class="ng-dialog-footer ng-widget-content" *ngIf="config.footer">
 				{{config.footer}}
             </div>
 		</div>
@@ -124,7 +124,7 @@ export class DynamicDialogComponent implements AfterViewInit, OnDestroy {
 				this.moveOnTop();
 				this.positionOverlay();
 				this.bindGlobalListeners();
-				this.domHandler.addClass(document.body, 'ui-overflow-hidden');
+				this.domHandler.addClass(document.body, 'ng-overflow-hidden');
 			break;
 
 			case 'void':
@@ -140,7 +140,7 @@ export class DynamicDialogComponent implements AfterViewInit, OnDestroy {
 	}
 
 	onContainerDestroy() {
-		this.domHandler.removeClass(document.body, 'ui-overflow-hidden');
+		this.domHandler.removeClass(document.body, 'ng-overflow-hidden');
 		this.unbindGlobalListeners();
 		this.container = null;
 	}

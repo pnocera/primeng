@@ -1,4 +1,4 @@
-.ui-message {
+.ng-message {
     border: 1px solid;
     margin: 0px .25em;
     padding: .25em .5em;
@@ -6,11 +6,11 @@
     vertical-align: top;
 }
 
-.ui-message .ui-message-icon,
-.ui-message .ui-message-text {
+.ng-message .ng-message-icon,
+.ng-message .ng-message-text {
     vertical-align: middle;
 }
 
-.ui-fluid .ui-message {
+.ng-fluid .ng-message {
     display: block;
 }

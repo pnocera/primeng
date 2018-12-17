@@ -8,26 +8,26 @@ import { RouterModule } from '@angular/router';
 @Component({
     selector: 'p-contextMenuSub',
     template: `
-        <ul [ngClass]="{'ui-widget-content ui-corner-all ui-submenu-list ui-shadow':!root}" class="ui-menu-list" (click)="listClick($event)">
+        <ul [ngClass]="{'ng-widget-content ng-corner-all ng-submenu-list ng-shadow':!root}" class="ng-menu-list" (click)="listClick($event)">
             <ng-template ngFor let-child [ngForOf]="(root ? item : item.items)">
-                <li *ngIf="child.separator" class="ui-menu-separator ui-widget-content" [ngClass]="{'ui-helper-hidden': child.visible === false}">
-                <li *ngIf="!child.separator" #item [ngClass]="{'ui-menuitem ui-corner-all':true,'ui-menuitem-active':item==activeItem,'ui-helper-hidden': child.visible === false}"
+                <li *ngIf="child.separator" class="ng-menu-separator ng-widget-content" [ngClass]="{'ng-helper-hidden': child.visible === false}">
+                <li *ngIf="!child.separator" #item [ngClass]="{'ng-menuitem ng-corner-all':true,'ng-menuitem-active':item==activeItem,'ng-helper-hidden': child.visible === false}"
                     (mouseenter)="onItemMouseEnter($event,item,child)" (mouseleave)="onItemMouseLeave($event,item)">
                     <a *ngIf="!child.routerLink" [href]="child.url||'#'" [attr.target]="child.target" [attr.title]="child.title" [attr.id]="child.id" (click)="itemClick($event, child)"
-                        [ngClass]="{'ui-menuitem-link ui-corner-all':true,'ui-state-disabled':child.disabled}" [ngStyle]="child.style" [class]="child.styleClass">
-                        <span class="ui-submenu-icon pi pi-fw pi-caret-right" *ngIf="child.items"></span>
-                        <span class="ui-menuitem-icon" *ngIf="child.icon" [ngClass]="child.icon"></span>
-                        <span class="ui-menuitem-text">{{child.label}}</span>
+                        [ngClass]="{'ng-menuitem-link ng-corner-all':true,'ng-state-disabled':child.disabled}" [ngStyle]="child.style" [class]="child.styleClass">
+                        <span class="ng-submenu-icon pi pi-fw pi-caret-right" *ngIf="child.items"></span>
+                        <span class="ng-menuitem-icon" *ngIf="child.icon" [ngClass]="child.icon"></span>
+                        <span class="ng-menuitem-text">{{child.label}}</span>
                     </a>
-                    <a *ngIf="child.routerLink" [routerLink]="child.routerLink" [queryParams]="child.queryParams" [routerLinkActive]="'ui-state-active'"
+                    <a *ngIf="child.routerLink" [routerLink]="child.routerLink" [queryParams]="child.queryParams" [routerLinkActive]="'ng-state-active'"
                         [routerLinkActiveOptions]="child.routerLinkActiveOptions||{exact:false}" [attr.target]="child.target" [attr.title]="child.title" [attr.id]="child.id"
-                        (click)="itemClick($event, child)" [ngClass]="{'ui-menuitem-link ui-corner-all':true,'ui-state-disabled':child.disabled}"
+                        (click)="itemClick($event, child)" [ngClass]="{'ng-menuitem-link ng-corner-all':true,'ng-state-disabled':child.disabled}"
                         [ngStyle]="child.style" [class]="child.styleClass">
-                        <span class="ui-submenu-icon pi pi-fw pi-caret-right" *ngIf="child.items"></span>
-                        <span class="ui-menuitem-icon" *ngIf="child.icon" [ngClass]="child.icon"></span>
-                        <span class="ui-menuitem-text">{{child.label}}</span>
+                        <span class="ng-submenu-icon pi pi-fw pi-caret-right" *ngIf="child.items"></span>
+                        <span class="ng-menuitem-icon" *ngIf="child.icon" [ngClass]="child.icon"></span>
+                        <span class="ng-menuitem-text">{{child.label}}</span>
                     </a>
-                    <p-contextMenuSub class="ui-submenu" [item]="child" *ngIf="child.items"></p-contextMenuSub>
+                    <p-contextMenuSub class="ng-submenu" [item]="child" *ngIf="child.items"></p-contextMenuSub>
                 </li>
             </ng-template>
         </ul>
@@ -123,7 +123,7 @@ export class ContextMenuSub {
 @Component({
     selector: 'p-contextMenu',
     template: `
-        <div #container [ngClass]="'ui-contextmenu ui-widget ui-widget-content ui-corner-all ui-shadow'"
+        <div #container [ngClass]="'ng-contextmenu ng-widget ng-widget-content ng-corner-all ng-shadow'"
             [class]="styleClass" [ngStyle]="style">
             <p-contextMenuSub [item]="model" root="root"></p-contextMenuSub>
         </div>

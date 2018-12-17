@@ -1,81 +1,81 @@
-.ui-megamenu {
+.ng-megamenu {
     padding: .25em;
 }
 
-.ui-megamenu-root-list {
+.ng-megamenu-root-list {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.ui-megamenu-root-list > .ui-menuitem {
+.ng-megamenu-root-list > .ng-menuitem {
     position: relative;
 }
 
-.ui-megamenu .ui-menuitem-link {
+.ng-megamenu .ng-menuitem-link {
     padding: .25em;
     display: block;
     text-decoration: none;
 }
 
-.ui-megamenu .ui-menuitem-icon {
+.ng-megamenu .ng-menuitem-icon {
     margin-right: .25em;
     vertical-align: middle;
 }
 
-.ui-megamenu .ui-menuitem-text {
+.ng-megamenu .ng-menuitem-text {
     vertical-align: middle;
 }
 
-.ui-megamenu-panel {
+.ng-megamenu-panel {
     display: none;
     position: absolute;
     width: auto;
 }
 
-.ui-megamenu-root-list > .ui-menuitem-active > .ui-megamenu-panel {
+.ng-megamenu-root-list > .ng-menuitem-active > .ng-megamenu-panel {
     display: block;
 }
 
-.ui-megamenu-panel .ui-menuitem {
+.ng-megamenu-panel .ng-menuitem {
     margin: .125em 0;
 }
 
-.ui-megamenu-submenu {
+.ng-megamenu-submenu {
     margin: 0;
     padding: 0;
     list-style: none;
     width: 12.5em;
 }
 
-.ui-megamenu-submenu-header {
+.ng-megamenu-submenu-header {
     padding: .25em;
 }
 
 /* Horizontal */
-.ui-megamenu-horizontal .ui-megamenu-root-list > .ui-menuitem {
+.ng-megamenu-horizontal .ng-megamenu-root-list > .ng-menuitem {
     display: inline-block;
 }
 
-.ui-megamenu-horizontal .ui-megamenu-root-list > .ui-menuitem > .ui-menuitem-link > .ui-submenu-icon {
+.ng-megamenu-horizontal .ng-megamenu-root-list > .ng-menuitem > .ng-menuitem-link > .ng-submenu-icon {
     vertical-align: middle;
     margin-left: .25em;    
 }
 
 /* Vertical */
-.ui-megamenu-vertical {
+.ng-megamenu-vertical {
     width: 12.5em;
 }
 
-.ui-megamenu-vertical .ui-megamenu-root-list > .ui-menuitem {
+.ng-megamenu-vertical .ng-megamenu-root-list > .ng-menuitem {
     display: block;
 }
 
-.ui-megamenu-vertical .ui-megamenu-root-list > .ui-menuitem > .ui-menuitem-link {
+.ng-megamenu-vertical .ng-megamenu-root-list > .ng-menuitem > .ng-menuitem-link {
     position: relative;
 }
 
-.ui-megamenu-vertical .ui-megamenu-root-list > .ui-menuitem > .ui-menuitem-link > .ui-submenu-icon {
+.ng-megamenu-vertical .ng-megamenu-root-list > .ng-menuitem > .ng-menuitem-link > .ng-submenu-icon {
     position: absolute;
     width: 1em;
     height: 1em;
@@ -84,7 +84,7 @@
     margin-top: -.5em;
 }
 
-.ui-megamenu .ui-g {
+.ng-megamenu .ng-g {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
 }

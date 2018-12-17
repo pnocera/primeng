@@ -86,7 +86,7 @@ describe('AutoComplete', () => {
       const inputMultipleEl = fixture.debugElement.query(By.css('ul')).query(By.css('input'));
       const multiContainer = fixture.debugElement.query(By.css('ul'));
       expect(inputMultipleEl.properties.disabled).toEqual(true);
-      expect(multiContainer.nativeElement.className).toContain('ui-state-disabled');
+      expect(multiContainer.nativeElement.className).toContain('ng-state-disabled');
     });
 
     it('should display dropdown icon', () => {
@@ -94,8 +94,8 @@ describe('AutoComplete', () => {
       fixture.detectChanges();
 
       const autocompleteEl = fixture.debugElement.query(By.css('span')).nativeElement;
-      const dropdownIconEl = fixture.debugElement.query(By.css('.ui-autocomplete-dropdown')).nativeElement;
-      expect(autocompleteEl.className).toContain('ui-autocomplete-dd');
+      const dropdownIconEl = fixture.debugElement.query(By.css('.ng-autocomplete-dropdown')).nativeElement;
+      expect(autocompleteEl.className).toContain('ng-autocomplete-dd');
       expect(dropdownIconEl).toBeTruthy();
     });
 
@@ -154,7 +154,7 @@ describe('AutoComplete', () => {
 
       let focusValue;
       autocomplete.onFocus.subscribe(value => focusValue = value);
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext.ui-widget'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext.ng-widget'));
       inputEl.nativeElement.dispatchEvent(new Event('focus'));  
       inputEl.nativeElement.focus();
       inputEl.nativeElement.click();
@@ -195,7 +195,7 @@ describe('AutoComplete', () => {
       deleteLastEl.nativeElement.click();
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext.ui-widget'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext.ng-widget'));
       inputEl.nativeElement.dispatchEvent(new Event('focus'));  
       inputEl.nativeElement.focus();
       inputEl.nativeElement.click();
@@ -222,7 +222,7 @@ describe('AutoComplete', () => {
       autocomplete.appendTo = "body";
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext.ui-widget'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext.ng-widget'));
       inputEl.nativeElement.dispatchEvent(new Event('focus'));  
       inputEl.nativeElement.focus();
       inputEl.nativeElement.click();
@@ -247,7 +247,7 @@ describe('AutoComplete', () => {
       autocomplete.appendTo = fixture.debugElement.query(By.css('a')).nativeElement;
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext.ui-widget'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext.ng-widget'));
       inputEl.nativeElement.dispatchEvent(new Event('focus'));  
       inputEl.nativeElement.focus();
       inputEl.nativeElement.click();
@@ -271,7 +271,7 @@ describe('AutoComplete', () => {
     it('should not show panel', fakeAsync(() => {
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext.ui-widget'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext.ng-widget'));
       inputEl.nativeElement.dispatchEvent(new Event('focus'));  
       inputEl.nativeElement.focus();
       inputEl.nativeElement.click();
@@ -294,7 +294,7 @@ describe('AutoComplete', () => {
       autocomplete.emptyMessage = "Primeng ROCKS!";
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext.ui-widget'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext.ng-widget'));
       inputEl.nativeElement.dispatchEvent(new Event('focus'));  
       inputEl.nativeElement.focus();
       inputEl.nativeElement.click();
@@ -327,7 +327,7 @@ describe('AutoComplete', () => {
       autocomplete.baseZIndex = 20;
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext.ui-widget'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext.ng-widget'));
       inputEl.nativeElement.dispatchEvent(new Event('focus'));  
       inputEl.nativeElement.focus();
       inputEl.nativeElement.click();
@@ -341,14 +341,14 @@ describe('AutoComplete', () => {
       fixture.detectChanges();
       
       const firstItemEl = fixture.debugElement.query(By.css('li')).nativeElement;
-      expect(firstItemEl.className).toContain('ui-state-highlight');
+      expect(firstItemEl.className).toContain('ng-state-highlight');
     }));
 
     it('should use forceSelection', fakeAsync(() => {
       autocomplete.forceSelection = true;
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext.ui-widget'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext.ng-widget'));
       inputEl.nativeElement.dispatchEvent(new Event('focus'));  
       inputEl.nativeElement.focus();
       inputEl.nativeElement.click();
@@ -370,7 +370,7 @@ describe('AutoComplete', () => {
     it('should select item', fakeAsync(() => {
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext.ui-widget'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext.ng-widget'));
       inputEl.nativeElement.dispatchEvent(new Event('focus'));  
       inputEl.nativeElement.focus();
       inputEl.nativeElement.click();
@@ -399,7 +399,7 @@ describe('AutoComplete', () => {
 
       let dropdownValue;
       autocomplete.onDropdownClick.subscribe(value => dropdownValue = value);
-      const dropdownOpenEl = fixture.debugElement.query(By.css('.ui-autocomplete-dropdown'));
+      const dropdownOpenEl = fixture.debugElement.query(By.css('.ng-autocomplete-dropdown'));
       dropdownOpenEl.nativeElement.click();
       fixture.detectChanges();
       
@@ -414,7 +414,7 @@ describe('AutoComplete', () => {
       autocomplete.dropdownMode = "current";
       fixture.detectChanges();
 
-      const dropdownOpenEl = fixture.debugElement.query(By.css('.ui-autocomplete-dropdown'));
+      const dropdownOpenEl = fixture.debugElement.query(By.css('.ng-autocomplete-dropdown'));
       dropdownOpenEl.nativeElement.click();
       fixture.detectChanges();
       
@@ -428,7 +428,7 @@ describe('AutoComplete', () => {
       autocomplete2.forceSelection = true;
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.queryAll(By.css('p-autoComplete'))[1].query(By.css('.ui-inputtext.ui-widget'));
+      const inputEl = fixture.debugElement.queryAll(By.css('p-autoComplete'))[1].query(By.css('.ng-inputtext.ng-widget'));
       inputEl.nativeElement.dispatchEvent(new Event('focus'));  
       inputEl.nativeElement.focus();
       inputEl.nativeElement.click();
@@ -454,7 +454,7 @@ describe('AutoComplete', () => {
     it('should change minLength', fakeAsync(() => {
       autocomplete.minLength = 2;
       fixture.detectChanges();
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext.ui-widget'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext.ng-widget'));
       inputEl.nativeElement.dispatchEvent(new Event('focus'));  
       inputEl.nativeElement.focus();
       inputEl.nativeElement.click();
@@ -477,8 +477,8 @@ describe('AutoComplete', () => {
 
       const spanEl = fixture.debugElement.query(By.css('span'));
       const listEl = fixture.debugElement.query(By.css('ul'));
-      expect(spanEl.nativeElement.className).toContain('ui-autocomplete-multiple');
-      expect(listEl.nativeElement.className).toContain('ui-autocomplete-multiple-container');
+      expect(spanEl.nativeElement.className).toContain('ng-autocomplete-multiple');
+      expect(listEl.nativeElement.className).toContain('ng-autocomplete-multiple-container');
     });
 
     it('should select item with multiSelect', fakeAsync(() => {
@@ -592,7 +592,7 @@ describe('AutoComplete', () => {
       expect(autocomplete.value.length).toEqual(1);
       expect(selectItemSpy).toHaveBeenCalled();
       expect(testComponent.brand).toEqual(autocomplete.value);
-      const iconEl = fixture.debugElement.query(By.css('.ui-autocomplete-token-icon'));
+      const iconEl = fixture.debugElement.query(By.css('.ng-autocomplete-token-icon'));
       iconEl.nativeElement.click();
       fixture.detectChanges();
 

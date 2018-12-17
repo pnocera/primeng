@@ -1,11 +1,11 @@
-.ui-toolbar {
+.ng-toolbar {
     padding: .25em .5em;
 }
 
-.ui-toolbar-group-left {
+.ng-toolbar-group-left {
     float:left
 }
 
-.ui-toolbar-group-right {
+.ng-toolbar-group-right {
     float:right
 }

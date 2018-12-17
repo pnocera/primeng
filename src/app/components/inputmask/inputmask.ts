@@ -44,8 +44,8 @@ export const INPUTMASK_VALUE_ACCESSOR: any = {
         (focus)="onInputFocus($event)" (blur)="onInputBlur($event)" (keydown)="onKeyDown($event)" (keypress)="onKeyPress($event)" [attr.autofocus]="autoFocus"
         (input)="onInput($event)" (paste)="handleInputChange($event)">`,
     host: {
-        '[class.ui-inputwrapper-filled]': 'filled',
-        '[class.ui-inputwrapper-focus]': 'focus'
+        '[class.ng-inputwrapper-filled]': 'filled',
+        '[class.ng-inputwrapper-focus]': 'focus'
     },
     providers: [INPUTMASK_VALUE_ACCESSOR,DomHandler]
 })

@@ -52,8 +52,8 @@ describe('RadioButton', () => {
         radiobutton.inputViewChild.nativeElement.checked=true;
         fixture.detectChanges();
 
-        const boxEl = fixture.nativeElement.querySelector('.ui-radiobutton-box');
-        expect(boxEl.className).toContain('ui-state-active');
+        const boxEl = fixture.nativeElement.querySelector('.ng-radiobutton-box');
+        expect(boxEl.className).toContain('ng-state-active');
     });
 
     it('should disabled', () => {
@@ -67,8 +67,8 @@ describe('RadioButton', () => {
         const inputEl = fixture.debugElement.query(By.css('input'));
         const labelEl = fixture.debugElement.query(By.css('label'));
         expect(inputEl.nativeElement.disabled).toEqual(true);
-        expect(radiobuttonEl.nativeElement.className).toContain("ui-state-disabled");
-        expect(labelEl.nativeElement.className).toContain("ui-label-disabled");
+        expect(radiobuttonEl.nativeElement.className).toContain("ng-state-disabled");
+        expect(labelEl.nativeElement.className).toContain("ng-label-disabled");
 
         radiobuttonEl.nativeElement.click();
         fixture.detectChanges();
@@ -105,7 +105,7 @@ describe('RadioButton', () => {
         expect(radiobutton.checked).toEqual(true);
         expect(value).toEqual(5);
         expect(radiobutton.focused).toEqual(true);
-        expect(radiobuttonEl.nativeElement.className).toContain("ui-state-focus");
+        expect(radiobuttonEl.nativeElement.className).toContain("ng-state-focus");
         expect(iconEl.nativeElement.className).toContain("pi pi-circle-on");
     });
 
@@ -129,7 +129,7 @@ describe('RadioButton', () => {
         expect(selectSpy).toHaveBeenCalled();
         expect(onFocusSpy).toHaveBeenCalled();
         expect(radiobutton.checked).toEqual(true);
-        expect(labelEl.nativeElement.className).toContain("ui-label-focus");
+        expect(labelEl.nativeElement.className).toContain("ng-label-focus");
         expect(value).toEqual(5);
         inputEl.nativeElement.dispatchEvent(new Event('blur'));
         fixture.detectChanges();

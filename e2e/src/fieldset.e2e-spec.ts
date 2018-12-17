@@ -7,8 +7,8 @@ describe('Fieldset', () => {
     describe('Toggle Icon Click', () => {
         beforeEach(() => {
           browser.get('#/fieldset');
-          legend = element(by.css('.ui-fieldset-toggleable .ui-fieldset-legend'));
-          contentWrapper = element.all(by.css('.ui-fieldset-content-wrapper'));
+          legend = element(by.css('.ng-fieldset-toggleable .ng-fieldset-legend'));
+          contentWrapper = element.all(by.css('.ng-fieldset-content-wrapper'));
         });
 
         it('should close active content', () => {

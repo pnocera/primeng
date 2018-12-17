@@ -5,11 +5,11 @@ import {DomHandler} from '../dom/domhandler';
 @Directive({
     selector: '[pPassword]',
     host: {
-        '[class.ui-inputtext]': 'true',
-        '[class.ui-corner-all]': 'true',
-        '[class.ui-state-default]': 'true',
-        '[class.ui-widget]': 'true',
-        '[class.ui-state-filled]': 'filled'
+        '[class.ng-inputtext]': 'true',
+        '[class.ng-corner-all]': 'true',
+        '[class.ng-state-default]': 'true',
+        '[class.ng-widget]': 'true',
+        '[class.ng-state-filled]': 'filled'
     },
     providers: [DomHandler]
 })
@@ -39,7 +39,7 @@ export class Password implements OnDestroy,DoCheck {
         this.updateFilledState();
     }
     
-    //To trigger change detection to manage ui-state-filled for material labels when there is no value binding
+    //To trigger change detection to manage ng-state-filled for material labels when there is no value binding
     @HostListener('input', ['$event']) 
     onInput(e) {
         this.updateFilledState();
@@ -51,11 +51,11 @@ export class Password implements OnDestroy,DoCheck {
 
     createPanel() {
         this.panel = document.createElement('div');
-        this.panel.className = 'ui-password-panel ui-widget ui-state-highlight ui-corner-all';
+        this.panel.className = 'ng-password-panel ng-widget ng-state-highlight ng-corner-all';
         this.meter = document.createElement('div');
-        this.meter.className = 'ui-password-meter';
+        this.meter.className = 'ng-password-meter';
         this.info = document.createElement('div');
-        this.info.className = 'ui-password-info';
+        this.info.className = 'ng-password-info';
         this.info.textContent = this.promptLabel;
         this.panel.appendChild(this.meter);
         this.panel.appendChild(this.info);
@@ -73,8 +73,8 @@ export class Password implements OnDestroy,DoCheck {
             this.panel.style.zIndex = String(++DomHandler.zindex);
             this.zone.runOutsideAngular(() => {
                 setTimeout(() => {
-                    this.domHandler.addClass(this.panel, 'ui-password-panel-visible');
-                    this.domHandler.removeClass(this.panel, 'ui-password-panel-hidden');
+                    this.domHandler.addClass(this.panel, 'ng-password-panel-visible');
+                    this.domHandler.removeClass(this.panel, 'ng-password-panel-hidden');
                 }, 1);
                 this.domHandler.absolutePosition(this.panel, this.el.nativeElement);
             });
@@ -84,8 +84,8 @@ export class Password implements OnDestroy,DoCheck {
     @HostListener('blur', ['$event']) 
     onBlur(e) {   
         if (this.feedback) {
-            this.domHandler.addClass(this.panel, 'ui-password-panel-hidden');
-            this.domHandler.removeClass(this.panel, 'ui-password-panel-visible');
+            this.domHandler.addClass(this.panel, 'ng-password-panel-hidden');
+            this.domHandler.removeClass(this.panel, 'ng-password-panel-visible');
 
             this.zone.runOutsideAngular(() => {
                 setTimeout(() => {

@@ -61,8 +61,8 @@ describe('Chips', () => {
 
       const listEl = fixture.debugElement.query(By.css('ul'));
       const inputEl = fixture.debugElement.query(By.css('input'));
-      const tokenIconEl = fixture.debugElement.query(By.css('.ui-chips-token-icon'));
-      expect(listEl.nativeElement.className).toContain("ui-state-disabled");
+      const tokenIconEl = fixture.debugElement.query(By.css('.ng-chips-token-icon'));
+      expect(listEl.nativeElement.className).toContain("ng-state-disabled");
       expect(tokenIconEl).toBeFalsy();
       expect(inputEl.nativeElement.disabled).toEqual(true);
     });
@@ -266,7 +266,7 @@ describe('Chips', () => {
       expect(chips.value[0]).toEqual("primeng");
       fixture.detectChanges();
 
-      const tokenIconEl = fixture.debugElement.query(By.css('.ui-chips-token-icon'));
+      const tokenIconEl = fixture.debugElement.query(By.css('.ng-chips-token-icon'));
       tokenIconEl.nativeElement.click();      
       fixture.detectChanges();
 
@@ -299,7 +299,7 @@ describe('Chips', () => {
       fixture.detectChanges();
       
 
-      const labelEl = fixture.debugElement.query(By.css('.ui-chips-token-label'));
+      const labelEl = fixture.debugElement.query(By.css('.ng-chips-token-label'));
       expect(labelEl.nativeElement.textContent).toEqual("primeng")
       expect(chips.value[0].name).toEqual("primeng");
     });
@@ -312,7 +312,7 @@ describe('Chips', () => {
       fixture.detectChanges();
       
 
-      const labelEl = fixture.debugElement.query(By.css('.ui-chips-token-label'));
+      const labelEl = fixture.debugElement.query(By.css('.ng-chips-token-label'));
       expect(labelEl.nativeElement.textContent).toEqual("rocks");
       expect(chips.value[0].name.primeng).toEqual("rocks");
     });

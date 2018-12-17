@@ -7,8 +7,8 @@ describe('Panel', () => {
     describe('Toggle Icon Click', () => {
         beforeEach(() => {
           browser.get('#/panel');
-          toggleIcon = element(by.css('.ui-panel-titlebar-icon'));
-          contentWrapper = element.all(by.css('.ui-panel-content-wrapper'));
+          toggleIcon = element(by.css('.ng-panel-titlebar-icon'));
+          contentWrapper = element.all(by.css('.ng-panel-content-wrapper'));
         });
 
         it('should close active content', () => {

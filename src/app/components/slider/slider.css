@@ -1,8 +1,8 @@
-.ui-slider {
+.ng-slider {
 	position: relative;
 	text-align: left;
 }
-.ui-slider .ui-slider-handle {
+.ng-slider .ng-slider-handle {
 	position: absolute;
 	width: 1.2em;
 	height: 1.2em;
@@ -11,10 +11,10 @@
 	touch-action: none;
     z-index: 1;
 }
-.ui-slider .ui-slider-handle.ui-slider-handle-active {
+.ng-slider .ng-slider-handle.ng-slider-handle-active {
     z-index: 2;
 }
-.ui-slider .ui-slider-range {
+.ng-slider .ng-slider-range {
 	position: absolute;
 	font-size: .7em;
 	display: block;
@@ -22,44 +22,44 @@
 	background-position: 0 0;
 }
 
-.ui-slider-horizontal {
+.ng-slider-horizontal {
 	height: .8em;
 }
-.ui-slider-horizontal .ui-slider-handle {
+.ng-slider-horizontal .ng-slider-handle {
 	top: -.25em;
 	margin-left: -.6em;
 }
-.ui-slider-horizontal .ui-slider-range {
+.ng-slider-horizontal .ng-slider-range {
 	top: 0;
 	height: 100%;
 }
-.ui-slider-horizontal .ui-slider-range-min {
+.ng-slider-horizontal .ng-slider-range-min {
 	left: 0;
 }
-.ui-slider-horizontal .ui-slider-range-max {
+.ng-slider-horizontal .ng-slider-range-max {
 	right: 0;
 }
 
-.ui-slider-vertical {
+.ng-slider-vertical {
 	width: .8em;
 	height: 100px;
 }
-.ui-slider-vertical .ui-slider-handle {
+.ng-slider-vertical .ng-slider-handle {
 	left: -.25em;
 	margin-left: 0;
 	margin-bottom: -.6em;
 }
-.ui-slider-vertical .ui-slider-range {
+.ng-slider-vertical .ng-slider-range {
 	left: 0;
 	width: 100%;
 }
-.ui-slider-vertical .ui-slider-range-min {
+.ng-slider-vertical .ng-slider-range-min {
 	bottom: 0;
 }
-.ui-slider-vertical .ui-slider-range-max {
+.ng-slider-vertical .ng-slider-range-max {
 	top: 0;
 }
 
-.ui-slider-animate .ui-slider-handle {
+.ng-slider-animate .ng-slider-handle {
     transition: left .3s;
 }

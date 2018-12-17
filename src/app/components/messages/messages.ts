@@ -8,20 +8,20 @@ import {Subscription} from 'rxjs';
 @Component({
     selector: 'p-messages',
     template: `
-        <div *ngIf="hasMessages()" class="ui-messages ui-widget ui-corner-all" style="display:block"
-                    [ngClass]="{'ui-messages-info':(value[0].severity === 'info'),
-                    'ui-messages-warn':(value[0].severity === 'warn'),
-                    'ui-messages-error':(value[0].severity === 'error'),
-                    'ui-messages-success':(value[0].severity === 'success')}"
+        <div *ngIf="hasMessages()" class="ng-messages ng-widget ng-corner-all" style="display:block"
+                    [ngClass]="{'ng-messages-info':(value[0].severity === 'info'),
+                    'ng-messages-warn':(value[0].severity === 'warn'),
+                    'ng-messages-error':(value[0].severity === 'error'),
+                    'ng-messages-success':(value[0].severity === 'success')}"
                     [ngStyle]="style" [class]="styleClass" [@messageAnimation]="{value: 'visible', params: {showTransitionParams: showTransitionOptions, hideTransitionParams: hideTransitionOptions}}">
-            <a tabindex="0" class="ui-messages-close" (click)="clear($event)" (keydown.enter)="clear($event)" *ngIf="closable">
+            <a tabindex="0" class="ng-messages-close" (click)="clear($event)" (keydown.enter)="clear($event)" *ngIf="closable">
                 <i class="pi pi-times"></i>
             </a>
-            <span class="ui-messages-icon pi" [ngClass]="icon"></span>
+            <span class="ng-messages-icon pi" [ngClass]="icon"></span>
             <ul>
                 <li *ngFor="let msg of value">
-                    <span *ngIf="msg.summary" class="ui-messages-summary" [innerHTML]="msg.summary"></span>
-                    <span *ngIf="msg.detail" class="ui-messages-detail" [innerHTML]="msg.detail"></span>
+                    <span *ngIf="msg.summary" class="ng-messages-summary" [innerHTML]="msg.summary"></span>
+                    <span *ngIf="msg.detail" class="ng-messages-detail" [innerHTML]="msg.detail"></span>
                 </li>
             </ul>
         </div>

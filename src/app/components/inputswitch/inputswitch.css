@@ -1,11 +1,11 @@
-.ui-inputswitch {
+.ng-inputswitch {
     position: relative;
     display: inline-block;
     width: 3em;
     height: 1.75em;
 }
 
-.ui-inputswitch-slider {
+.ng-inputswitch-slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -17,7 +17,7 @@
     border-radius: 30px;
 }
 
-.ui-inputswitch-slider:before {
+.ng-inputswitch-slider:before {
     position: absolute;
     content: "";
     height: 1.250em;
@@ -29,13 +29,13 @@
     transition: .3s;
 }
 
-.ui-inputswitch-checked .ui-inputswitch-slider:before {
+.ng-inputswitch-checked .ng-inputswitch-slider:before {
     -webkit-transform: translateX(1.250em);
     -ms-transform: translateX(1.250em);
     transform: translateX(1.250em);
 }
 
-.ui-inputswitch.ui-state-disabled .ui-inputswitch-slider, 
-.ui-inputswitch-readonly .ui-inputswitch-slider {
+.ng-inputswitch.ng-state-disabled .ng-inputswitch-slider, 
+.ng-inputswitch-readonly .ng-inputswitch-slider {
     cursor: default;
 }

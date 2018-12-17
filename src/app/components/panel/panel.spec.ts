@@ -25,27 +25,27 @@ describe('Panel', () => {
     it('should display the header', () => {
         panel.header = 'PrimeNG Panel Header';
         fixture.detectChanges();
-        const headerEl = fixture.debugElement.query(By.css('.ui-panel-title'));
+        const headerEl = fixture.debugElement.query(By.css('.ng-panel-title'));
         expect(headerEl.nativeElement.textContent).toContain('PrimeNG Panel Header')
     });
     
     it('should not render toggle icon when not toggleable', () => {
         fixture.detectChanges();
-        const togglerEl = fixture.debugElement.query(By.css('.ui-panel-titlebar-toggler'));
+        const togglerEl = fixture.debugElement.query(By.css('.ng-panel-titlebar-toggler'));
         expect(togglerEl).toBeNull();
     });
     
     it('should render toggle icon when toggleable', () => {
         panel.toggleable = true;
         fixture.detectChanges();
-        const togglerEl = fixture.debugElement.query(By.css('.ui-panel-titlebar-toggler'));
+        const togglerEl = fixture.debugElement.query(By.css('.ng-panel-titlebar-toggler'));
         expect(togglerEl).not.toBeNull();
     });
     
     it('should toggle the panel when toggler is clicked', fakeAsync(() => {
         panel.toggleable = true;
         fixture.detectChanges();
-        const togglerEl = fixture.nativeElement.querySelector('.ui-panel-titlebar-toggler');
+        const togglerEl = fixture.nativeElement.querySelector('.ng-panel-titlebar-toggler');
         
         togglerEl.click();
         expect(panel.collapsed).toEqual(true);

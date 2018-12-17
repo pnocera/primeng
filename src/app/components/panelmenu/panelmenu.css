@@ -1,62 +1,62 @@
-.ui-panelmenu {
+.ng-panelmenu {
     width: auto;
 }
 
-.ui-panelmenu .ui-menu-separator {
+.ng-panelmenu .ng-menu-separator {
     border-width: 1px 0 0 0;
 }
 
-.ui-panelmenu .ui-panelmenu-content-wrapper {
+.ng-panelmenu .ng-panelmenu-content-wrapper {
     overflow: hidden;
 }
 
-.ui-panelmenu .ui-panelmenu-header {
+.ng-panelmenu .ng-panelmenu-header {
     margin: -1px 0 0 0;
     zoom: 1;
 }
 
-.ui-panelmenu .ui-panelmenu-header-link {
+.ng-panelmenu .ng-panelmenu-header-link {
     padding: .5em;
     display: block;
     text-decoration: none;
 }
 
-.ui-panelmenu .ui-panelmenu-icon {
+.ng-panelmenu .ng-panelmenu-icon {
     vertical-align: middle;
 }
 
-.ui-panelmenu .ui-menuitem-text {
+.ng-panelmenu .ng-menuitem-text {
     vertical-align: middle;
 }
 
-.ui-panelmenu .ui-menuitem-icon {
+.ng-panelmenu .ng-menuitem-icon {
     margin-right: .25em;
     vertical-align: middle;
 }
 
-.ui-panelmenu .ui-panelmenu-content {
+.ng-panelmenu .ng-panelmenu-content {
     padding: 0.25em;
     border-top: 0;
     margin-bottom: 1px;
 }
 
-.ui-panelmenu .ui-submenu-list {
+.ng-panelmenu .ng-submenu-list {
     margin: 0;
     padding: 0;
     list-style: none;
     margin-left: 1.5em;
 }
 
-.ui-panelmenu .ui-panelmenu-content > .ui-panelmenu-root-submenu >.ui-submenu-list {
+.ng-panelmenu .ng-panelmenu-content > .ng-panelmenu-root-submenu >.ng-submenu-list {
     margin-left: 0;
 }
 
-.ui-panelmenu .ui-menuitem {
+.ng-panelmenu .ng-menuitem {
     overflow: hidden;
     margin: .125em 0;
 }
 
-.ui-panelmenu .ui-menuitem-link {
+.ng-panelmenu .ng-menuitem-link {
     padding: .25em;
     display: block;
     text-decoration: none;

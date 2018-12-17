@@ -39,7 +39,7 @@ describe('InputSwitch', () => {
       inputSwitchEl.click();
       fixture.detectChanges();
 
-      expect(inputSwitchEl.className).toContain('ui-state-disabled');
+      expect(inputSwitchEl.className).toContain('ng-state-disabled');
       expect(inputEl.disabled).toEqual(true);
       expect(updateModelSpy).not.toHaveBeenCalled();
     });
@@ -106,14 +106,14 @@ describe('InputSwitch', () => {
       inputEl.dispatchEvent(new Event('focus'));
       fixture.detectChanges();
 
-      expect(inputSwitchEl.className).toContain("ui-inputswitch-focus");
+      expect(inputSwitchEl.className).toContain("ng-inputswitch-focus");
       expect(inputswitch.focused).toEqual(true);
       expect(onFocusSpy).toHaveBeenCalled();
       inputEl.dispatchEvent(new Event('blur'));
       fixture.detectChanges();
 
       expect(inputswitch.focused).toEqual(false);
-      expect(inputSwitchEl.className).not.toContain("ui-inputswitch-focus");
+      expect(inputSwitchEl.className).not.toContain("ng-inputswitch-focus");
       expect(onBlurSpy).toHaveBeenCalled();
       expect(onModelTouchedSpy).toHaveBeenCalled();
     });
@@ -145,7 +145,7 @@ describe('InputSwitch', () => {
         inputSwitchEl.click();
         fixture.detectChanges();
 
-        expect(inputSwitchEl.className).toContain('ui-state-disabled');
+        expect(inputSwitchEl.className).toContain('ng-state-disabled');
         expect(inputEl.disabled).toEqual(true);
         expect(updateModelSpy).not.toHaveBeenCalled();
     });

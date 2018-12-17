@@ -9,23 +9,23 @@ let idx: number = 0;
 @Component({
     selector: 'p-fieldset',
     template: `
-        <fieldset [attr.id]="id" [ngClass]="{'ui-fieldset ui-widget ui-widget-content ui-corner-all': true, 'ui-fieldset-toggleable': toggleable}" [ngStyle]="style" [class]="styleClass">
-            <legend class="ui-fieldset-legend ui-corner-all ui-state-default ui-unselectable-text">
+        <fieldset [attr.id]="id" [ngClass]="{'ng-fieldset ng-widget ng-widget-content ng-corner-all': true, 'ng-fieldset-toggleable': toggleable}" [ngStyle]="style" [class]="styleClass">
+            <legend class="ng-fieldset-legend ng-corner-all ng-state-default ng-unselectable-text">
                 <ng-container *ngIf="toggleable; else legendContent">
                     <a tabindex="0" (click)="toggle($event)" (keydown.enter)="toggle($event)" [attr.aria-controls]="id + '-content'" [attr.aria-expanded]="!collapsed">
                         <ng-container *ngTemplateOutlet="legendContent"></ng-container>
                     </a>
                 </ng-container>
                 <ng-template #legendContent>
-                    <span class="ui-fieldset-toggler pi" *ngIf="toggleable" [ngClass]="{'pi-minus': !collapsed,'pi-plus':collapsed}"></span>
-                    <span class="ui-fieldset-legend-text">{{legend}}</span>
+                    <span class="ng-fieldset-toggler pi" *ngIf="toggleable" [ngClass]="{'pi-minus': !collapsed,'pi-plus':collapsed}"></span>
+                    <span class="ng-fieldset-legend-text">{{legend}}</span>
                     <ng-content select="p-header"></ng-content>
                 </ng-template>
             </legend>
-            <div [attr.id]="id + '-content'" class="ui-fieldset-content-wrapper" [@fieldsetContent]="collapsed ? {value: 'hidden', params: {transitionParams: transitionOptions}} : {value: 'visible', params: {transitionParams: transitionOptions}}" 
-                        [ngClass]="{'ui-fieldset-content-wrapper-overflown': collapsed||animating}" [attr.aria-hidden]="collapsed"
+            <div [attr.id]="id + '-content'" class="ng-fieldset-content-wrapper" [@fieldsetContent]="collapsed ? {value: 'hidden', params: {transitionParams: transitionOptions}} : {value: 'visible', params: {transitionParams: transitionOptions}}" 
+                        [ngClass]="{'ng-fieldset-content-wrapper-overflown': collapsed||animating}" [attr.aria-hidden]="collapsed"
                          (@fieldsetContent.done)="onToggleDone($event)" role="region">
-                <div class="ui-fieldset-content">
+                <div class="ng-fieldset-content">
                     <ng-content></ng-content>
                 </div>
             </div>
@@ -68,7 +68,7 @@ export class Fieldset implements BlockableUI {
     
     constructor(private el: ElementRef) {}
     
-    id: string = `ui-fieldset-${idx++}`;
+    id: string = `ng-fieldset-${idx++}`;
         
     toggle(event) {
         if(this.animating) {

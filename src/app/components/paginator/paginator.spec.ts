@@ -29,7 +29,7 @@ describe('Paginator', () => {
     it('should created by default', () => {
       fixture.detectChanges();
       
-      const paginatorEl = fixture.debugElement.query(By.css('.ui-paginator'));
+      const paginatorEl = fixture.debugElement.query(By.css('.ng-paginator'));
       expect(paginatorEl).toBeTruthy();
     });
 
@@ -38,7 +38,7 @@ describe('Paginator', () => {
       paginator.styleClass = "Primeng ROCKS!";
       fixture.detectChanges();
       
-      const paginatorEl = fixture.debugElement.query(By.css('.ui-paginator'));
+      const paginatorEl = fixture.debugElement.query(By.css('.ng-paginator'));
       expect(paginatorEl.nativeElement.className).toContain("Primeng ROCKS!");
       expect(paginatorEl.nativeElement.style.primeng).toEqual("rocks!");
     });
@@ -47,7 +47,7 @@ describe('Paginator', () => {
       paginator.alwaysShow = false;
       fixture.detectChanges();
       
-      const paginatorEl = fixture.debugElement.query(By.css('.ui-paginator'));
+      const paginatorEl = fixture.debugElement.query(By.css('.ng-paginator'));
       expect(paginatorEl).toBeFalsy();
     });
 
@@ -78,9 +78,9 @@ describe('Paginator', () => {
       const updatePaginatorStateSpy = spyOn(paginator, 'updatePaginatorState').and.callThrough();
       fixture.detectChanges();
 
-      const pageEls = fixture.debugElement.queryAll(By.css('.ui-paginator-page'));
+      const pageEls = fixture.debugElement.queryAll(By.css('.ng-paginator-page'));
       const dropdownEl = fixture.debugElement.query(By.css('p-dropdown'));
-      const paginatorElemntEls = fixture.debugElement.queryAll(By.css('.ui-paginator-page'));
+      const paginatorElemntEls = fixture.debugElement.queryAll(By.css('.ng-paginator-page'));
       expect(dropdownEl).toBeTruthy();
       expect(dropdownEl.componentInstance.options.length).toEqual(3);
       expect(updatePaginatorStateSpy).toHaveBeenCalled();
@@ -96,13 +96,13 @@ describe('Paginator', () => {
       const onPageLinkClickSpy = spyOn(paginator, 'onPageLinkClick').and.callThrough();
       fixture.detectChanges();
       
-      const pageEls = fixture.debugElement.queryAll(By.css('.ui-paginator-page'));
+      const pageEls = fixture.debugElement.queryAll(By.css('.ng-paginator-page'));
       const pickedPage =pageEls[3];
       pageEls[3].nativeElement.click();
       fixture.detectChanges();
 
-      const pageElsAfterClick = fixture.debugElement.queryAll(By.css('.ui-paginator-page'));
-      const activePage = fixture.debugElement.query(By.css('.ui-state-active'));
+      const pageElsAfterClick = fixture.debugElement.queryAll(By.css('.ng-paginator-page'));
+      const activePage = fixture.debugElement.query(By.css('.ng-state-active'));
       expect(onPageLinkClickSpy);
       expect(activePage.nativeElement.textContent).toEqual("4");
       expect((paginator.getPage()+1).toString()).toEqual(pickedPage.nativeElement.textContent);
@@ -121,14 +121,14 @@ describe('Paginator', () => {
       const changePageToNextSpy = spyOn(paginator, 'changePageToNext').and.callThrough();
       fixture.detectChanges();
       
-      const pageEls = fixture.debugElement.queryAll(By.css('.ui-paginator-page'));
-      const pageNextEl = fixture.debugElement.query(By.css('.ui-paginator-next'));
+      const pageEls = fixture.debugElement.queryAll(By.css('.ng-paginator-page'));
+      const pageNextEl = fixture.debugElement.query(By.css('.ng-paginator-next'));
       const nextPageEl =pageEls[1];
       pageNextEl.nativeElement.click();
       fixture.detectChanges();
 
-      const pageElsAfterClick = fixture.debugElement.queryAll(By.css('.ui-paginator-page'));
-      const activePage = fixture.debugElement.query(By.css('.ui-state-active'));
+      const pageElsAfterClick = fixture.debugElement.queryAll(By.css('.ng-paginator-page'));
+      const activePage = fixture.debugElement.query(By.css('.ng-state-active'));
       expect(changePageToNextSpy);
       expect(activePage.nativeElement.textContent).toEqual("2");
       expect((paginator.getPage()+1).toString()).toEqual(nextPageEl.nativeElement.textContent);
@@ -147,9 +147,9 @@ describe('Paginator', () => {
       const changePageToPrevSpy = spyOn(paginator, 'changePageToPrev').and.callThrough();
       fixture.detectChanges();
       
-      const pageEls = fixture.debugElement.queryAll(By.css('.ui-paginator-page'));
-      const pageNextEl = fixture.debugElement.query(By.css('.ui-paginator-next'));
-      const pagePrevEl = fixture.debugElement.query(By.css('.ui-paginator-prev'));
+      const pageEls = fixture.debugElement.queryAll(By.css('.ng-paginator-page'));
+      const pageNextEl = fixture.debugElement.query(By.css('.ng-paginator-next'));
+      const pagePrevEl = fixture.debugElement.query(By.css('.ng-paginator-prev'));
       const prevPageEl =pageEls[0];
       pageNextEl.nativeElement.click();
       fixture.detectChanges();
@@ -157,8 +157,8 @@ describe('Paginator', () => {
       pagePrevEl.nativeElement.click();
       fixture.detectChanges();
 
-      const pageElsAfterClick = fixture.debugElement.queryAll(By.css('.ui-paginator-page'));
-      const activePage = fixture.debugElement.query(By.css('.ui-state-active'));
+      const pageElsAfterClick = fixture.debugElement.queryAll(By.css('.ng-paginator-page'));
+      const activePage = fixture.debugElement.query(By.css('.ng-state-active'));
       expect(changePageToPrevSpy);
       expect(activePage.nativeElement.textContent).toEqual("1");
       expect((paginator.getPage()+1).toString()).toEqual(prevPageEl.nativeElement.textContent);
@@ -177,12 +177,12 @@ describe('Paginator', () => {
       const changePageToLastSpy = spyOn(paginator, 'changePageToLast').and.callThrough();
       fixture.detectChanges();
       
-      const pageLastEl = fixture.debugElement.query(By.css('.ui-paginator-last'));
+      const pageLastEl = fixture.debugElement.query(By.css('.ng-paginator-last'));
       pageLastEl.nativeElement.click();
       fixture.detectChanges();
 
-      const pageElsAfterClick = fixture.debugElement.queryAll(By.css('.ui-paginator-page'));
-      const activePage = fixture.debugElement.query(By.css('.ui-state-active'));
+      const pageElsAfterClick = fixture.debugElement.queryAll(By.css('.ng-paginator-page'));
+      const activePage = fixture.debugElement.query(By.css('.ng-state-active'));
       expect(changePageToLastSpy);
       expect(activePage.nativeElement.textContent).toEqual("12");
       let pageValue = paginator.getPage()-3;
@@ -191,7 +191,7 @@ describe('Paginator', () => {
         pageValue++;
       }
       expect(pageElsAfterClick[4]).toEqual(activePage);
-      expect(pageLastEl.nativeElement.className).toContain('ui-state-disabled');
+      expect(pageLastEl.nativeElement.className).toContain('ng-state-disabled');
     });
 
     it('should called changePageToFirst and go to first page', () => {
@@ -201,16 +201,16 @@ describe('Paginator', () => {
       const changePageToFirstSpy = spyOn(paginator, 'changePageToFirst').and.callThrough();
       fixture.detectChanges();
       
-      const pageLastEl = fixture.debugElement.query(By.css('.ui-paginator-last'));
-      const pageFirstEl = fixture.debugElement.query(By.css('.ui-paginator-first'));
+      const pageLastEl = fixture.debugElement.query(By.css('.ng-paginator-last'));
+      const pageFirstEl = fixture.debugElement.query(By.css('.ng-paginator-first'));
       pageLastEl.nativeElement.click();
       fixture.detectChanges();
 
       pageFirstEl.nativeElement.click();
       fixture.detectChanges();
 
-      const pageElsAfterClick = fixture.debugElement.queryAll(By.css('.ui-paginator-page'));
-      const activePage = fixture.debugElement.query(By.css('.ui-state-active'));
+      const pageElsAfterClick = fixture.debugElement.queryAll(By.css('.ng-paginator-page'));
+      const activePage = fixture.debugElement.query(By.css('.ng-state-active'));
       expect(changePageToFirstSpy);
       expect(activePage.nativeElement.textContent).toEqual("1");
       let pageValue = paginator.getPage()+1;
@@ -219,7 +219,7 @@ describe('Paginator', () => {
         pageValue++;
       }
       expect(pageElsAfterClick[0]).toEqual(activePage);
-      expect(pageFirstEl.nativeElement.className).toContain('ui-state-disabled');
+      expect(pageFirstEl.nativeElement.className).toContain('ng-state-disabled');
     });
 
     it('should called onRppChange and change page count', () => {
@@ -229,10 +229,10 @@ describe('Paginator', () => {
       const onRppChangeSpy = spyOn(paginator, 'onRppChange').and.callThrough();
       fixture.detectChanges();
    
-      const dropdownEl = fixture.debugElement.query(By.css('.ui-dropdown'));
+      const dropdownEl = fixture.debugElement.query(By.css('.ng-dropdown'));
       dropdownEl.nativeElement.click();
       fixture.detectChanges();
-      const dropdownItemsEl = fixture.debugElement.queryAll(By.css('.ui-dropdown-item'));
+      const dropdownItemsEl = fixture.debugElement.queryAll(By.css('.ng-dropdown-item'));
       dropdownItemsEl[1].nativeElement.click();
       fixture.detectChanges();
 
@@ -248,7 +248,7 @@ describe('Paginator', () => {
       
       let data;
       paginator.onPageChange.subscribe(value => data = value);
-      const pageEls = fixture.debugElement.queryAll(By.css('.ui-paginator-page'));
+      const pageEls = fixture.debugElement.queryAll(By.css('.ng-paginator-page'));
       pageEls[3].nativeElement.click();
       fixture.detectChanges();
       expect(data).toBeTruthy();

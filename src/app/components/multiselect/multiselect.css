@@ -1,11 +1,11 @@
-.ui-multiselect {
+.ng-multiselect {
     display: inline-block;
     position: relative;
     width: auto;
     cursor: pointer;
 }
 
-.ui-multiselect .ui-multiselect-trigger {
+.ng-multiselect .ng-multiselect-trigger {
     border-right: none;
     border-top: none;
     border-bottom: none;
@@ -18,7 +18,7 @@
     padding: 0 .25em;
 }
 
-.ui-multiselect .ui-multiselect-trigger  .ui-multiselect-trigger-icon {
+.ng-multiselect .ng-multiselect-trigger  .ng-multiselect-trigger-icon {
     top: 50%;
     left: 50%;
     margin-top: -.5em;
@@ -26,11 +26,11 @@
     position: absolute;
 }
 
-.ui-multiselect .ui-multiselect-label-container  {
+.ng-multiselect .ng-multiselect-label-container  {
     overflow: hidden;
 }
 
-.ui-multiselect .ui-multiselect-label  {
+.ng-multiselect .ng-multiselect-label  {
     display: block;
     padding: .25em 2em .25em .25em;
     width: auto;
@@ -40,32 +40,32 @@
     overflow: hidden;
 }
 
-.ui-multiselect.ui-state-disabled .ui-multiselect-trigger,
-.ui-multiselect.ui-state-disabled .ui-multiselect-label {
+.ng-multiselect.ng-state-disabled .ng-multiselect-trigger,
+.ng-multiselect.ng-state-disabled .ng-multiselect-label {
     cursor: auto
 }
 
-.ui-multiselect-panel {
+.ng-multiselect-panel {
     padding: 0.2em;
     position: absolute;
     min-width: 12em;
 }
 
-.ui-multiselect .ui-multiselect-panel {
+.ng-multiselect .ng-multiselect-panel {
     min-width: 100%;
 }
 
-.ui-multiselect-panel .ui-multiselect-items-wrapper {
+.ng-multiselect-panel .ng-multiselect-items-wrapper {
     overflow: auto;
     position: relative;
     padding: 0.2em 0;
 }
 
-.ui-multiselect-panel .ui-multiselect-list {
+.ng-multiselect-panel .ng-multiselect-list {
     border: 0 none;
 }
 
-.ui-multiselect-panel .ui-multiselect-item {
+.ng-multiselect-panel .ng-multiselect-item {
     border: 0 none;
     cursor: pointer;
     font-weight: normal;
@@ -77,17 +77,17 @@
     position: relative;
 }
 
-.ui-multiselect-panel .ui-multiselect-item .ui-chkbox {
+.ng-multiselect-panel .ng-multiselect-item .ng-chkbox {
     display: inline-block;
     vertical-align: middle;
 }
 
-.ui-multiselect-panel .ui-multiselect-item label {
+.ng-multiselect-panel .ng-multiselect-item label {
     display: inline-block;
     vertical-align: middle;
 }
 
-.ui-multiselect-header {
+.ng-multiselect-header {
     margin-bottom: 0.3em;
     padding: .25em;
     position: relative;
@@ -95,35 +95,35 @@
     min-height: 2em;
 }
 
-.ui-multiselect-header .ui-chkbox {
+.ng-multiselect-header .ng-chkbox {
     display: inline-block;
     vertical-align: middle;
     cursor:pointer;
 }
 
-.ui-multiselect-header .ui-multiselect-filter-container {
+.ng-multiselect-header .ng-multiselect-filter-container {
     position: relative;
     display: inline-block;
     vertical-align: middle;
     width: 65%;
 }
 
-.ui-multiselect-header.ui-multiselect-header-no-toggleall .ui-multiselect-filter-container {
+.ng-multiselect-header.ng-multiselect-header-no-toggleall .ng-multiselect-filter-container {
     width: 85%;
 }
 
-.ui-multiselect-header .ui-multiselect-filter-container .ui-multiselect-filter-icon {
+.ng-multiselect-header .ng-multiselect-filter-container .ng-multiselect-filter-icon {
     position: absolute;
     top: .25em;
     left: .125em;
 }
             
-.ui-multiselect-header .ui-inputtext {
+.ng-multiselect-header .ng-inputtext {
     padding: .125em .125em .125em 1.25em;
     width: 100%;
 }
 
-.ui-multiselect-header .ui-multiselect-close {
+.ng-multiselect-header .ng-multiselect-close {
     position: absolute;
     right: .375em;
     top: .375em;
@@ -132,18 +132,18 @@
     cursor: pointer;
 }
 
-.ui-multiselect-header a.ui-multiselect-all,
-.ui-multiselect-header a.ui-multiselect-none {
+.ng-multiselect-header a.ng-multiselect-all,
+.ng-multiselect-header a.ng-multiselect-none {
     float:left;
     margin-right: 10px;
     display: block;
 }
 
-.ui-multiselect-footer {
+.ng-multiselect-footer {
     padding: .25em;
 }
 
-.ui-fluid .ui-multiselect {
+.ng-fluid .ng-multiselect {
     width: 100%;
     box-sizing: border-box;
 }

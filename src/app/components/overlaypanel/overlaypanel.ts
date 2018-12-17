@@ -6,13 +6,13 @@ import {trigger,state,style,transition,animate,AnimationEvent} from '@angular/an
 @Component({
     selector: 'p-overlayPanel',
     template: `
-        <div [ngClass]="'ui-overlaypanel ui-widget ui-widget-content ui-corner-all ui-shadow'" [ngStyle]="style" [class]="styleClass" (click)="onPanelClick($event)"
+        <div [ngClass]="'ng-overlaypanel ng-widget ng-widget-content ng-corner-all ng-shadow'" [ngStyle]="style" [class]="styleClass" (click)="onPanelClick($event)"
             [@animation]="{value: 'visible', params: {showTransitionParams: showTransitionOptions, hideTransitionParams: hideTransitionOptions}}" (@animation.start)="onAnimationStart($event)" *ngIf="visible">
-            <div class="ui-overlaypanel-content">
+            <div class="ng-overlaypanel-content">
                 <ng-content></ng-content>
             </div>
-            <a tabindex="0" *ngIf="showCloseIcon" class="ui-overlaypanel-close ui-state-default" (click)="onCloseClick($event)" (keydown.enter)="hide()">
-                <span class="ui-overlaypanel-close-icon pi pi-times"></span>
+            <a tabindex="0" *ngIf="showCloseIcon" class="ng-overlaypanel-close ng-state-default" (click)="onCloseClick($event)" (keydown.enter)="hide()">
+                <span class="ng-overlaypanel-close-icon pi pi-times"></span>
             </a>
         </div>
     `,
@@ -161,7 +161,7 @@ export class OverlayPanel implements OnDestroy {
                 }
                 this.domHandler.absolutePosition(this.container, this.target);
                 if (this.domHandler.getOffset(this.container).top < this.domHandler.getOffset(this.target).top) {
-                    this.domHandler.addClass(this.container, 'ui-overlaypanel-flipped');
+                    this.domHandler.addClass(this.container, 'ng-overlaypanel-flipped');
                 }
                 this.bindDocumentClickListener();
                 this.bindDocumentResizeListener();

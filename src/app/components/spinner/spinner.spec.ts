@@ -31,7 +31,7 @@ describe('Spinner', () => {
     it('should have value as 3 when up clicked 3 times', () => {
         fixture.detectChanges();
         
-        const spinnerUp = fixture.nativeElement.querySelector('.ui-spinner-up');
+        const spinnerUp = fixture.nativeElement.querySelector('.ng-spinner-up');
         const clearTimerSpy = spyOn(spinner,'clearTimer').and.callThrough();
         triggerEvent(spinnerUp, 'mousedown');
         triggerEvent(spinnerUp, 'mouseup');
@@ -49,7 +49,7 @@ describe('Spinner', () => {
     it('should have value as -3 when down clicked 3 times', () => {
         fixture.detectChanges();
         
-        const spinnerDown = fixture.nativeElement.querySelector('.ui-spinner-down');
+        const spinnerDown = fixture.nativeElement.querySelector('.ng-spinner-down');
         const clearTimerSpy = spyOn(spinner,'clearTimer').and.callThrough();
         triggerEvent(spinnerDown, 'mousedown');
         triggerEvent(spinnerDown, 'mouseup');
@@ -68,7 +68,7 @@ describe('Spinner', () => {
         spinner.step = 0.25;
         fixture.detectChanges();
 
-        const spinnerUp = fixture.nativeElement.querySelector('.ui-spinner-up');
+        const spinnerUp = fixture.nativeElement.querySelector('.ng-spinner-up');
         triggerEvent(spinnerUp, 'mousedown');
         triggerEvent(spinnerUp, 'mousedown');
         triggerEvent(spinnerUp, 'mousedown');
@@ -90,9 +90,9 @@ describe('Spinner', () => {
         spinner.disabled = true;
         fixture.detectChanges();
         
-        const spinnerInputField = fixture.nativeElement.querySelector('.ui-spinner-input');
-        const spinnerUp = fixture.nativeElement.querySelector('.ui-spinner-up');
-        const spinnerDown = fixture.nativeElement.querySelector('.ui-spinner-down');
+        const spinnerInputField = fixture.nativeElement.querySelector('.ng-spinner-input');
+        const spinnerUp = fixture.nativeElement.querySelector('.ng-spinner-up');
+        const spinnerDown = fixture.nativeElement.querySelector('.ng-spinner-down');
 
         expect(spinnerInputField.disabled).toEqual(true);
         expect(spinnerUp.disabled).toEqual(true);
@@ -106,7 +106,7 @@ describe('Spinner', () => {
         triggerEvent(spinnerInput, 'keyup');
         fixture.detectChanges();
 
-        const spinnerUp = fixture.nativeElement.querySelector('.ui-spinner-up');
+        const spinnerUp = fixture.nativeElement.querySelector('.ng-spinner-up');
         triggerEvent(spinnerUp, 'mousedown');
 
         expect(spinner.value).toBeUndefined();
@@ -115,7 +115,7 @@ describe('Spinner', () => {
     it('should have a maxlength', () => {
         spinner.maxlength = 1;
         fixture.detectChanges();
-        const spinnerUp = fixture.nativeElement.querySelector('.ui-spinner-up');
+        const spinnerUp = fixture.nativeElement.querySelector('.ng-spinner-up');
         triggerEvent(spinnerUp, 'mousedown');
         triggerEvent(spinnerUp, 'mousedown');
         triggerEvent(spinnerUp, 'mousedown');
@@ -134,7 +134,7 @@ describe('Spinner', () => {
     it('should have a max', () => {
         spinner.max = 1;
         fixture.detectChanges();
-        const spinnerUp = fixture.nativeElement.querySelector('.ui-spinner-up');
+        const spinnerUp = fixture.nativeElement.querySelector('.ng-spinner-up');
         triggerEvent(spinnerUp, 'mousedown');
         triggerEvent(spinnerUp, 'mousedown');
         triggerEvent(spinnerUp, 'mousedown');
@@ -153,7 +153,7 @@ describe('Spinner', () => {
     it('should have a min', () => {
         spinner.min = -1;
         fixture.detectChanges();
-        const spinnerUp = fixture.nativeElement.querySelector('.ui-spinner-down');
+        const spinnerUp = fixture.nativeElement.querySelector('.ng-spinner-down');
         triggerEvent(spinnerUp, 'mousedown');
         triggerEvent(spinnerUp, 'mousedown');
         triggerEvent(spinnerUp, 'mousedown');
@@ -223,7 +223,7 @@ describe('Spinner', () => {
         inputEl.dispatchEvent(new Event('blur'));
         fixture.detectChanges();
 
-        const spinnerUp = fixture.nativeElement.querySelector('.ui-spinner-up');      
+        const spinnerUp = fixture.nativeElement.querySelector('.ng-spinner-up');      
         triggerEvent(spinnerUp, 'mousedown');
         fixture.detectChanges();
 

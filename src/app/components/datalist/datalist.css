@@ -1,39 +1,39 @@
-.ui-datalist .ui-datalist-header,
-.ui-datalist .ui-datalist-footer {
+.ng-datalist .ng-datalist-header,
+.ng-datalist .ng-datalist-footer {
     text-align:center;
 	padding: .5em .75em;
 }
 
-.ui-datalist .ui-datalist-header {
+.ng-datalist .ng-datalist-header {
     border-bottom: 0 none;
 }
 
-.ui-datalist .ui-datalist-footer {
+.ng-datalist .ng-datalist-footer {
     border-top: 0 none;
 }
 
-.ui-datalist .ui-datalist-data {
+.ng-datalist .ng-datalist-data {
     margin: 0;
     padding: 0;
 }
 
-.ui-datalist .ui-datalist-data > li {
+.ng-datalist .ng-datalist-data > li {
     list-style-type: none;
     
 }
 
-.ui-datalist .ui-datalist-emptymessage {
+.ng-datalist .ng-datalist-emptymessage {
     padding: .5em .75em;
 }
 
-.ui-datalist.ui-datalist-scrollable .ui-datalist-content {
+.ng-datalist.ng-datalist-scrollable .ng-datalist-content {
     overflow: auto;
 }
 
-.ui-datalist .ui-paginator-top {
+.ng-datalist .ng-paginator-top {
     border-bottom: 0 none;
 }
 
-.ui-datalist .ui-paginator-bottom {
+.ng-datalist .ng-paginator-bottom {
     border-top: 0 none;
 }

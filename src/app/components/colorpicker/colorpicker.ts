@@ -13,20 +13,20 @@ export const COLORPICKER_VALUE_ACCESSOR: any = {
 @Component({
     selector: 'p-colorPicker',
     template: `
-        <div [ngStyle]="style" [class]="styleClass" [ngClass]="{'ui-colorpicker ui-widget':true,'ui-colorpicker-overlay':!inline,'ui-colorpicker-dragging':colorDragging||hueDragging}">
-            <input #input type="text" *ngIf="!inline" class="ui-colorpicker-preview ui-inputtext ui-state-default ui-corner-all" readonly="readonly" [ngClass]="{'ui-state-disabled': disabled}"
+        <div [ngStyle]="style" [class]="styleClass" [ngClass]="{'ng-colorpicker ng-widget':true,'ng-colorpicker-overlay':!inline,'ng-colorpicker-dragging':colorDragging||hueDragging}">
+            <input #input type="text" *ngIf="!inline" class="ng-colorpicker-preview ng-inputtext ng-state-default ng-corner-all" readonly="readonly" [ngClass]="{'ng-state-disabled': disabled}"
                 (focus)="onInputFocus()" (click)="onInputClick()" (keydown)="onInputKeydown($event)" [attr.id]="inputId" [attr.tabindex]="tabindex" [disabled]="disabled"
                 [style.backgroundColor]="inputBgColor">
-            <div *ngIf="inline || overlayVisible" [ngClass]="{'ui-colorpicker-panel ui-corner-all': true, 'ui-colorpicker-overlay-panel ui-shadow':!inline, 'ui-state-disabled': disabled}" (click)="onPanelClick()"
+            <div *ngIf="inline || overlayVisible" [ngClass]="{'ng-colorpicker-panel ng-corner-all': true, 'ng-colorpicker-overlay-panel ng-shadow':!inline, 'ng-state-disabled': disabled}" (click)="onPanelClick()"
                 [@overlayAnimation]="{value: 'visible', params: {showTransitionParams: showTransitionOptions, hideTransitionParams: hideTransitionOptions}}" [@.disabled]="inline === true" (@overlayAnimation.start)="onOverlayAnimationStart($event)">
-                <div class="ui-colorpicker-content">
-                    <div #colorSelector class="ui-colorpicker-color-selector" (mousedown)="onColorMousedown($event)">
-                        <div class="ui-colorpicker-color">
-                            <div #colorHandle class="ui-colorpicker-color-handle"></div>
+                <div class="ng-colorpicker-content">
+                    <div #colorSelector class="ng-colorpicker-color-selector" (mousedown)="onColorMousedown($event)">
+                        <div class="ng-colorpicker-color">
+                            <div #colorHandle class="ng-colorpicker-color-handle"></div>
                         </div>
                     </div>
-                    <div #hue class="ui-colorpicker-hue" (mousedown)="onHueMousedown($event)">
-                        <div #hueHandle class="ui-colorpicker-hue-handle"></div>
+                    <div #hue class="ng-colorpicker-hue" (mousedown)="onHueMousedown($event)">
+                        <div #hueHandle class="ng-colorpicker-hue-handle"></div>
                     </div>
                 </div>
             </div>

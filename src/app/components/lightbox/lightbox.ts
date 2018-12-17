@@ -13,22 +13,22 @@ import {DomHandler} from '../dom/domhandler';
         <span [ngStyle]="style" [class]="styleClass" *ngIf="(type == 'content')" (click)="onLinkClick($event,content)">
             <ng-content select="a"></ng-content>
         </span>
-        <div class="ui-lightbox ui-widget ui-corner-all ui-shadow" [style.display]="visible ? 'block' : 'none'" [style.zIndex]="zindex"
-            [ngClass]="{'ui-lightbox-loading': loading}"
+        <div class="ng-lightbox ng-widget ng-corner-all ng-shadow" [style.display]="visible ? 'block' : 'none'" [style.zIndex]="zindex"
+            [ngClass]="{'ng-lightbox-loading': loading}"
             [style.transitionProperty]="'all'" [style.transitionDuration]="effectDuration" [style.transitionTimingFunction]="easing" (click)="preventDocumentClickListener=true">
-           <div class="ui-lightbox-content-wrapper">
-              <a class="ui-state-default ui-lightbox-nav-left ui-corner-right" [style.zIndex]="zindex + 1" (click)="prev(img)"
-                [ngClass]="{'ui-helper-hidden':!leftVisible}"><span class="ui-lightbox-nav-icon pi pi-chevron-left"></span></a>
-              <div #content class="ui-lightbox-content ui-corner-all" 
+           <div class="ng-lightbox-content-wrapper">
+              <a class="ng-state-default ng-lightbox-nav-left ng-corner-right" [style.zIndex]="zindex + 1" (click)="prev(img)"
+                [ngClass]="{'ng-helper-hidden':!leftVisible}"><span class="ng-lightbox-nav-icon pi pi-chevron-left"></span></a>
+              <div #content class="ng-lightbox-content ng-corner-all" 
                 [style.transitionProperty]="'width,height'" [style.transitionDuration]="effectDuration" [style.transitionTimingFunction]="easing">
                 <img #img [src]="currentImage ? currentImage.source||'' : ''" (load)="onImageLoad($event,content)" style="display:none">
                 <ng-content></ng-content>
               </div>
-              <a class="ui-state-default ui-lightbox-nav-right ui-corner-left ui-helper-hidden" [style.zIndex]="zindex + 1" (click)="next(img)"
-                [ngClass]="{'ui-helper-hidden':!rightVisible}"><span class="ui-lightbox-nav-icon pi pi-chevron-right"></span></a>
+              <a class="ng-state-default ng-lightbox-nav-right ng-corner-left ng-helper-hidden" [style.zIndex]="zindex + 1" (click)="next(img)"
+                [ngClass]="{'ng-helper-hidden':!rightVisible}"><span class="ng-lightbox-nav-icon pi pi-chevron-right"></span></a>
            </div>
-           <div class="ui-lightbox-caption ui-widget-header" [style.display]="captionText ? 'block' : 'none'">
-              <span class="ui-lightbox-caption-text">{{captionText}}</span><a class="ui-lightbox-close ui-corner-all" tabindex="0" (click)="hide($event)" (keydown.enter)="hide($event)"><span class="pi pi-times"></span></a>
+           <div class="ng-lightbox-caption ng-widget-header" [style.display]="captionText ? 'block' : 'none'">
+              <span class="ng-lightbox-caption-text">{{captionText}}</span><a class="ng-lightbox-close ng-corner-all" tabindex="0" (click)="hide($event)" (keydown.enter)="hide($event)"><span class="pi pi-times"></span></a>
               <div style="clear:both"></div>
            </div>
         </div>
@@ -89,7 +89,7 @@ export class Lightbox implements AfterViewInit,OnDestroy {
     }
     
     ngAfterViewInit() {
-        this.panel = this.domHandler.findSingle(this.el.nativeElement, '.ui-lightbox ');
+        this.panel = this.domHandler.findSingle(this.el.nativeElement, '.ng-lightbox ');
         
         if(this.appendTo) {
             if(this.appendTo === 'body')
@@ -125,7 +125,7 @@ export class Lightbox implements AfterViewInit,OnDestroy {
     show() {
         this.mask = document.createElement('div');
         
-        this.domHandler.addMultipleClasses(this.mask, 'ui-widget-overlay ui-dialog-mask');
+        this.domHandler.addMultipleClasses(this.mask, 'ng-widget-overlay ng-dialog-mask');
         document.body.appendChild(this.mask);
         if (this.autoZIndex) {
             this.zindex = this.baseZIndex + (++DomHandler.zindex);

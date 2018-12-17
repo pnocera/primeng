@@ -10,19 +10,19 @@ import {trigger,state,style,transition,animate,query,animateChild,AnimationEvent
 @Component({
     selector: 'p-toastItem',
     template: `
-        <div #container class="ui-toast-message ui-shadow" [@messageState]="{value: 'visible', params: {showTransitionParams: showTransitionOptions, hideTransitionParams: hideTransitionOptions}}"
-            [ngClass]="{'ui-toast-message-info': message.severity == 'info','ui-toast-message-warn': message.severity == 'warn',
-                'ui-toast-message-error': message.severity == 'error','ui-toast-message-success': message.severity == 'success'}"
+        <div #container class="ng-toast-message ng-shadow" [@messageState]="{value: 'visible', params: {showTransitionParams: showTransitionOptions, hideTransitionParams: hideTransitionOptions}}"
+            [ngClass]="{'ng-toast-message-info': message.severity == 'info','ng-toast-message-warn': message.severity == 'warn',
+                'ng-toast-message-error': message.severity == 'error','ng-toast-message-success': message.severity == 'success'}"
                 (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
-            <div class="ui-toast-message-content">
-                <a tabindex="0" class="ui-toast-close-icon pi pi-times" (click)="onCloseIconClick($event)" (keydown.enter)="onCloseIconClick($event)" *ngIf="message.closable !== false"></a>
+            <div class="ng-toast-message-content">
+                <a tabindex="0" class="ng-toast-close-icon pi pi-times" (click)="onCloseIconClick($event)" (keydown.enter)="onCloseIconClick($event)" *ngIf="message.closable !== false"></a>
                 <ng-container *ngIf="!template">
-                    <span class="ui-toast-icon pi"
+                    <span class="ng-toast-icon pi"
                         [ngClass]="{'pi-info-circle': message.severity == 'info', 'pi-exclamation-triangle': message.severity == 'warn',
                             'pi-times': message.severity == 'error', 'pi-check' :message.severity == 'success'}"></span>
-                    <div class="ui-toast-message-text-content">
-                        <div class="ui-toast-summary">{{message.summary}}</div>
-                        <div class="ui-toast-detail">{{message.detail}}</div>
+                    <div class="ng-toast-message-text-content">
+                        <div class="ng-toast-summary">{{message.summary}}</div>
+                        <div class="ng-toast-detail">{{message.detail}}</div>
                     </div>
                 </ng-container>
                 <ng-container *ngTemplateOutlet="template; context: {$implicit: message}"></ng-container>
@@ -117,14 +117,14 @@ export class ToastItem implements AfterViewInit, OnDestroy {
 @Component({
     selector: 'p-toast',
     template: `
-        <div #container [ngClass]="{'ui-toast ui-widget': true, 
-                'ui-toast-top-right': position === 'top-right',
-                'ui-toast-top-left': position === 'top-left',
-                'ui-toast-bottom-right': position === 'bottom-right',
-                'ui-toast-bottom-left': position === 'bottom-left',
-                'ui-toast-top-center': position === 'top-center',
-                'ui-toast-bottom-center': position === 'bottom-center',
-                'ui-toast-center': position === 'center'}" 
+        <div #container [ngClass]="{'ng-toast ng-widget': true, 
+                'ng-toast-top-right': position === 'top-right',
+                'ng-toast-top-left': position === 'top-left',
+                'ng-toast-bottom-right': position === 'bottom-right',
+                'ng-toast-bottom-left': position === 'bottom-left',
+                'ng-toast-top-center': position === 'top-center',
+                'ng-toast-bottom-center': position === 'bottom-center',
+                'ng-toast-center': position === 'center'}" 
                 [ngStyle]="style" [class]="styleClass">
             <p-toastItem *ngFor="let msg of messages; let i=index" [message]="msg" [index]="i" (onClose)="onMessageClose($event)"
                     [template]="template" @toastAnimation (@toastAnimation.start)="onAnimationStart($event)" [showTransitionOptions]="showTransitionOptions" [hideTransitionOptions]="hideTransitionOptions"></p-toastItem>
@@ -240,7 +240,7 @@ export class Toast implements OnInit,AfterContentInit,OnDestroy {
         if (!this.mask) {
             this.mask = document.createElement('div');
             this.mask.style.zIndex = String(parseInt(this.containerViewChild.nativeElement.style.zIndex) - 1);
-            let maskStyleClass = 'ui-widget-overlay ui-dialog-mask';
+            let maskStyleClass = 'ng-widget-overlay ng-dialog-mask';
             this.domHandler.addMultipleClasses(this.mask, maskStyleClass);
             document.body.appendChild(this.mask);
         }

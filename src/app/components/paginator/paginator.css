@@ -1,32 +1,32 @@
-.ui-paginator {
+.ng-paginator {
     margin: 0;
     text-align: center;
     padding: .125em;
 }
 
-.ui-paginator .ui-paginator-top {
+.ng-paginator .ng-paginator-top {
     border-bottom: 0 none;
 }
 
-.ui-paginator .ui-paginator-bottom {
+.ng-paginator .ng-paginator-bottom {
     border-top:0 none;
 }
 
-.ui-paginator .ui-paginator-left-content {
+.ng-paginator .ng-paginator-left-content {
     float: left;    
 }
 
-.ui-paginator .ui-paginator-right-content {
+.ng-paginator .ng-paginator-right-content {
     float: right;    
 }
 
-.ui-paginator .ui-paginator-page,
-.ui-paginator .ui-paginator-pages,
-.ui-paginator .ui-paginator-next,
-.ui-paginator .ui-paginator-last,
-.ui-paginator .ui-paginator-first,
-.ui-paginator .ui-paginator-prev,
-.ui-paginator .ui-paginator-current {
+.ng-paginator .ng-paginator-page,
+.ng-paginator .ng-paginator-pages,
+.ng-paginator .ng-paginator-next,
+.ng-paginator .ng-paginator-last,
+.ng-paginator .ng-paginator-first,
+.ng-paginator .ng-paginator-prev,
+.ng-paginator .ng-paginator-current {
     display: inline-block;
     min-width: 1.5em;
     height: 1.5em;
@@ -40,12 +40,12 @@
     position: relative;
 }
 
-.ui-paginator .ui-paginator-pages {
+.ng-paginator .ng-paginator-pages {
     width: auto;
     line-height: 1;
 }
 
-.ui-paginator .ui-paginator-icon {
+.ng-paginator .ng-paginator-icon {
     display: block;
     position: absolute;
     left: 50%;
@@ -56,23 +56,23 @@
     margin-left: -.5em;
 }
 
-.ui-paginator .ui-paginator-page,
-.ui-paginator .ui-paginator-next,
-.ui-paginator .ui-paginator-last,
-.ui-paginator .ui-paginator-first,
-.ui-paginator .ui-paginator-prev{
+.ng-paginator .ng-paginator-page,
+.ng-paginator .ng-paginator-next,
+.ng-paginator .ng-paginator-last,
+.ng-paginator .ng-paginator-first,
+.ng-paginator .ng-paginator-prev{
     cursor: pointer;
 }
 
-.ui-paginator .ui-paginator-current,
-.ui-paginator .ui-paginator-rpp-options {
+.ng-paginator .ng-paginator-current,
+.ng-paginator .ng-paginator-rpp-options {
 	margin-left: 1em;
 	margin-right: 1em;
     background-image: none;
 }
 
-.ui-paginator .ui-paginator-jtp-select option,
-.ui-paginator .ui-paginator-rpp-options option {
+.ng-paginator .ng-paginator-jtp-select option,
+.ng-paginator .ng-paginator-rpp-options option {
     background-image: none;
     border: 0 none;
     box-shadow: none;
@@ -80,15 +80,15 @@
     -webkit-box-shadow: none;
 }
 
-.ui-paginator a.ui-state-disabled {
+.ng-paginator a.ng-state-disabled {
     outline: 0 none;
 }
 
-.ui-paginator .ui-dropdown {
+.ng-paginator .ng-dropdown {
     min-width: 4em;
     margin-left: .375em;
 }
 
-.ui-fluid .ui-paginator .ui-dropdown {
+.ng-fluid .ng-paginator .ng-dropdown {
     width: auto;
 }

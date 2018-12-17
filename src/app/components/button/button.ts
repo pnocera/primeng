@@ -10,7 +10,7 @@ export class ButtonDirective implements AfterViewInit, OnDestroy {
 
     @Input() iconPos: string = 'left';
     
-    @Input() cornerStyleClass: string = 'ui-corner-all';
+    @Input() cornerStyleClass: string = 'ng-corner-all';
         
     public _label: string;
     
@@ -25,37 +25,37 @@ export class ButtonDirective implements AfterViewInit, OnDestroy {
         if(this.icon) {
             let iconElement = document.createElement("span");
             iconElement.setAttribute("aria-hidden", "true");
-            let iconPosClass = (this.iconPos == 'right') ? 'ui-button-icon-right': 'ui-button-icon-left';
-            iconElement.className = iconPosClass  + ' ui-clickable ' + this.icon;
+            let iconPosClass = (this.iconPos == 'right') ? 'ng-button-icon-right': 'ng-button-icon-left';
+            iconElement.className = iconPosClass  + ' ng-clickable ' + this.icon;
             this.el.nativeElement.appendChild(iconElement);
         }
         
         let labelElement = document.createElement("span");
-        labelElement.className = 'ui-button-text ui-clickable';
-        labelElement.appendChild(document.createTextNode(this.label||'ui-btn'));
+        labelElement.className = 'ng-button-text ng-clickable';
+        labelElement.appendChild(document.createTextNode(this.label||'ng-btn'));
         this.el.nativeElement.appendChild(labelElement);
         this.initialized = true;
     }
         
     getStyleClass(): string {
-        let styleClass = 'ui-button ui-widget ui-state-default ' + this.cornerStyleClass;
+        let styleClass = 'ng-button ng-widget ng-state-default ' + this.cornerStyleClass;
         if(this.icon) {
             if(this.label != null && this.label != undefined) {
                 if(this.iconPos == 'left')
-                    styleClass = styleClass + ' ui-button-text-icon-left';
+                    styleClass = styleClass + ' ng-button-text-icon-left';
                 else
-                    styleClass = styleClass + ' ui-button-text-icon-right';
+                    styleClass = styleClass + ' ng-button-text-icon-right';
             }
             else {
-                styleClass = styleClass + ' ui-button-icon-only';
+                styleClass = styleClass + ' ng-button-icon-only';
             }
         }
         else {
             if(this.label) {
-                styleClass = styleClass + ' ui-button-text-only';
+                styleClass = styleClass + ' ng-button-text-only';
             }
             else {
-                styleClass = styleClass + ' ui-button-text-empty';
+                styleClass = styleClass + ' ng-button-text-empty';
             }
         }
         
@@ -70,16 +70,16 @@ export class ButtonDirective implements AfterViewInit, OnDestroy {
         this._label = val;
         
         if(this.initialized) {
-            this.domHandler.findSingle(this.el.nativeElement, '.ui-button-text').textContent = this._label;
+            this.domHandler.findSingle(this.el.nativeElement, '.ng-button-text').textContent = this._label;
 
             if(!this.icon) {
                 if (this._label) {
-                    this.domHandler.removeClass(this.el.nativeElement, 'ui-button-text-empty');
-                    this.domHandler.addClass(this.el.nativeElement, 'ui-button-text-only');
+                    this.domHandler.removeClass(this.el.nativeElement, 'ng-button-text-empty');
+                    this.domHandler.addClass(this.el.nativeElement, 'ng-button-text-only');
                 }
                 else {
-                    this.domHandler.addClass(this.el.nativeElement, 'ui-button-text-empty');
-                    this.domHandler.removeClass(this.el.nativeElement, 'ui-button-text-only');
+                    this.domHandler.addClass(this.el.nativeElement, 'ng-button-text-empty');
+                    this.domHandler.removeClass(this.el.nativeElement, 'ng-button-text-only');
                 }
             }
         }
@@ -93,9 +93,9 @@ export class ButtonDirective implements AfterViewInit, OnDestroy {
         this._icon = val;
         
         if(this.initialized) {
-            let iconPosClass = (this.iconPos == 'right') ? 'ui-button-icon-right': 'ui-button-icon-left';
-            this.domHandler.findSingle(this.el.nativeElement, '.ui-clickable').className =
-                iconPosClass + ' ui-clickable ' + this.icon;
+            let iconPosClass = (this.iconPos == 'right') ? 'ng-button-icon-right': 'ng-button-icon-left';
+            this.domHandler.findSingle(this.el.nativeElement, '.ng-clickable').className =
+                iconPosClass + ' ng-clickable ' + this.icon;
         }
     }
         
@@ -112,20 +112,20 @@ export class ButtonDirective implements AfterViewInit, OnDestroy {
     selector: 'p-button',
     template: `
         <button [attr.type]="type" [class]="styleClass" [style]="style" [disabled]="disabled"
-            [ngClass]="{'ui-button ui-widget ui-state-default ui-corner-all':true,
-                        'ui-button-icon-only': (icon && !label),
-                        'ui-button-text-icon-left': (icon && label && iconPos === 'left'),
-                        'ui-button-text-icon-right': (icon && label && iconPos === 'right'),
-                        'ui-button-text-only': (!icon && label),
-                        'ui-button-text-empty': (!icon && !label),
-                        'ui-state-disabled': disabled}"
+            [ngClass]="{'ng-button ng-widget ng-state-default ng-corner-all':true,
+                        'ng-button-icon-only': (icon && !label),
+                        'ng-button-text-icon-left': (icon && label && iconPos === 'left'),
+                        'ng-button-text-icon-right': (icon && label && iconPos === 'right'),
+                        'ng-button-text-only': (!icon && label),
+                        'ng-button-text-empty': (!icon && !label),
+                        'ng-state-disabled': disabled}"
                         (click)="onClick.emit($event)" (focus)="onFocus.emit($event)" (blur)="onBlur.emit($event)">
             <ng-content></ng-content>
-            <span [ngClass]="{'ui-clickable': true,
-                        'ui-button-icon-left': (iconPos === 'left'), 
-                        'ui-button-icon-right': (iconPos === 'right')}"
+            <span [ngClass]="{'ng-clickable': true,
+                        'ng-button-icon-left': (iconPos === 'left'), 
+                        'ng-button-icon-right': (iconPos === 'right')}"
                         [class]="icon" *ngIf="icon"></span>
-            <span class="ui-button-text ui-clickable">{{label||'ui-btn'}}</span>
+            <span class="ng-button-text ng-clickable">{{label||'ng-btn'}}</span>
         </button>
     `
 })

@@ -15,11 +15,11 @@ export const EDITOR_VALUE_ACCESSOR: any = {
 @Component({
     selector: 'p-editor',
     template: `
-        <div [ngClass]="'ui-widget ui-editor-container ui-corner-all'" [class]="styleClass">
-            <div class="ui-editor-toolbar ui-widget-header ui-corner-top" *ngIf="toolbar">
+        <div [ngClass]="'ng-widget ng-editor-container ng-corner-all'" [class]="styleClass">
+            <div class="ng-editor-toolbar ng-widget-header ng-corner-top" *ngIf="toolbar">
                 <ng-content select="p-header"></ng-content>
             </div>
-            <div class="ui-editor-toolbar ui-widget-header ui-corner-top" *ngIf="!toolbar">
+            <div class="ng-editor-toolbar ng-widget-header ng-corner-top" *ngIf="!toolbar">
                 <span class="ql-formats">
                     <select class="ql-header">
                       <option value="1">Heading</option>
@@ -60,7 +60,7 @@ export const EDITOR_VALUE_ACCESSOR: any = {
                     <button class="ql-clean" aria-label="Remove Styles"></button>
                 </span>
             </div>
-            <div class="ui-editor-content" [ngStyle]="style"></div>
+            <div class="ng-editor-content" [ngStyle]="style"></div>
         </div>
     `,
     providers: [DomHandler,EDITOR_VALUE_ACCESSOR]
@@ -96,8 +96,8 @@ export class Editor implements AfterViewInit,ControlValueAccessor {
     constructor(public el: ElementRef, public domHandler: DomHandler) {}
 
     ngAfterViewInit() {
-        let editorElement = this.domHandler.findSingle(this.el.nativeElement ,'div.ui-editor-content'); 
-        let toolbarElement = this.domHandler.findSingle(this.el.nativeElement ,'div.ui-editor-toolbar'); 
+        let editorElement = this.domHandler.findSingle(this.el.nativeElement ,'div.ng-editor-content'); 
+        let toolbarElement = this.domHandler.findSingle(this.el.nativeElement ,'div.ng-editor-toolbar'); 
         
         this.quill = new Quill(editorElement, {
           modules: {

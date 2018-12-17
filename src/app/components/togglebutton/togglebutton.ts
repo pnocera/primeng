@@ -11,17 +11,17 @@ export const TOGGLEBUTTON_VALUE_ACCESSOR: any = {
 @Component({
     selector: 'p-toggleButton',
     template: `
-        <div [ngClass]="{'ui-button ui-togglebutton ui-widget ui-state-default ui-corner-all': true, 'ui-button-text-only': (!onIcon && !offIcon), 
-                'ui-button-text-icon-left': (onIcon && offIcon && hasOnLabel && hasOffLabel && iconPos === 'left'), 
-                'ui-button-text-icon-right': (onIcon && offIcon && hasOnLabel && hasOffLabel && iconPos === 'right'),'ui-button-icon-only': (onIcon && offIcon && !hasOnLabel && !hasOffLabel),
-                'ui-state-active': checked,'ui-state-focus':focus,'ui-state-disabled':disabled}" [ngStyle]="style" [class]="styleClass" 
+        <div [ngClass]="{'ng-button ng-togglebutton ng-widget ng-state-default ng-corner-all': true, 'ng-button-text-only': (!onIcon && !offIcon), 
+                'ng-button-text-icon-left': (onIcon && offIcon && hasOnLabel && hasOffLabel && iconPos === 'left'), 
+                'ng-button-text-icon-right': (onIcon && offIcon && hasOnLabel && hasOffLabel && iconPos === 'right'),'ng-button-icon-only': (onIcon && offIcon && !hasOnLabel && !hasOffLabel),
+                'ng-state-active': checked,'ng-state-focus':focus,'ng-state-disabled':disabled}" [ngStyle]="style" [class]="styleClass" 
                 (click)="toggle($event)">
-            <div class="ui-helper-hidden-accessible">
+            <div class="ng-helper-hidden-accessible">
                 <input #checkbox type="checkbox" [attr.id]="inputId" [checked]="checked" (focus)="onFocus()" (blur)="onBlur()" [attr.tabindex]="tabindex">
             </div>
-            <span *ngIf="onIcon||offIcon" class="ui-button-icon-left" [class]="checked ? this.onIcon : this.offIcon" [ngClass]="{'ui-button-icon-left': (iconPos === 'left'), 
-            'ui-button-icon-right': (iconPos === 'right')}"></span>
-            <span class="ui-button-text ui-unselectable-text">{{checked ? hasOnLabel ? onLabel : 'ui-btn' : hasOffLabel ? offLabel : 'ui-btn'}}</span>
+            <span *ngIf="onIcon||offIcon" class="ng-button-icon-left" [class]="checked ? this.onIcon : this.offIcon" [ngClass]="{'ng-button-icon-left': (iconPos === 'left'), 
+            'ng-button-icon-right': (iconPos === 'right')}"></span>
+            <span class="ng-button-text ng-unselectable-text">{{checked ? hasOnLabel ? onLabel : 'ng-btn' : hasOffLabel ? offLabel : 'ng-btn'}}</span>
         </div>
     `,
     providers: [TOGGLEBUTTON_VALUE_ACCESSOR]

@@ -6,15 +6,15 @@ import { Component } from '@angular/core';
 
 @Component({
   template: `<p-toolbar>
-  <div class="ui-toolbar-group-left">
+  <div class="ng-toolbar-group-left">
       <button  type="button" label="New" icon="pi pi-plus"></button>
-      <button  type="button" label="Upload" icon="pi pi-upload" class="ui-button-success"></button>
+      <button  type="button" label="Upload" icon="pi pi-upload" class="ng-button-success"></button>
   </div>
   
-  <div class="ui-toolbar-group-right">
+  <div class="ng-toolbar-group-right">
       <button  type="button" icon="pi pi-search"></button>
-      <button  type="button" icon="pi pi-calendar" class="ui-button-success"></button>
-      <button  type="button" icon="pi pi-times" class="ui-button-danger"></button>
+      <button  type="button" icon="pi pi-calendar" class="ng-button-success"></button>
+      <button  type="button" icon="pi pi-times" class="ng-button-danger"></button>
   </div>
 </p-toolbar>`
 })
@@ -62,7 +62,7 @@ describe('Toolbar', () => {
     it('should show ng-content', () => {
       fixture.detectChanges();
 
-      const contentEl = fixture.debugElement.query(By.css('.ui-toolbar-group-left')).nativeElement;
+      const contentEl = fixture.debugElement.query(By.css('.ng-toolbar-group-left')).nativeElement;
       expect(contentEl).toBeTruthy();
     });
 

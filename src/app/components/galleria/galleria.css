@@ -1,16 +1,16 @@
-.ui-galleria {
+.ng-galleria {
     overflow: hidden;
     visibility: hidden;
     position: relative;
 }
 
-.ui-galleria .ui-galleria-panel-wrapper {
+.ng-galleria .ng-galleria-panel-wrapper {
     position: relative;
     padding: 0;
     margin: 0;
 }
 
-.ui-galleria .ui-galleria-panel {
+.ng-galleria .ng-galleria-panel {
     filter: inherit;
     position: absolute;
     top: 0;
@@ -18,13 +18,13 @@
     list-style-type: none;
 }
 
-.ui-galleria .ui-galleria-filmstrip-wrapper {
+.ng-galleria .ng-galleria-filmstrip-wrapper {
     overflow: hidden;
     margin: .25em auto;
     position: relative;
 }
 
-.ui-galleria .ui-galleria-filmstrip {
+.ng-galleria .ng-galleria-filmstrip {
     list-style: none outside none;
     margin: 0;
     padding: 0;
@@ -35,36 +35,36 @@
     left: 0;
 }
 
-.ui-galleria .ui-galleria-frame {
+.ng-galleria .ng-galleria-frame {
     float:left;
     margin-right: 5px;
     opacity: 0.3;
     cursor: pointer;
 }
 
-.ui-galleria .ui-galleria-frame-active {
+.ng-galleria .ng-galleria-frame-active {
     opacity: 1;
 }
 
-.ui-galleria .ui-galleria-frame-content {
+.ng-galleria .ng-galleria-frame-content {
     overflow: hidden;
 }
 
-.ui-galleria .ui-galleria-nav-next, .ui-galleria .ui-galleria-nav-prev {
+.ng-galleria .ng-galleria-nav-next, .ng-galleria .ng-galleria-nav-prev {
 	cursor: pointer;
     position: absolute;
     z-index: 910;
 }
 
-.ui-galleria .ui-galleria-nav-prev {
+.ng-galleria .ng-galleria-nav-prev {
     left: 4px;
 }
 
-.ui-galleria .ui-galleria-nav-next {
+.ng-galleria .ng-galleria-nav-next {
     right: 4px;
 }
 
-.ui-galleria .ui-galleria-caption {
+.ng-galleria .ng-galleria-caption {
     position: absolute;
     left:1px;
     background-color: rgba(0,0,0,0.5);
@@ -73,10 +73,10 @@
     padding: 0.2em 1em;
 }
 
-.ui-galleria .ui-galleria-caption h4 {
+.ng-galleria .ng-galleria-caption h4 {
     color: #ededed;
 }
 
-.ui-galleria .ui-galleria-panel-content {
+.ng-galleria .ng-galleria-panel-content {
     padding: 1em 1.4em;
 }

@@ -10,8 +10,8 @@ describe('TabView', () => {
     describe('Tab Click', () => {
         beforeEach(() => {
           browser.get('#/tabview');
-          tabPanels = element.all(by.css('.ui-tabview-panel'));
-          tabElements = element.all(by.css('.ui-tabview-nav li'));
+          tabPanels = element.all(by.css('.ng-tabview-panel'));
+          tabElements = element.all(by.css('.ng-tabview-nav li'));
         });
 
         it('should switch panels', () => {
@@ -23,8 +23,8 @@ describe('TabView', () => {
     describe('Close Icon Click', () => {
         beforeEach(() => {
           browser.get('#/tabview');
-          closableTabElements = element.all(by.css('#closableTabView .ui-tabview-nav li'));
-          closeIcons = element.all(by.css('#closableTabView .ui-tabview-nav li .ui-tabview-close'));
+          closableTabElements = element.all(by.css('#closableTabView .ng-tabview-nav li'));
+          closeIcons = element.all(by.css('#closableTabView .ng-tabview-nav li .ng-tabview-close'));
         });
         
         it('should delete closed panel', () => {
@@ -35,9 +35,9 @@ describe('TabView', () => {
     describe('Close Icon Click on an active tab', () => {
         beforeEach(() => {
           browser.get('#/tabview');
-          closableTabPanels = element.all(by.css('#closableTabView .ui-tabview-panel'));
-          closableTabElements = element.all(by.css('#closableTabView .ui-tabview-nav li'));
-          closeIcons = element.all(by.css('#closableTabView .ui-tabview-nav li .ui-tabview-close'));
+          closableTabPanels = element.all(by.css('#closableTabView .ng-tabview-panel'));
+          closableTabElements = element.all(by.css('#closableTabView .ng-tabview-nav li'));
+          closeIcons = element.all(by.css('#closableTabView .ng-tabview-nav li .ng-tabview-close'));
         });
         
         it('should close that panel and first tab should be active', () => {

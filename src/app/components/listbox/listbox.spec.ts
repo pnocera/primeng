@@ -54,9 +54,9 @@ describe('Listbox', () => {
         fixture.detectChanges();
 
         const listboxEl = fixture.debugElement.query(By.css('div')).nativeElement;
-        const filterInputEl = fixture.debugElement.query(By.css('.ui-listbox-filter-container')).query(By.css('input')).nativeElement;
-        const checkboxEl = fixture.debugElement.queryAll(By.css('li'))[1].query(By.css('.ui-chkbox-icon')).nativeElement;
-        expect(listboxEl.className).toContain("ui-state-disabled");
+        const filterInputEl = fixture.debugElement.query(By.css('.ng-listbox-filter-container')).query(By.css('input')).nativeElement;
+        const checkboxEl = fixture.debugElement.queryAll(By.css('li'))[1].query(By.css('.ng-chkbox-icon')).nativeElement;
+        expect(listboxEl.className).toContain("ng-state-disabled");
         expect(filterInputEl.disabled).toEqual(true);
         expect(checkboxEl.className).not.toContain("pi pi-check");
         expect(clickSingleSpy).not.toHaveBeenCalled();
@@ -142,15 +142,15 @@ describe('Listbox', () => {
         fixture.detectChanges();
         
         const container = fixture.debugElement.query(By.css("div"));
-        expect(container.nativeElement.className).toContain("ui-state-focus");
+        expect(container.nativeElement.className).toContain("ng-state-focus");
         const bmwEl = fixture.debugElement.query(By.css('ul')).children[1].nativeElement;
         bmwEl.click();
         readonlyInput.nativeElement.dispatchEvent(new Event("blur"));
         fixture.detectChanges();
 
-        expect(container.nativeElement.className).not.toContain("ui-state-focus");
+        expect(container.nativeElement.className).not.toContain("ng-state-focus");
         expect(listbox.value).toEqual("BMW");
-        expect(bmwEl.className).toContain("ui-state-highlight");
+        expect(bmwEl.className).toContain("ng-state-highlight");
         expect(clickSingleSpy).toHaveBeenCalled();
         expect(onOptionClick).toHaveBeenCalled();
         expect(listbox.optionTouched).toEqual(false);
@@ -177,12 +177,12 @@ describe('Listbox', () => {
         fixture.detectChanges();
 
         expect(listbox.value).toEqual("BMW");
-        expect(bmwEl.className).toContain("ui-state-highlight");
+        expect(bmwEl.className).toContain("ng-state-highlight");
         bmwEl.click();
         fixture.detectChanges();
 
         expect(listbox.value).not.toEqual("BMW");
-        expect(bmwEl.className).not.toContain("ui-state-highlight");
+        expect(bmwEl.className).not.toContain("ng-state-highlight");
     });
 
     it('should select two item with multiple option', () => {
@@ -213,8 +213,8 @@ describe('Listbox', () => {
 
         expect(listbox.value[0]).toEqual("BMW");
         expect(listbox.value[1]).toEqual("Audi");
-        expect(bmwEl.className).toContain("ui-state-highlight");
-        expect(audiEl.className).toContain("ui-state-highlight");
+        expect(bmwEl.className).toContain("ng-state-highlight");
+        expect(audiEl.className).toContain("ng-state-highlight");
         expect(clickMultipleSpy).toHaveBeenCalledTimes(2);
     });
 
@@ -246,8 +246,8 @@ describe('Listbox', () => {
 
         expect(listbox.value[0]).not.toEqual("BMW");
         expect(listbox.value[1]).not.toEqual("Audi");
-        expect(bmwEl.className).not.toContain("ui-state-highlight");
-        expect(audiEl.className).not.toContain("ui-state-highlight");
+        expect(bmwEl.className).not.toContain("ng-state-highlight");
+        expect(audiEl.className).not.toContain("ng-state-highlight");
         expect(clickMultipleSpy).toHaveBeenCalledTimes(4);
     });
 
@@ -269,13 +269,13 @@ describe('Listbox', () => {
         const toggleAllSpy = spyOn(listbox, 'toggleAll').and.callThrough();
         fixture.detectChanges();
         
-        const selectAllEl = fixture.debugElement.query(By.css('.ui-chkbox-box.ui-widget.ui-corner-all.ui-state-default')).nativeElement;
+        const selectAllEl = fixture.debugElement.query(By.css('.ng-chkbox-box.ng-widget.ng-corner-all.ng-state-default')).nativeElement;
         selectAllEl.click();
         fixture.detectChanges();
 
         expect(listbox.value.length).toEqual(10);
         expect(listbox.allChecked).toEqual(true);
-        expect(selectAllEl.className).toContain('ui-state-active');
+        expect(selectAllEl.className).toContain('ng-state-active');
         expect(toggleAllSpy).toHaveBeenCalled();
     });
 
@@ -295,7 +295,7 @@ describe('Listbox', () => {
         listbox.filter = true;
         fixture.detectChanges();
         
-        const filterInputEl = fixture.debugElement.query(By.css('.ui-listbox-filter-container')).children[0].nativeElement;
+        const filterInputEl = fixture.debugElement.query(By.css('.ng-listbox-filter-container')).children[0].nativeElement;
         filterInputEl.value = "f";
         filterInputEl.dispatchEvent(new Event('input'));
         fixture.detectChanges();
@@ -419,7 +419,7 @@ describe('Listbox', () => {
         fixture.detectChanges();
         
         expect(listbox.value).toEqual(null);
-        expect(bmwEl.className).not.toContain("ui-state-highlight");
+        expect(bmwEl.className).not.toContain("ng-state-highlight");
         expect(onOptionClick).toHaveBeenCalled();
         expect(data.value).toEqual(null);
     });
@@ -453,7 +453,7 @@ describe('Listbox', () => {
         fixture.detectChanges();
         
         expect(listbox.value).toEqual([]);
-        expect(bmwEl.className).not.toContain("ui-state-highlight");
+        expect(bmwEl.className).not.toContain("ng-state-highlight");
         expect(onOptionClick).toHaveBeenCalled();
         expect(data.value).toEqual([]);
     });
@@ -488,7 +488,7 @@ describe('Listbox', () => {
         expect(listbox.value[0]).toEqual("BMW");
         expect(listbox.value.length).toEqual(1);
         expect(listbox.value[1]).not.toEqual("Audi");
-        expect(bmwEl.className).toContain("ui-state-highlight");
+        expect(bmwEl.className).toContain("ng-state-highlight");
         expect(clickCheckboxSpy).toHaveBeenCalledTimes(3);
     });
 
@@ -510,7 +510,7 @@ describe('Listbox', () => {
         const toggleAllSpy = spyOn(listbox, 'toggleAll').and.callThrough();
         fixture.detectChanges();
         
-        const selectAllEl = fixture.debugElement.query(By.css('.ui-chkbox-box.ui-widget.ui-corner-all.ui-state-default')).nativeElement;
+        const selectAllEl = fixture.debugElement.query(By.css('.ng-chkbox-box.ng-widget.ng-corner-all.ng-state-default')).nativeElement;
         selectAllEl.click();
         fixture.detectChanges();
 
@@ -519,7 +519,7 @@ describe('Listbox', () => {
 
         expect(listbox.value.length).toEqual(0);
         expect(listbox.allChecked).toEqual(false);
-        expect(selectAllEl.className).not.toContain('ui-state-active');
+        expect(selectAllEl.className).not.toContain('ng-state-active');
         expect(toggleAllSpy).toHaveBeenCalledTimes(2);
     });
 
@@ -542,13 +542,13 @@ describe('Listbox', () => {
         const toggleAllSpy = spyOn(listbox, 'toggleAll').and.callThrough();
         fixture.detectChanges();
         
-        const selectAllEl = fixture.debugElement.query(By.css('.ui-chkbox-box.ui-widget.ui-corner-all.ui-state-default')).nativeElement;
+        const selectAllEl = fixture.debugElement.query(By.css('.ng-chkbox-box.ng-widget.ng-corner-all.ng-state-default')).nativeElement;
         selectAllEl.click();
         fixture.detectChanges();
 
         expect(listbox.value).toEqual(undefined);
         expect(listbox.allChecked).toEqual(undefined);
-        expect(selectAllEl.className).not.toContain('ui-state-active');
+        expect(selectAllEl.className).not.toContain('ng-state-active');
         expect(toggleAllSpy).toHaveBeenCalledTimes(1);
     });
 
@@ -623,21 +623,21 @@ describe('Listbox', () => {
         listbox.filterValue = "o";
         fixture.detectChanges();
 
-        const headerCheckBoxReadonlyEl = fixture.debugElement.query(By.css(".ui-chkbox.ui-widget")).query(By.css("input"));
-        const headerCheckBoxEl = fixture.debugElement.query(By.css(".ui-chkbox-box"));
+        const headerCheckBoxReadonlyEl = fixture.debugElement.query(By.css(".ng-chkbox.ng-widget")).query(By.css("input"));
+        const headerCheckBoxEl = fixture.debugElement.query(By.css(".ng-chkbox-box"));
         headerCheckBoxReadonlyEl.nativeElement.dispatchEvent(new Event("focus"));
         headerCheckBoxEl.nativeElement.click();
         fixture.detectChanges();
 
         expect(listbox.value.length).toEqual(3);
-        expect(headerCheckBoxEl.nativeElement.className).toContain("ui-state-active");
-        expect(headerCheckBoxEl.nativeElement.className).toContain("ui-state-focus");
+        expect(headerCheckBoxEl.nativeElement.className).toContain("ng-state-active");
+        expect(headerCheckBoxEl.nativeElement.className).toContain("ng-state-focus");
         listbox.filterValue = "m";
         headerCheckBoxReadonlyEl.nativeElement.dispatchEvent(new Event("blur"));
         fixture.detectChanges();
         
-        expect(headerCheckBoxEl.nativeElement.className).not.toContain("ui-state-active");
-        expect(headerCheckBoxEl.nativeElement.className).not.toContain("ui-state-focus");
+        expect(headerCheckBoxEl.nativeElement.className).not.toContain("ng-state-active");
+        expect(headerCheckBoxEl.nativeElement.className).not.toContain("ng-state-focus");
     });
 
 

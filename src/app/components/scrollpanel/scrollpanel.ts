@@ -5,14 +5,14 @@ import { DomHandler } from '../dom/domhandler';
 @Component({
     selector: 'p-scrollPanel',
     template: `
-        <div #container [ngClass]="'ui-scrollpanel ui-widget ui-widget-content ui-corner-all'" [ngStyle]="style" [class]="styleClass">
-            <div class="ui-scrollpanel-wrapper">
-                <div #content class="ui-scrollpanel-content">
+        <div #container [ngClass]="'ng-scrollpanel ng-widget ng-widget-content ng-corner-all'" [ngStyle]="style" [class]="styleClass">
+            <div class="ng-scrollpanel-wrapper">
+                <div #content class="ng-scrollpanel-content">
                     <ng-content></ng-content>
                 </div>
             </div>
-            <div #xBar class="ui-scrollpanel-bar ui-scrollpanel-bar-x"></div>
-            <div #yBar class="ui-scrollpanel-bar ui-scrollpanel-bar-y"></div>   
+            <div #xBar class="ng-scrollpanel-bar ng-scrollpanel-bar-x"></div>
+            <div #yBar class="ng-scrollpanel-bar ng-scrollpanel-bar-y"></div>   
         </div>
     `,
     providers: [DomHandler]
@@ -111,18 +111,18 @@ export class ScrollPanel implements AfterViewInit, OnDestroy {
 
         this.requestAnimationFrame(() => {
             if (this.scrollXRatio >= 1) {
-                this.domHandler.addClass(xBar, 'ui-scrollpanel-hidden');
+                this.domHandler.addClass(xBar, 'ng-scrollpanel-hidden');
             } 
             else {
-                this.domHandler.removeClass(xBar, 'ui-scrollpanel-hidden');
+                this.domHandler.removeClass(xBar, 'ng-scrollpanel-hidden');
                 xBar.style.cssText = 'width:' + Math.max(this.scrollXRatio * 100, 10) + '%; left:' + (content.scrollLeft / totalWidth) * 100 + '%;bottom:' + bottom + 'px;';
             }
 
             if (this.scrollYRatio >= 1) {
-                this.domHandler.addClass(yBar, 'ui-scrollpanel-hidden');
+                this.domHandler.addClass(yBar, 'ng-scrollpanel-hidden');
             } 
             else {
-                this.domHandler.removeClass(yBar, 'ui-scrollpanel-hidden');
+                this.domHandler.removeClass(yBar, 'ng-scrollpanel-hidden');
                 yBar.style.cssText = 'height:' + Math.max(this.scrollYRatio * 100, 10) + '%; top: calc(' + (content.scrollTop / totalHeight) * 100 + '% - ' + xBar.clientHeight + 'px);right:' + right + 'px;';
             }
         });
@@ -131,9 +131,9 @@ export class ScrollPanel implements AfterViewInit, OnDestroy {
     onYBarMouseDown(e: MouseEvent) {
         this.isYBarClicked = true;
         this.lastPageY = e.pageY;
-        this.domHandler.addClass(this.yBarViewChild.nativeElement, 'ui-scrollpanel-grabbed');
+        this.domHandler.addClass(this.yBarViewChild.nativeElement, 'ng-scrollpanel-grabbed');
         
-        this.domHandler.addClass(document.body, 'ui-scrollpanel-grabbed');
+        this.domHandler.addClass(document.body, 'ng-scrollpanel-grabbed');
 
         document.addEventListener('mousemove', this.onDocumentMouseMove);
         document.addEventListener('mouseup', this.onDocumentMouseUp);
@@ -143,9 +143,9 @@ export class ScrollPanel implements AfterViewInit, OnDestroy {
     onXBarMouseDown(e: MouseEvent) {
         this.isXBarClicked = true;
         this.lastPageX = e.pageX;
-        this.domHandler.addClass(this.xBarViewChild.nativeElement, 'ui-scrollpanel-grabbed');
+        this.domHandler.addClass(this.xBarViewChild.nativeElement, 'ng-scrollpanel-grabbed');
 
-        this.domHandler.addClass(document.body, 'ui-scrollpanel-grabbed');
+        this.domHandler.addClass(document.body, 'ng-scrollpanel-grabbed');
 
         document.addEventListener('mousemove', this.onDocumentMouseMove);
         document.addEventListener('mouseup', this.onDocumentMouseUp);
@@ -185,9 +185,9 @@ export class ScrollPanel implements AfterViewInit, OnDestroy {
     }
 
     onDocumentMouseUp(e: Event) {
-        this.domHandler.removeClass(this.yBarViewChild.nativeElement, 'ui-scrollpanel-grabbed');
-        this.domHandler.removeClass(this.xBarViewChild.nativeElement, 'ui-scrollpanel-grabbed');
-        this.domHandler.removeClass(document.body, 'ui-scrollpanel-grabbed');
+        this.domHandler.removeClass(this.yBarViewChild.nativeElement, 'ng-scrollpanel-grabbed');
+        this.domHandler.removeClass(this.xBarViewChild.nativeElement, 'ng-scrollpanel-grabbed');
+        this.domHandler.removeClass(document.body, 'ng-scrollpanel-grabbed');
 
         document.removeEventListener('mousemove', this.onDocumentMouseMove);
         document.removeEventListener('mouseup', this.onDocumentMouseUp);

@@ -6,12 +6,12 @@ import {DomHandler} from '../dom/domhandler';
 @Component({
     selector: 'p-sidebar',
     template: `
-        <div #container [ngClass]="{'ui-sidebar ui-widget ui-widget-content ui-shadow':true, 'ui-sidebar-active': visible, 
-            'ui-sidebar-left': (position === 'left'), 'ui-sidebar-right': (position === 'right'),
-            'ui-sidebar-top': (position === 'top'), 'ui-sidebar-bottom': (position === 'bottom'), 
-            'ui-sidebar-full': fullScreen}"
+        <div #container [ngClass]="{'ng-sidebar ng-widget ng-widget-content ng-shadow':true, 'ng-sidebar-active': visible, 
+            'ng-sidebar-left': (position === 'left'), 'ng-sidebar-right': (position === 'right'),
+            'ng-sidebar-top': (position === 'top'), 'ng-sidebar-bottom': (position === 'bottom'), 
+            'ng-sidebar-full': fullScreen}"
             [@panelState]="visible ? 'visible' : 'hidden'" [ngStyle]="style" [class]="styleClass">
-            <a [ngClass]="{'ui-sidebar-close ui-corner-all':true}" *ngIf="showCloseIcon" tabindex="0" role="button" (click)="close($event)" (keydown.enter)="close($event)">
+            <a [ngClass]="{'ng-sidebar-close ng-corner-all':true}" *ngIf="showCloseIcon" tabindex="0" role="button" (click)="close($event)" (keydown.enter)="close($event)">
                 <span class="pi pi-times"></span>
             </a>
             <ng-content></ng-content>
@@ -148,7 +148,7 @@ export class Sidebar implements AfterViewInit, AfterViewChecked, OnDestroy {
         if(!this.mask) {
             this.mask = document.createElement('div');
             this.mask.style.zIndex = String(parseInt(this.containerViewChild.nativeElement.style.zIndex) - 1);
-            this.domHandler.addMultipleClasses(this.mask, 'ui-widget-overlay ui-sidebar-mask');
+            this.domHandler.addMultipleClasses(this.mask, 'ng-widget-overlay ng-sidebar-mask');
             
             if(this.dismissible){
                 this.maskClickListener = this.renderer.listen(this.mask, 'click', (event: any) => {
@@ -158,7 +158,7 @@ export class Sidebar implements AfterViewInit, AfterViewChecked, OnDestroy {
 
             document.body.appendChild(this.mask);
             if(this.blockScroll) {
-                this.domHandler.addClass(document.body, 'ui-overflow-hidden');
+                this.domHandler.addClass(document.body, 'ng-overflow-hidden');
             }
         }
     }
@@ -168,7 +168,7 @@ export class Sidebar implements AfterViewInit, AfterViewChecked, OnDestroy {
             this.unbindMaskClickListener();
             document.body.removeChild(this.mask);
             if(this.blockScroll) {
-                this.domHandler.removeClass(document.body, 'ui-overflow-hidden');
+                this.domHandler.removeClass(document.body, 'ng-overflow-hidden');
             }
             this.mask = null;
         }

@@ -14,7 +14,7 @@ import { Footer, Header } from '../common/shared';
       quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</div>
   <p-footer>
       <button  type="button" label="Save" icon="pi pi-check" style="margin-right: .25em"></button>
-      <button  type="button" label="Cancel" icon="pi pi-times" class="ui-button-secondary"></button>
+      <button  type="button" label="Cancel" icon="pi pi-times" class="ng-button-secondary"></button>
   </p-footer>
 </p-card>`
 })
@@ -58,7 +58,7 @@ describe('Card', () => {
       card.header = "Primeng ROCKS!";
       fixture.detectChanges();
 
-      const cardEl = fixture.debugElement.query(By.css('.ui-card-title')).nativeElement;
+      const cardEl = fixture.debugElement.query(By.css('.ng-card-title')).nativeElement;
       expect(cardEl.textContent).toEqual("Primeng ROCKS!");
     });
 
@@ -66,7 +66,7 @@ describe('Card', () => {
       card.subheader = "Primeng ROCKS!";
       fixture.detectChanges();
 
-      const cardEl = fixture.debugElement.query(By.css('.ui-card-subtitle')).nativeElement;
+      const cardEl = fixture.debugElement.query(By.css('.ng-card-subtitle')).nativeElement;
       expect(cardEl.textContent).toEqual("Primeng ROCKS!");
     });
 
@@ -84,7 +84,7 @@ describe('Card', () => {
       fixture.detectChanges();
 
       const headerEl = fixture.debugElement.query(By.css('p-header')).nativeElement;
-      const cardHeaderEl = fixture.debugElement.query(By.css('.ui-card-header')).nativeElement;
+      const cardHeaderEl = fixture.debugElement.query(By.css('.ng-card-header')).nativeElement;
       expect(headerEl).toBeTruthy();
       expect(cardHeaderEl).toBeTruthy();
       expect(cardHeaderEl.children[0].children.length).toEqual(1);
@@ -94,7 +94,7 @@ describe('Card', () => {
       fixture.detectChanges();
 
       const footerEl = fixture.debugElement.query(By.css('p-footer')).nativeElement;
-      const cardFooterEl = fixture.debugElement.query(By.css('.ui-card-footer')).nativeElement;
+      const cardFooterEl = fixture.debugElement.query(By.css('.ng-card-footer')).nativeElement;
       expect(footerEl).toBeTruthy();
       expect(cardFooterEl).toBeTruthy();
       expect(cardFooterEl.children[0].children.length).toEqual(2);
@@ -104,7 +104,7 @@ describe('Card', () => {
       card.headerFacet = null;
       fixture.detectChanges();
 
-      const cardHeaderEl = fixture.debugElement.query(By.css('.ui-card-header'));
+      const cardHeaderEl = fixture.debugElement.query(By.css('.ng-card-header'));
       expect(cardHeaderEl).toBeFalsy();
     });
 
@@ -112,7 +112,7 @@ describe('Card', () => {
       card.footerFacet = null;
       fixture.detectChanges();
 
-      const cardFooterEl = fixture.debugElement.query(By.css('.ui-card-footer'));
+      const cardFooterEl = fixture.debugElement.query(By.css('.ng-card-footer'));
       expect(cardFooterEl).toBeFalsy();
     });
 

@@ -1,11 +1,11 @@
-.ui-selectbutton {
+.ng-selectbutton {
     display: inline-block;
 }
             
-.ui-selectbutton.ui-state-error {
+.ng-selectbutton.ng-state-error {
     padding: 0;
 }
 
-.ui-selectbutton .ui-button.ui-state-focus {
+.ng-selectbutton .ng-button.ng-state-focus {
     outline: none;
 }

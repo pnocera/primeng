@@ -1,20 +1,20 @@
-.ui-treetable {
+.ng-treetable {
     position: relative;
 }
 
-.ui-treetable table {
+.ng-treetable table {
     border-collapse: collapse;
     width: 100%;
     table-layout: fixed;
 }
 
-.ui-treetable .ui-treetable-thead > tr > th,
-.ui-treetable .ui-treetable-tbody > tr > td,
-.ui-treetable .ui-treetable-tfoot > tr > td {
+.ng-treetable .ng-treetable-thead > tr > th,
+.ng-treetable .ng-treetable-tbody > tr > td,
+.ng-treetable .ng-treetable-tfoot > tr > td {
     padding: .25em .5em;
 }
 
-.ui-treetable .ui-treetable-toggler {
+.ng-treetable .ng-treetable-toggler {
     cursor: pointer;
     display: inline-block;
     height: 1em;
@@ -23,110 +23,110 @@
     margin-top: -.5em;
 }
 
-.ui-treetable .ui-sortable-column {
+.ng-treetable .ng-sortable-column {
     cursor: pointer;
 }
 
-.ui-treetable p-treetablesorticon {
+.ng-treetable p-treetablesorticon {
     vertical-align: middle;
 }
 
-.ui-treetable-auto-layout > .ui-treetable-wrapper {
+.ng-treetable-auto-layout > .ng-treetable-wrapper {
     overflow-x: auto;
 }
 
-.ui-treetable-auto-layout > .ui-treetable-wrapper > table {
+.ng-treetable-auto-layout > .ng-treetable-wrapper > table {
     table-layout: auto;
 }
 
-.ui-treetable .ui-treetable-chkbox {
+.ng-treetable .ng-treetable-chkbox {
     margin: 0 .25em;
     vertical-align: middle;
 }
 
 /* Sections */
-.ui-treetable-caption,
-.ui-treetable-summary {
+.ng-treetable-caption,
+.ng-treetable-summary {
     padding: .25em .5em;
     text-align: center;
     font-weight: bold;
 }
 
-.ui-treetable-caption {
+.ng-treetable-caption {
     border-bottom: 0 none;
 }
 
-.ui-treetable-summary {
+.ng-treetable-summary {
     border-top: 0 none;
 }
 
 /* Paginator */
-.ui-treetable .ui-paginator-top {
+.ng-treetable .ng-paginator-top {
     border-bottom: 0 none;
 }
 
-.ui-treetable .ui-paginator-bottom {
+.ng-treetable .ng-paginator-bottom {
     border-top: 0 none;
 }
 
 /* Scrollable */
-.ui-treetable-scrollable-wrapper {
+.ng-treetable-scrollable-wrapper {
     position: relative;
 }
-.ui-treetable-scrollable-header,
-.ui-treetable-scrollable-footer {
+.ng-treetable-scrollable-header,
+.ng-treetable-scrollable-footer {
     overflow: hidden;
     border: 0 none;
 }
 
-.ui-treetable-scrollable-body {
+.ng-treetable-scrollable-body {
     overflow: auto;
     position: relative;
 }
 
-.ui-treetable-scrollable-body > table > .ui-treetable-tbody > tr:first-child > td {
+.ng-treetable-scrollable-body > table > .ng-treetable-tbody > tr:first-child > td {
     border-top: 0 none;
 }
 
-.ui-treetable-virtual-table {
+.ng-treetable-virtual-table {
     position: absolute;
 }
 
 /* Frozen Columns */
-.ui-treetable-frozen-view .ui-treetable-scrollable-body {
+.ng-treetable-frozen-view .ng-treetable-scrollable-body {
     overflow: hidden;
 }
 
-.ui-treetable-frozen-view > .ui-treetable-scrollable-body > table > .ui-treetable-tbody > tr > td:last-child {
+.ng-treetable-frozen-view > .ng-treetable-scrollable-body > table > .ng-treetable-tbody > tr > td:last-child {
     border-right: 0 none;
 }
 
-.ui-treetable-unfrozen-view {
+.ng-treetable-unfrozen-view {
     position: absolute;
     top: 0px;
 }
 
 /* Resizable */
-.ui-treetable-resizable > .ui-treetable-wrapper {
+.ng-treetable-resizable > .ng-treetable-wrapper {
     overflow-x: auto;
 }
 
-.ui-treetable-resizable .ui-treetable-thead > tr > th,
-.ui-treetable-resizable .ui-treetable-tfoot > tr > td,
-.ui-treetable-resizable .ui-treetable-tbody > tr > td {
+.ng-treetable-resizable .ng-treetable-thead > tr > th,
+.ng-treetable-resizable .ng-treetable-tfoot > tr > td,
+.ng-treetable-resizable .ng-treetable-tbody > tr > td {
     overflow: hidden;
 }
 
-.ui-treetable-resizable .ui-resizable-column {
+.ng-treetable-resizable .ng-resizable-column {
     background-clip: padding-box;
     position: relative;
 }
 
-.ui-treetable-resizable-fit .ui-resizable-column:last-child .ui-column-resizer {
+.ng-treetable-resizable-fit .ng-resizable-column:last-child .ng-column-resizer {
     display: none;
 }
 
-.ui-treetable .ui-column-resizer {
+.ng-treetable .ng-column-resizer {
     display: block;
     position: absolute !important;
     top: 0;
@@ -139,7 +139,7 @@
     border: 1px solid transparent;
 }
 
-.ui-treetable .ui-column-resizer-helper {
+.ng-treetable .ng-column-resizer-helper {
     width: 1px;
     position: absolute;
     z-index: 10;
@@ -147,24 +147,24 @@
 }
 
 /* Reorder */
-.ui-treetable-reorder-indicator-up,
-.ui-treetable-reorder-indicator-down {
+.ng-treetable-reorder-indicator-up,
+.ng-treetable-reorder-indicator-down {
     position: absolute;
     display: none;
 }
 
 /* Responsive */
-.ui-treetable-responsive .ui-treetable-tbody > tr > td .ui-column-title {
+.ng-treetable-responsive .ng-treetable-tbody > tr > td .ng-column-title {
     display: none;
 }
 
 @media screen and (max-width: 40em) {
-    .ui-treetable-responsive .ui-treetable-thead > tr > th,
-    .ui-treetable-responsive .ui-treetable-tfoot > tr > td {
+    .ng-treetable-responsive .ng-treetable-thead > tr > th,
+    .ng-treetable-responsive .ng-treetable-tfoot > tr > td {
         display: none !important;
     }
 
-    .ui-treetable-responsive .ui-treetable-tbody > tr > td {
+    .ng-treetable-responsive .ng-treetable-tbody > tr > td {
         text-align: left;
         display: block;
         border: 0 none;
@@ -176,7 +176,7 @@
 		clear: left;
     }
 
-    .ui-treetable-responsive .ui-treetable-tbody > tr > td .ui-column-title {
+    .ng-treetable-responsive .ng-treetable-tbody > tr > td .ng-column-title {
         padding: .4em;
         min-width: 30%;
         display: inline-block;
@@ -186,7 +186,7 @@
 }
 
 /* Loader */
-.ui-treetable-loading {
+.ng-treetable-loading {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -195,7 +195,7 @@
     z-index: 1;
 }
 
-.ui-treetable-loading-content {
+.ng-treetable-loading-content {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -204,6 +204,6 @@
     margin-left: -1em;
 }
 
-.ui-treetable .ui-treetable-loading-icon {
+.ng-treetable .ng-treetable-loading-icon {
     font-size: 2em;
 }

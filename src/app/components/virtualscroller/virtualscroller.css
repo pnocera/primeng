@@ -1,16 +1,16 @@
-.ui-virtualscroller .ui-virtualscroller-header {
+.ng-virtualscroller .ng-virtualscroller-header {
     text-align: center;
 	padding: .5em .75em;
     border-bottom: 0 none;
 }
 
-.ui-virtualscroller .ui-virtualscroller-footer {
+.ng-virtualscroller .ng-virtualscroller-footer {
     text-align: center;
     padding: .25em .625em;
     border-top: 0px none;
 }
 
-.ui-virtualscroller .ui-virtualscroller-list {
+.ng-virtualscroller .ng-virtualscroller-list {
     list-style-type: none;
     margin: 0;
     padding: 0;

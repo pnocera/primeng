@@ -6,28 +6,28 @@ import {CommonModule} from '@angular/common';
 @Component({
     selector: 'p-carousel',
     template: `
-        <div #container [ngClass]="{'ui-carousel ui-widget ui-widget-content ui-corner-all':true}" [ngStyle]="style" [class]="styleClass">
-            <div class="ui-carousel-header ui-widget-header ui-corner-all">
-                <span class="ui-carousel-header-title">{{headerText}}</span>
-                <span class="ui-carousel-button ui-carousel-next-button pi pi-arrow-circle-right" (click)="onNextNav()" 
-                        [ngClass]="{'ui-state-disabled':(page === (totalPages-1)) && !circular}" *ngIf="value&&value.length"></span>
-                <span class="ui-carousel-button ui-carousel-prev-button pi pi-arrow-circle-left" (click)="onPrevNav()" 
-                        [ngClass]="{'ui-state-disabled':(page === 0 && !circular)}" *ngIf="value&&value.length"></span>
-                <div *ngIf="displayPageLinks" class="ui-carousel-page-links">
-                    <a tabindex="0" (click)="setPageWithLink($event,i)" class="ui-carousel-page-link pi" *ngFor="let links of anchorPageLinks;let i=index" [ngClass]="{'pi-circle-on': page===i, 'pi-circle-off': page !== i}"></a>
+        <div #container [ngClass]="{'ng-carousel ng-widget ng-widget-content ng-corner-all':true}" [ngStyle]="style" [class]="styleClass">
+            <div class="ng-carousel-header ng-widget-header ng-corner-all">
+                <span class="ng-carousel-header-title">{{headerText}}</span>
+                <span class="ng-carousel-button ng-carousel-next-button pi pi-arrow-circle-right" (click)="onNextNav()" 
+                        [ngClass]="{'ng-state-disabled':(page === (totalPages-1)) && !circular}" *ngIf="value&&value.length"></span>
+                <span class="ng-carousel-button ng-carousel-prev-button pi pi-arrow-circle-left" (click)="onPrevNav()" 
+                        [ngClass]="{'ng-state-disabled':(page === 0 && !circular)}" *ngIf="value&&value.length"></span>
+                <div *ngIf="displayPageLinks" class="ng-carousel-page-links">
+                    <a tabindex="0" (click)="setPageWithLink($event,i)" class="ng-carousel-page-link pi" *ngFor="let links of anchorPageLinks;let i=index" [ngClass]="{'pi-circle-on': page===i, 'pi-circle-off': page !== i}"></a>
                 </div>
-                <select *ngIf="displayPageDropdown" class="ui-carousel-dropdown ui-widget ui-state-default ui-corner-left" [value]="page" (change)="onDropdownChange($event.target.value)">
+                <select *ngIf="displayPageDropdown" class="ng-carousel-dropdown ng-widget ng-state-default ng-corner-left" [value]="page" (change)="onDropdownChange($event.target.value)">
                     <option *ngFor="let option of selectDropdownOptions" [value]="option" [selected]="value == option">{{option+1}}</option>
                 </select>
-                <select *ngIf="responsive&&value&&value.length" class="ui-carousel-mobiledropdown ui-widget ui-state-default ui-corner-left" [value]="page" (change)="onDropdownChange($event.target.value)"
+                <select *ngIf="responsive&&value&&value.length" class="ng-carousel-mobiledropdown ng-widget ng-state-default ng-corner-left" [value]="page" (change)="onDropdownChange($event.target.value)"
                     [style.display]="shrinked ? 'block' : 'none'">
                     <option *ngFor="let option of mobileDropdownOptions" [value]="option" [selected]="value == option">{{option+1}}</option>
                 </select>
             </div>
-            <div #viewport class="ui-carousel-viewport">
-                <ul #items class="ui-carousel-items" [style.left.px]="left" [style.transitionProperty]="'left'" 
+            <div #viewport class="ng-carousel-viewport">
+                <ul #items class="ng-carousel-items" [style.left.px]="left" [style.transitionProperty]="'left'" 
                             [style.transitionDuration]="effectDuration" [style.transitionTimingFunction]="easing">
-                    <li *ngFor="let item of value" class="ui-carousel-item ui-widget-content ui-corner-all">
+                    <li *ngFor="let item of value" class="ng-carousel-item ng-widget-content ng-corner-all">
                         <ng-container *ngTemplateOutlet="itemTemplate; context: {$implicit: item}"></ng-container>
                     </li>
                 </ul>

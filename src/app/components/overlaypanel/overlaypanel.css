@@ -1,20 +1,20 @@
-.ui-overlaypanel {
+.ng-overlaypanel {
     padding: 0;
     margin: 0;
     position: absolute;
     margin-top: 10px;
 }
 
-.ui-overlaypanel-flipped {
+.ng-overlaypanel-flipped {
     margin-top: 0;
     margin-bottom: 10px;
 }
 
-.ui-overlaypanel-content {
+.ng-overlaypanel-content {
     padding: 0.5em 1em;
 }
 
-.ui-overlaypanel-close {
+.ng-overlaypanel-close {
     position: absolute;
     top: -1em;
     right: -1em;
@@ -28,11 +28,11 @@
     cursor: pointer;
 }
 
-.ui-overlaypanel-close-icon {
+.ng-overlaypanel-close-icon {
     line-height: inherit;
 }
 
-.ui-overlaypanel:after, .ui-overlaypanel:before {
+.ng-overlaypanel:after, .ng-overlaypanel:before {
 	bottom: 100%;
 	left: 1.25em;
 	border: solid transparent;
@@ -43,25 +43,25 @@
 	pointer-events: none;
 }
 
-.ui-overlaypanel:after {
+.ng-overlaypanel:after {
 	border-width: 8px;
 	margin-left: -8px;
 }
 
-.ui-overlaypanel:before {
+.ng-overlaypanel:before {
 	border-width: 10px;
 	margin-left: -10px;
 }
 
-.ui-overlaypanel-flipped:after, .ui-overlaypanel-flipped:before {
+.ng-overlaypanel-flipped:after, .ng-overlaypanel-flipped:before {
     bottom: auto;
     top: 100%;
 }
 
-.ui-overlaypanel-flipped:after {
+.ng-overlaypanel-flipped:after {
     border-bottom-color: transparent;
 }
 
-.ui-overlaypanel-flipped:before {
+.ng-overlaypanel-flipped:before {
     border-bottom-color: transparent
 }

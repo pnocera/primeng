@@ -10,7 +10,7 @@ import { Footer } from '../common/shared';
     <p-dialog [(visible)]="display">
     <p-footer>
             <button type="button" pButton icon="pi pi-check" (click)="display=false" label="Yes"></button>
-            <button type="button" pButton icon="pi pi-close" (click)="display=false" label="No" class="ui-button-secondary"></button>
+            <button type="button" pButton icon="pi pi-close" (click)="display=false" label="No" class="ng-button-secondary"></button>
     </p-footer>
     </p-dialog>
     <button type="button" (click)="showDialog()" pButton icon="pi pi-info-circle" label="Show"></button>
@@ -55,7 +55,7 @@ describe('Dialog', () => {
         buttonEl.nativeElement.click();
         fixture.detectChanges();
 
-        const headerEl = fixture.debugElement.query(By.css('.ui-dialog-title'));
+        const headerEl = fixture.debugElement.query(By.css('.ng-dialog-title'));
         expect(headerEl.nativeElement.textContent).toContain('PrimeNG Dialog Header')
     });
     
@@ -64,7 +64,7 @@ describe('Dialog', () => {
         buttonEl.nativeElement.click();
         fixture.detectChanges();
         
-        const closeEl = fixture.debugElement.query(By.css('.ui-dialog-titlebar-close'));
+        const closeEl = fixture.debugElement.query(By.css('.ng-dialog-titlebar-close'));
         expect(closeEl).not.toBeNull();
     });
     
@@ -73,7 +73,7 @@ describe('Dialog', () => {
         buttonEl.nativeElement.click();
         fixture.detectChanges();
 
-        const resizeEl = fixture.debugElement.query(By.css('.ui-resizable-handle'));
+        const resizeEl = fixture.debugElement.query(By.css('.ng-resizable-handle'));
         expect(resizeEl).not.toBeNull();
     });
 
@@ -90,7 +90,7 @@ describe('Dialog', () => {
         buttonEl.nativeElement.click();
         fixture.detectChanges();
 
-        expect(fixture.debugElement.children[0].children[0].classes['ui-dialog-rtl']).toEqual(true);
+        expect(fixture.debugElement.children[0].children[0].classes['ng-dialog-rtl']).toEqual(true);
     });
     
     it('should add draggable class when dragging is enabled', () => {
@@ -98,7 +98,7 @@ describe('Dialog', () => {
         buttonEl.nativeElement.click();
         fixture.detectChanges();
         
-        expect(fixture.debugElement.children[0].children[0].classes['ui-dialog-draggable']).toEqual(true);
+        expect(fixture.debugElement.children[0].children[0].classes['ng-dialog-draggable']).toEqual(true);
     });
             
     it('should update visible as false binding when close icon is clicked', () => {
@@ -108,7 +108,7 @@ describe('Dialog', () => {
         fixture.detectChanges();
         dialog.visibleChange.subscribe(value => show = value);
         
-        const closeEl = fixture.nativeElement.querySelector('.ui-dialog-titlebar-close');
+        const closeEl = fixture.nativeElement.querySelector('.ng-dialog-titlebar-close');
         closeEl.click();
         
         expect(show).toEqual(false);
@@ -127,7 +127,7 @@ describe('Dialog', () => {
 
         const maximizeSpy = spyOn(dialog,'maximize').and.callThrough();
         const revertMaximizSpy = spyOn(dialog,'revertMaximize').and.callThrough();
-        const maximizableEl = fixture.nativeElement.querySelector('.ui-dialog-titlebar-maximize ');
+        const maximizableEl = fixture.nativeElement.querySelector('.ng-dialog-titlebar-maximize ');
         expect(maximizableEl).toBeTruthy();
         maximizableEl.click();
         fixture.detectChanges();
@@ -158,12 +158,12 @@ describe('Dialog', () => {
         dialog.container = fixture.debugElement.query(By.css('div')).nativeElement;
         fixture.detectChanges();
 
-        const maximizableEl = fixture.nativeElement.querySelector('.ui-dialog-titlebar-maximize ');
+        const maximizableEl = fixture.nativeElement.querySelector('.ng-dialog-titlebar-maximize ');
         expect(maximizableEl).toBeTruthy();
         maximizableEl.click();
         fixture.detectChanges();
 
-        const closeEl = fixture.debugElement.query(By.css('.ui-dialog-titlebar-close'));    
+        const closeEl = fixture.debugElement.query(By.css('.ng-dialog-titlebar-close'));    
         dialog.visibleChange.subscribe(value => dialog.visible = value);
         closeEl.nativeElement.click();
         tick(350);
@@ -184,7 +184,7 @@ describe('Dialog', () => {
 
         const dialogEl = fixture.debugElement.query(By.css('div'));
         const onCloseMouseDownSpy = spyOn(dialog,'onCloseMouseDown').and.callThrough();
-        const closeEl = fixture.debugElement.query(By.css('.ui-dialog-titlebar-close'));
+        const closeEl = fixture.debugElement.query(By.css('.ng-dialog-titlebar-close'));
         expect(dialogEl).toBeTruthy();
         dialog.visibleChange.subscribe(value => dialog.visible = value);
         closeEl.nativeElement.click();
@@ -192,7 +192,7 @@ describe('Dialog', () => {
         tick(350);
         fixture.detectChanges();
         
-        expect(dialog.mask.classList).toContain('ui-dialog-mask-scrollblocker');
+        expect(dialog.mask.classList).toContain('ng-dialog-mask-scrollblocker');
         expect(dialog.visible).toEqual(false);
         expect(closeSpy).toHaveBeenCalled();
         expect(onCloseMouseDownSpy).toHaveBeenCalled();
@@ -281,7 +281,7 @@ describe('Dialog', () => {
         dialog.container = fixture.debugElement.query(By.css('div')).nativeElement;
         fixture.detectChanges();
 
-        const maximizableEl = fixture.nativeElement.querySelector('.ui-dialog-titlebar-maximize ');
+        const maximizableEl = fixture.nativeElement.querySelector('.ng-dialog-titlebar-maximize ');
         maximizableEl.click();
         fixture.detectChanges();
 

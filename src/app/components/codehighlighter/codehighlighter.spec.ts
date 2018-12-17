@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   template: `
   <pre>
     <code  pCode ngNonBindable class="language-css">
-    .ui-datatable table &#123;
+    .ng-datatable table &#123;
         border-collapse:collapse;
         width: 100%;
         table-layout: fixed;

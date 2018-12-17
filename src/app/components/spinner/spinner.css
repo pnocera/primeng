@@ -1,4 +1,4 @@
-.ui-spinner {
+.ng-spinner {
     display: inline-block;
     overflow: visible;
     padding: 0;
@@ -6,12 +6,12 @@
     vertical-align: middle;
 }
 
-.ui-spinner-input {
+.ng-spinner-input {
     vertical-align: middle;
     padding-right: 1.5em;
 }
 
-.ui-spinner-button {
+.ng-spinner-button {
     cursor: default;
     display: block;
     height: 50%;
@@ -25,7 +25,7 @@
     width: 1.5em;
 }
 
-.ui-spinner .ui-spinner-button-icon {
+.ng-spinner .ng-spinner-button-icon {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -34,28 +34,28 @@
     width: 1em;
 }
 
-.ui-spinner-up {
+.ng-spinner-up {
     top: 0;
 }
 
-.ui-spinner-down {
+.ng-spinner-down {
     bottom: 0;
 }
 
 /* Fluid */
-.ui-fluid .ui-spinner {
+.ng-fluid .ng-spinner {
     width: 100%;
 }
 
-.ui-fluid .ui-spinner .ui-spinner-input {
+.ng-fluid .ng-spinner .ng-spinner-input {
     padding-right: 2em;
     width: 100%;
 }
 
-.ui-fluid .ui-spinner .ui-spinner-button {
+.ng-fluid .ng-spinner .ng-spinner-button {
     width: 1.5em;
 }
 
-.ui-fluid .ui-spinner .ui-spinner-button .ui-spinner-button-icon {
+.ng-fluid .ng-spinner .ng-spinner-button .ng-spinner-button-icon {
     left: .7em;
 }

@@ -62,7 +62,7 @@ describe('SlideMenu', () => {
     it('should created by default', () => {
      fixture.detectChanges();
 
-     const containerEl = fixture.debugElement.query(By.css('.ui-slidemenu'));
+     const containerEl = fixture.debugElement.query(By.css('.ng-slidemenu'));
      const slideMenuSubEl = fixture.debugElement.query(By.css('ul'));
      expect(containerEl.nativeElement).toBeTruthy();
      expect(slideMenuSubEl).toBeTruthy();
@@ -73,7 +73,7 @@ describe('SlideMenu', () => {
       slidemenu.styleClass = "Primeng ROCKS!";
       fixture.detectChanges();
       
-      const containerEl = fixture.debugElement.query(By.css('.ui-slidemenu'));
+      const containerEl = fixture.debugElement.query(By.css('.ng-slidemenu'));
       expect(containerEl.nativeElement.className).toContain("Primeng ROCKS!");
       expect(containerEl.nativeElement.style.primeng).toEqual("rocks!");
      });
@@ -82,7 +82,7 @@ describe('SlideMenu', () => {
       slidemenu.viewportHeight = 400; 
       fixture.detectChanges();
       
-      const wrapperEl = fixture.debugElement.query(By.css('.ui-slidemenu-wrapper'));
+      const wrapperEl = fixture.debugElement.query(By.css('.ng-slidemenu-wrapper'));
       expect(wrapperEl.nativeElement.style.height).toEqual(slidemenu.viewportHeight.toString()+"px");
      });
 
@@ -90,7 +90,7 @@ describe('SlideMenu', () => {
       slidemenu.backLabel = "ALWAYS BET ON PRIME"; 
       fixture.detectChanges();
       
-      const backwardSpanEl = fixture.debugElement.query(By.css('.ui-slidemenu-backward')).queryAll(By.css('span'))[1];
+      const backwardSpanEl = fixture.debugElement.query(By.css('.ng-slidemenu-backward')).queryAll(By.css('span'))[1];
       expect(backwardSpanEl.nativeElement.textContent).toEqual("ALWAYS BET ON PRIME");
      });
 
@@ -118,12 +118,12 @@ describe('SlideMenu', () => {
       expect(itemsEl.length).toEqual(6);
       let i = 0;
       for(let item of slidemenu.model){
-        expect(item.label).toEqual(itemsEl[i].query(By.css('.ui-menuitem-text')).nativeElement.textContent);
+        expect(item.label).toEqual(itemsEl[i].query(By.css('.ng-menuitem-text')).nativeElement.textContent);
         i++;
         if(item.items){
           for(let child of item.items as MenuItem[]){
             if(child.label)
-              expect(child.label).toEqual(itemsEl[i].query(By.css('.ui-menuitem-text')).nativeElement.textContent);
+              expect(child.label).toEqual(itemsEl[i].query(By.css('.ng-menuitem-text')).nativeElement.textContent);
             i++;
           }
         }
@@ -140,10 +140,10 @@ describe('SlideMenu', () => {
       fileItemEl.nativeElement.click();
       fixture.detectChanges();
 
-      const activeItem = fixture.debugElement.query(By.css('.ui-menuitem-active'));
-      expect(activeItem.query(By.css('.ui-menuitem-text')).nativeElement.textContent).toEqual('File');
+      const activeItem = fixture.debugElement.query(By.css('.ng-menuitem-active'));
+      expect(activeItem.query(By.css('.ng-menuitem-text')).nativeElement.textContent).toEqual('File');
       expect(itemClickSpy).toHaveBeenCalled();
-      expect(activeItem.query(By.css('ul')).nativeElement.className).toContain('ui-submenu-list ui-active-submenu');
+      expect(activeItem.query(By.css('ul')).nativeElement.className).toContain('ng-submenu-list ng-active-submenu');
       expect(slidemenu.left).toEqual(-190);
     });
 
@@ -157,15 +157,15 @@ describe('SlideMenu', () => {
       fileItemEl.nativeElement.click();
       fixture.detectChanges();
 
-      const backEl = fixture.debugElement.query(By.css('.ui-slidemenu-backward'));
+      const backEl = fixture.debugElement.query(By.css('.ng-slidemenu-backward'));
       backEl.nativeElement.click();
       fixture.detectChanges();
       
       const rootMenu = listsEl[0];
       const subMenu = listsEl[1];
       expect(goBackSpy).toHaveBeenCalled();
-      expect(subMenu.nativeElement.className).not.toContain('ui-submenu-list ui-active-submenu');
-      expect(rootMenu.nativeElement.className).toContain('ui-slidemenu-rootlist ui-active-submenu');
+      expect(subMenu.nativeElement.className).not.toContain('ng-submenu-list ng-active-submenu');
+      expect(rootMenu.nativeElement.className).toContain('ng-slidemenu-rootlist ng-active-submenu');
       expect(slidemenu.left).toEqual(0);
     });
 
@@ -181,8 +181,8 @@ describe('SlideMenu', () => {
 
       const rootMenu = listsEl[0];
       const subMenu = listsEl[1];
-      expect(subMenu.nativeElement.className).not.toContain('ui-submenu-list ui-active-submenu');
-      expect(rootMenu.nativeElement.className).toContain('ui-slidemenu-rootlist ui-active-submenu');
+      expect(subMenu.nativeElement.className).not.toContain('ng-submenu-list ng-active-submenu');
+      expect(rootMenu.nativeElement.className).toContain('ng-slidemenu-rootlist ng-active-submenu');
       expect(slidemenu.left).toEqual(0);
       expect(slidemenuSub.activeItem).toEqual(undefined);
       expect(itemClickSpy).toHaveBeenCalled();
@@ -209,7 +209,7 @@ describe('SlideMenu', () => {
       slidemenu.visible = true;
       fixture.detectChanges();
 
-      const slideMenuEl = fixture.debugElement.query(By.css('.ui-slidemenu'));
+      const slideMenuEl = fixture.debugElement.query(By.css('.ng-slidemenu'));
       expect(slidemenu.visible).toEqual(true);
       expect(slideMenuEl).toBeTruthy();
     }));
@@ -224,7 +224,7 @@ describe('SlideMenu', () => {
       slidemenu.visible = true;
       fixture.detectChanges();
 
-      const slideMenuEl = fixture.debugElement.query(By.css('.ui-slidemenu'));
+      const slideMenuEl = fixture.debugElement.query(By.css('.ng-slidemenu'));
       expect(slidemenu.visible).toEqual(true);
       expect(slideMenuEl).toBeTruthy();
     }));
@@ -239,7 +239,7 @@ describe('SlideMenu', () => {
       slidemenu.visible = true;
       fixture.detectChanges();
 
-      const slideMenuEl = fixture.debugElement.query(By.css('.ui-slidemenu'));
+      const slideMenuEl = fixture.debugElement.query(By.css('.ng-slidemenu'));
       expect(slidemenu.visible).toEqual(true);
       expect(slideMenuEl).toBeTruthy();
     }));

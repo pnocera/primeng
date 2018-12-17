@@ -1,23 +1,23 @@
-.ui-organizationchart .ui-organizationchart-table {
+.ng-organizationchart .ng-organizationchart-table {
     border-spacing: 0;
     border-collapse: separate;
     margin: 0 auto;
 }
 
-.ui-organizationchart .ui-organizationchart-table > tr > td {
+.ng-organizationchart .ng-organizationchart-table > tr > td {
     text-align: center;
     vertical-align: top;
     padding: 0;
     padding: 0 .75em;
 }
 
-.ui-organizationchart .ui-organizationchart-node-content {
+.ng-organizationchart .ng-organizationchart-node-content {
     padding: .5em .75em;
     display: inline-block;
     position: relative;
 }
 
-.ui-organizationchart .ui-organizationchart-node-content .ui-node-toggler {
+.ng-organizationchart .ng-organizationchart-node-content .ng-node-toggler {
     position: absolute;
     bottom: -9px;
     margin-left: -8px;
@@ -25,23 +25,23 @@
     left: 50%;
 }
 
-.ui-organizationchart .ui-organizationchart-line-down {
+.ng-organizationchart .ng-organizationchart-line-down {
     margin: 0 auto;
     height: 20px;
     width: 1px;
     float: none;
 }
 
-.ui-organizationchart .ui-organizationchart-line-right {
+.ng-organizationchart .ng-organizationchart-line-right {
     float: none;
     border-radius: 0px;
 }
 
-.ui-organizationchart .ui-organizationchart-line-left {
+.ng-organizationchart .ng-organizationchart-line-left {
     float: none;
     border-radius: 0;
 }
 
-.ui-organizationchart .ui-organizationchart-node-content.ui-organizationchart-selectable-node {
+.ng-organizationchart .ng-organizationchart-node-content.ng-organizationchart-selectable-node {
     cursor: pointer;
 }

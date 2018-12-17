@@ -31,7 +31,7 @@
     }
 }
 
-.ui-widget {
+.ng-widget {
     font-family:  $fontFamily;
     font-size: $fontSize;
 
@@ -45,7 +45,7 @@
     }
 }
 
-.ui-widget-content {
+.ng-widget-content {
     border: $contentBorderWidth solid $contentBorderColor;
     background-color: $contentBgColor;
     color: $contentTextColor;
@@ -55,7 +55,7 @@
     }
 }
 
-.ui-widget-header {
+.ng-widget-header {
     border: $headerBorderWidth solid $headerBorderColor;
     background-color: $headerBgColor;
     color: $headerTextColor;
@@ -66,13 +66,13 @@
     }
 }
 
-.ui-widget-overlay {
+.ng-widget-overlay {
     background-color: #666666;
     opacity: .50;
     filter:Alpha(Opacity=50);
 }
 
-.ui-state-default {
+.ng-state-default {
     border: $stateDefaultBorderWidth solid $stateDefaultBorderColor;
     background-color: $stateDefaultBgColor;
     color: $stateDefaultTextColor;
@@ -82,7 +82,7 @@
     }
 }
 
-.ui-state-active {
+.ng-state-active {
     border-color: $stateActiveBorderColor;
     background-color: $stateActiveBgColor;
     color: $stateActiveTextColor;
@@ -92,7 +92,7 @@
     }
 }
 
-.ui-state-highlight  {
+.ng-state-highlight  {
     border-color: $stateHighlightBorderColor;
     background-color: $stateHighlightBgColor;
     color: $stateHighlightTextColor;
@@ -102,7 +102,7 @@
     }
 }
 
-.ui-state-focus {
+.ng-state-focus {
     border-color: $stateFocusBorderColor;
     background-color: $stateFocusBgColor;
     color: $stateFocusTextColor;
@@ -112,7 +112,7 @@
     }
 }
 
-.ui-state-error {
+.ng-state-error {
     border-color: $stateErrorBorderColor;
     background-color: $stateErrorBgColor;
     color: $stateErrorTextColor;
@@ -122,8 +122,8 @@
     }
 }
 
-.ui-state-disabled,
-.ui-widget:disabled {
+.ng-state-disabled,
+.ng-widget:disabled {
     opacity: $disabledOpacity;
     filter: Alpha(Opacity= $disabledOpacity * 100);
     background-image: none;
@@ -135,17 +135,17 @@
 }
 
 /* Forms */
-.ui-inputtext {
+.ng-inputtext {
     background-color: $inputBgColor;
     color: $inputTextColor;
 }
 
-.ui-inputtext:enabled:hover {
+.ng-inputtext:enabled:hover {
     border-color: $stateHoverBorderColor;
 }
 
-.ui-inputtext.ui-state-focus,
-.ui-inputtext:focus {
+.ng-inputtext.ng-state-focus,
+.ng-inputtext:focus {
     outline: 0 none;
     border-color: $stateFocusBorderColor;
     -moz-box-shadow: 0px 0px 5px $stateFocusBorderColor;
@@ -153,8 +153,8 @@
     box-shadow: 0px 0px 5px $stateFocusBorderColor;
 }
 
-.ui-inputgroup {
-    .ui-inputgroup-addon  {
+.ng-inputgroup {
+    .ng-inputgroup-addon  {
         border-color: $stateDefaultBorderColor;
         background-color: lighten($stateDefaultBorderColor, 10%);
         color: $inputGroupTextColor;
@@ -170,7 +170,7 @@
         }
     }
 
-    .ui-button {
+    .ng-button {
         &:first-child {
             border-top-left-radius: $borderRadius;
             border-bottom-left-radius: $borderRadius;
@@ -183,91 +183,91 @@
     }
 }
 
-.ui-float-label input.ng-dirty.ng-invalid ~ label {
+.ng-float-label input.ng-dirty.ng-invalid ~ label {
     color: $stateErrorTextColor;
 }
 
-.ui-autocomplete {
-    .ui-autocomplete-multiple-container:not(.ui-state-disabled) {
+.ng-autocomplete {
+    .ng-autocomplete-multiple-container:not(.ng-state-disabled) {
         &:hover {
             border-color: $stateHoverBorderColor;
         }
 
-        &.ui-state-focus {
+        &.ng-state-focus {
             border-color: $stateFocusBorderColor;
 
         }
     }
 }
 
-.ui-chips {
-    > ul:not(.ui-state-disabled) {
+.ng-chips {
+    > ul:not(.ng-state-disabled) {
         &:hover {
             border-color: $stateHoverBorderColor;
         }
 
-        &.ui-state-focus {
+        &.ng-state-focus {
             border-color: $stateFocusBorderColor;
         }
     }
 }
 
-.ui-button:focus,
-.ui-button:enabled:hover,
-.ui-fileupload-choose:not(.ui-state-disabled):hover {
+.ng-button:focus,
+.ng-button:enabled:hover,
+.ng-fileupload-choose:not(.ng-state-disabled):hover {
     outline: 0 none;
     @include hover-element();
 }
 
-.ui-button:enabled:active,
-.ui-fileupload-choose:not(.ui-state-disabled):active {
+.ng-button:enabled:active,
+.ng-fileupload-choose:not(.ng-state-disabled):active {
     border-color: $stateActiveBorderColor;
     background-color: $stateActiveBgColor;
     color: $stateActiveTextColor;
 }
 
-.ui-chkbox-box:not(.ui-state-disabled):not(.ui-state-active):hover {
+.ng-chkbox-box:not(.ng-state-disabled):not(.ng-state-active):hover {
     @include hover-element();
 }
 
-.ui-radiobutton-box:not(.ui-state-disabled):not(.ui-state-active):hover {
+.ng-radiobutton-box:not(.ng-state-disabled):not(.ng-state-active):hover {
     @include hover-element();
 }
 
-.ui-dropdown .ui-dropdown-clear-icon {
+.ng-dropdown .ng-dropdown-clear-icon {
     color: lighten($inputTextColor, 40%);
 }
 
-.ui-dropdown:not(.ui-state-disabled):hover {
+.ng-dropdown:not(.ng-state-disabled):hover {
     @include hover-element();
 }
 
-.ui-dropdown-panel .ui-dropdown-item:not(.ui-state-highlight):not(.ui-state-disabled):hover {
+.ng-dropdown-panel .ng-dropdown-item:not(.ng-state-highlight):not(.ng-state-disabled):hover {
     @include hover-element();
 }
 
-.ui-listbox {
-    .ui-listbox-header {
-        .ui-listbox-filter-container {
+.ng-listbox {
+    .ng-listbox-header {
+        .ng-listbox-filter-container {
             .fa {
                 color: $inputTextColor;
             }
         }
     }
 
-    &:not(.ui-state-disabled) {
-        .ui-listbox-item:not(.ui-state-highlight):not(.ui-state-disabled):hover {
+    &:not(.ng-state-disabled) {
+        .ng-listbox-item:not(.ng-state-highlight):not(.ng-state-disabled):hover {
             @include hover-element();
         }
 
-        .ui-listbox-item.ui-state-disabled .ui-chkbox-box:hover {
+        .ng-listbox-item.ng-state-disabled .ng-chkbox-box:hover {
             background-color: $inputBgColor;
             border-color: $stateDefaultBorderColor;
         }
     }
 
-    &.ui-state-disabled {
-        .ui-chkbox-box:not(.ui-state-active):hover {
+    &.ng-state-disabled {
+        .ng-chkbox-box:not(.ng-state-active):hover {
             border-color: $stateDefaultBorderColor;
             background-color: $stateDefaultBgColor;
             color: $stateDefaultTextColor;
@@ -275,69 +275,69 @@
     }
 }
 
-.ui-multiselect:not(.ui-state-disabled):hover {
+.ng-multiselect:not(.ng-state-disabled):hover {
     @include hover-element();
 }
 
-.ui-multiselect-panel .ui-multiselect-item:not(.ui-state-highlight):not(.ui-state-disabled):hover {
+.ng-multiselect-panel .ng-multiselect-item:not(.ng-state-highlight):not(.ng-state-disabled):hover {
     @include hover-element();
 }
 
-.ui-multiselect-panel .ui-multiselect-item.ui-state-disabled:hover .ui-chkbox-box {
+.ng-multiselect-panel .ng-multiselect-item.ng-state-disabled:hover .ng-chkbox-box {
     background-color: $inputBgColor;
     border-color: $stateDefaultBorderColor;
 }
 
-.ui-multiselect-panel .ui-multiselect-close {
+.ng-multiselect-panel .ng-multiselect-close {
     color: $headerIconTextColor;
 }
 
-.ui-multiselect-panel .ui-multiselect-filter-container .fa {
+.ng-multiselect-panel .ng-multiselect-filter-container .fa {
     color: $inputTextColor;
 }
 
-.ui-spinner:not(.ui-state-disabled) .ui-spinner-button:enabled:hover {
+.ng-spinner:not(.ng-state-disabled) .ng-spinner-button:enabled:hover {
     @include hover-element();
 }
 
-.ui-spinner:not(.ui-state-disabled) .ui-spinner-button:enabled:active {
+.ng-spinner:not(.ng-state-disabled) .ng-spinner-button:enabled:active {
     border-color: $stateActiveBorderColor;
     background-color: $stateActiveBgColor;
     color: $stateActiveTextColor;
 }
 
-.ui-selectbutton .ui-button:not(.ui-state-disabled):not(.ui-state-active):hover {
+.ng-selectbutton .ng-button:not(.ng-state-disabled):not(.ng-state-active):hover {
     @include hover-element();
 }
 
-.ui-togglebutton:not(.ui-state-disabled):not(.ui-state-active):hover {
+.ng-togglebutton:not(.ng-state-disabled):not(.ng-state-active):hover {
     @include hover-element();
 }
 
-.ui-paginator a:not(.ui-state-disabled):not(.ui-state-active):hover {
+.ng-paginator a:not(.ng-state-disabled):not(.ng-state-active):hover {
     @include hover-element();
 }
 
-.ui-paginator a {
+.ng-paginator a {
     color: $stateDefaultTextColor;
 }
 
-.ui-datatable {
-    .ui-rowgroup-header a {
+.ng-datatable {
+    .ng-rowgroup-header a {
         color: $headerTextColor;
     }
 
-    .ui-sortable-column:not(.ui-state-active):hover {
+    .ng-sortable-column:not(.ng-state-active):hover {
         background-color: $stateHoverBgColor;
         color: $stateHoverTextColor;
     }
 
-    .ui-row-toggler {
+    .ng-row-toggler {
         color: $contentTextColor;
     }
 
-    tbody.ui-datatable-hoverable-rows {
-        > tr.ui-widget-content:not(.ui-state-highlight):hover {
+    tbody.ng-datatable-hoverable-rows {
+        > tr.ng-widget-content:not(.ng-state-highlight):hover {
             cursor: pointer;
             background-color: $stateHoverBgColor;
             color: $stateHoverTextColor;
@@ -345,18 +345,18 @@
     }
 }
 
-.ui-orderlist {
-    .ui-orderlist-item:not(.ui-state-highlight):hover {
+.ng-orderlist {
+    .ng-orderlist-item:not(.ng-state-highlight):hover {
         @include hover-element();
     }
 }
 
-.ui-picklist {
-    .ui-picklist-item:not(.ui-state-disabled):not(.ui-state-highlight):hover {
+.ng-picklist {
+    .ng-picklist-item:not(.ng-state-disabled):not(.ng-state-highlight):hover {
         @include hover-element();
     }
 
-    .ui-picklist-droppoint-highlight {
+    .ng-picklist-droppoint-highlight {
         border-color: $stateHighlightBorderColor;
         background-color: $stateHighlightBgColor;
         color: darken($contentTextColor,1%);
@@ -366,7 +366,7 @@
         }
     }
 
-    .ui-picklist-highlight {
+    .ng-picklist-highlight {
         border-color: $stateHighlightBorderColor;
         color: darken($contentTextColor,1%);
 
@@ -376,80 +376,80 @@
     }
 }
 
-.ui-tree {
-    &.ui-treenode-dragover {
+.ng-tree {
+    &.ng-treenode-dragover {
         border-color: $stateHighlightBorderColor;
     }
 
-    .ui-treenode-content {
-        &.ui-treenode-selectable {
-            .ui-treenode-label:not(.ui-state-highlight):hover {
+    .ng-treenode-content {
+        &.ng-treenode-selectable {
+            .ng-treenode-label:not(.ng-state-highlight):hover {
                 @include hover-element();
             }
         }
 
-        &.ui-treenode-dragover {
+        &.ng-treenode-dragover {
             background-color: $stateActiveBgColor;
             color: $stateActiveTextColor;
         }
     }
 
-    &.ui-tree-horizontal {
-        .ui-treenode-content.ui-treenode-selectable {
-            .ui-treenode-label:not(.ui-state-highlight):hover {
+    &.ng-tree-horizontal {
+        .ng-treenode-content.ng-treenode-selectable {
+            .ng-treenode-label:not(.ng-state-highlight):hover {
                 background-color: inherit;
                 color: inherit;
             }
 
-            &:not(.ui-state-highlight):hover {
+            &:not(.ng-state-highlight):hover {
                 @include hover-element();
             }
         }
     }
 }
 
-.ui-organizationchart {
-    .ui-organizationchart-node-content {
-        &.ui-organizationchart-selectable-node:not(.ui-state-highlight):hover {
+.ng-organizationchart {
+    .ng-organizationchart-node-content {
+        &.ng-organizationchart-selectable-node:not(.ng-state-highlight):hover {
             @include hover-element();
         }
     }
 }
 
-.ui-accordion {
-    .ui-accordion-header:not(.ui-state-active):not(.ui-state-disabled):hover {
+.ng-accordion {
+    .ng-accordion-header:not(.ng-state-active):not(.ng-state-disabled):hover {
         @include hover-element();
     }
 }
 
-.ui-fieldset {
-    &.ui-fieldset-toggleable {
-        .ui-fieldset-legend:hover {
+.ng-fieldset {
+    &.ng-fieldset-toggleable {
+        .ng-fieldset-legend:hover {
             @include hover-element();
         }
     }
 }
 
-.ui-panel {
-    .ui-panel-titlebar {
-        .ui-panel-titlebar-icon:hover {
+.ng-panel {
+    .ng-panel-titlebar {
+        .ng-panel-titlebar-icon:hover {
             @include hover-element();
         }
     }
 }
 
-.ui-tabview {
-    .ui-tabview-nav {
+.ng-tabview {
+    .ng-tabview-nav {
         li {
-            &:not(.ui-state-active):not(.ui-state-disabled):hover {
+            &:not(.ng-state-active):not(.ng-state-disabled):hover {
                 @include hover-element();
             }
         }
     }
 }
 
-.ui-dialog {
-    .ui-dialog-titlebar-icon {
+.ng-dialog {
+    .ng-dialog-titlebar-icon {
         color: $headerTextColor;
 
         &:hover {
@@ -458,8 +458,8 @@
     }
 }
 
-.ui-sidebar {
-    .ui-sidebar-close {
+.ng-sidebar {
+    .ng-sidebar-close {
         color: $headerTextColor;
 
         &:hover {
@@ -468,26 +468,26 @@
     }
 }
 
-.ui-overlaypanel {
-    .ui-overlaypanel-close:hover {
+.ng-overlaypanel {
+    .ng-overlaypanel-close:hover {
         @include hover-element();
     }
 }
 
-.ui-inplace {
-    .ui-inplace-display:hover {
+.ng-inplace {
+    .ng-inplace-display:hover {
         @include hover-element();
     }
 }
 
-.ui-breadcrumb {
+.ng-breadcrumb {
     a {
         color: $headerTextColor;
     }
 }
 
-.ui-menuitem {
-    .ui-menuitem-link {
+.ng-menuitem {
+    .ng-menuitem-link {
         color: $contentTextColor;
 
         &:hover {
@@ -496,31 +496,31 @@
         }
     }
 
-    &.ui-menuitem-active {
-        > .ui-menuitem-link {
+    &.ng-menuitem-active {
+        > .ng-menuitem-link {
             @include hover-element();
             border-color: transparent;
         }
     }
 }
 
-.ui-tabmenu {
-    .ui-tabmenu-nav {
-        li:not(.ui-state-active):hover {
+.ng-tabmenu {
+    .ng-tabmenu-nav {
+        li:not(.ng-state-active):hover {
             @include hover-element();
         }
     }
 }
 
-.ui-steps {
-    .ui-steps-item:not(.ui-state-highlight):not(.ui-state-disabled):hover {
+.ng-steps {
+    .ng-steps-item:not(.ng-state-highlight):not(.ng-state-disabled):hover {
         @include hover-element();
     }
 }
 
-.ui-panelmenu {
-    .ui-panelmenu-header {
-        &:not(.ui-state-active):hover {
+.ng-panelmenu {
+    .ng-panelmenu-header {
+        &:not(.ng-state-active):hover {
             @include hover-element();
             border-color: $stateDefaultBorderColor;
 
@@ -529,15 +529,15 @@
             }
         }
 
-        &.ui-state-active {
+        &.ng-state-active {
             a {
                 color: $stateActiveTextColor;
             }
         }
     }
 
-    .ui-panelmenu-content {
-        .ui-menuitem-link {
+    .ng-panelmenu-content {
+        .ng-menuitem-link {
             color: $contentTextColor;
 
             &:hover {
@@ -548,8 +548,8 @@
     }
 }
 
-.ui-datepicker {
-    .ui-datepicker-header {
+.ng-datepicker {
+    .ng-datepicker-header {
         a {
             color: $headerTextColor;
 
@@ -559,16 +559,16 @@
         }
     }
 
-    .ui-datepicker-calendar {
-        td:not(.ui-state-disabled) {
+    .ng-datepicker-calendar {
+        td:not(.ng-state-disabled) {
             a:hover {
                 @include hover-element();
             }
         }
     }
 
-    .ui-monthpicker {
-        .ui-monthpicker-month:hover {
+    .ng-monthpicker {
+        .ng-monthpicker-month:hover {
             @include hover-element();
         }
     }
@@ -577,14 +577,14 @@
 .fc {
     .fc-toolbar {
         .fc-prev-button {
-            .ui-icon-circle-triangle-w {
+            .ng-icon-circle-triangle-w {
                 margin-top: .3em;
                 @include icon_override("\e900");
             }
         }
 
         .fc-next-button {
-            .ui-icon-circle-triangle-e {
+            .ng-icon-circle-triangle-e {
                 margin-top: .3em;
                 @include icon_override("\e901");
             }
@@ -592,44 +592,44 @@
     }
 }
 
-.ui-rating {
+.ng-rating {
     a {
         color: $inputTextColor;
     }
 }
 
-.ui-organizationchart {
-    .ui-organizationchart-line-down {
+.ng-organizationchart {
+    .ng-organizationchart-line-down {
         background-color: darken($contentBorderColor, 10%);
     }
 
-    .ui-organizationchart-line-left {
+    .ng-organizationchart-line-left {
         border-right: 1px solid darken($contentBorderColor, 10%);
     }
 
-    .ui-organizationchart-line-top {
+    .ng-organizationchart-line-top {
         border-top: 1px solid darken($contentBorderColor, 10%);
     }
 
-    .ui-organizationchart-node-content {
+    .ng-organizationchart-node-content {
         border-color: darken($contentBorderColor, 10%);
     }
 
-    .ui-organizationchart-node-content .ui-node-toggler {
+    .ng-organizationchart-node-content .ng-node-toggler {
         color: darken($contentBorderColor, 10%);
     }
 }
 
 /* TurboTable */
-.ui-table {
-    .ui-table-thead > tr > th,
-    .ui-table-tfoot > tr > td {
+.ng-table {
+    .ng-table-thead > tr > th,
+    .ng-table-tfoot > tr > td {
         background-color: $headerBgColor;
         border: 1px solid $headerBorderColor;
         color: $headerTextColor;
     }
 
-    .ui-table-tbody > tr {
+    .ng-table-tbody > tr {
         background-color: $contentBgColor;
         color: $contentTextColor;
 
@@ -638,43 +638,43 @@
             background-color: inherit;
         }
 
-        &.ui-state-highlight {
+        &.ng-state-highlight {
             background-color: $stateHighlightBgColor;
             color: $stateHighlightTextColor;
         }
 
-        &.ui-contextmenu-selected {
+        &.ng-contextmenu-selected {
             background-color: lighten($stateHighlightBgColor, 20%);
             color: $stateHighlightTextColor;
         }
     }
 
-    .ui-sortable-column {
-        .ui-sortable-column-icon {
+    .ng-sortable-column {
+        .ng-sortable-column-icon {
             color: $headerTextColor;
         }
 
-        &.ui-state-highlight {
+        &.ng-state-highlight {
             background-color: $stateHighlightBgColor;
             color: $stateHighlightTextColor;
 
-            .ui-sortable-column-icon {
+            .ng-sortable-column-icon {
                 color: $stateHighlightTextColor;
             }
         }
 
-        &:not(.ui-state-highlight):hover {
+        &:not(.ng-state-highlight):hover {
             background-color: $stateHoverBgColor;
             color: $stateHoverTextColor;
 
-            .ui-sortable-column-icon {
+            .ng-sortable-column-icon {
                 color: $stateHoverTextColor;
             }
         }
     }
 
-    &.ui-table-hoverable-rows {
-        .ui-table-tbody > tr:not(.ui-state-highlight):not(.ui-contextmenu-selected):hover {
+    &.ng-table-hoverable-rows {
+        .ng-table-tbody > tr:not(.ng-state-highlight):not(.ng-contextmenu-selected):hover {
             cursor: pointer;
             background-color: $stateHoverBgColor;
             color: $stateHoverTextColor;
@@ -683,31 +683,31 @@
 }
 
 @media ( max-width: 35em ) {
-    .ui-table-responsive .ui-table-tbody > tr {
+    .ng-table-responsive .ng-table-tbody > tr {
         border-top: 1px solid $contentBorderColor;
         border-bottom: 1px solid $contentBorderColor;
     }
 }
 
 /* Row Reorder */
-.ui-table .ui-table-tbody > tr.ui-table-dragpoint-top > td {
+.ng-table .ng-table-tbody > tr.ng-table-dragpoint-top > td {
     box-shadow: inset 0 2px 0 0 $stateHighlightBgColor;
 }
 
-.ui-table .ui-table-tbody > tr.ui-table-dragpoint-bottom > td {
+.ng-table .ng-table-tbody > tr.ng-table-dragpoint-bottom > td {
     box-shadow: inset 0 -2px 0 0 $stateHighlightBgColor;
 }
 
 /* TurboTable */
-.ui-treetable {
-    .ui-treetable-thead > tr > th,
-    .ui-treetable-tfoot > tr > td {
+.ng-treetable {
+    .ng-treetable-thead > tr > th,
+    .ng-treetable-tfoot > tr > td {
         background-color: $headerBgColor;
         border: 1px solid $headerBorderColor;
         color: $headerTextColor;
     }
 
-    .ui-treetable-tbody > tr {
+    .ng-treetable-tbody > tr {
         background-color: $contentBgColor;
         color: $contentTextColor;
 
@@ -716,55 +716,55 @@
             background-color: inherit;
         }
 
-        &.ui-state-highlight {
+        &.ng-state-highlight {
             background-color: $stateHighlightBgColor;
             color: $stateHighlightTextColor;
 
-            .ui-treetable-toggler {
+            .ng-treetable-toggler {
                 color: $stateHighlightTextColor;
             }
         }
 
-        &.ui-contextmenu-selected {
+        &.ng-contextmenu-selected {
             background-color: lighten($stateHighlightBgColor, 20%);
             color: $stateHighlightTextColor;
 
-            .ui-treetable-toggler {
+            .ng-treetable-toggler {
                 color: $stateHighlightTextColor;
             }
         }
 
-        .ui-treetable-toggler {
+        .ng-treetable-toggler {
             color: $contentTextColor;
         }
     }
 
-    .ui-sortable-column {
-        .ui-sortable-column-icon {
+    .ng-sortable-column {
+        .ng-sortable-column-icon {
             color: $headerTextColor;
         }
 
-        &.ui-state-highlight {
+        &.ng-state-highlight {
             background-color: $stateHighlightBgColor;
             color: $stateHighlightTextColor;
 
-            .ui-sortable-column-icon {
+            .ng-sortable-column-icon {
                 color: $stateHighlightTextColor;
             }
         }
 
-        &:not(.ui-state-highlight):hover {
+        &:not(.ng-state-highlight):hover {
             background-color: $stateHoverBgColor;
             color: $stateHoverTextColor;
 
-            .ui-sortable-column-icon {
+            .ng-sortable-column-icon {
                 color: $stateHoverTextColor;
             }
         }
     }
 
-    &.ui-treetable-hoverable-rows {
-        .ui-treetable-tbody > tr:not(.ui-state-highlight):not(.ui-contextmenu-selected):hover {
+    &.ng-treetable-hoverable-rows {
+        .ng-treetable-tbody > tr:not(.ng-state-highlight):not(.ng-contextmenu-selected):hover {
             cursor: pointer;
             background-color: $stateHoverBgColor;
             color: $stateHoverTextColor;
@@ -773,24 +773,24 @@
 }
 
 @media ( max-width: 35em ) {
-    .ui-treetable-responsive .ui-treetable-tbody > tr {
+    .ng-treetable-responsive .ng-treetable-tbody > tr {
         border-top: 1px solid $contentBorderColor;
         border-bottom: 1px solid $contentBorderColor;
     }
 }
 
 /* Row Reorder */
-.ui-treetable .ui-treetable-tbody > tr.ui-treetable-dragpoint-top > td {
+.ng-treetable .ng-treetable-tbody > tr.ng-treetable-dragpoint-top > td {
     box-shadow: inset 0 2px 0 0 $stateHighlightBgColor;
 }
 
-.ui-treetable .ui-treetable-tbody > tr.ui-treetable-dragpoint-bottom > td {
+.ng-treetable .ng-treetable-tbody > tr.ng-treetable-dragpoint-bottom > td {
     box-shadow: inset 0 -2px 0 0 $stateHighlightBgColor;
 }
 
 /* InputSwitch */
-.ui-inputswitch {
-    .ui-inputswitch-slider {
+.ng-inputswitch {
+    .ng-inputswitch-slider {
         -webkit-transition: background-color .3s, box-shadow .2s;
         transition: background-color .3s, box-shadow .2s;
         background: #cccccc; 
@@ -800,27 +800,27 @@
         }
     }
 
-    &.ui-inputswitch-focus {
-        .ui-inputswitch-slider {
+    &.ng-inputswitch-focus {
+        .ng-inputswitch-slider {
             -moz-box-shadow: 0px 0px 5px $stateFocusBorderColor;
             -webkit-box-shadow: 0px 0px 5px $stateFocusBorderColor;
             box-shadow: 0px 0px 5px $stateFocusBorderColor;
         } 
     }
 
-    &:not(.ui-state-disabled):hover {
-        .ui-inputswitch-slider {
+    &:not(.ng-state-disabled):hover {
+        .ng-inputswitch-slider {
             background-color: #b7b7b7;
         }
     }
 
-    &.ui-inputswitch-checked {
-        .ui-inputswitch-slider {
+    &.ng-inputswitch-checked {
+        .ng-inputswitch-slider {
             background-color: #186ba0;
         }
 
-        &:not(.ui-state-disabled):hover {
-            .ui-inputswitch-slider {
+        &:not(.ng-state-disabled):hover {
+            .ng-inputswitch-slider {
                 background-color: darken(#186ba0, 10%);
             }
         }
@@ -828,30 +828,30 @@
 }
 
 /* Validation */
-.ui-inputtext.ng-dirty.ng-invalid,
-p-dropdown.ng-dirty.ng-invalid > .ui-dropdown,
-p-autocomplete.ng-dirty.ng-invalid > .ui-autocomplete > .ui-inputtext,
-p-calendar.ng-dirty.ng-invalid > .ui-calendar > .ui-inputtext,
-p-chips.ng-dirty.ng-invalid > .ui-inputtext,
-p-inputmask.ng-dirty.ng-invalid > .ui-inputtext,
-p-checkbox.ng-dirty.ng-invalid .ui-chkbox-box,
-p-radiobutton.ng-dirty.ng-invalid .ui-radiobutton-box,
-p-inputswitch.ng-dirty.ng-invalid .ui-inputswitch,
-p-listbox.ng-dirty.ng-invalid .ui-inputtext,
-p-multiselect.ng-dirty.ng-invalid > .ui-multiselect,
-p-spinner.ng-dirty.ng-invalid > .ui-inputtext,
-p-selectbutton.ng-dirty.ng-invalid .ui-button,
-p-togglebutton.ng-dirty.ng-invalid .ui-button {
+.ng-inputtext.ng-dirty.ng-invalid,
+p-dropdown.ng-dirty.ng-invalid > .ng-dropdown,
+p-autocomplete.ng-dirty.ng-invalid > .ng-autocomplete > .ng-inputtext,
+p-calendar.ng-dirty.ng-invalid > .ng-calendar > .ng-inputtext,
+p-chips.ng-dirty.ng-invalid > .ng-inputtext,
+p-inputmask.ng-dirty.ng-invalid > .ng-inputtext,
+p-checkbox.ng-dirty.ng-invalid .ng-chkbox-box,
+p-radiobutton.ng-dirty.ng-invalid .ng-radiobutton-box,
+p-inputswitch.ng-dirty.ng-invalid .ng-inputswitch,
+p-listbox.ng-dirty.ng-invalid .ng-inputtext,
+p-multiselect.ng-dirty.ng-invalid > .ng-multiselect,
+p-spinner.ng-dirty.ng-invalid > .ng-inputtext,
+p-selectbutton.ng-dirty.ng-invalid .ng-button,
+p-togglebutton.ng-dirty.ng-invalid .ng-button {
     border-bottom-color: $invalidInputBorderColor;
 }
 
 /* Cornering */
-.ui-corner-tl { -moz-border-radius-topleft: $borderRadius; -webkit-border-top-left-radius: $borderRadius; border-top-left-radius: $borderRadius; }
-.ui-corner-tr { -moz-border-radius-topright: $borderRadius; -webkit-border-top-right-radius: $borderRadius; border-top-right-radius: $borderRadius; }
-.ui-corner-bl { -moz-border-radius-bottomleft: $borderRadius; -webkit-border-bottom-left-radius: $borderRadius; border-bottom-left-radius: $borderRadius; }
-.ui-corner-br { -moz-border-radius-bottomright: $borderRadius; -webkit-border-bottom-right-radius: $borderRadius; border-bottom-right-radius: $borderRadius; }
-.ui-corner-top { -moz-border-radius-topleft: $borderRadius; -webkit-border-top-left-radius: $borderRadius; border-top-left-radius: $borderRadius; -moz-border-radius-topright: $borderRadius; -webkit-border-top-right-radius: $borderRadius; border-top-right-radius: $borderRadius; }
-.ui-corner-bottom { -moz-border-radius-bottomleft: $borderRadius; -webkit-border-bottom-left-radius: $borderRadius; border-bottom-left-radius: $borderRadius; -moz-border-radius-bottomright: $borderRadius; -webkit-border-bottom-right-radius: $borderRadius; border-bottom-right-radius: $borderRadius; }
-.ui-corner-right {  -moz-border-radius-topright: $borderRadius; -webkit-border-top-right-radius: $borderRadius; border-top-right-radius: $borderRadius; -moz-border-radius-bottomright: $borderRadius; -webkit-border-bottom-right-radius: $borderRadius; border-bottom-right-radius: $borderRadius; }
-.ui-corner-left { -moz-border-radius-topleft: $borderRadius; -webkit-border-top-left-radius: $borderRadius; border-top-left-radius: $borderRadius; -moz-border-radius-bottomleft: $borderRadius; -webkit-border-bottom-left-radius: $borderRadius; border-bottom-left-radius: $borderRadius; }
-.ui-corner-all { -moz-border-radius: $borderRadius; -webkit-border-radius: $borderRadius; border-radius: $borderRadius; }
+.ng-corner-tl { -moz-border-radius-topleft: $borderRadius; -webkit-border-top-left-radius: $borderRadius; border-top-left-radius: $borderRadius; }
+.ng-corner-tr { -moz-border-radius-topright: $borderRadius; -webkit-border-top-right-radius: $borderRadius; border-top-right-radius: $borderRadius; }
+.ng-corner-bl { -moz-border-radius-bottomleft: $borderRadius; -webkit-border-bottom-left-radius: $borderRadius; border-bottom-left-radius: $borderRadius; }
+.ng-corner-br { -moz-border-radius-bottomright: $borderRadius; -webkit-border-bottom-right-radius: $borderRadius; border-bottom-right-radius: $borderRadius; }
+.ng-corner-top { -moz-border-radius-topleft: $borderRadius; -webkit-border-top-left-radius: $borderRadius; border-top-left-radius: $borderRadius; -moz-border-radius-topright: $borderRadius; -webkit-border-top-right-radius: $borderRadius; border-top-right-radius: $borderRadius; }
+.ng-corner-bottom { -moz-border-radius-bottomleft: $borderRadius; -webkit-border-bottom-left-radius: $borderRadius; border-bottom-left-radius: $borderRadius; -moz-border-radius-bottomright: $borderRadius; -webkit-border-bottom-right-radius: $borderRadius; border-bottom-right-radius: $borderRadius; }
+.ng-corner-right {  -moz-border-radius-topright: $borderRadius; -webkit-border-top-right-radius: $borderRadius; border-top-right-radius: $borderRadius; -moz-border-radius-bottomright: $borderRadius; -webkit-border-bottom-right-radius: $borderRadius; border-bottom-right-radius: $borderRadius; }
+.ng-corner-left { -moz-border-radius-topleft: $borderRadius; -webkit-border-top-left-radius: $borderRadius; border-top-left-radius: $borderRadius; -moz-border-radius-bottomleft: $borderRadius; -webkit-border-bottom-left-radius: $borderRadius; border-bottom-left-radius: $borderRadius; }
+.ng-corner-all { -moz-border-radius: $borderRadius; -webkit-border-radius: $borderRadius; border-radius: $borderRadius; }

@@ -1,10 +1,10 @@
 /** TabMenu **/
-.ui-tabmenu .ui-tabmenu-nav { 
+.ng-tabmenu .ng-tabmenu-nav { 
     margin: 0;
     padding: .25em .5em 0 .25em; 
 }
 
-.ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem { 
+.ng-tabmenu .ng-tabmenu-nav .ng-tabmenuitem { 
     list-style: none; 
     float: left; 
     position: relative; 
@@ -16,25 +16,25 @@
     top: 1px; 
 }
 
-.ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem a { 
+.ng-tabmenu .ng-tabmenu-nav .ng-tabmenuitem a { 
     float: left; 
     padding: 0.5em 1em;
     text-decoration: none; 
 }
 
-.ui-tabmenu .ui-tabmenu-nav a { 
+.ng-tabmenu .ng-tabmenu-nav a { 
     padding: 0.5em 1em;
 }
 
-.ui-tabmenu .ui-menuitem-icon  { 
+.ng-tabmenu .ng-menuitem-icon  { 
     margin-right: .25em;
     vertical-align: middle;
 }
 
-.ui-tabmenu .ui-menuitem-text  { 
+.ng-tabmenu .ng-menuitem-text  { 
     vertical-align: middle;
 }
 
-.ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem.ui-state-disabled a {
+.ng-tabmenu .ng-tabmenu-nav .ng-tabmenuitem.ng-state-disabled a {
      cursor: default;
 } 

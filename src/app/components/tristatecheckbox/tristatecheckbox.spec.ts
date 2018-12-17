@@ -35,15 +35,15 @@ describe('TriStateCheckbox', () => {
       fixture.detectChanges();
 
       const toggleSpy = spyOn(tristate, 'toggle').and.callThrough();
-      const helperInputEl = fixture.debugElement.query(By.css('.ui-helper-hidden-accessible')).children[0].nativeElement;
-      const checkBoxEl = fixture.debugElement.query(By.css('.ui-chkbox-box')).nativeElement;
+      const helperInputEl = fixture.debugElement.query(By.css('.ng-helper-hidden-accessible')).children[0].nativeElement;
+      const checkBoxEl = fixture.debugElement.query(By.css('.ng-chkbox-box')).nativeElement;
       const labelEl = fixture.debugElement.query(By.css('label')).nativeElement;
       checkBoxEl.click();
       fixture.detectChanges();
 
       expect(helperInputEl.disabled).toEqual(true);
-      expect(checkBoxEl.className).toContain("ui-state-disabled");
-      expect(labelEl.className).toContain("ui-label-disabled");
+      expect(checkBoxEl.className).toContain("ng-state-disabled");
+      expect(labelEl.className).toContain("ng-label-disabled");
       expect(toggleSpy).not.toHaveBeenCalled();
     });
 
@@ -87,7 +87,7 @@ describe('TriStateCheckbox', () => {
       let value;
       tristate.onChange.subscribe(data => value = data);
       const onClickSpy = spyOn(tristate, 'onClick').and.callThrough();
-      const checkBoxEl = fixture.debugElement.query(By.css('.ui-chkbox-box')).nativeElement;
+      const checkBoxEl = fixture.debugElement.query(By.css('.ng-chkbox-box')).nativeElement;
       const checkBoxIconEl = fixture.debugElement.query(By.css('span')).nativeElement;
       const labeEl = fixture.debugElement.query(By.css('label')).nativeElement;
       checkBoxEl.click();
@@ -95,9 +95,9 @@ describe('TriStateCheckbox', () => {
 
       expect(tristate.value).toEqual(true);
       expect(value.value).toEqual(tristate.value);
-      expect(checkBoxEl.className).toContain("ui-state-active");
+      expect(checkBoxEl.className).toContain("ng-state-active");
       expect(checkBoxIconEl.className).toContain("pi-check");
-      expect(labeEl.className).toContain("ui-label-active");
+      expect(labeEl.className).toContain("ng-label-active");
       expect(onClickSpy).toHaveBeenCalled();
     });
 
@@ -108,7 +108,7 @@ describe('TriStateCheckbox', () => {
       let value;
       tristate.onChange.subscribe(data => value = data);
       const onClickSpy = spyOn(tristate, 'onClick').and.callThrough();
-      const checkBoxEl = fixture.debugElement.query(By.css('.ui-chkbox-box')).nativeElement;
+      const checkBoxEl = fixture.debugElement.query(By.css('.ng-chkbox-box')).nativeElement;
       const checkBoxIconEl = fixture.debugElement.query(By.css('span')).nativeElement;
       const labeEl = fixture.debugElement.query(By.css('label')).nativeElement;
       labeEl.click();
@@ -116,9 +116,9 @@ describe('TriStateCheckbox', () => {
 
       expect(tristate.value).toEqual(true);
       expect(value.value).toEqual(tristate.value);
-      expect(checkBoxEl.className).toContain("ui-state-active");
+      expect(checkBoxEl.className).toContain("ng-state-active");
       expect(checkBoxIconEl.className).toContain("pi-check");
-      expect(labeEl.className).toContain("ui-label-active");
+      expect(labeEl.className).toContain("ng-label-active");
       expect(onClickSpy).toHaveBeenCalled();
     });
 
@@ -129,7 +129,7 @@ describe('TriStateCheckbox', () => {
       let value;
       tristate.onChange.subscribe(data => value = data);
       const onClickSpy = spyOn(tristate, 'onClick').and.callThrough();
-      const checkBoxEl = fixture.debugElement.query(By.css('.ui-chkbox-box')).nativeElement;
+      const checkBoxEl = fixture.debugElement.query(By.css('.ng-chkbox-box')).nativeElement;
       const checkBoxIconEl = fixture.debugElement.query(By.css('span')).nativeElement;
       const labeEl = fixture.debugElement.query(By.css('label')).nativeElement;
       checkBoxEl.click();
@@ -138,9 +138,9 @@ describe('TriStateCheckbox', () => {
 
       expect(tristate.value).toEqual(false);
       expect(value.value).toEqual(tristate.value);
-      expect(checkBoxEl.className).toContain("ui-state-active");
+      expect(checkBoxEl.className).toContain("ng-state-active");
       expect(checkBoxIconEl.className).toContain("pi-times");
-      expect(labeEl.className).toContain("ui-label-active");
+      expect(labeEl.className).toContain("ng-label-active");
       expect(onClickSpy).toHaveBeenCalledTimes(2);
     });
 
@@ -151,7 +151,7 @@ describe('TriStateCheckbox', () => {
       let value;
       tristate.onChange.subscribe(data => value = data);
       const onClickSpy = spyOn(tristate, 'onClick').and.callThrough();
-      const checkBoxEl = fixture.debugElement.query(By.css('.ui-chkbox-box')).nativeElement;
+      const checkBoxEl = fixture.debugElement.query(By.css('.ng-chkbox-box')).nativeElement;
       const checkBoxIconEl = fixture.debugElement.query(By.css('span')).nativeElement;
       const labeEl = fixture.debugElement.query(By.css('label')).nativeElement;
       checkBoxEl.click();
@@ -161,9 +161,9 @@ describe('TriStateCheckbox', () => {
 
       expect(tristate.value).toEqual(null);
       expect(value.value).toEqual(tristate.value);
-      expect(checkBoxEl.className).not.toContain("ui-state-active");
-      expect(checkBoxIconEl.className).toEqual("ui-chkbox-icon pi ui-clickable");
-      expect(labeEl.className).not.toContain("ui-label-active");
+      expect(checkBoxEl.className).not.toContain("ng-state-active");
+      expect(checkBoxIconEl.className).toEqual("ng-chkbox-icon pi ng-clickable");
+      expect(labeEl.className).not.toContain("ng-label-active");
       expect(onClickSpy).toHaveBeenCalledTimes(3);
     });
 
@@ -176,17 +176,17 @@ describe('TriStateCheckbox', () => {
       const onFocusSpy = spyOn(tristate, 'onFocus').and.callThrough();
       const onBlurSpy = spyOn(tristate, 'onBlur').and.callThrough();
       const inputEl = fixture.debugElement.query(By.css('input'));
-      const checkBoxEl = fixture.debugElement.query(By.css('.ui-chkbox-box'));
+      const checkBoxEl = fixture.debugElement.query(By.css('.ng-chkbox-box'));
       inputEl.nativeElement.dispatchEvent(new Event('focus'));
       fixture.detectChanges();
 
       expect(onFocusSpy).toHaveBeenCalled();
-      expect(checkBoxEl.nativeElement.className).toContain("ui-state-focus");
+      expect(checkBoxEl.nativeElement.className).toContain("ng-state-focus");
       inputEl.nativeElement.dispatchEvent(new Event('blur'));
       fixture.detectChanges();
 
       expect(onBlurSpy).toHaveBeenCalled();
-      expect(checkBoxEl.nativeElement.className).not.toContain("ui-state-focus");
+      expect(checkBoxEl.nativeElement.className).not.toContain("ng-state-focus");
     });
 
     it('should call onKeydown', () => {

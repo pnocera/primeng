@@ -1,16 +1,16 @@
-.ui-colorpicker {
+.ng-colorpicker {
     display: inline-block;
 } 
 
-.ui-colorpicker-dragging {
+.ng-colorpicker-dragging {
     cursor: pointer;
 } 
 
-.ui-colorpicker-overlay {
+.ng-colorpicker-overlay {
     position: relative;
 } 
 
-.ui-colorpicker-panel {
+.ng-colorpicker-panel {
     position: relative;
     width: 193px;
     height: 166px;
@@ -18,20 +18,20 @@
     border-color: #191919;
 }
 
-.ui-colorpicker-overlay-panel {
+.ng-colorpicker-overlay-panel {
     position: absolute;
 } 
 
-.ui-colorpicker-preview {
+.ng-colorpicker-preview {
     width: 2em;
     cursor: pointer;
 }
 
-.ui-colorpicker-panel .ui-colorpicker-content {
+.ng-colorpicker-panel .ng-colorpicker-content {
     position: relative;
 }
 
-.ui-colorpicker-panel .ui-colorpicker-color-selector {
+.ng-colorpicker-panel .ng-colorpicker-color-selector {
     width: 150px;
     height: 150px;
     top: 8px;
@@ -39,13 +39,13 @@
     position: absolute;
 }
 
-.ui-colorpicker-panel .ui-colorpicker-color {
+.ng-colorpicker-panel .ng-colorpicker-color {
      width: 150px;
      height: 150px;
      background: transparent url("./images/color.png") no-repeat left top; 
 }
 
-.ui-colorpicker-panel .ui-colorpicker-color-handle {
+.ng-colorpicker-panel .ng-colorpicker-color-handle {
      position: absolute;
      top: 0px;
      left: 150px;
@@ -57,7 +57,7 @@
      cursor: pointer;
 }
 
-.ui-colorpicker-panel .ui-colorpicker-hue {
+.ng-colorpicker-panel .ng-colorpicker-hue {
     background: transparent url("./images/hue.png") no-repeat left top; 
     width: 17px;
     height: 150px;
@@ -67,7 +67,7 @@
     opacity: .85;
 }
 
-.ui-colorpicker-panel .ui-colorpicker-hue-handle {
+.ng-colorpicker-panel .ng-colorpicker-hue-handle {
      position: absolute;
      top: 150px;
      left: 0px;
@@ -80,7 +80,7 @@
      cursor: pointer;
  }
  
- .ui-colorpicker-panel.ui-state-disabled .ui-colorpicker-hue-handle,
- .ui-colorpicker-panel.ui-state-disabled .ui-colorpicker-color-handle  {
+ .ng-colorpicker-panel.ng-state-disabled .ng-colorpicker-hue-handle,
+ .ng-colorpicker-panel.ng-state-disabled .ng-colorpicker-color-handle  {
       opacity: .5;
  }

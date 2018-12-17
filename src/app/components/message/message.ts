@@ -4,13 +4,13 @@ import {CommonModule} from '@angular/common';
 @Component({
     selector: 'p-message',
     template: `
-        <div aria-live="polite" class="ui-message ui-widget ui-corner-all" *ngIf="severity"
-        [ngClass]="{'ui-message-info': (severity === 'info'),
-                'ui-message-warn': (severity === 'warn'),
-                'ui-message-error': (severity === 'error'),
-                'ui-message-success': (severity === 'success')}">
-            <span class="ui-message-icon" [ngClass]="icon"></span>
-            <span class="ui-message-text" [innerHTML]="text"></span>
+        <div aria-live="polite" class="ng-message ng-widget ng-corner-all" *ngIf="severity"
+        [ngClass]="{'ng-message-info': (severity === 'info'),
+                'ng-message-warn': (severity === 'warn'),
+                'ng-message-error': (severity === 'error'),
+                'ng-message-success': (severity === 'success')}">
+            <span class="ng-message-icon" [ngClass]="icon"></span>
+            <span class="ng-message-text" [innerHTML]="text"></span>
         </div>
     `
 })

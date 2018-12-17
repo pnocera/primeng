@@ -13,9 +13,9 @@ import {BlockableUI} from '../common/blockableui';
 @Component({
     selector: 'p-fileUpload',
     template: `
-        <div [ngClass]="'ui-fileupload ui-widget'" [ngStyle]="style" [class]="styleClass" *ngIf="mode === 'advanced'">
-            <div class="ui-fileupload-buttonbar ui-widget-header ui-corner-top">
-                <span class="ui-fileupload-choose" [label]="chooseLabel" icon="pi pi-plus" pButton [ngClass]="{'ui-state-focus': focus, 'ui-state-disabled':disabled}"> 
+        <div [ngClass]="'ng-fileupload ng-widget'" [ngStyle]="style" [class]="styleClass" *ngIf="mode === 'advanced'">
+            <div class="ng-fileupload-buttonbar ng-widget-header ng-corner-top">
+                <span class="ng-fileupload-choose" [label]="chooseLabel" icon="pi pi-plus" pButton [ngClass]="{'ng-state-focus': focus, 'ng-state-disabled':disabled}"> 
                     <input #advancedfileinput type="file" (change)="onFileSelect($event)" [multiple]="multiple" [accept]="accept" [disabled]="disabled" (focus)="onFocus()" (blur)="onBlur()">
                 </span>
 
@@ -24,15 +24,15 @@ import {BlockableUI} from '../common/blockableui';
             
                 <ng-container *ngTemplateOutlet="toolbarTemplate"></ng-container>
             </div>
-            <div #content [ngClass]="{'ui-fileupload-content ui-widget-content ui-corner-bottom':true}" 
+            <div #content [ngClass]="{'ng-fileupload-content ng-widget-content ng-corner-bottom':true}" 
                 (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
                 <p-progressBar [value]="progress" [showValue]="false" *ngIf="hasFiles()"></p-progressBar>
                 
                 <p-messages [value]="msgs" [enableService]="false"></p-messages>
                 
-                <div class="ui-fileupload-files" *ngIf="hasFiles()">
+                <div class="ng-fileupload-files" *ngIf="hasFiles()">
                     <div *ngIf="!fileTemplate">
-                        <div class="ui-fileupload-row" *ngFor="let file of files; let i = index;">
+                        <div class="ng-fileupload-row" *ngFor="let file of files; let i = index;">
                             <div><img [src]="file.objectURL" *ngIf="isImage(file)" [width]="previewWidth" /></div>
                             <div>{{file.name}}</div>
                             <div>{{formatSize(file.size)}}</div>
@@ -46,11 +46,11 @@ import {BlockableUI} from '../common/blockableui';
                 <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
             </div>
         </div>
-        <span *ngIf="mode === 'basic'" [ngClass]="{'ui-button ui-fileupload-choose ui-widget ui-state-default ui-corner-all ui-button-text-icon-left': true, 
-                'ui-fileupload-choose-selected': hasFiles(),'ui-state-focus': focus, 'ui-state-disabled':disabled}"
+        <span *ngIf="mode === 'basic'" [ngClass]="{'ng-button ng-fileupload-choose ng-widget ng-state-default ng-corner-all ng-button-text-icon-left': true, 
+                'ng-fileupload-choose-selected': hasFiles(),'ng-state-focus': focus, 'ng-state-disabled':disabled}"
                 [ngStyle]="style" [class]="styleClass" (mouseup)="onSimpleUploaderClick($event)">
-            <span class="ui-button-icon-left pi" [ngClass]="{'pi-plus': !hasFiles()||auto, 'pi-upload': hasFiles()&&!auto}"></span>
-            <span class="ui-button-text ui-clickable">{{auto ? chooseLabel : hasFiles() ? files[0].name : chooseLabel}}</span>
+            <span class="ng-button-icon-left pi" [ngClass]="{'pi-plus': !hasFiles()||auto, 'pi-upload': hasFiles()&&!auto}"></span>
+            <span class="ng-button-text ng-clickable">{{auto ? chooseLabel : hasFiles() ? files[0].name : chooseLabel}}</span>
             <input #basicfileinput type="file" [accept]="accept" [multiple]="multiple" [disabled]="disabled"
                 (change)="onFileSelect($event)" *ngIf="!hasFiles()" (focus)="onFocus()" (blur)="onBlur()">
         </span>
@@ -390,7 +390,7 @@ export class FileUpload implements OnInit,AfterViewInit,AfterContentInit,OnDestr
 
     onDragOver(e) {
         if(!this.disabled) {
-            this.domHandler.addClass(this.content.nativeElement, 'ui-fileupload-highlight');
+            this.domHandler.addClass(this.content.nativeElement, 'ng-fileupload-highlight');
             this.dragHighlight = true;
             e.stopPropagation();
             e.preventDefault();
@@ -399,13 +399,13 @@ export class FileUpload implements OnInit,AfterViewInit,AfterContentInit,OnDestr
 
     onDragLeave(event) {
         if(!this.disabled) {
-            this.domHandler.removeClass(this.content.nativeElement, 'ui-fileupload-highlight');
+            this.domHandler.removeClass(this.content.nativeElement, 'ng-fileupload-highlight');
         }
     }
 
     onDrop(event) {
         if(!this.disabled) {
-            this.domHandler.removeClass(this.content.nativeElement, 'ui-fileupload-highlight');
+            this.domHandler.removeClass(this.content.nativeElement, 'ng-fileupload-highlight');
             event.stopPropagation();
             event.preventDefault();
 

@@ -1,29 +1,29 @@
-.ui-inputtext {
+.ng-inputtext {
     margin: 0;
     outline: medium none;
     padding: .25em;
     font-weight: normal;
 }
 
-.ui-widget-header .ui-inputtext,
-.ui-widget-content .ui-inputtext {
+.ng-widget-header .ng-inputtext,
+.ng-widget-content .ng-inputtext {
     font-weight: normal;
 }
 
-.ui-fluid .ui-inputtext {
+.ng-fluid .ng-inputtext {
     width: 100%;
     box-sizing: border-box;
     -webkit-box-sizing:border-box;
     -moz-box-sizing: border-box;
 }
 
-.ui-inputgroup {
+.ng-inputgroup {
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
 }
 
-.ui-inputgroup .ui-inputgroup-addon {
+.ng-inputgroup .ng-inputgroup-addon {
     display: inline-block;
     text-align: center;
     min-width: 1.5em;
@@ -32,55 +32,55 @@
     border-style: solid;
 }
 
-.ui-inputgroup .ui-inputgroup-addon + .ui-inputgroup-addon {
+.ng-inputgroup .ng-inputgroup-addon + .ng-inputgroup-addon {
     border-left: 0 none;
 }
 
-.ui-inputgroup .ui-inputtext {
+.ng-inputgroup .ng-inputtext {
     padding-left: .5em;
 }
 
-.ui-inputgroup .ui-inputtext:not(:first-child) {
+.ng-inputgroup .ng-inputtext:not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-left: 0 none;
 }
 
-.ui-inputgroup .ui-inputtext:not(:last-child) {
+.ng-inputgroup .ng-inputtext:not(:last-child) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-right: 0 none;
 }
 
-.ui-inputgroup .ui-button {
+.ng-inputgroup .ng-button {
     margin-right: 0;
     border-radius: 0;
 }
 
-.ui-fluid .ui-inputgroup .ui-button {
+.ng-fluid .ng-inputgroup .ng-button {
     width: auto;
 }
 
-.ui-fluid .ui-inputgroup .ui-inputtext {
+.ng-fluid .ng-inputgroup .ng-inputtext {
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
 }
 
-.ui-inputgroup .ui-chkbox, 
-.ui-inputgroup .ui-radiobutton {
+.ng-inputgroup .ng-chkbox, 
+.ng-inputgroup .ng-radiobutton {
     margin-right: 0;
     vertical-align: bottom;
 }
 
 /* Floating Label */
-.ui-float-label {
+.ng-float-label {
     display: block;
     position:relative; 
 }
 
-.ui-float-label > label {
+.ng-float-label > label {
   font-weight:normal;
   position:absolute;
   pointer-events:none;
@@ -95,15 +95,15 @@
 }
 
 /* breaks firefox so defined separately */
-.ui-float-label > input:-webkit-autofill ~ label {
+.ng-float-label > input:-webkit-autofill ~ label {
     top:-.75em;
     font-size:12px;
 }
     
-.ui-float-label > input:focus ~ label,
-.ui-float-label > input.ui-state-filled ~ label,
-.ui-float-label > .ui-inputwrapper-focus ~ label,
-.ui-float-label > .ui-inputwrapper-filled ~ label {
+.ng-float-label > input:focus ~ label,
+.ng-float-label > input.ng-state-filled ~ label,
+.ng-float-label > .ng-inputwrapper-focus ~ label,
+.ng-float-label > .ng-inputwrapper-filled ~ label {
   top:-.75em;
   font-size:12px;
 }

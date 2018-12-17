@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 @Component({
   template: `<p-orderList [value]="cars">
   <ng-template let-car pTemplate="item">
-      <div class="ui-helper-clearfix">
+      <div class="ng-helper-clearfix">
           <img src="assets/showcase/images/demo/car/{{car.brand}}.png" style="display:inline-block;margin:2px 0 2px 2px" width="48">
           <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{car.brand}} - {{car.year}} - {{car.color}}</div>
       </div>
@@ -60,9 +60,9 @@ describe('OrderList', () => {
       fixture.detectChanges();
 
       const orderListEl = fixture.debugElement.query(By.css('div'));
-      const controlEls = fixture.debugElement.query(By.css('.ui-orderlist-controls'));
-      const containerEl = fixture.debugElement.query(By.css('.ui-orderlist-list-container'));
-      const contentEl = fixture.debugElement.query(By.css('.ui-widget-content'));
+      const controlEls = fixture.debugElement.query(By.css('.ng-orderlist-controls'));
+      const containerEl = fixture.debugElement.query(By.css('.ng-orderlist-list-container'));
+      const contentEl = fixture.debugElement.query(By.css('.ng-widget-content'));
       expect(controlEls).toBeTruthy();
       expect(orderListEl).toBeTruthy();
       expect(containerEl).toBeTruthy();
@@ -81,7 +81,7 @@ describe('OrderList', () => {
       orderlist.header = "Primeng ROCKS!";
       fixture.detectChanges();
 
-      const headerEl = fixture.debugElement.query(By.css('.ui-orderlist-caption'));
+      const headerEl = fixture.debugElement.query(By.css('.ng-orderlist-caption'));
       expect(headerEl).toBeTruthy();
       expect(headerEl.nativeElement.textContent).toEqual("Primeng ROCKS!");
     });
@@ -91,7 +91,7 @@ describe('OrderList', () => {
       orderlist.filterPlaceholder = "Primeng ROCKS!";
       fixture.detectChanges();
 
-      const filterInputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const filterInputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       expect(filterInputEl).toBeTruthy();
       expect(filterInputEl.nativeElement.placeholder).toEqual("Primeng ROCKS!");
     });
@@ -101,7 +101,7 @@ describe('OrderList', () => {
       orderlist.dragdropScope = "cars";
       fixture.detectChanges();
 
-      const dragdropEl = fixture.debugElement.query(By.css('.ui-orderlist-droppoint'));
+      const dragdropEl = fixture.debugElement.query(By.css('.ng-orderlist-droppoint'));
 
       expect(dragdropEl).toBeTruthy();
     });
@@ -121,7 +121,7 @@ describe('OrderList', () => {
       fixture.detectChanges();
 
       const itemListEl = fixture.debugElement.query(By.css('ul'));
-      const bmwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[3];
+      const bmwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[3];
       fixture.detectChanges();
 
       expect(orderlist.selection.length).toEqual(1);
@@ -134,7 +134,7 @@ describe('OrderList', () => {
       fixture.detectChanges();
 
       const itemListEl = fixture.debugElement.query(By.css('ul'));
-      const bmwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[3];
+      const bmwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[3];
       bmwEl.nativeElement.dispatchEvent(new Event('touchend'));
       fixture.detectChanges();
       expect(orderlist.itemTouched).toEqual(true);
@@ -147,7 +147,7 @@ describe('OrderList', () => {
       expect(orderlist.itemTouched).toEqual(false);
       expect(orderlist.selection.length).toEqual(1);
       expect(orderlist.selection[0].brand).toEqual("BMW");
-      expect(bmwEl.nativeElement.className).toContain('ui-state-highlight');
+      expect(bmwEl.nativeElement.className).toContain('ng-state-highlight');
     });
 
     it('should call onItem click and unselect a item', () => {
@@ -155,7 +155,7 @@ describe('OrderList', () => {
       fixture.detectChanges();
 
       const itemListEl = fixture.debugElement.query(By.css('ul'));
-      const bmwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[3];
+      const bmwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[3];
       bmwEl.nativeElement.click();
       fixture.detectChanges();
       
@@ -165,7 +165,7 @@ describe('OrderList', () => {
 
       expect(onItemClickSpy).toHaveBeenCalledTimes(2);
       expect(orderlist.selection.length).toEqual(0);
-      expect(bmwEl.nativeElement.className).not.toContain('ui-state-highlight');
+      expect(bmwEl.nativeElement.className).not.toContain('ng-state-highlight');
     });
 
     it('should call onItem click and select a item with metaKeySelection false', () => {
@@ -174,14 +174,14 @@ describe('OrderList', () => {
       fixture.detectChanges();
 
       const itemListEl = fixture.debugElement.query(By.css('ul'));
-      const bmwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[3];
+      const bmwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[3];
       bmwEl.nativeElement.click();
       fixture.detectChanges();
 
       expect(onItemClickSpy).toHaveBeenCalled();
       expect(orderlist.selection.length).toEqual(1);
       expect(orderlist.selection[0].brand).toEqual("BMW");
-      expect(bmwEl.nativeElement.className).toContain('ui-state-highlight');
+      expect(bmwEl.nativeElement.className).toContain('ng-state-highlight');
     });
 
     it('should call onItem click and unselect a item with metaKeySelection', () => {
@@ -190,7 +190,7 @@ describe('OrderList', () => {
       fixture.detectChanges();
 
       const itemListEl = fixture.debugElement.query(By.css('ul'));
-      const bmwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[3];
+      const bmwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[3];
       bmwEl.nativeElement.click();
       fixture.detectChanges();
       
@@ -200,7 +200,7 @@ describe('OrderList', () => {
 
       expect(onItemClickSpy).toHaveBeenCalledTimes(2);
       expect(orderlist.selection.length).toEqual(0);
-      expect(bmwEl.nativeElement.className).not.toContain('ui-state-highlight');
+      expect(bmwEl.nativeElement.className).not.toContain('ng-state-highlight');
     });
 
     it('should call moveUp', () => {
@@ -208,7 +208,7 @@ describe('OrderList', () => {
       fixture.detectChanges();
 
       const itemListEl = fixture.debugElement.query(By.css('ul'));
-      const bmwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[3];
+      const bmwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[3];
       const buttonsEl = fixture.debugElement.queryAll(By.css('button'));
       const moveUpButtonEl = buttonsEl[0];
       bmwEl.nativeElement.click();
@@ -218,9 +218,9 @@ describe('OrderList', () => {
       expect(moveUpSpy).toHaveBeenCalled();
       expect(orderlist.selection.length).toEqual(1);
       expect(orderlist.selection[0].brand).toEqual("BMW");
-      expect(bmwEl.nativeElement.className).toContain('ui-state-highlight');
-      expect(itemListEl.queryAll(By.css('.ui-orderlist-item'))[3].context.$implicit.brand).toEqual("Renault");
-      expect(itemListEl.queryAll(By.css('.ui-orderlist-item'))[2].context.$implicit.brand).toEqual("BMW");
+      expect(bmwEl.nativeElement.className).toContain('ng-state-highlight');
+      expect(itemListEl.queryAll(By.css('.ng-orderlist-item'))[3].context.$implicit.brand).toEqual("Renault");
+      expect(itemListEl.queryAll(By.css('.ng-orderlist-item'))[2].context.$implicit.brand).toEqual("BMW");
     });
 
     it('should call moveDown', () => {
@@ -228,7 +228,7 @@ describe('OrderList', () => {
       fixture.detectChanges();
 
       const itemListEl = fixture.debugElement.query(By.css('ul'));
-      const bmwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[3];
+      const bmwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[3];
       const buttonsEl = fixture.debugElement.queryAll(By.css('button'));
       const moveDownButtonEl = buttonsEl[2];
       bmwEl.nativeElement.click();
@@ -238,9 +238,9 @@ describe('OrderList', () => {
       expect(moveUpSpy).toHaveBeenCalled();
       expect(orderlist.selection.length).toEqual(1);
       expect(orderlist.selection[0].brand).toEqual("BMW");
-      expect(bmwEl.nativeElement.className).toContain('ui-state-highlight');
-      expect(itemListEl.queryAll(By.css('.ui-orderlist-item'))[3].context.$implicit.brand).toEqual("Mercedes");
-      expect(itemListEl.queryAll(By.css('.ui-orderlist-item'))[4].context.$implicit.brand).toEqual("BMW");
+      expect(bmwEl.nativeElement.className).toContain('ng-state-highlight');
+      expect(itemListEl.queryAll(By.css('.ng-orderlist-item'))[3].context.$implicit.brand).toEqual("Mercedes");
+      expect(itemListEl.queryAll(By.css('.ng-orderlist-item'))[4].context.$implicit.brand).toEqual("BMW");
     });
 
     it('should call MoveTop', () => {
@@ -248,7 +248,7 @@ describe('OrderList', () => {
       fixture.detectChanges();
 
       const itemListEl = fixture.debugElement.query(By.css('ul'));
-      const bmwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[3];
+      const bmwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[3];
       const buttonsEl = fixture.debugElement.queryAll(By.css('button'));
       const moveTopButtonEl = buttonsEl[1];
       bmwEl.nativeElement.click();
@@ -258,9 +258,9 @@ describe('OrderList', () => {
       expect(moveTopSpy).toHaveBeenCalled();
       expect(orderlist.selection.length).toEqual(1);
       expect(orderlist.selection[0].brand).toEqual("BMW");
-      expect(bmwEl.nativeElement.className).toContain('ui-state-highlight');
-      expect(itemListEl.queryAll(By.css('.ui-orderlist-item'))[3].context.$implicit.brand).toEqual("Renault");
-      expect(itemListEl.queryAll(By.css('.ui-orderlist-item'))[0].context.$implicit.brand).toEqual("BMW");
+      expect(bmwEl.nativeElement.className).toContain('ng-state-highlight');
+      expect(itemListEl.queryAll(By.css('.ng-orderlist-item'))[3].context.$implicit.brand).toEqual("Renault");
+      expect(itemListEl.queryAll(By.css('.ng-orderlist-item'))[0].context.$implicit.brand).toEqual("BMW");
     });
 
     it('should call moveBottom', () => {
@@ -268,7 +268,7 @@ describe('OrderList', () => {
       fixture.detectChanges();
 
       const itemListEl = fixture.debugElement.query(By.css('ul'));
-      const bmwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[3];
+      const bmwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[3];
       const buttonsEl = fixture.debugElement.queryAll(By.css('button'));
       const moveBottomButtonEl = buttonsEl[3];
       bmwEl.nativeElement.click();
@@ -278,9 +278,9 @@ describe('OrderList', () => {
       expect(moveBottomSpy).toHaveBeenCalled();
       expect(orderlist.selection.length).toEqual(1);
       expect(orderlist.selection[0].brand).toEqual("BMW");
-      expect(bmwEl.nativeElement.className).toContain('ui-state-highlight');
-      expect(itemListEl.queryAll(By.css('.ui-orderlist-item'))[3].context.$implicit.brand).toEqual("Mercedes");
-      expect(itemListEl.queryAll(By.css('.ui-orderlist-item'))[9].context.$implicit.brand).toEqual("BMW");
+      expect(bmwEl.nativeElement.className).toContain('ng-state-highlight');
+      expect(itemListEl.queryAll(By.css('.ng-orderlist-item'))[3].context.$implicit.brand).toEqual("Mercedes");
+      expect(itemListEl.queryAll(By.css('.ng-orderlist-item'))[9].context.$implicit.brand).toEqual("BMW");
     });
 
     it('should show filter items by default', () => {
@@ -291,7 +291,7 @@ describe('OrderList', () => {
       const filterEl = fixture.debugElement.query(By.css('input'));
       fixture.detectChanges();
 
-      const itemsEl = fixture.debugElement.queryAll(By.css(".ui-orderlist-item"));
+      const itemsEl = fixture.debugElement.queryAll(By.css(".ng-orderlist-item"));
       expect(orderlist.visibleOptions.length).toEqual(2);
       expect(orderlist.visibleOptions[0].brand).toEqual("VW");
       expect(orderlist.visibleOptions[1].brand).toEqual("Volvo");
@@ -313,7 +313,7 @@ describe('OrderList', () => {
       filterEl.nativeElement.dispatchEvent(new Event('keyup'));
       fixture.detectChanges();
 
-      const itemsEl = fixture.debugElement.queryAll(By.css(".ui-orderlist-item"));
+      const itemsEl = fixture.debugElement.queryAll(By.css(".ng-orderlist-item"));
       expect(orderlist.visibleOptions.length).toEqual(2);
       expect(orderlist.visibleOptions[0].brand).toEqual("VW");
       expect(orderlist.visibleOptions[1].brand).toEqual("Volvo");
@@ -332,7 +332,7 @@ describe('OrderList', () => {
       let data;
       orderlist.onReorder.subscribe(value => data = value);
       const itemListEl = fixture.debugElement.query(By.css('ul'));
-      const bmwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[3];
+      const bmwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[3];
       const buttonsEl = fixture.debugElement.queryAll(By.css('button'));
       const moveUpButtonEl = buttonsEl[0];
       bmwEl.nativeElement.click();
@@ -349,7 +349,7 @@ describe('OrderList', () => {
       let data;
       orderlist.onReorder.subscribe(value => data = value);
       const itemListEl = fixture.debugElement.query(By.css('ul'));
-      const bmwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[3];
+      const bmwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[3];
       const buttonsEl = fixture.debugElement.queryAll(By.css('button'));
       const moveDownButtonEl = buttonsEl[2];
       bmwEl.nativeElement.click();
@@ -366,7 +366,7 @@ describe('OrderList', () => {
       let data;
       orderlist.onReorder.subscribe(value => data = value);
       const itemListEl = fixture.debugElement.query(By.css('ul'));
-      const bmwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[3];
+      const bmwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[3];
       const buttonsEl = fixture.debugElement.queryAll(By.css('button'));
       const moveTopButtonEl = buttonsEl[1];
       bmwEl.nativeElement.click();
@@ -382,7 +382,7 @@ describe('OrderList', () => {
 		let data;
 		orderlist.onReorder.subscribe(value => data = value);
 		const itemListEl = fixture.debugElement.query(By.css('ul'));
-		const vwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[0];
+		const vwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[0];
 		const buttonsEl = fixture.debugElement.queryAll(By.css('button'));
 		const moveTopButtonEl = buttonsEl[1];
 		vwEl.nativeElement.click();
@@ -399,7 +399,7 @@ describe('OrderList', () => {
 		let data;
 		orderlist.onReorder.subscribe(value => data = value);
 		const itemListEl = fixture.debugElement.query(By.css('ul'));
-		const vwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[0];
+		const vwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[0];
 		const buttonsEl = fixture.debugElement.queryAll(By.css('button'));
 		const moveTopButtonEl = buttonsEl[0];
 		vwEl.nativeElement.click();
@@ -417,7 +417,7 @@ describe('OrderList', () => {
       let data;
       orderlist.onReorder.subscribe(value => data = value);
       const itemListEl = fixture.debugElement.query(By.css('ul'));
-      const bmwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[3];
+      const bmwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[3];
       const buttonsEl = fixture.debugElement.queryAll(By.css('button'));
       const moveBottomButtonEl = buttonsEl[3];
       bmwEl.nativeElement.click();
@@ -433,7 +433,7 @@ describe('OrderList', () => {
 		let data;
 		orderlist.onReorder.subscribe(value => data = value);
 		const itemListEl = fixture.debugElement.query(By.css('ul'));
-		const bmwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[9];
+		const bmwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[9];
 		const buttonsEl = fixture.debugElement.queryAll(By.css('button'));
 		const moveBottomButtonEl = buttonsEl[3];
 		bmwEl.nativeElement.click();
@@ -450,7 +450,7 @@ describe('OrderList', () => {
 		let data;
 		orderlist.onReorder.subscribe(value => data = value);
 		const itemListEl = fixture.debugElement.query(By.css('ul'));
-		const bmwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[9];
+		const bmwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[9];
 		const buttonsEl = fixture.debugElement.queryAll(By.css('button'));
 		const moveBottomButtonEl = buttonsEl[2];
 		bmwEl.nativeElement.click();
@@ -467,7 +467,7 @@ describe('OrderList', () => {
       let data;
       orderlist.onSelectionChange.subscribe(value => data = value);
       const itemListEl = fixture.debugElement.query(By.css('ul'));
-      const bmwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[3];
+      const bmwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[3];
       bmwEl.nativeElement.click();
       fixture.detectChanges();
 
@@ -499,7 +499,7 @@ describe('OrderList', () => {
 		fixture.detectChanges();
 
 		const itemListEl = fixture.debugElement.query(By.css('ul'));
-		const bmwEl = itemListEl.queryAll(By.css('.ui-orderlist-item'))[3].nativeElement;
+		const bmwEl = itemListEl.queryAll(By.css('.ng-orderlist-item'))[3].nativeElement;
 		const event: any = document.createEvent('CustomEvent');
         event.which = 40;
         event.initEvent('keydown');
@@ -518,6 +518,6 @@ describe('OrderList', () => {
 		expect(orderlist.selection[0].brand).toEqual("BMW");
 		expect(findNextItemSpy).toHaveBeenCalled();
         expect(findPrevItemSpy).toHaveBeenCalled();
-		expect(bmwEl.className).toContain('ui-state-highlight');
+		expect(bmwEl.className).toContain('ng-state-highlight');
 	});
 });

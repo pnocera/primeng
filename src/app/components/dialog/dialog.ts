@@ -10,28 +10,28 @@ let idx: number = 0;
 @Component({
     selector: 'p-dialog',
     template: `
-        <div #container [ngClass]="{'ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow':true, 'ui-dialog-rtl':rtl,'ui-dialog-draggable':draggable,'ui-dialog-resizable':resizable}"
+        <div #container [ngClass]="{'ng-dialog ng-widget ng-widget-content ng-corner-all ng-shadow':true, 'ng-dialog-rtl':rtl,'ng-dialog-draggable':draggable,'ng-dialog-resizable':resizable}"
             [ngStyle]="style" [class]="styleClass"
             [@animation]="{value: 'visible', params: {transitionParams: transitionOptions}}" (@animation.start)="onAnimationStart($event)" role="dialog" [attr.aria-labelledby]="id + '-label'" *ngIf="visible">
-            <div #titlebar class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top" (mousedown)="initDrag($event)" *ngIf="showHeader">
-                <span [attr.id]="id + '-label'" class="ui-dialog-title" *ngIf="header">{{header}}</span>
-                <span [attr.id]="id + '-label'" class="ui-dialog-title" *ngIf="headerFacet && headerFacet.first">
+            <div #titlebar class="ng-dialog-titlebar ng-widget-header ng-helper-clearfix ng-corner-top" (mousedown)="initDrag($event)" *ngIf="showHeader">
+                <span [attr.id]="id + '-label'" class="ng-dialog-title" *ngIf="header">{{header}}</span>
+                <span [attr.id]="id + '-label'" class="ng-dialog-title" *ngIf="headerFacet && headerFacet.first">
                     <ng-content select="p-header"></ng-content>
                 </span>
-                <a *ngIf="closable" [ngClass]="{'ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all':true}" tabindex="0" role="button" (click)="close($event)" (keydown.enter)="close($event)" (mousedown)="onCloseMouseDown($event)">
+                <a *ngIf="closable" [ngClass]="{'ng-dialog-titlebar-icon ng-dialog-titlebar-close ng-corner-all':true}" tabindex="0" role="button" (click)="close($event)" (keydown.enter)="close($event)" (mousedown)="onCloseMouseDown($event)">
                     <span class="pi pi-times"></span>
                 </a>
-                <a *ngIf="maximizable" [ngClass]="{'ui-dialog-titlebar-icon ui-dialog-titlebar-maximize ui-corner-all':true}" tabindex="0" role="button" (click)="toggleMaximize($event)" (keydown.enter)="toggleMaximize($event)">
+                <a *ngIf="maximizable" [ngClass]="{'ng-dialog-titlebar-icon ng-dialog-titlebar-maximize ng-corner-all':true}" tabindex="0" role="button" (click)="toggleMaximize($event)" (keydown.enter)="toggleMaximize($event)">
                     <span [ngClass]="maximized ? 'pi pi-window-minimize' : 'pi pi-window-maximize'"></span>
                 </a>
             </div>
-            <div #content class="ui-dialog-content ui-widget-content" [ngStyle]="contentStyle">
+            <div #content class="ng-dialog-content ng-widget-content" [ngStyle]="contentStyle">
                 <ng-content></ng-content>
             </div>
-            <div #footer class="ui-dialog-footer ui-widget-content" *ngIf="footerFacet && footerFacet.first">
+            <div #footer class="ng-dialog-footer ng-widget-content" *ngIf="footerFacet && footerFacet.first">
                 <ng-content select="p-footer"></ng-content>
             </div>
-            <div *ngIf="resizable" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;" (mousedown)="initResize($event)"></div>
+            <div *ngIf="resizable" class="ng-resizable-handle ng-resizable-se ng-icon ng-icon-gripsmall-diagonal-se" style="z-index: 90;" (mousedown)="initResize($event)"></div>
         </div>
     `,
     animations: [
@@ -173,7 +173,7 @@ export class Dialog implements OnDestroy {
 
     _minHeight: any;
     
-    id: string = `ui-dialog-${idx++}`;
+    id: string = `ng-dialog-${idx++}`;
     
     constructor(public el: ElementRef, public domHandler: DomHandler, public renderer: Renderer2, public zone: NgZone) {}
     
@@ -276,9 +276,9 @@ export class Dialog implements OnDestroy {
         if (!this.mask) {
             this.mask = document.createElement('div');
             this.mask.style.zIndex = String(parseInt(this.container.style.zIndex) - 1);
-            let maskStyleClass = 'ui-widget-overlay ui-dialog-mask';
+            let maskStyleClass = 'ng-widget-overlay ng-dialog-mask';
             if(this.blockScroll) {
-                maskStyleClass += ' ui-dialog-mask-scrollblocker';
+                maskStyleClass += ' ng-dialog-mask-scrollblocker';
             }
             this.domHandler.addMultipleClasses(this.mask, maskStyleClass);
             
@@ -289,7 +289,7 @@ export class Dialog implements OnDestroy {
 			}
             document.body.appendChild(this.mask);
             if(this.blockScroll) {
-                this.domHandler.addClass(document.body, 'ui-overflow-hidden');
+                this.domHandler.addClass(document.body, 'ng-overflow-hidden');
             }
         }
     }
@@ -304,14 +304,14 @@ export class Dialog implements OnDestroy {
                 let hasBlockerMasks: boolean;
                 for (let i = 0; i < bodyChildren.length; i++) {
                     let bodyChild = bodyChildren[i];
-                    if (this.domHandler.hasClass(bodyChild, 'ui-dialog-mask-scrollblocker')) {
+                    if (this.domHandler.hasClass(bodyChild, 'ng-dialog-mask-scrollblocker')) {
                         hasBlockerMasks = true;
                         break;
                     }
                 }
                 
                 if (!hasBlockerMasks) {
-                    this.domHandler.removeClass(document.body, 'ui-overflow-hidden');
+                    this.domHandler.removeClass(document.body, 'ng-overflow-hidden');
                 }
             }
             this.mask = null;
@@ -328,7 +328,7 @@ export class Dialog implements OnDestroy {
     }
 
     maximize() {
-        this.domHandler.addClass(this.container, 'ui-dialog-maximized');
+        this.domHandler.addClass(this.container, 'ng-dialog-maximized');
         this.preMaximizePageX = parseFloat(this.container.style.top);
         this.preMaximizePageY = parseFloat(this.container.style.left);
         this.preMaximizeContainerWidth = this.domHandler.getOuterWidth(this.container);
@@ -348,7 +348,7 @@ export class Dialog implements OnDestroy {
         }
         this.contentViewChild.nativeElement.style.height = 'calc(100vh - ' + diffHeight +'px)';
 
-        this.domHandler.addClass(document.body, 'ui-overflow-hidden');
+        this.domHandler.addClass(document.body, 'ng-overflow-hidden');
 
         this.maximized = true;
     }
@@ -360,12 +360,12 @@ export class Dialog implements OnDestroy {
         this.container.style.height = this.preMaximizeContainerHeight + 'px';
         this.contentViewChild.nativeElement.style.height = this.preMaximizeContentHeight + 'px';
 
-        this.domHandler.removeClass(document.body, 'ui-overflow-hidden');
+        this.domHandler.removeClass(document.body, 'ng-overflow-hidden');
 
         this.maximized = false;
 
         this.zone.runOutsideAngular(() => {
-            setTimeout(() => this.domHandler.removeClass(this.container, 'ui-dialog-maximized'), 300);
+            setTimeout(() => this.domHandler.removeClass(this.container, 'ng-dialog-maximized'), 300);
         });
     }
     
@@ -396,7 +396,7 @@ export class Dialog implements OnDestroy {
             this.dragging = true;
             this.lastPageX = event.pageX;
             this.lastPageY = event.pageY;
-            this.domHandler.addClass(document.body, 'ui-unselectable-text');
+            this.domHandler.addClass(document.body, 'ng-unselectable-text');
         }
     }
     
@@ -423,7 +423,7 @@ export class Dialog implements OnDestroy {
     endDrag(event: MouseEvent) {
         if (this.draggable) {
             this.dragging = false;
-            this.domHandler.removeClass(document.body, 'ui-unselectable-text');
+            this.domHandler.removeClass(document.body, 'ng-unselectable-text');
         }
     }
     
@@ -433,7 +433,7 @@ export class Dialog implements OnDestroy {
             this.resizing = true;
             this.lastPageX = event.pageX;
             this.lastPageY = event.pageY;
-            this.domHandler.addClass(document.body, 'ui-unselectable-text');
+            this.domHandler.addClass(document.body, 'ng-unselectable-text');
         }
     }
     
@@ -466,7 +466,7 @@ export class Dialog implements OnDestroy {
     onResizeEnd(event: MouseEvent) {
         if (this.resizing) {
             this.resizing = false;
-            this.domHandler.removeClass(document.body, 'ui-unselectable-text');
+            this.domHandler.removeClass(document.body, 'ng-unselectable-text');
         }
     }
     
@@ -639,7 +639,7 @@ export class Dialog implements OnDestroy {
                 this.bindGlobalListeners();
         
                 if (this.maximized) {
-                    this.domHandler.addClass(document.body, 'ui-overflow-hidden');
+                    this.domHandler.addClass(document.body, 'ng-overflow-hidden');
                 }
                 
                 if (this.modal) {
@@ -663,7 +663,7 @@ export class Dialog implements OnDestroy {
         this.dragging = false;
 
         if (this.maximized) {
-            this.domHandler.removeClass(document.body, 'ui-overflow-hidden');
+            this.domHandler.removeClass(document.body, 'ng-overflow-hidden');
             this.maximized = false;
         }
         

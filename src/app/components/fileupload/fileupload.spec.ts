@@ -36,8 +36,8 @@ describe('FileUpload', () => {
 
         const fileuploadEl = fixture.debugElement.query(By.css('span'));
         expect(fileuploadEl).toBeTruthy();
-        expect(fileuploadEl.nativeElement.className).toContain("ui-fileupload-choose");
-        expect(fileuploadEl.nativeElement.className).toContain("ui-button");
+        expect(fileuploadEl.nativeElement.className).toContain("ng-fileupload-choose");
+        expect(fileuploadEl.nativeElement.className).toContain("ng-button");
         expect(fixture.debugElement.query(By.css('div'))).toBeFalsy();
     });
 
@@ -46,7 +46,7 @@ describe('FileUpload', () => {
 
         const fileuploadEl = fixture.debugElement.query(By.css('div'));
         expect(fileuploadEl).toBeTruthy();
-        expect(fileuploadEl.nativeElement.className).toContain("ui-fileupload ui-widget");
+        expect(fileuploadEl.nativeElement.className).toContain("ng-fileupload ng-widget");
         expect(fileuploadEl.children.length).toEqual(2);
     });
 
@@ -61,7 +61,7 @@ describe('FileUpload', () => {
         const fileuploadEl = fixture.debugElement.query(By.css('div'));
         const uploadButton = fixture.debugElement.queryAll(By.css('button'))[0];
         const cancelButton = fixture.debugElement.queryAll(By.css('button'))[1];
-        const chooseButton =fixture.debugElement.query(By.css(".ui-fileupload-choose"));
+        const chooseButton =fixture.debugElement.query(By.css(".ng-fileupload-choose"));
         expect(fileuploadEl).toBeTruthy();
         expect(fileuploadEl.nativeElement.className).toContain("Primeng ROCKS!");
         expect(fileuploadEl.nativeElement.style.primeng).toContain("rocks!");
@@ -89,7 +89,7 @@ describe('FileUpload', () => {
 
         const uploadButton = fixture.debugElement.queryAll(By.css('button'))[0];
         const cancelButton = fixture.debugElement.queryAll(By.css('button'))[1];
-        const fileUploadRow = fixture.debugElement.query(By.css('.ui-fileupload-row'));
+        const fileUploadRow = fixture.debugElement.query(By.css('.ng-fileupload-row'));
         const fileNameEl = fileUploadRow.children[1];
         const fileSizeEl = fileUploadRow.children[2];
         const removeButtonEl = fileUploadRow.query(By.css('button'));
@@ -187,15 +187,15 @@ describe('FileUpload', () => {
         fileupload.onDragOver(event);
         fixture.detectChanges();
 
-        const contentEl = fixture.debugElement.query(By.css(".ui-fileupload-content"));
+        const contentEl = fixture.debugElement.query(By.css(".ng-fileupload-content"));
         expect(fileupload.dragHighlight).toEqual(true);
-        expect(contentEl.nativeElement.className).toContain("ui-fileupload-highlight");
+        expect(contentEl.nativeElement.className).toContain("ng-fileupload-highlight");
         expect(onDragEnterSpy).toHaveBeenCalled();
         fileupload.onDragLeave(event);
         fixture.detectChanges();
 
         expect(onDragLeaveSpy).toHaveBeenCalled();
-        expect(contentEl.nativeElement.className).not.toContain("ui-fileupload-highlight");
+        expect(contentEl.nativeElement.className).not.toContain("ng-fileupload-highlight");
         fileupload.onDrop(event2);
         fixture.detectChanges();
 

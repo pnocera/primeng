@@ -8,12 +8,12 @@ import {BlockableUI} from '../common/blockableui';
 @Component({
     selector: 'p-virtualScroller',
     template:`
-        <div [ngClass]="'ui-virtualscroller ui-widget'" [ngStyle]="style" [class]="styleClass">
-            <div class="ui-virtualscroller-header ui-widget-header ui-corner-top" *ngIf="header">
+        <div [ngClass]="'ng-virtualscroller ng-widget'" [ngStyle]="style" [class]="styleClass">
+            <div class="ng-virtualscroller-header ng-widget-header ng-corner-top" *ngIf="header">
                 <ng-content select="p-header"></ng-content>
             </div>
-            <div #content class="ui-virtualscroller-content ui-widget-content">
-                <ul class="ui-virtualscroller-list">
+            <div #content class="ng-virtualscroller-content ng-widget-content">
+                <ul class="ng-virtualscroller-list">
                     <cdk-virtual-scroll-viewport #viewport [ngStyle]="{'height': scrollHeight}" [itemSize]="itemSize" (scrolledIndexChange)="onScrollIndexChange($event)">
                         <ng-container *cdkVirtualFor="let item of value; trackBy: trackBy; let i = index; let c = count; let f = first; let l = last; let e = even; let o = odd; ">
                             <li [ngStyle]="{'height': itemSize + 'px'}">
@@ -23,7 +23,7 @@ import {BlockableUI} from '../common/blockableui';
                     </cdk-virtual-scroll-viewport>
                 </ul>
             </div>
-            <div class="ui-virtualscroller-footer ui-widget-header ui-corner-bottom" *ngIf="footer">
+            <div class="ng-virtualscroller-footer ng-widget-header ng-corner-bottom" *ngIf="footer">
                 <ng-content select="p-footer"></ng-content>
             </div>
         </div>

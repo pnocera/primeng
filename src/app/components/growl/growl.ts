@@ -8,18 +8,18 @@ import {Subscription}   from 'rxjs';
 @Component({
     selector: 'p-growl',
     template: `
-        <div #container [ngClass]="'ui-growl ui-widget'" [ngStyle]="style" [class]="styleClass">
-            <div #msgel *ngFor="let msg of value;let i = index" class="ui-growl-item-container ui-state-highlight ui-corner-all ui-shadow" aria-live="polite"
-                [ngClass]="{'ui-growl-message-info':msg.severity == 'info','ui-growl-message-warn':msg.severity == 'warn',
-                    'ui-growl-message-error':msg.severity == 'error','ui-growl-message-success':msg.severity == 'success'}"
+        <div #container [ngClass]="'ng-growl ng-widget'" [ngStyle]="style" [class]="styleClass">
+            <div #msgel *ngFor="let msg of value;let i = index" class="ng-growl-item-container ng-state-highlight ng-corner-all ng-shadow" aria-live="polite"
+                [ngClass]="{'ng-growl-message-info':msg.severity == 'info','ng-growl-message-warn':msg.severity == 'warn',
+                    'ng-growl-message-error':msg.severity == 'error','ng-growl-message-success':msg.severity == 'success'}"
                     (click)="onMessageClick(i)" (mouseenter)="onMessageHover(i)">
-                <div class="ui-growl-item">
-                     <div class="ui-growl-icon-close pi pi-times" (click)="remove(i,msgel)"></div>
-                     <span class="ui-growl-image pi"
+                <div class="ng-growl-item">
+                     <div class="ng-growl-icon-close pi pi-times" (click)="remove(i,msgel)"></div>
+                     <span class="ng-growl-image pi"
                         [ngClass]="{'pi-info-circle':msg.severity == 'info','pi-exclamation-triangle':msg.severity == 'warn',
                                 'pi-times':msg.severity == 'error','pi-check':msg.severity == 'success'}"></span>
-                     <div class="ui-growl-message">
-                        <span class="ui-growl-title">{{msg.summary}}</span>
+                     <div class="ng-growl-message">
+                        <span class="ng-growl-title">{{msg.summary}}</span>
                         <p [innerHTML]="msg.detail||''"></p>
                      </div>
                      <div style="clear: both;"></div>

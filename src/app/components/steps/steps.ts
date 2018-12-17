@@ -6,20 +6,20 @@ import {RouterModule} from '@angular/router';
 @Component({
     selector: 'p-steps',
     template: `
-        <div [ngClass]="{'ui-steps ui-widget ui-helper-clearfix':true,'ui-steps-readonly':readonly}" [ngStyle]="style" [class]="styleClass">
+        <div [ngClass]="{'ng-steps ng-widget ng-helper-clearfix':true,'ng-steps-readonly':readonly}" [ngStyle]="style" [class]="styleClass">
             <ul role="tablist">
-                <li *ngFor="let item of model; let i = index" class="ui-steps-item" #menuitem
-                    [ngClass]="{'ui-state-highlight ui-steps-current':(i === activeIndex),
-                        'ui-state-default':(i !== activeIndex),
-                        'ui-state-complete':(i < activeIndex),
-                        'ui-state-disabled ui-steps-incomplete':item.disabled||(i !== activeIndex && readonly)}">
-                    <a *ngIf="!item.routerLink" [href]="item.url||'#'" class="ui-menuitem-link" (click)="itemClick($event, item, i)" [attr.target]="item.target" [attr.id]="item.id">
-                        <span class="ui-steps-number">{{i + 1}}</span>
-                        <span class="ui-steps-title">{{item.label}}</span>
+                <li *ngFor="let item of model; let i = index" class="ng-steps-item" #menuitem
+                    [ngClass]="{'ng-state-highlight ng-steps-current':(i === activeIndex),
+                        'ng-state-default':(i !== activeIndex),
+                        'ng-state-complete':(i < activeIndex),
+                        'ng-state-disabled ng-steps-incomplete':item.disabled||(i !== activeIndex && readonly)}">
+                    <a *ngIf="!item.routerLink" [href]="item.url||'#'" class="ng-menuitem-link" (click)="itemClick($event, item, i)" [attr.target]="item.target" [attr.id]="item.id">
+                        <span class="ng-steps-number">{{i + 1}}</span>
+                        <span class="ng-steps-title">{{item.label}}</span>
                     </a>
-                    <a *ngIf="item.routerLink" [routerLink]="item.routerLink" [queryParams]="item.queryParams" [routerLinkActive]="'ui-state-active'" [routerLinkActiveOptions]="item.routerLinkActiveOptions||{exact:false}" class="ui-menuitem-link" (click)="itemClick($event, item, i)" [attr.target]="item.target" [attr.id]="item.id">
-                        <span class="ui-steps-number">{{i + 1}}</span>
-                        <span class="ui-steps-title">{{item.label}}</span>
+                    <a *ngIf="item.routerLink" [routerLink]="item.routerLink" [queryParams]="item.queryParams" [routerLinkActive]="'ng-state-active'" [routerLinkActiveOptions]="item.routerLinkActiveOptions||{exact:false}" class="ng-menuitem-link" (click)="itemClick($event, item, i)" [attr.target]="item.target" [attr.id]="item.id">
+                        <span class="ng-steps-number">{{i + 1}}</span>
+                        <span class="ng-steps-title">{{item.label}}</span>
                     </a>
                 </li>
             </ul>

@@ -94,7 +94,7 @@ describe('Calendar', () => {
 
       const calenderEl = fixture.debugElement.query(By.css('span'));
       const buttonEl = fixture.debugElement.query(By.css('button'));
-      expect(calenderEl.nativeElement.className).toContain('ui-calendar-w-btn');
+      expect(calenderEl.nativeElement.className).toContain('ng-calendar-w-btn');
       expect(buttonEl.nativeElement.attributes[6].value).toEqual("pi pi-calendar");
     });
 
@@ -138,7 +138,7 @@ describe('Calendar', () => {
       expect(panelEl).toBeTruthy();
       expect(calendar.overlayVisible).toEqual(true);
       expect(onButtonClickSpy).toHaveBeenCalled();
-      expect(panelEl.nativeElement.className).toContain('ui-shadow');
+      expect(panelEl.nativeElement.className).toContain('ng-shadow');
     });
 
     it('should show panel', () => {
@@ -147,7 +147,7 @@ describe('Calendar', () => {
 
       const panelEl = fixture.debugElement.query(By.css('div'));
       expect(panelEl).toBeTruthy();
-      expect(panelEl.nativeElement.className).toContain('ui-datepicker-inline')
+      expect(panelEl.nativeElement.className).toContain('ng-datepicker-inline')
     });
 
     it('should spanish', () => {
@@ -173,7 +173,7 @@ describe('Calendar', () => {
       inputEl.dispatchEvent(focusEvent);
       fixture.detectChanges();
 
-      const firstDayEl = fixture.debugElement.query(By.css('.ui-datepicker-month'));
+      const firstDayEl = fixture.debugElement.query(By.css('.ng-datepicker-month'));
       expect(firstDayEl.nativeElement.textContent).toEqual(calendar.locale.monthNames[calendar.currentMonth]);
     });
 
@@ -206,13 +206,13 @@ describe('Calendar', () => {
       fixture.detectChanges();
 
       const navForwardSpy = spyOn(calendar, 'navForward').and.callThrough();
-      const monthEl = fixture.debugElement.query(By.css('.ui-datepicker-month'));
+      const monthEl = fixture.debugElement.query(By.css('.ng-datepicker-month'));
       expect(monthEl.nativeElement.textContent).toEqual(calendar.locale.monthNames[calendar.currentMonth]);      
-      const nextMonthEl = fixture.debugElement.query(By.css('.ui-datepicker-next'));
+      const nextMonthEl = fixture.debugElement.query(By.css('.ng-datepicker-next'));
       nextMonthEl.nativeElement.click();
       fixture.detectChanges();
 
-      const currentMonthEl = fixture.debugElement.query(By.css('.ui-datepicker-month'));
+      const currentMonthEl = fixture.debugElement.query(By.css('.ng-datepicker-month'));
       expect(currentMonth).not.toEqual(calendar.currentMonth);
       expect(currentMonthEl.nativeElement.textContent).toEqual(calendar.locale.monthNames[calendar.currentMonth]);
       expect(navForwardSpy).toHaveBeenCalled();
@@ -229,13 +229,13 @@ describe('Calendar', () => {
       fixture.detectChanges();
 
       const navBackwardSpy = spyOn(calendar, 'navBackward').and.callThrough();
-      const monthEl = fixture.debugElement.query(By.css('.ui-datepicker-month'));
+      const monthEl = fixture.debugElement.query(By.css('.ng-datepicker-month'));
       expect(monthEl.nativeElement.textContent).toEqual(calendar.locale.monthNames[calendar.currentMonth]);      
-      const preMonthEl = fixture.debugElement.query(By.css('.ui-datepicker-prev'));
+      const preMonthEl = fixture.debugElement.query(By.css('.ng-datepicker-prev'));
       preMonthEl.nativeElement.click();
       fixture.detectChanges();
 
-      const currentMonthEl = fixture.debugElement.query(By.css('.ui-datepicker-month'));
+      const currentMonthEl = fixture.debugElement.query(By.css('.ng-datepicker-month'));
       expect(currentMonth).not.toEqual(calendar.currentMonth);
       expect(currentMonthEl.nativeElement.textContent).toEqual(calendar.locale.monthNames[calendar.currentMonth]);
       expect(navBackwardSpy).toHaveBeenCalled();
@@ -254,14 +254,14 @@ describe('Calendar', () => {
       fixture.detectChanges();
 
       const onDateSelectSpy = spyOn(calendar, 'onDateSelect').and.callThrough();
-      const calendarContainer = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const calendarContainer = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const sampleDateEls = calendarContainer.queryAll(By.css('a'));
       expect(calendar.dateTemplate).toBeFalsy();
       sampleDateEls[7].nativeElement.click();
       fixture.detectChanges();
 
       const datesEl = calendarContainer.queryAll(By.css('a'));
-      const selectedTdEl = fixture.debugElement.query(By.css('.ui-datepicker-current-day'));
+      const selectedTdEl = fixture.debugElement.query(By.css('.ng-datepicker-current-day'));
       expect(calendar.inputFieldValue).toEqual(inputEl.value);
       let i = 1;
       for(let date of sampleDateEls){
@@ -272,9 +272,9 @@ describe('Calendar', () => {
       expect(selectedTdEl).toBeTruthy();
       for(let x=0; x<datesEl.length; x++){
         if(x == 7)
-          expect(datesEl[x].nativeElement.className).toContain("ui-state-active");
+          expect(datesEl[x].nativeElement.className).toContain("ng-state-active");
         else
-          expect(datesEl[x].nativeElement.className).not.toContain("ui-state-active");
+          expect(datesEl[x].nativeElement.className).not.toContain("ng-state-active");
       }
       expect(calendar.isSingleSelection()).toEqual(true);
       tick(150);
@@ -292,7 +292,7 @@ describe('Calendar', () => {
       fixture.detectChanges();
 
       const onDateSelectSpy = spyOn(calendar, 'onDateSelect').and.callThrough();
-      const calendarContainer = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const calendarContainer = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const sampleDateEl = calendarContainer.queryAll(By.css('a'))[4].nativeElement;
       sampleDateEl.click();
       fixture.detectChanges();
@@ -331,13 +331,13 @@ describe('Calendar', () => {
       inputEl.dispatchEvent(focusEvent);
       fixture.detectChanges();
 
-      const nextMonthEl = fixture.debugElement.query(By.css('.ui-datepicker-next'));
+      const nextMonthEl = fixture.debugElement.query(By.css('.ng-datepicker-next'));
       nextMonthEl.nativeElement.click();
       nextMonthEl.nativeElement.click();
       fixture.detectChanges();
 
-      const containerEl = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
-      const unselectableEls = containerEl.queryAll(By.css('.ui-state-default.ui-state-disabled'));
+      const containerEl = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
+      const unselectableEls = containerEl.queryAll(By.css('.ng-state-default.ng-state-disabled'));
       expect(unselectableEls).toBeTruthy();
       expect(unselectableEls.length).toBeGreaterThan(30);
     });
@@ -359,8 +359,8 @@ describe('Calendar', () => {
       inputEl.dispatchEvent(focusEvent);
       fixture.detectChanges();
 
-      const containerEl = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
-      const unselectableEls = containerEl.queryAll(By.css('.ui-state-default.ui-state-disabled'));
+      const containerEl = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
+      const unselectableEls = containerEl.queryAll(By.css('.ng-state-default.ng-state-disabled'));
       let invalidDateArray = [];
       for (let el of unselectableEls){
         if(el.nativeElement.textContent == invalidDate.getDate() || el.nativeElement.textContent == invalidDate2.getDate()){
@@ -400,7 +400,7 @@ describe('Calendar', () => {
       inputEl.dispatchEvent(focusEvent);
       fixture.detectChanges();
 
-      const navigators = fixture.debugElement.query(By.css('.ui-datepicker-title')).queryAll(By.css('select'));
+      const navigators = fixture.debugElement.query(By.css('.ng-datepicker-title')).queryAll(By.css('select'));
       expect(navigators.length).toEqual(2);
       const monthDropdownEl = navigators[0];
       const yearDropdownEl = navigators[1];
@@ -413,7 +413,7 @@ describe('Calendar', () => {
 
       expect(calendar.currentMonth).toEqual(1);
       expect(calendar.currentYear).toEqual(2019);
-      const datesContainer = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const datesContainer = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const dates = datesContainer.queryAll(By.css('a'));
       dates[17].nativeElement.click();
       fixture.detectChanges();
@@ -445,8 +445,8 @@ describe('Calendar', () => {
       const decrementHourSpy = spyOn(calendar, 'decrementHour').and.callThrough();
       const incrementMinuteSpy = spyOn(calendar, 'incrementMinute').and.callThrough();
       const decrementMinuteSpy = spyOn(calendar, 'decrementMinute').and.callThrough();
-      const navigators = fixture.debugElement.query(By.css('.ui-datepicker-title')).queryAll(By.css('select'));
-      const timers = fixture.debugElement.query(By.css('.ui-timepicker')).queryAll(By.css('div'));
+      const navigators = fixture.debugElement.query(By.css('.ng-datepicker-title')).queryAll(By.css('select'));
+      const timers = fixture.debugElement.query(By.css('.ng-timepicker')).queryAll(By.css('div'));
       const hourPicker = timers[0];
       const minutePicker = timers[2];
       const incrementHourEl = hourPicker.children[0];
@@ -480,7 +480,7 @@ describe('Calendar', () => {
       expect(minutePicker.queryAll(By.css('span'))[2].nativeElement.textContent).toEqual(calendar.currentMinute.toString());
       expect(calendar.currentMinute).toEqual(13);
       expect(calendar.currentHour).toEqual(16);
-      const datesContainer = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const datesContainer = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const dates = datesContainer.queryAll(By.css('a'));
       dates[7].nativeElement.click();
       fixture.detectChanges();
@@ -513,11 +513,11 @@ describe('Calendar', () => {
 
       const spanEl = fixture.debugElement.query(By.css('span')).nativeElement;
       const panelEl = fixture.debugElement.query(By.css('div')).nativeElement;
-      expect(spanEl.className).toContain('ui-calendar-timeonly');
-      expect(panelEl.className).toContain('ui-datepicker-timeonly');
+      expect(spanEl.className).toContain('ng-calendar-timeonly');
+      expect(panelEl.className).toContain('ng-datepicker-timeonly');
       let defaultHour = calendar.currentHour;
       let defaultMinute = calendar.currentMinute;
-      const timers = fixture.debugElement.query(By.css('.ui-timepicker')).queryAll(By.css('div'));
+      const timers = fixture.debugElement.query(By.css('.ng-timepicker')).queryAll(By.css('div'));
       const hourPicker = timers[0];
       const minutePicker = timers[2];
       const incrementHourEl = hourPicker.children[0];
@@ -560,7 +560,7 @@ describe('Calendar', () => {
 
       let defaultHour = calendar.currentHour;
       let defaultMinute = calendar.currentMinute;
-      const navigators = fixture.debugElement.query(By.css('.ui-datepicker-title')).queryAll(By.css('select'));
+      const navigators = fixture.debugElement.query(By.css('.ng-datepicker-title')).queryAll(By.css('select'));
       const monthDropdownEl = navigators[0];
       const yearDropdownEl = navigators[1];
       const event = new Event ('change');
@@ -570,7 +570,7 @@ describe('Calendar', () => {
       yearDropdownEl.nativeElement.dispatchEvent(event);
       fixture.detectChanges();
 
-      const datesContainer = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const datesContainer = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const dates = datesContainer.queryAll(By.css('a'));
       dates[7].nativeElement.click();
       fixture.detectChanges();
@@ -606,7 +606,7 @@ describe('Calendar', () => {
 
       let defaultHour = calendar.currentHour;
       let defaultMinute = calendar.currentMinute;
-      const navigators = fixture.debugElement.query(By.css('.ui-datepicker-title')).queryAll(By.css('select'));
+      const navigators = fixture.debugElement.query(By.css('.ng-datepicker-title')).queryAll(By.css('select'));
       const monthDropdownEl = navigators[0];
       const yearDropdownEl = navigators[1];
       const event = new Event ('change');
@@ -616,7 +616,7 @@ describe('Calendar', () => {
       yearDropdownEl.nativeElement.dispatchEvent(event);
       fixture.detectChanges();
 
-      const datesContainer = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const datesContainer = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const dates = datesContainer.queryAll(By.css('a'));
       dates[7].nativeElement.click();
       fixture.detectChanges();
@@ -648,7 +648,7 @@ describe('Calendar', () => {
 
       const onClearButtonClickSpy = spyOn(calendar, 'onClearButtonClick').and.callThrough();
       const onTodayButtonClickSpy = spyOn(calendar, 'onTodayButtonClick').and.callThrough();
-      const buttonbar = fixture.debugElement.query(By.css('.ui-datepicker-buttonbar'));
+      const buttonbar = fixture.debugElement.query(By.css('.ng-datepicker-buttonbar'));
       const todayButtonEl = buttonbar.queryAll(By.css('button'))[0];
       const clearButtonEl = buttonbar.queryAll(By.css('button'))[1];
       expect(buttonbar).toBeTruthy();
@@ -686,7 +686,7 @@ describe('Calendar', () => {
       inputEl.dispatchEvent(focusEvent);
       fixture.detectChanges();
 
-      const buttonbar = fixture.debugElement.query(By.css('.ui-datepicker-buttonbar'));
+      const buttonbar = fixture.debugElement.query(By.css('.ng-datepicker-buttonbar'));
       const todayButtonEl = buttonbar.queryAll(By.css('button'))[0];
       const clearButtonEl = buttonbar.queryAll(By.css('button'))[1];
       expect(todayButtonEl.nativeElement.className).toContain("Primeng ROCKS!");
@@ -704,9 +704,9 @@ describe('Calendar', () => {
       fixture.detectChanges();
 
       const panelEl = fixture.debugElement.query(By.css('div'));
-      const contentEls = fixture.debugElement.queryAll(By.css('.ui-datepicker-group'));
+      const contentEls = fixture.debugElement.queryAll(By.css('.ng-datepicker-group'));
       const selectEls = fixture.debugElement.queryAll(By.css('select'));
-      expect(panelEl.nativeElement.className).toContain("ui-datepicker-multiple-month");
+      expect(panelEl.nativeElement.className).toContain("ng-datepicker-multiple-month");
       expect(contentEls.length).toEqual(3);
       expect(selectEls.length).toEqual(0);
     });
@@ -721,15 +721,15 @@ describe('Calendar', () => {
       const focusEvent = new Event('focus');
       inputEl.click();
       inputEl.dispatchEvent(focusEvent);
-      const dateViewEl = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const dateViewEl = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       fixture.detectChanges();
 
       const onMonthSelectSpy = spyOn(calendar, 'onMonthSelect').and.callThrough();
       const panelEl = fixture.debugElement.query(By.css('div')).nativeElement;
-      const monthpickerEl = fixture.debugElement.query(By.css('.ui-monthpicker'));
+      const monthpickerEl = fixture.debugElement.query(By.css('.ng-monthpicker'));
       const janEl = monthpickerEl.query(By.css('a')).nativeElement;
       expect(monthpickerEl).toBeTruthy();
-      expect(panelEl.className).toContain("ui-datepicker-monthpicker");
+      expect(panelEl.className).toContain("ng-datepicker-monthpicker");
       expect(janEl.textContent).toContain(calendar.monthPickerValues[0]);
       janEl.click();
       fixture.detectChanges();
@@ -737,7 +737,7 @@ describe('Calendar', () => {
       tick(200);
       expect(onMonthSelectSpy).toHaveBeenCalled();
       expect(calendar.value).toBeTruthy();
-      expect(janEl.className).toContain('ui-state-active');
+      expect(janEl.className).toContain('ng-state-active');
       expect(calendar.inputFieldValue).toEqual('01');
     }));
 
@@ -754,9 +754,9 @@ describe('Calendar', () => {
       const onOverlayAnimationStartSpy = spyOn(calendar, 'onOverlayAnimationStart').and.callThrough();
       const onDateSelectSpy = spyOn(calendar, 'onDateSelect').and.callThrough();
       const panelEl = fixture.debugElement.query(By.css('div')).nativeElement;
-      const containerEl = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const containerEl = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const firstDayEl = containerEl.query(By.css('a')).nativeElement;
-      expect(panelEl.className).toContain("ui-datepicker-touch-ui");
+      expect(panelEl.className).toContain("ng-datepicker-touch-ui");
       firstDayEl.click();
       fixture.detectChanges();
 
@@ -787,15 +787,15 @@ describe('Calendar', () => {
       calendar.onUserInput(event);
       fixture.detectChanges();
 
-      const containerEl = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const containerEl = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const firstEl = containerEl.query(By.css('a')).nativeElement;
-      const monthSpanEl = fixture.debugElement.query(By.css('.ui-datepicker-month')).nativeElement;
-      const yearSpanEl = fixture.debugElement.query(By.css('.ui-datepicker-year')).nativeElement;
+      const monthSpanEl = fixture.debugElement.query(By.css('.ng-datepicker-month')).nativeElement;
+      const yearSpanEl = fixture.debugElement.query(By.css('.ng-datepicker-year')).nativeElement;
       expect(updateUISpy).toHaveBeenCalled();
       expect(updateModelSpy).toHaveBeenCalled();
       expect(calendar.currentMonth).toEqual(6);
       expect(calendar.currentYear).toEqual(2008);
-      expect(firstEl.className).toContain("ui-state-active");
+      expect(firstEl.className).toContain("ng-state-active");
       expect(monthSpanEl.textContent).toEqual("July");
       expect(yearSpanEl.textContent).toEqual("2008");
     });
@@ -826,7 +826,7 @@ describe('Calendar', () => {
       inputEl.dispatchEvent(focusEvent);
       fixture.detectChanges();
 
-      const calendarContainer = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const calendarContainer = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const sampleDateEl = calendarContainer.queryAll(By.css('a'))[7].nativeElement;
       sampleDateEl.click();
       fixture.detectChanges();
@@ -867,7 +867,7 @@ describe('Calendar', () => {
       inputEl.dispatchEvent(focusEvent);
       fixture.detectChanges();
 
-      const buttonbar = fixture.debugElement.query(By.css('.ui-datepicker-buttonbar'));
+      const buttonbar = fixture.debugElement.query(By.css('.ng-datepicker-buttonbar'));
       const todayButtonEl = buttonbar.queryAll(By.css('button'))[0];
       const clearButtonEl = buttonbar.queryAll(By.css('button'))[1];
       todayButtonEl.nativeElement.click();
@@ -891,7 +891,7 @@ describe('Calendar', () => {
       inputEl.dispatchEvent(focusEvent);
       fixture.detectChanges();
 
-      const nextMonthEl = fixture.debugElement.query(By.css('.ui-datepicker-next'));
+      const nextMonthEl = fixture.debugElement.query(By.css('.ng-datepicker-next'));
       nextMonthEl.nativeElement.click();
       fixture.detectChanges();
 
@@ -910,7 +910,7 @@ describe('Calendar', () => {
       inputEl.dispatchEvent(focusEvent);
       fixture.detectChanges();
 
-      const navigators = fixture.debugElement.query(By.css('.ui-datepicker-title')).queryAll(By.css('select'));
+      const navigators = fixture.debugElement.query(By.css('.ng-datepicker-title')).queryAll(By.css('select'));
       const yearDropdownEl = navigators[0];
       const event = new Event ('change');
       yearDropdownEl.nativeElement.value = "2019";
@@ -929,16 +929,16 @@ describe('Calendar', () => {
       calendar.showTime = true;
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       
       inputEl.nativeElement.click();
       inputEl.nativeElement.dispatchEvent(focusEvent);
       fixture.detectChanges();
 
-      const amPmEl = fixture.debugElement.query(By.css('.ui-ampm-picker'));
-      const hourPicker = fixture.debugElement.query(By.css('.ui-hour-picker'));
-      const minutePicker = fixture.debugElement.query(By.css('.ui-minute-picker'));
+      const amPmEl = fixture.debugElement.query(By.css('.ng-ampm-picker'));
+      const hourPicker = fixture.debugElement.query(By.css('.ng-hour-picker'));
+      const minutePicker = fixture.debugElement.query(By.css('.ng-minute-picker'));
       expect(calendar.pm).toEqual(true);
       expect(amPmEl).toBeTruthy();
       expect(amPmEl.children[1].nativeElement.textContent).toEqual("PM");
@@ -957,7 +957,7 @@ describe('Calendar', () => {
       calendar.showTime = true;
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       
       inputEl.nativeElement.click();
@@ -965,8 +965,8 @@ describe('Calendar', () => {
       fixture.detectChanges();
 
       
-      const amPmEl = fixture.debugElement.query(By.css('.ui-ampm-picker'));
-      const hourPicker = fixture.debugElement.query(By.css('.ui-hour-picker'));
+      const amPmEl = fixture.debugElement.query(By.css('.ng-ampm-picker'));
+      const hourPicker = fixture.debugElement.query(By.css('.ng-hour-picker'));
       const incrementHour = hourPicker.query(By.css('a'));
       const decrementHour = hourPicker.queryAll(By.css('a'))[1];
       
@@ -999,7 +999,7 @@ describe('Calendar', () => {
       calendar.showTime = true;
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       
       inputEl.nativeElement.click();
@@ -1007,9 +1007,9 @@ describe('Calendar', () => {
       fixture.detectChanges();
 
       
-      const amPmEl = fixture.debugElement.query(By.css('.ui-ampm-picker'));
-      const hourPicker = fixture.debugElement.query(By.css('.ui-hour-picker'));
-      const minutePicker = fixture.debugElement.query(By.css('.ui-minute-picker'));
+      const amPmEl = fixture.debugElement.query(By.css('.ng-ampm-picker'));
+      const hourPicker = fixture.debugElement.query(By.css('.ng-hour-picker'));
+      const minutePicker = fixture.debugElement.query(By.css('.ng-minute-picker'));
       const changeFormatEl = amPmEl.query(By.css('a'));
       const toggleAMPMSpy = spyOn(calendar, 'toggleAMPM').and.callThrough();      
       expect(calendar.pm).toEqual(false);
@@ -1034,7 +1034,7 @@ describe('Calendar', () => {
       calendar.showTime = true;
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       
       inputEl.nativeElement.click();
@@ -1042,10 +1042,10 @@ describe('Calendar', () => {
       fixture.detectChanges();
 
       
-      const hourPicker = fixture.debugElement.query(By.css('.ui-hour-picker'));
-      const minutePicker = fixture.debugElement.query(By.css('.ui-minute-picker'));
-      const yearEl = fixture.debugElement.query(By.css('.ui-datepicker-year'));
-      const monthEl = fixture.debugElement.query(By.css('.ui-datepicker-month'));
+      const hourPicker = fixture.debugElement.query(By.css('.ng-hour-picker'));
+      const minutePicker = fixture.debugElement.query(By.css('.ng-minute-picker'));
+      const yearEl = fixture.debugElement.query(By.css('.ng-datepicker-year'));
+      const monthEl = fixture.debugElement.query(By.css('.ng-datepicker-month'));
       expect(hourPicker.children[2].nativeElement.textContent).toEqual('11');
       expect(minutePicker.children[2].nativeElement.textContent).toEqual('12');
       expect(yearEl.nativeElement.textContent).toEqual("2017");
@@ -1064,15 +1064,15 @@ describe('Calendar', () => {
       calendar.showSeconds = true;
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       
       inputEl.nativeElement.click();
       inputEl.nativeElement.dispatchEvent(focusEvent);
       fixture.detectChanges();
       
-      const seperatorEl = fixture.debugElement.queryAll(By.css('.ui-separator'))
-      const secondPicker = fixture.debugElement.query(By.css('.ui-second-picker'));
+      const seperatorEl = fixture.debugElement.queryAll(By.css('.ng-separator'))
+      const secondPicker = fixture.debugElement.query(By.css('.ng-second-picker'));
       expect(seperatorEl.length).toEqual(2);
       expect(calendar.showSeconds).toBeTruthy();
       expect(seperatorEl[0]).toBeTruthy();
@@ -1093,14 +1093,14 @@ describe('Calendar', () => {
 
       const incrementSecondSpy = spyOn(calendar, 'incrementSecond').and.callThrough();
       const decrementSecondSpy = spyOn(calendar, 'decrementSecond').and.callThrough();
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       inputEl.nativeElement.click();
       inputEl.nativeElement.dispatchEvent(focusEvent);
       fixture.detectChanges();
 
       
-      const secondPicker = fixture.debugElement.query(By.css('.ui-second-picker'));
+      const secondPicker = fixture.debugElement.query(By.css('.ng-second-picker'));
       const incrementSecond = secondPicker.query(By.css('a'));
       const decrementSecond = secondPicker.queryAll(By.css('a'))[1];
       incrementSecond.nativeElement.dispatchEvent(new Event('mousedown'));
@@ -1130,20 +1130,20 @@ describe('Calendar', () => {
       calendar.stepSecond = 2;
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       
       inputEl.nativeElement.click();
       inputEl.nativeElement.dispatchEvent(focusEvent);
       fixture.detectChanges();
 
-      const secondPicker = fixture.debugElement.query(By.css('.ui-second-picker'));
+      const secondPicker = fixture.debugElement.query(By.css('.ng-second-picker'));
       const incrementSecond = secondPicker.query(By.css('a'));
       const decrementSecond = secondPicker.queryAll(By.css('a'))[1];      
-      const hourPicker = fixture.debugElement.query(By.css('.ui-hour-picker'));
+      const hourPicker = fixture.debugElement.query(By.css('.ng-hour-picker'));
       const incrementHour = hourPicker.query(By.css('a'));
       const decrementHour = hourPicker.queryAll(By.css('a'))[1]; 
-      const minutePicker = fixture.debugElement.query(By.css('.ui-minute-picker'));
+      const minutePicker = fixture.debugElement.query(By.css('.ng-minute-picker'));
       const incrementMinute = minutePicker.query(By.css('a'));
       const decrementMinute = minutePicker.queryAll(By.css('a'))[1]; 
       incrementHour.nativeElement.dispatchEvent(new Event('mousedown'));
@@ -1187,20 +1187,20 @@ describe('Calendar', () => {
       calendar.stepSecond = 5;
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       
       inputEl.nativeElement.click();
       inputEl.nativeElement.dispatchEvent(focusEvent);
       fixture.detectChanges();
 
-      const secondPicker = fixture.debugElement.query(By.css('.ui-second-picker'));
+      const secondPicker = fixture.debugElement.query(By.css('.ng-second-picker'));
       const incrementSecond = secondPicker.query(By.css('a'));
       const decrementSecond = secondPicker.queryAll(By.css('a'))[1];      
-      const hourPicker = fixture.debugElement.query(By.css('.ui-hour-picker'));
+      const hourPicker = fixture.debugElement.query(By.css('.ng-hour-picker'));
       const incrementHour = hourPicker.query(By.css('a'));
       const decrementHour = hourPicker.queryAll(By.css('a'))[1]; 
-      const minutePicker = fixture.debugElement.query(By.css('.ui-minute-picker'));
+      const minutePicker = fixture.debugElement.query(By.css('.ng-minute-picker'));
       const incrementMinute = minutePicker.query(By.css('a'));
       const decrementMinute = minutePicker.queryAll(By.css('a'))[1]; 
       incrementHour.nativeElement.dispatchEvent(new Event('mousedown'));
@@ -1239,13 +1239,13 @@ describe('Calendar', () => {
       const onOverlayAnimationStartSpy = spyOn(calendar, 'onOverlayAnimationStart').and.callThrough();
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       inputEl.nativeElement.click();
       inputEl.nativeElement.dispatchEvent(focusEvent);
       fixture.detectChanges();
       
-      const panelEl = fixture.debugElement.query(By.css('.ui-datepicker'));
+      const panelEl = fixture.debugElement.query(By.css('.ng-datepicker'));
       expect(showOverlaySpy).not.toHaveBeenCalled();
       expect(onOverlayAnimationStartSpy).not.toHaveBeenCalled();
       expect(calendar.overlayVisible).toBeUndefined();
@@ -1260,13 +1260,13 @@ describe('Calendar', () => {
       const formatDateTimeSpy = spyOn(calendar, 'formatDateTime').and.callThrough();
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       inputEl.nativeElement.click();
       inputEl.nativeElement.dispatchEvent(focusEvent);
       fixture.detectChanges();
       
-      const datesContainer = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const datesContainer = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const dates = datesContainer.queryAll(By.css('a'));
       dates[7].nativeElement.click();
       fixture.detectChanges();
@@ -1282,13 +1282,13 @@ describe('Calendar', () => {
       const onDateSelectSpy = spyOn(calendar, 'onDateSelect').and.callThrough();
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       inputEl.nativeElement.click();
       inputEl.nativeElement.dispatchEvent(focusEvent);
       fixture.detectChanges();
       
-      const datesContainer = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const datesContainer = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const dates = datesContainer.queryAll(By.css('a'));
       dates[7].nativeElement.click();
       fixture.detectChanges();
@@ -1307,13 +1307,13 @@ describe('Calendar', () => {
       calendar.selectionMode = "multiple";
       fixture.detectChanges();
 
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       inputEl.nativeElement.click();
       inputEl.nativeElement.dispatchEvent(focusEvent);
       fixture.detectChanges();
       
-      const datesContainer = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const datesContainer = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const dates = datesContainer.queryAll(By.css('a'));
       dates[7].nativeElement.click();
       dates[9].nativeElement.click();
@@ -1331,7 +1331,7 @@ describe('Calendar', () => {
 
       const inputEl = fixture.debugElement.query(By.css('input'));
       const buttonEl = fixture.debugElement.query(By.css('button'));
-      expect(buttonEl.nativeElement.className).toContain('ui-state-disabled');
+      expect(buttonEl.nativeElement.className).toContain('ng-state-disabled');
       expect(buttonEl.nativeElement.disabled).toEqual(true);
       expect(inputEl.nativeElement.disabled).toEqual(true);
     });
@@ -1341,22 +1341,22 @@ describe('Calendar', () => {
       calendar.inline = true;
       fixture.detectChanges();
 
-      const datePicker = fixture.debugElement.query(By.css('.ui-datepicker'));
-      expect(datePicker.nativeElement.className).toContain("ui-state-disabled");
+      const datePicker = fixture.debugElement.query(By.css('.ng-datepicker'));
+      expect(datePicker.nativeElement.className).toContain("ng-state-disabled");
 
       const incrementYearSpy = spyOn(calendar, 'incrementYear').and.callThrough();
       const decrementYearSpy = spyOn(calendar, 'decrementYear').and.callThrough();
       const createMonthsSpy = spyOn(calendar, 'createMonths').and.callThrough();
-      const preMonthEl = fixture.debugElement.query(By.css('.ui-datepicker-prev'));
+      const preMonthEl = fixture.debugElement.query(By.css('.ng-datepicker-prev'));
       preMonthEl.nativeElement.click();
-      const nextMonthEl = fixture.debugElement.query(By.css('.ui-datepicker-next'));
+      const nextMonthEl = fixture.debugElement.query(By.css('.ng-datepicker-next'));
       nextMonthEl.nativeElement.click();
       fixture.detectChanges();
 
       expect(incrementYearSpy).not.toHaveBeenCalled();
       expect(decrementYearSpy).not.toHaveBeenCalled();
       expect(createMonthsSpy).not.toHaveBeenCalled();
-      const calendarContainer = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const calendarContainer = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const sampleDateEls = calendarContainer.queryAll(By.css('a'));
       const updateInputfieldSpy = spyOn(calendar,'updateInputfield').and.callThrough();
       const selectDateSpy = spyOn(calendar,'selectDate').and.callThrough();
@@ -1376,7 +1376,7 @@ describe('Calendar', () => {
       let blurValue;
       calendar.onBlur.subscribe(value => blurValue = value);
       const onInputBlurSpy = spyOn(calendar,'onInputBlur').and.callThrough();
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       const blurEvent = new Event('blur');
       inputEl.nativeElement.click();
@@ -1406,13 +1406,13 @@ describe('Calendar', () => {
       calendar.selectOtherMonths = true;
       fixture.detectChanges();
       
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       inputEl.nativeElement.click();
       inputEl.nativeElement.dispatchEvent(focusEvent);
       fixture.detectChanges();
       
-      const datesContainer = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const datesContainer = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const dates = datesContainer.queryAll(By.css('a'));
       expect(dates.length).toEqual(42);
       dates[0].nativeElement.click();
@@ -1425,15 +1425,15 @@ describe('Calendar', () => {
       calendar.showOtherMonths = false;
       fixture.detectChanges();
       
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       inputEl.nativeElement.click();
       inputEl.nativeElement.dispatchEvent(focusEvent);
       fixture.detectChanges();
       
-      const datesContainer = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const datesContainer = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const dates = datesContainer.queryAll(By.css('a'));
-      const otherMonthDates = datesContainer.queryAll(By.css('.ui-datepicker-other-month'));
+      const otherMonthDates = datesContainer.queryAll(By.css('.ng-datepicker-other-month'));
       for(let otherMonthDate of otherMonthDates){
         expect(otherMonthDate.children.length).toEqual(0);
         expect(otherMonthDate.children).toEqual([]);
@@ -1449,13 +1449,13 @@ describe('Calendar', () => {
       calendar.showSeconds = true;
       fixture.detectChanges();
       
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       inputEl.nativeElement.click();
       inputEl.nativeElement.dispatchEvent(focusEvent);
       fixture.detectChanges();
       
-      const datesContainer = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const datesContainer = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const dates = datesContainer.queryAll(By.css('a'));
       dates[0].nativeElement.click();
       dates[5].nativeElement.click();
@@ -1473,13 +1473,13 @@ describe('Calendar', () => {
       calendar.showSeconds = true;
       fixture.detectChanges();
       
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       inputEl.nativeElement.click();
       inputEl.nativeElement.dispatchEvent(focusEvent);
       fixture.detectChanges();
       
-      const datesContainer = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const datesContainer = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const dates = datesContainer.queryAll(By.css('a'));
       dates[5].nativeElement.click();
       fixture.detectChanges();
@@ -1502,13 +1502,13 @@ describe('Calendar', () => {
       calendar.showSeconds = true;
       fixture.detectChanges();
       
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       inputEl.nativeElement.click();
       inputEl.nativeElement.dispatchEvent(focusEvent);
       fixture.detectChanges();
       
-      const datesContainer = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const datesContainer = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const dates = datesContainer.queryAll(By.css('a'));
       dates[0].nativeElement.click();
       fixture.detectChanges();
@@ -1531,7 +1531,7 @@ describe('Calendar', () => {
        const updateInputfieldSpy = spyOn(calendar,'updateInputfield').and.callThrough();
        const onModelTouchedSpy = spyOn(calendar,'onModelTouched').and.callThrough();
        const onInputBlurSpy = spyOn(calendar,'onInputBlur').and.callThrough();
-       const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+       const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
        const focusEvent = new Event('focus');
        const blurEvent = new Event('blur');
        inputEl.nativeElement.click();
@@ -1555,14 +1555,14 @@ describe('Calendar', () => {
       calendar.showSeconds = true;
       fixture.detectChanges();
       
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       const blurEvent = new Event('blur');      
       inputEl.nativeElement.click();
       inputEl.nativeElement.dispatchEvent(focusEvent);
       fixture.detectChanges();
       
-      const datesContainer = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const datesContainer = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const dates = datesContainer.queryAll(By.css('a'));
       dates[0].nativeElement.click();
       fixture.detectChanges();
@@ -1574,7 +1574,7 @@ describe('Calendar', () => {
       calendar.required = true;
       fixture.detectChanges();
       
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       inputEl.nativeElement.click();
       inputEl.nativeElement.dispatchEvent(focusEvent);
@@ -1587,13 +1587,13 @@ describe('Calendar', () => {
       calendar.hideOnDateTimeSelect = true;
       fixture.detectChanges();
       
-      const inputEl = fixture.debugElement.query(By.css('.ui-inputtext'));
+      const inputEl = fixture.debugElement.query(By.css('.ng-inputtext'));
       const focusEvent = new Event('focus');
       inputEl.nativeElement.click();
       inputEl.nativeElement.dispatchEvent(focusEvent);
       fixture.detectChanges();
       
-      const datesContainer = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const datesContainer = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const dates = datesContainer.queryAll(By.css('a'));
       dates[0].nativeElement.click();
       tick(150);
@@ -1615,13 +1615,13 @@ describe('Calendar', () => {
       fixture.detectChanges();
 
       const navForwardSpy = spyOn(calendar, 'navForward').and.callThrough();
-      const monthEl = fixture.debugElement.query(By.css('.ui-datepicker-month'));
+      const monthEl = fixture.debugElement.query(By.css('.ng-datepicker-month'));
       expect(monthEl.nativeElement.textContent).toEqual(calendar.locale.monthNames[calendar.currentMonth]);      
-      const nextMonthEl = fixture.debugElement.query(By.css('.ui-datepicker-next'));
+      const nextMonthEl = fixture.debugElement.query(By.css('.ng-datepicker-next'));
       nextMonthEl.nativeElement.click();
       fixture.detectChanges();
 
-      const currentMonthEl = fixture.debugElement.query(By.css('.ui-datepicker-month'));
+      const currentMonthEl = fixture.debugElement.query(By.css('.ng-datepicker-month'));
       expect(currentMonthEl.nativeElement.textContent).toEqual("January");
       expect(calendar.currentMonth).toEqual(0);
       expect(calendar.currentYear).toEqual(2018);
@@ -1641,13 +1641,13 @@ describe('Calendar', () => {
       fixture.detectChanges();
 
       const navBackwardSpy = spyOn(calendar, 'navBackward').and.callThrough();
-      const monthEl = fixture.debugElement.query(By.css('.ui-datepicker-month'));
+      const monthEl = fixture.debugElement.query(By.css('.ng-datepicker-month'));
       expect(monthEl.nativeElement.textContent).toEqual(calendar.locale.monthNames[calendar.currentMonth]);      
-      const prevMonthEl = fixture.debugElement.query(By.css('.ui-datepicker-prev'));
+      const prevMonthEl = fixture.debugElement.query(By.css('.ng-datepicker-prev'));
       prevMonthEl.nativeElement.click();
       fixture.detectChanges();
 
-      const currentMonthEl = fixture.debugElement.query(By.css('.ui-datepicker-month'));
+      const currentMonthEl = fixture.debugElement.query(By.css('.ng-datepicker-month'));
       expect(currentMonthEl.nativeElement.textContent).toEqual("December");
       expect(calendar.currentMonth).toEqual(11);
       expect(calendar.currentYear).toEqual(2016);
@@ -1666,7 +1666,7 @@ describe('Calendar', () => {
       inputEl.dispatchEvent(focusEvent);
       fixture.detectChanges();
 
-      const yearSelectEl = fixture.debugElement.query(By.css('.ui-datepicker-year'));
+      const yearSelectEl = fixture.debugElement.query(By.css('.ng-datepicker-year'));
       const yearsEls = yearSelectEl.queryAll(By.css('option'));
       expect(yearsEls.length).toEqual(20);
       expect(yearsEls[19].nativeElement.textContent).toEqual("2019");
@@ -1695,7 +1695,7 @@ describe('Calendar', () => {
       inputEl.dispatchEvent(focusEvent);
       fixture.detectChanges();
 
-      const nextMonthEl = fixture.debugElement.query(By.css('.ui-datepicker-next'));
+      const nextMonthEl = fixture.debugElement.query(By.css('.ng-datepicker-next'));
       nextMonthEl.nativeElement.click();
       fixture.detectChanges();
       
@@ -1718,7 +1718,7 @@ describe('Calendar', () => {
       inputEl.dispatchEvent(focusEvent);
       fixture.detectChanges();
 
-      const prevMonthEl = fixture.debugElement.query(By.css('.ui-datepicker-prev'));
+      const prevMonthEl = fixture.debugElement.query(By.css('.ng-datepicker-prev'));
       prevMonthEl.nativeElement.click();
       fixture.detectChanges();
 
@@ -1741,10 +1741,10 @@ describe('Calendar', () => {
       fixture.detectChanges();
       
       const panelEl = fixture.debugElement.query(By.css('div')).nativeElement;
-      const containerEl = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const containerEl = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const firstDayEl = containerEl.query(By.css('a')).nativeElement;
       const thirdDayEl =containerEl.queryAll(By.css('a'))[2].nativeElement;
-      expect(panelEl.className).toContain("ui-datepicker-touch-ui");
+      expect(panelEl.className).toContain("ng-datepicker-touch-ui");
       firstDayEl.click();
       fixture.detectChanges();
 
@@ -1770,11 +1770,11 @@ describe('Calendar', () => {
       fixture.detectChanges();
       
       const panelEl = fixture.debugElement.query(By.css('div')).nativeElement;
-      const containerEl = fixture.debugElement.query(By.css('.ui-datepicker-calendar-container'));
+      const containerEl = fixture.debugElement.query(By.css('.ng-datepicker-calendar-container'));
       const firstDayEl = containerEl.query(By.css('a')).nativeElement;
       const secondDayEl = containerEl.queryAll(By.css('a'))[1].nativeElement;
       const thirdDayEl =containerEl.queryAll(By.css('a'))[2].nativeElement;
-      expect(panelEl.className).toContain("ui-datepicker-touch-ui");
+      expect(panelEl.className).toContain("ng-datepicker-touch-ui");
       firstDayEl.click();
       fixture.detectChanges();
 
@@ -1805,7 +1805,7 @@ describe('Calendar', () => {
 	  
       let defaultHour = calendar.currentHour;
       let defaultMinute = calendar.currentMinute;
-      const timers = fixture.debugElement.query(By.css('.ui-timepicker')).queryAll(By.css('div'));
+      const timers = fixture.debugElement.query(By.css('.ng-timepicker')).queryAll(By.css('div'));
       const hourPicker = timers[0];
       const minutePicker = timers[2];
       const incrementHourEl = hourPicker.children[0];
@@ -1852,8 +1852,8 @@ describe('Calendar', () => {
       const decrementYearSpy = spyOn(calendar,'decrementYear').and.callThrough();
       fixture.detectChanges();
 
-      const navForwardEl = fixture.debugElement.query(By.css('.ui-datepicker-next'));
-      const navBackwardEl = fixture.debugElement.query(By.css('.ui-datepicker-prev'));
+      const navForwardEl = fixture.debugElement.query(By.css('.ng-datepicker-next'));
+      const navBackwardEl = fixture.debugElement.query(By.css('.ng-datepicker-prev'));
       navForwardEl.nativeElement.click();
       fixture.detectChanges();
 
@@ -1882,7 +1882,7 @@ describe('Calendar', () => {
       calendar.currentYear = 2018;	  
       fixture.detectChanges();
 
-      const navForwardEl = fixture.debugElement.query(By.css('.ui-datepicker-next'));
+      const navForwardEl = fixture.debugElement.query(By.css('.ng-datepicker-next'));
       navForwardEl.nativeElement.click();
       fixture.detectChanges();
 
@@ -1912,7 +1912,7 @@ describe('Calendar', () => {
       calendar.currentYear = 2017;	  
       fixture.detectChanges();
 
-      const navBackwardEl = fixture.debugElement.query(By.css('.ui-datepicker-prev'));
+      const navBackwardEl = fixture.debugElement.query(By.css('.ng-datepicker-prev'));
       navBackwardEl.nativeElement.click();
       fixture.detectChanges();
 

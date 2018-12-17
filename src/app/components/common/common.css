@@ -1,10 +1,10 @@
-.ui-widget, .ui-widget * {
+.ng-widget, .ng-widget * {
     box-sizing: border-box;
 }
-.ui-helper-hidden {
+.ng-helper-hidden {
     display: none !important;
 }
-.ui-helper-hidden-accessible {
+.ng-helper-hidden-accessible {
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -14,11 +14,11 @@
     position: absolute;
     width: 1px;
 }
-.ui-helper-hidden-accessible input,
-.ui-helper-hidden-accessible select {
+.ng-helper-hidden-accessible input,
+.ng-helper-hidden-accessible select {
     transform: scale(0);
 }
-.ui-helper-reset {
+.ng-helper-reset {
     margin: 0;
     padding: 0;
     border: 0;
@@ -28,18 +28,18 @@
     font-size: 100%;
     list-style: none;
 }
-.ui-helper-clearfix::before,
-.ui-helper-clearfix::after {
+.ng-helper-clearfix::before,
+.ng-helper-clearfix::after {
     content: "";
     display: table;
 }
-.ui-helper-clearfix::after {
+.ng-helper-clearfix::after {
     clear: both;
 }
-.ui-helper-clearfix {
+.ng-helper-clearfix {
     zoom: 1;
 }
-.ui-helper-zfix {
+.ng-helper-zfix {
     width: 100%;
     height: 100%;
     top: 0;
@@ -48,113 +48,113 @@
     opacity: 0;
     filter: Alpha(Opacity=0);
 }
-.ui-state-disabled {
+.ng-state-disabled {
     cursor: default !important;
 }
-.ui-state-disabled a {
+.ng-state-disabled a {
     cursor: default !important;
 }
-.ui-icon {
+.ng-icon {
     display: block;
     text-indent: -99999px;
     overflow: hidden;
     background-repeat: no-repeat;
 }
-.ui-widget-overlay {
+.ng-widget-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
 }
-.ui-resizable {
+.ng-resizable {
     position: relative;
 }
-.ui-resizable-handle {
+.ng-resizable-handle {
     position: absolute;
     font-size: 0.1px;
     display: block;
 }
-.ui-resizable-disabled .ui-resizable-handle,
-.ui-resizable-autohide .ui-resizable-handle {
+.ng-resizable-disabled .ng-resizable-handle,
+.ng-resizable-autohide .ng-resizable-handle {
     display: none;
 }
-.ui-resizable-n {
+.ng-resizable-n {
     cursor: n-resize;
     height: 7px;
     width: 100%;
     top: -5px;
     left: 0;
 }
-.ui-resizable-s {
+.ng-resizable-s {
     cursor: s-resize;
     height: 7px;
     width: 100%;
     bottom: -5px;
     left: 0;
 }
-.ui-resizable-e {
+.ng-resizable-e {
     cursor: e-resize;
     width: 7px;
     right: -5px;
     top: 0;
     height: 100%;
 }
-.ui-resizable-w {
+.ng-resizable-w {
     cursor: w-resize;
     width: 7px;
     left: -5px;
     top: 0;
     height: 100%;
 }
-.ui-resizable-se {
+.ng-resizable-se {
     cursor: se-resize;
     width: 12px;
     height: 12px;
     right: 1px;
     bottom: 1px;
 }
-.ui-resizable-sw {
+.ng-resizable-sw {
     cursor: sw-resize;
     width: 9px;
     height: 9px;
     left: -5px;
     bottom: -5px;
 }
-.ui-resizable-nw {
+.ng-resizable-nw {
     cursor: nw-resize;
     width: 9px;
     height: 9px;
     left: -5px;
     top: -5px;
 }
-.ui-resizable-ne {
+.ng-resizable-ne {
     cursor: ne-resize;
     width: 9px;
     height: 9px;
     right: -5px;
     top: -5px;
 }
-.ui-shadow {
+.ng-shadow {
     -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
 }
-.ui-unselectable-text {
+.ng-unselectable-text {
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
 }
-.ui-scrollbar-measure {
+.ng-scrollbar-measure {
     width: 100px;
     height: 100px;
     overflow: scroll;
     position: absolute;
     top: -9999px;
 }
-.ui-overflow-hidden {
+.ng-overflow-hidden {
     overflow: hidden;
 }
 
@@ -175,7 +175,7 @@
 ::-ms-input-placeholder { /* Microsoft Edge */
    color: #898989;
 }
-.ui-placeholder {
+.ng-placeholder {
    color: #898989;
 }
 

@@ -1,20 +1,20 @@
-.ui-toast {
+.ng-toast {
 	position: fixed;
     width: 20em;
 }
 
-.ui-toast .ui-toast-message {
+.ng-toast .ng-toast-message {
     position: relative;
 	display: block;
     margin-bottom: .75em;
     overflow: hidden;
 }
 
-.ui-toast .ui-toast-message-content {
+.ng-toast .ng-toast-message-content {
     padding: .5em 1em;
 }
 
-.ui-toast .ui-toast-close-icon {
+.ng-toast .ng-toast-close-icon {
 	position: absolute;
 	top: .25em;
 	right: .25em;
@@ -22,13 +22,13 @@
     display: inline-block;
 }
 
-.ui-toast .ui-toast-summary {
+.ng-toast .ng-toast-summary {
 	font-weight: bold;
 	padding: 0 0 .5em 0;
 	display: block;
 }
 
-.ui-toast .ui-toast-icon {
+.ng-toast .ng-toast-icon {
     position: absolute;
     display: inline-block;
     left: .5em;
@@ -37,44 +37,44 @@
     font-size: 2em;
 }
 
-.ui-toast .ui-toast-message-text-content {
+.ng-toast .ng-toast-message-text-content {
 	padding: 0 0 .25em 0;
     margin-left: 2.5em;
 }
 /* Positions */
-.ui-toast-top-right {
+.ng-toast-top-right {
 	top: 20px;
 	right: 20px;
 }
 
-.ui-toast-top-left {
+.ng-toast-top-left {
 	top: 20px;
 	left: 20px;
 }
 
-.ui-toast-bottom-right {
+.ng-toast-bottom-right {
 	bottom: 20px;
 	right: 20px;
 }
 
-.ui-toast-bottom-left {
+.ng-toast-bottom-left {
 	bottom: 20px;
 	right: 20px;
 }
 
-.ui-toast-top-center {
+.ng-toast-top-center {
 	top: 20px;
     left: 50%;
     margin-left: -10em;
 }
 
-.ui-toast-bottom-center {
+.ng-toast-bottom-center {
 	bottom: 20px;
 	left: 50%;
     margin-left: -10em;
 }
 
-.ui-toast-center {
+.ng-toast-center {
 	left: 50%;
 	top: 50%;
     min-width: 20vw;

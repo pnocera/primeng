@@ -1,5 +1,5 @@
 /* Button */
-.ui-button {
+.ng-button {
     display: inline-block;
     position: relative;
     padding: 0;
@@ -15,40 +15,40 @@ p-button {
 }
 
 /*button text element */
-.ui-button .ui-button-text {
+.ng-button .ng-button-text {
     display: block;
     line-height: normal;
 }
 
-.ui-button-text-only .ui-button-text {
+.ng-button-text-only .ng-button-text {
     padding: .25em 1em;
 }
 
-.ui-button-icon-only .ui-button-text,
-.ui-button-text-empty .ui-button-text {
+.ng-button-icon-only .ng-button-text,
+.ng-button-text-empty .ng-button-text {
     padding: .25em;
     text-indent: -9999999px;
 }
 
-.ui-button-text-icon-left .ui-button-text {
+.ng-button-text-icon-left .ng-button-text {
     padding: .25em 1em .25em 2.1em;
 }
 
-.ui-button-text-icon-right .ui-button-text {
+.ng-button-text-icon-right .ng-button-text {
     padding: .25em 2.1em .25em 1em;
 }
 
 /*button icon element(s) */
-.ui-button-icon-only .ui-button-icon-left,
-.ui-button-text-icon-left .ui-button-icon-left,
-.ui-button-text-icon-right .ui-button-icon-right {
+.ng-button-icon-only .ng-button-icon-left,
+.ng-button-text-icon-left .ng-button-icon-left,
+.ng-button-text-icon-right .ng-button-icon-right {
     position: absolute;
     top: 50%;
     margin-top: -.5em;
     height: 1em;
 }
 
-.ui-button-icon-only .ui-button-icon-left {
+.ng-button-icon-only .ng-button-icon-left {
     top: 50%;
     left: 50%;
     margin-top: -.5em;
@@ -57,55 +57,55 @@ p-button {
     height: 1em;
 }
 
-.ui-button-icon-left {
+.ng-button-icon-left {
     left: .5em;
 }
 
-.ui-button-icon-right {
+.ng-button-icon-right {
     right: .5em;
 }
 
 /*button sets*/
-.ui-buttonset .ui-button {
+.ng-buttonset .ng-button {
     margin-left: 0;
     margin-right: 0;
 }
 
 /* workarounds */
-button.ui-button::-moz-focus-inner {
+button.ng-button::-moz-focus-inner {
     border: 0; padding: 0; /* reset extra padding in Firefox */
 }
 
 /** Fluid **/
-.ui-fluid .ui-button {
+.ng-fluid .ng-button {
     width: 100%;
 }
 
-.ui-fluid .ui-button-text-icon-left .ui-button-text,
-.ui-fluid .ui-button-text-icon-right .ui-button-text {
+.ng-fluid .ng-button-text-icon-left .ng-button-text,
+.ng-fluid .ng-button-text-icon-right .ng-button-text {
     padding-left: 1em;
     padding-right: 1em;
 }
 
 /** ButtonSet **/
-.ui-fluid .ui-buttonset {
+.ng-fluid .ng-buttonset {
     width: 100%;
 }
 
-.ui-fluid .ui-buttonset.ui-buttonset-1 .ui-button {width: 100%;}
-.ui-fluid .ui-buttonset.ui-buttonset-2 .ui-button {width: 50%;}
-.ui-fluid .ui-buttonset.ui-buttonset-3 .ui-button {width: 33.3%;}
-.ui-fluid .ui-buttonset.ui-buttonset-4 .ui-button {width: 25%;}
-.ui-fluid .ui-buttonset.ui-buttonset-5 .ui-button {width: 20%;}
-.ui-fluid .ui-buttonset.ui-buttonset-6 .ui-button {width: 16.6%;}
+.ng-fluid .ng-buttonset.ng-buttonset-1 .ng-button {width: 100%;}
+.ng-fluid .ng-buttonset.ng-buttonset-2 .ng-button {width: 50%;}
+.ng-fluid .ng-buttonset.ng-buttonset-3 .ng-button {width: 33.3%;}
+.ng-fluid .ng-buttonset.ng-buttonset-4 .ng-button {width: 25%;}
+.ng-fluid .ng-buttonset.ng-buttonset-5 .ng-button {width: 20%;}
+.ng-fluid .ng-buttonset.ng-buttonset-6 .ng-button {width: 16.6%;}
 
 @media (max-width: 640px) {
-    .ui-fluid .ui-buttonset.ui-buttonset-1 .ui-button,
-    .ui-fluid .ui-buttonset.ui-buttonset-2 .ui-button,
-    .ui-fluid .ui-buttonset.ui-buttonset-3 .ui-button,
-    .ui-fluid .ui-buttonset.ui-buttonset-4 .ui-button,
-    .ui-fluid .ui-buttonset.ui-buttonset-5 .ui-button,
-    .ui-fluid .ui-buttonset.ui-buttonset-6 .ui-button {
+    .ng-fluid .ng-buttonset.ng-buttonset-1 .ng-button,
+    .ng-fluid .ng-buttonset.ng-buttonset-2 .ng-button,
+    .ng-fluid .ng-buttonset.ng-buttonset-3 .ng-button,
+    .ng-fluid .ng-buttonset.ng-buttonset-4 .ng-button,
+    .ng-fluid .ng-buttonset.ng-buttonset-5 .ng-button,
+    .ng-fluid .ng-buttonset.ng-buttonset-6 .ng-button {
         width: 100%;
     }
 }

@@ -15,35 +15,35 @@ export const LISTBOX_VALUE_ACCESSOR: any = {
 @Component({
     selector: 'p-listbox',
     template: `
-    <div [ngClass]="{'ui-listbox ui-inputtext ui-widget ui-widget-content ui-corner-all':true,'ui-state-disabled':disabled,'ui-state-focus':focus}" [ngStyle]="style" [class]="styleClass">
-      <div class="ui-helper-hidden-accessible">
+    <div [ngClass]="{'ng-listbox ng-inputtext ng-widget ng-widget-content ng-corner-all':true,'ng-state-disabled':disabled,'ng-state-focus':focus}" [ngStyle]="style" [class]="styleClass">
+      <div class="ng-helper-hidden-accessible">
         <input type="text" readonly="readonly" (focus)="onInputFocus($event)" (blur)="onInputBlur($event)">
       </div>
-      <div class="ui-widget-header ui-corner-all ui-listbox-header ui-helper-clearfix" *ngIf="headerFacet">
+      <div class="ng-widget-header ng-corner-all ng-listbox-header ng-helper-clearfix" *ngIf="headerFacet">
         <ng-content select="p-header"></ng-content>
       </div>
-      <div class="ui-widget-header ui-corner-all ui-listbox-header ui-helper-clearfix" *ngIf="(checkbox && multiple && showToggleAll) || filter" [ngClass]="{'ui-listbox-header-w-checkbox': checkbox}">
-        <div class="ui-chkbox ui-widget" *ngIf="checkbox && multiple && showToggleAll">
-          <div class="ui-helper-hidden-accessible">
+      <div class="ng-widget-header ng-corner-all ng-listbox-header ng-helper-clearfix" *ngIf="(checkbox && multiple && showToggleAll) || filter" [ngClass]="{'ng-listbox-header-w-checkbox': checkbox}">
+        <div class="ng-chkbox ng-widget" *ngIf="checkbox && multiple && showToggleAll">
+          <div class="ng-helper-hidden-accessible">
             <input type="checkbox" readonly="readonly" [checked]="allChecked" (focus)="onHeaderCheckboxFocus()" (blur)="onHeaderCheckboxBlur()" (keydown.space)="toggleAll($event)">
           </div>
-          <div #headerchkbox class="ui-chkbox-box ui-widget ui-corner-all ui-state-default" [ngClass]="{'ui-state-active': allChecked, 'ui-state-focus': headerCheckboxFocus}" (click)="toggleAll($event)">
-            <span class="ui-chkbox-icon ui-clickable" [ngClass]="{'pi pi-check':allChecked}"></span>
+          <div #headerchkbox class="ng-chkbox-box ng-widget ng-corner-all ng-state-default" [ngClass]="{'ng-state-active': allChecked, 'ng-state-focus': headerCheckboxFocus}" (click)="toggleAll($event)">
+            <span class="ng-chkbox-icon ng-clickable" [ngClass]="{'pi pi-check':allChecked}"></span>
           </div>
         </div>
-        <div class="ui-listbox-filter-container" *ngIf="filter">
-          <input type="text" role="textbox" [value]="filterValue||''" (input)="onFilter($event)" class="ui-inputtext ui-widget ui-state-default ui-corner-all" [disabled]="disabled">
-          <span class="ui-listbox-filter-icon pi pi-search"></span>
+        <div class="ng-listbox-filter-container" *ngIf="filter">
+          <input type="text" role="textbox" [value]="filterValue||''" (input)="onFilter($event)" class="ng-inputtext ng-widget ng-state-default ng-corner-all" [disabled]="disabled">
+          <span class="ng-listbox-filter-icon pi pi-search"></span>
         </div>
       </div>
-      <div class="ui-listbox-list-wrapper" [ngStyle]="listStyle">
-        <ul class="ui-listbox-list">
+      <div class="ng-listbox-list-wrapper" [ngStyle]="listStyle">
+        <ul class="ng-listbox-list">
           <li *ngFor="let option of options; let i = index;" [style.display]="isItemVisible(option) ? 'block' : 'none'" [attr.tabindex]="option.disabled ? null : '0'"
-              [ngClass]="{'ui-listbox-item ui-corner-all':true,'ui-state-highlight':isSelected(option), 'ui-state-disabled': option.disabled}"
+              [ngClass]="{'ng-listbox-item ng-corner-all':true,'ng-state-highlight':isSelected(option), 'ng-state-disabled': option.disabled}"
               (click)="onOptionClick($event,option)" (dblclick)="onOptionDoubleClick($event,option)" (touchend)="onOptionTouchEnd($event,option)" (keydown)="onOptionKeyDown($event,option)">
-            <div class="ui-chkbox ui-widget" *ngIf="checkbox && multiple">
-              <div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default" [ngClass]="{'ui-state-active':isSelected(option)}">
-                <span class="ui-chkbox-icon ui-clickable" [ngClass]="{'pi pi-check':isSelected(option)}"></span>
+            <div class="ng-chkbox ng-widget" *ngIf="checkbox && multiple">
+              <div class="ng-chkbox-box ng-widget ng-corner-all ng-state-default" [ngClass]="{'ng-state-active':isSelected(option)}">
+                <span class="ng-chkbox-icon ng-clickable" [ngClass]="{'pi pi-check':isSelected(option)}"></span>
               </div>
             </div>
             <span *ngIf="!itemTemplate">{{option.label}}</span>
@@ -51,7 +51,7 @@ export const LISTBOX_VALUE_ACCESSOR: any = {
           </li>
         </ul>
       </div>
-      <div class="ui-listbox-footer ui-widget-header ui-corner-all" *ngIf="footerFacet">
+      <div class="ng-listbox-footer ng-widget-header ng-corner-all" *ngIf="footerFacet">
         <ng-content select="p-footer"></ng-content>
       </div>
     </div>
@@ -470,7 +470,7 @@ export class Listbox implements AfterContentInit, ControlValueAccessor {
         let nextItem = item.nextElementSibling;
 
         if (nextItem)
-            return this.domHandler.hasClass(nextItem, 'ui-state-disabled') || this.domHandler.isHidden(nextItem) ? this.findNextItem(nextItem) : nextItem;
+            return this.domHandler.hasClass(nextItem, 'ng-state-disabled') || this.domHandler.isHidden(nextItem) ? this.findNextItem(nextItem) : nextItem;
         else
             return null;
     }
@@ -479,7 +479,7 @@ export class Listbox implements AfterContentInit, ControlValueAccessor {
         let prevItem = item.previousElementSibling;
         
         if (prevItem)
-            return this.domHandler.hasClass(prevItem, 'ui-state-disabled') || this.domHandler.isHidden(prevItem) ? this.findPrevItem(prevItem) : prevItem;
+            return this.domHandler.hasClass(prevItem, 'ng-state-disabled') || this.domHandler.isHidden(prevItem) ? this.findPrevItem(prevItem) : prevItem;
         else
             return null;
     } 

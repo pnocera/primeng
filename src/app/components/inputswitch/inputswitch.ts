@@ -12,13 +12,13 @@ export const INPUTSWITCH_VALUE_ACCESSOR: any = {
 @Component({
     selector: 'p-inputSwitch',
     template: `
-        <div [ngClass]="{'ui-inputswitch ui-widget': true, 'ui-inputswitch-checked': checked, 'ui-state-disabled': disabled, 'ui-inputswitch-readonly': readonly, 'ui-inputswitch-focus': focused}" 
+        <div [ngClass]="{'ng-inputswitch ng-widget': true, 'ng-inputswitch-checked': checked, 'ng-state-disabled': disabled, 'ng-inputswitch-readonly': readonly, 'ng-inputswitch-focus': focused}" 
             [ngStyle]="style" [class]="styleClass" (click)="onClick($event, cb)" role="checkbox" [attr.aria-checked]="checked">
-            <div class="ui-helper-hidden-accessible">
+            <div class="ng-helper-hidden-accessible">
                 <input #cb type="checkbox" [attr.id]="inputId" [attr.name]="name" [attr.tabindex]="tabindex" [checked]="checked" (change)="onInputChange($event)"
                         (focus)="onFocus($event)" (blur)="onBlur($event)" [disabled]="disabled" />
             </div>
-            <span class="ui-inputswitch-slider"></span>
+            <span class="ng-inputswitch-slider"></span>
         </div>
     `,
     providers: [INPUTSWITCH_VALUE_ACCESSOR,DomHandler]

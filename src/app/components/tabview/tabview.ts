@@ -10,28 +10,28 @@ let idx: number = 0;
 @Component({
     selector: '[p-tabViewNav]',
     host:{
-        '[class.ui-tabview-nav]': 'true',
-        '[class.ui-helper-reset]': 'true',
-        '[class.ui-helper-clearfix]': 'true',
-        '[class.ui-widget-header]': 'true',
-        '[class.ui-corner-all]': 'true'
+        '[class.ng-tabview-nav]': 'true',
+        '[class.ng-helper-reset]': 'true',
+        '[class.ng-helper-clearfix]': 'true',
+        '[class.ng-widget-header]': 'true',
+        '[class.ng-corner-all]': 'true'
     },
     template: `
         <ng-template ngFor let-tab [ngForOf]="tabs">
             <li [class]="getDefaultHeaderClass(tab)" [ngStyle]="tab.headerStyle" role="presentation"
-                [ngClass]="{'ui-tabview-selected ui-state-active': tab.selected, 'ui-state-disabled': tab.disabled}"
+                [ngClass]="{'ng-tabview-selected ng-state-active': tab.selected, 'ng-state-disabled': tab.disabled}"
                 (click)="clickTab($event,tab)" *ngIf="!tab.closed" tabindex="0" (keydown.enter)="clickTab($event,tab)">
                 <a [attr.id]="tab.id + '-label'" role="tab" [attr.aria-selected]="tab.selected" [attr.aria-controls]="tab.id" [pTooltip]="tab.tooltip" [tooltipPosition]="orientation">
                     <ng-container *ngIf="!tab.headerTemplate" >
-                        <span class="ui-tabview-left-icon" [ngClass]="tab.leftIcon" *ngIf="tab.leftIcon"></span>
-                        <span class="ui-tabview-title">{{tab.header}}</span>
-                        <span class="ui-tabview-right-icon" [ngClass]="tab.rightIcon" *ngIf="tab.rightIcon"></span>
+                        <span class="ng-tabview-left-icon" [ngClass]="tab.leftIcon" *ngIf="tab.leftIcon"></span>
+                        <span class="ng-tabview-title">{{tab.header}}</span>
+                        <span class="ng-tabview-right-icon" [ngClass]="tab.rightIcon" *ngIf="tab.rightIcon"></span>
                     </ng-container>
                     <ng-container *ngIf="tab.headerTemplate">
                         <ng-container *ngTemplateOutlet="tab.headerTemplate"></ng-container>
                     </ng-container>
                 </a>
-                <span *ngIf="tab.closable" class="ui-tabview-close pi pi-times" (click)="clickClose($event,tab)"></span>
+                <span *ngIf="tab.closable" class="ng-tabview-close pi pi-times" (click)="clickClose($event,tab)"></span>
             </li>
         </ng-template>
     `,
@@ -47,7 +47,7 @@ export class TabViewNav {
     @Output() onTabCloseClick: EventEmitter<any> = new EventEmitter();
     
     getDefaultHeaderClass(tab:TabPanel) {
-        let styleClass = 'ui-state-default ui-corner-' + this.orientation;
+        let styleClass = 'ng-state-default ng-corner-' + this.orientation;
         if(tab.headerStyleClass) {
             styleClass = styleClass + " " + tab.headerStyleClass;
         }
@@ -72,7 +72,7 @@ export class TabViewNav {
 @Component({
     selector: 'p-tabPanel',
     template: `
-        <div [attr.id]="id" class="ui-tabview-panel ui-widget-content" [ngClass]="{'ui-helper-hidden': !selected}"
+        <div [attr.id]="id" class="ng-tabview-panel ng-widget-content" [ngClass]="{'ng-helper-hidden': !selected}"
             role="tabpanel" [attr.aria-hidden]="!selected" [attr.aria-labelledby]="id + '-label'" *ngIf="!closed">
             <ng-content></ng-content>
             <ng-container *ngIf="contentTemplate && (cache ? loaded : selected)">
@@ -113,7 +113,7 @@ export class TabPanel implements AfterContentInit,OnDestroy {
     
     loaded: boolean;
     
-    id: string = `ui-tabpanel-${idx++}`;
+    id: string = `ng-tabpanel-${idx++}`;
     
     contentTemplate: TemplateRef<any>;
 
@@ -154,10 +154,10 @@ export class TabPanel implements AfterContentInit,OnDestroy {
 @Component({
     selector: 'p-tabView',
     template: `
-        <div [ngClass]="'ui-tabview ui-widget ui-widget-content ui-corner-all ui-tabview-' + orientation" [ngStyle]="style" [class]="styleClass">
+        <div [ngClass]="'ng-tabview ng-widget ng-widget-content ng-corner-all ng-tabview-' + orientation" [ngStyle]="style" [class]="styleClass">
             <ul p-tabViewNav role="tablist" *ngIf="orientation!='bottom'" [tabs]="tabs" [orientation]="orientation"
                 (onTabClick)="open($event.originalEvent, $event.tab)" (onTabCloseClick)="close($event.originalEvent, $event.tab)"></ul>
-            <div class="ui-tabview-panels">
+            <div class="ng-tabview-panels">
                 <ng-content></ng-content>
             </div>
             <ul p-tabViewNav role="tablist" *ngIf="orientation=='bottom'" [tabs]="tabs" [orientation]="orientation"

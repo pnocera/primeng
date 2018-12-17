@@ -28,7 +28,7 @@ describe('PanelMenu', () => {
     it('should display by default', () => {
       fixture.detectChanges();
 
-      const panelMenuEl = fixture.debugElement.query(By.css('.ui-panelmenu'));
+      const panelMenuEl = fixture.debugElement.query(By.css('.ng-panelmenu'));
       expect(panelMenuEl).toBeTruthy();
     });
 
@@ -37,7 +37,7 @@ describe('PanelMenu', () => {
       panelmenu.styleClass = "Primeng ROCKS!";
       fixture.detectChanges();
 
-      const panelMenuEl = fixture.debugElement.query(By.css('.ui-panelmenu'));
+      const panelMenuEl = fixture.debugElement.query(By.css('.ng-panelmenu'));
       expect(panelMenuEl.nativeElement.className).toContain("Primeng ROCKS!");
       expect(panelMenuEl.nativeElement.style.primeng).toContain("rocks!");
     });
@@ -64,8 +64,8 @@ describe('PanelMenu', () => {
       ];
       fixture.detectChanges();
 
-      const panelEl = fixture.debugElement.query(By.css('.ui-panelmenu-panel'));
-      expect(panelEl.nativeElement.className).toContain("ui-helper-hidden");
+      const panelEl = fixture.debugElement.query(By.css('.ng-panelmenu-panel'));
+      expect(panelEl.nativeElement.className).toContain("ng-helper-hidden");
     });
 
     it('should change item style styleClass and disable ', () => {
@@ -92,8 +92,8 @@ describe('PanelMenu', () => {
       ];
       fixture.detectChanges();
 
-      const panelHeaderEl = fixture.debugElement.query(By.css('.ui-panelmenu-header'));
-      expect(panelHeaderEl.nativeElement.className).toContain("ui-state-disabled");
+      const panelHeaderEl = fixture.debugElement.query(By.css('.ng-panelmenu-header'));
+      expect(panelHeaderEl.nativeElement.className).toContain("ng-state-disabled");
       expect(panelHeaderEl.nativeElement.className).toContain("Primeng ROCKS!");
       expect(panelHeaderEl.nativeElement.style.primeng).toContain("rocks!");
     });
@@ -122,11 +122,11 @@ describe('PanelMenu', () => {
       ];
       fixture.detectChanges();
 
-      const panelHeaderLinkEl = fixture.debugElement.query(By.css('.ui-panelmenu-header-link'));
+      const panelHeaderLinkEl = fixture.debugElement.query(By.css('.ng-panelmenu-header-link'));
       expect(panelHeaderLinkEl.nativeElement.href).toContain('primeng');
       expect(panelHeaderLinkEl.nativeElement.title).toEqual('primeng');
       expect(panelHeaderLinkEl.nativeElement.target).toEqual('primeng');
-      expect(panelHeaderLinkEl.query(By.css('.ui-menuitem-icon')).nativeElement.className).toContain("Primeng ROCKS!");
+      expect(panelHeaderLinkEl.query(By.css('.ng-menuitem-icon')).nativeElement.className).toContain("Primeng ROCKS!");
     });
 
     it('should change child visible ', () => {
@@ -147,9 +147,9 @@ describe('PanelMenu', () => {
       ];
       fixture.detectChanges();
 
-      const menuItems = fixture.debugElement.queryAll(By.css('.ui-menuitem'));
+      const menuItems = fixture.debugElement.queryAll(By.css('.ng-menuitem'));
       for(let menuItem of menuItems)
-        expect(menuItem.nativeElement.className).toContain("ui-helper-hidden");
+        expect(menuItem.nativeElement.className).toContain("ng-helper-hidden");
     });
 
     it('should change child style and styleClass', () => {
@@ -171,7 +171,7 @@ describe('PanelMenu', () => {
       ];
       fixture.detectChanges();
 
-      const menuItemLinks = fixture.debugElement.queryAll(By.css('.ui-menuitem'));
+      const menuItemLinks = fixture.debugElement.queryAll(By.css('.ng-menuitem'));
       for(let menuItemLink of menuItemLinks){
       expect(menuItemLink.nativeElement.className).toContain("Primeng ROCKS!");
       expect(menuItemLink.nativeElement.style.primeng).toContain("rocks!");
@@ -212,11 +212,11 @@ describe('PanelMenu', () => {
       ];
       fixture.detectChanges();
 
-      const panelHeaderLinkEl = fixture.debugElement.query(By.css('.ui-menuitem-link'));
+      const panelHeaderLinkEl = fixture.debugElement.query(By.css('.ng-menuitem-link'));
       expect(panelHeaderLinkEl.nativeElement.href).toContain('primeng');
       expect(panelHeaderLinkEl.nativeElement.title).toEqual('primeng');
       expect(panelHeaderLinkEl.nativeElement.target).toEqual('primeng');
-      expect(panelHeaderLinkEl.query(By.css('.ui-menuitem-icon')).nativeElement.className).toContain("Primeng ROCKS!");
+      expect(panelHeaderLinkEl.query(By.css('.ng-menuitem-icon')).nativeElement.className).toContain("Primeng ROCKS!");
     });
 
     it('should show items and call toggle', () => {
@@ -242,13 +242,13 @@ describe('PanelMenu', () => {
       fixture.detectChanges();
 
       const handleClickSpy = spyOn(panelmenu, 'handleClick').and.callThrough();
-      const headerLinks = fixture.debugElement.queryAll(By.css('.ui-panelmenu-header-link'));
+      const headerLinks = fixture.debugElement.queryAll(By.css('.ng-panelmenu-header-link'));
       expect(headerLinks.length).toEqual(2);
       headerLinks[0].nativeElement.click();
       fixture.detectChanges();
 
-      const iconSpanEl = fixture.debugElement.query(By.css('.ui-panelmenu-icon'));
-      const firstSubMenuComponent = fixture.debugElement.query(By.css('.ui-panelmenu-root-submenu')).componentInstance as PanelMenuSub;
+      const iconSpanEl = fixture.debugElement.query(By.css('.ng-panelmenu-icon'));
+      const firstSubMenuComponent = fixture.debugElement.query(By.css('.ng-panelmenu-root-submenu')).componentInstance as PanelMenuSub;
       expect(handleClickSpy).toHaveBeenCalled();
       expect(panelmenu.animating).toEqual(true);
       expect(panelmenu.model[0].expanded).toEqual(true);
@@ -278,19 +278,19 @@ describe('PanelMenu', () => {
       ];
       fixture.detectChanges();
 
-      const headerLinks = fixture.debugElement.queryAll(By.css('.ui-panelmenu-header-link'));
+      const headerLinks = fixture.debugElement.queryAll(By.css('.ng-panelmenu-header-link'));
       headerLinks[0].nativeElement.click();
       headerLinks[1].nativeElement.click();
       fixture.detectChanges();
 
-      const subMenuEls = fixture.debugElement.queryAll(By.css('.ui-panelmenu-root-submenu'));
+      const subMenuEls = fixture.debugElement.queryAll(By.css('.ng-panelmenu-root-submenu'));
       const firstSubMenuComponent = subMenuEls[0].componentInstance as PanelMenuSub;
       const seconSubMenuComponent = subMenuEls[1].componentInstance as PanelMenuSub;
-      const activeEls = fixture.debugElement.queryAll(By.css('.ui-state-active'));
+      const activeEls = fixture.debugElement.queryAll(By.css('.ng-state-active'));
       expect(activeEls.length).toEqual(2);
       let x = 0;
       for(let activeEl of activeEls){
-        expect(activeEl.query(By.css('.ui-menuitem-text')).nativeElement.textContent).toEqual(panelmenu.model[x].label);
+        expect(activeEl.query(By.css('.ng-menuitem-text')).nativeElement.textContent).toEqual(panelmenu.model[x].label);
         x++;
       }
       expect(panelmenu.model[0].expanded).toEqual(true);
@@ -323,14 +323,14 @@ describe('PanelMenu', () => {
       panelmenu.multiple = false;
       fixture.detectChanges();
 
-      const headerLinks = fixture.debugElement.queryAll(By.css('.ui-panelmenu-header-link'));
+      const headerLinks = fixture.debugElement.queryAll(By.css('.ng-panelmenu-header-link'));
       headerLinks[0].nativeElement.click();
       headerLinks[1].nativeElement.click();
       fixture.detectChanges();
 
-      const activeEls = fixture.debugElement.queryAll(By.css('.ui-state-active'));
+      const activeEls = fixture.debugElement.queryAll(By.css('.ng-state-active'));
       expect(activeEls.length).toEqual(1);
-      expect(activeEls[0].query(By.css('.ui-menuitem-text')).nativeElement.textContent).toEqual(panelmenu.model[1].label);
+      expect(activeEls[0].query(By.css('.ng-menuitem-text')).nativeElement.textContent).toEqual(panelmenu.model[1].label);
       expect(panelmenu.model[0].expanded).toEqual(false);
       expect(panelmenu.model[1].expanded).toEqual(true);
     });

@@ -23,7 +23,7 @@ describe('Checkbox', () => {
     });
 
     it('should check the input on click', () => {
-        const boxEl = fixture.nativeElement.querySelector('.ui-chkbox-box');
+        const boxEl = fixture.nativeElement.querySelector('.ng-chkbox-box');
         boxEl.click();
         fixture.detectChanges();
 
@@ -37,16 +37,16 @@ describe('Checkbox', () => {
         fixture.detectChanges();
 
         const onClickSpy = spyOn(checkbox,'onClick').and.callThrough();
-        const boxEl = fixture.nativeElement.querySelector('.ui-chkbox-box');
-        const labelEl = fixture.nativeElement.querySelector('.ui-chkbox-label');
+        const boxEl = fixture.nativeElement.querySelector('.ng-chkbox-box');
+        const labelEl = fixture.nativeElement.querySelector('.ng-chkbox-label');
         boxEl.click();
         fixture.detectChanges();
 
         const input = fixture.nativeElement.querySelector('input');
         expect(input.checked).toBe(false);
         expect(input.disabled).toEqual(true);
-        expect(boxEl.className).toContain('ui-state-disabled');
-        expect(labelEl.className).toContain('ui-label-disabled');
+        expect(boxEl.className).toContain('ng-state-disabled');
+        expect(labelEl.className).toContain('ng-label-disabled');
         expect(onClickSpy).toHaveBeenCalled();
         expect(checkbox.value).toEqual(undefined);
     });
@@ -61,8 +61,8 @@ describe('Checkbox', () => {
         checkbox.labelStyleClass = "Primeng ROCKS";
         fixture.detectChanges();
 
-        const boxEl = fixture.nativeElement.querySelector('.ui-chkbox-box');
-        const labelEl = fixture.nativeElement.querySelector('.ui-chkbox-label');
+        const boxEl = fixture.nativeElement.querySelector('.ng-chkbox-box');
+        const labelEl = fixture.nativeElement.querySelector('.ng-chkbox-label');
         const containerEl = fixture.nativeElement.querySelector('div');
         boxEl.click();
         fixture.detectChanges();
@@ -70,7 +70,7 @@ describe('Checkbox', () => {
         const input = fixture.nativeElement.querySelector('input');
         expect(labelEl).toBeTruthy();
         expect(labelEl.className).toContain("Primeng ROCKS");
-        expect(labelEl.className).toContain("ui-label-active");
+        expect(labelEl.className).toContain("ng-label-active");
         expect(input.name).toEqual("primeng");
         expect(input.id).toEqual("primeng");
         expect(input.tabIndex).toEqual(13);
@@ -79,7 +79,7 @@ describe('Checkbox', () => {
     });
 
     it('should uncheck when twice click', () => {
-        const boxEl = fixture.nativeElement.querySelector('.ui-chkbox-box');
+        const boxEl = fixture.nativeElement.querySelector('.ng-chkbox-box');
         const onClickSpy = spyOn(checkbox,'onClick').and.callThrough();
         boxEl.click();
         fixture.detectChanges();
@@ -95,7 +95,7 @@ describe('Checkbox', () => {
         checkbox.binary = "true";
         fixture.detectChanges();
 
-        const boxEl = fixture.nativeElement.querySelector('.ui-chkbox-box');
+        const boxEl = fixture.nativeElement.querySelector('.ng-chkbox-box');
         boxEl.click();
         fixture.detectChanges();
 
@@ -108,8 +108,8 @@ describe('Checkbox', () => {
         fixture.detectChanges();
 
         const input = fixture.nativeElement.querySelector('input');
-        const boxEl = fixture.nativeElement.querySelector('.ui-chkbox-box');
-        const labelEl = fixture.nativeElement.querySelector('.ui-chkbox-label');
+        const boxEl = fixture.nativeElement.querySelector('.ng-chkbox-box');
+        const labelEl = fixture.nativeElement.querySelector('.ng-chkbox-label');
         const onBlurSpy = spyOn(checkbox,'onBlur').and.callThrough();
         const onFocusSpy = spyOn(checkbox,'onFocus').and.callThrough();
         input.dispatchEvent(new Event('focus'));
@@ -117,16 +117,16 @@ describe('Checkbox', () => {
 
         expect(onFocusSpy).toHaveBeenCalled();
         expect(checkbox.focused).toEqual(true);
-        expect(input.className).toContain('ui-state-focus');
-        expect(boxEl.className).toContain('ui-state-focus');
-        expect(labelEl.className).toContain('ui-label-focus');
+        expect(input.className).toContain('ng-state-focus');
+        expect(boxEl.className).toContain('ng-state-focus');
+        expect(labelEl.className).toContain('ng-label-focus');
         input.dispatchEvent(new Event('blur'));
         fixture.detectChanges();
 
         expect(onBlurSpy).toHaveBeenCalled();
         expect(checkbox.focused).toEqual(false);
-        expect(input.className).not.toContain('ui-state-focus');
-        expect(boxEl.className).not.toContain('ui-state-focus');
-        expect(labelEl.className).not.toContain('ui-label-focus');
+        expect(input.className).not.toContain('ng-state-focus');
+        expect(boxEl.className).not.toContain('ng-state-focus');
+        expect(labelEl.className).not.toContain('ng-label-focus');
     });
 });

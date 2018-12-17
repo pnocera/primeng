@@ -7,25 +7,25 @@ import {BlockableUI} from '../common/blockableui';
 @Component({
     selector: 'p-dataList',
     template: `
-        <div [ngClass]="{'ui-datalist ui-widget': true, 'ui-datalist-scrollable': scrollable}" [ngStyle]="style" [class]="styleClass">
-            <div class="ui-datalist-header ui-widget-header ui-corner-top" *ngIf="header">
+        <div [ngClass]="{'ng-datalist ng-widget': true, 'ng-datalist-scrollable': scrollable}" [ngStyle]="style" [class]="styleClass">
+            <div class="ng-datalist-header ng-widget-header ng-corner-top" *ngIf="header">
                 <ng-content select="p-header"></ng-content>
             </div>
             <p-paginator [rows]="rows" [first]="first" [totalRecords]="totalRecords" [pageLinkSize]="pageLinks" [alwaysShow]="alwaysShowPaginator"
-            (onPageChange)="paginate($event)" styleClass="ui-paginator-top" [rowsPerPageOptions]="rowsPerPageOptions" *ngIf="paginator && (paginatorPosition === 'top' || paginatorPosition =='both')"
+            (onPageChange)="paginate($event)" styleClass="ng-paginator-top" [rowsPerPageOptions]="rowsPerPageOptions" *ngIf="paginator && (paginatorPosition === 'top' || paginatorPosition =='both')"
             [dropdownAppendTo]="paginatorDropdownAppendTo"></p-paginator>
-            <div class="ui-datalist-content ui-widget-content" [ngStyle]="{'max-height': scrollHeight}">
-                <div *ngIf="isEmpty()" class="ui-datalist-emptymessage">{{emptyMessage}}</div>
-                <ul class="ui-datalist-data">
+            <div class="ng-datalist-content ng-widget-content" [ngStyle]="{'max-height': scrollHeight}">
+                <div *ngIf="isEmpty()" class="ng-datalist-emptymessage">{{emptyMessage}}</div>
+                <ul class="ng-datalist-data">
                     <li *ngFor="let item of dataToRender;let i = index;trackBy: trackBy">
                         <ng-container *ngTemplateOutlet="itemTemplate; context: {$implicit: item, index: (i + first)}"></ng-container>
                     </li>
                 </ul>
             </div>
             <p-paginator [rows]="rows" [first]="first" [totalRecords]="totalRecords" [pageLinkSize]="pageLinks" [alwaysShow]="alwaysShowPaginator"
-            (onPageChange)="paginate($event)" styleClass="ui-paginator-bottom" [rowsPerPageOptions]="rowsPerPageOptions" *ngIf="paginator && (paginatorPosition === 'bottom' || paginatorPosition =='both')"
+            (onPageChange)="paginate($event)" styleClass="ng-paginator-bottom" [rowsPerPageOptions]="rowsPerPageOptions" *ngIf="paginator && (paginatorPosition === 'bottom' || paginatorPosition =='both')"
             [dropdownAppendTo]="paginatorDropdownAppendTo"></p-paginator>
-            <div class="ui-datalist-footer ui-widget-header ui-corner-bottom" *ngIf="footer">
+            <div class="ng-datalist-footer ng-widget-header ng-corner-bottom" *ngIf="footer">
                 <ng-content select="p-footer"></ng-content>
             </div>
         </div>

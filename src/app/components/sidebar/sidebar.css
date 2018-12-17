@@ -1,11 +1,11 @@
-.ui-sidebar {
+.ng-sidebar {
     position: fixed;
     padding: .5em 1em;
     -webkit-transition: transform .3s;
     transition: transform .3s;
 }
 
-.ui-sidebar-left {
+.ng-sidebar-left {
     top: 0;
     left: 0;
     width: 20em;
@@ -15,7 +15,7 @@
     transform: translateX(-100%);
 }
 
-.ui-sidebar-right {
+.ng-sidebar-right {
     top: 0;
     right: 0;
     width: 20em;
@@ -25,7 +25,7 @@
     transform: translateX(100%);
 }
 
-.ui-sidebar-top {
+.ng-sidebar-top {
     top: 0;
     left: 0;
     width: 100%;
@@ -35,7 +35,7 @@
     transform: translateY(-100%);
 }
 
-.ui-sidebar-bottom {
+.ng-sidebar-bottom {
     bottom: 0;
     left: 0;
     width: 100%;
@@ -45,7 +45,7 @@
     transform: translateY(100%);
 }
 
-.ui-sidebar-full {
+.ng-sidebar-full {
     width: 100%;
     height: 100%;
     left: 0;
@@ -53,65 +53,65 @@
     transition: transform 0s;
 }
 
-.ui-sidebar-left.ui-sidebar-active,
-.ui-sidebar-right.ui-sidebar-active {
+.ng-sidebar-left.ng-sidebar-active,
+.ng-sidebar-right.ng-sidebar-active {
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0)
 }
 
-.ui-sidebar-left.ui-sidebar-sm,
-.ui-sidebar-right.ui-sidebar-sm {
+.ng-sidebar-left.ng-sidebar-sm,
+.ng-sidebar-right.ng-sidebar-sm {
     width: 20em;
 }
 
-.ui-sidebar-left.ui-sidebar-md,
-.ui-sidebar-right.ui-sidebar-md {
+.ng-sidebar-left.ng-sidebar-md,
+.ng-sidebar-right.ng-sidebar-md {
     width: 40em;
 }
 
-.ui-sidebar-left.ui-sidebar-lg,
-.ui-sidebar-right.ui-sidebar-lg {
+.ng-sidebar-left.ng-sidebar-lg,
+.ng-sidebar-right.ng-sidebar-lg {
     width: 60em;
 }
 
-.ui-sidebar-top.ui-sidebar-active,
-.ui-sidebar-bottom.ui-sidebar-active {
+.ng-sidebar-top.ng-sidebar-active,
+.ng-sidebar-bottom.ng-sidebar-active {
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0)
 }
 
-.ui-sidebar-top.ui-sidebar-sm,
-.ui-sidebar-bottom.ui-sidebar-sm {
+.ng-sidebar-top.ng-sidebar-sm,
+.ng-sidebar-bottom.ng-sidebar-sm {
     height: 10em;
 }
 
-.ui-sidebar-top.ui-sidebar-md,
-.ui-sidebar-bottom.ui-sidebar-md {
+.ng-sidebar-top.ng-sidebar-md,
+.ng-sidebar-bottom.ng-sidebar-md {
     height: 20em;
 }
 
-.ui-sidebar-top.ui-sidebar-lg,
-.ui-sidebar-bottom.ui-sidebar-lg {
+.ng-sidebar-top.ng-sidebar-lg,
+.ng-sidebar-bottom.ng-sidebar-lg {
     height: 30em;
 }
 
-.ui-sidebar-mask {
+.ng-sidebar-mask {
     position: fixed;
     width: 100%;
     height: 100%;
 }
 
-.ui-sidebar-close {
+.ng-sidebar-close {
     float: right;
 }
 
 @media screen and (max-width: 64em) {
-    .ui-sidebar-left.ui-sidebar-lg,
-    .ui-sidebar-left.ui-sidebar-md, 
-    .ui-sidebar-right.ui-sidebar-lg,
-    .ui-sidebar-right.ui-sidebar-md {
+    .ng-sidebar-left.ng-sidebar-lg,
+    .ng-sidebar-left.ng-sidebar-md, 
+    .ng-sidebar-right.ng-sidebar-lg,
+    .ng-sidebar-right.ng-sidebar-md {
         width: 20em;
     }
 }

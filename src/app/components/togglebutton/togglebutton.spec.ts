@@ -24,18 +24,18 @@ describe('ToggleButton', () => {
     it('should display the OFF label when value is undefined', () => {
         toggleButton.offLabel = 'NO';
         fixture.detectChanges();
-        const labelEl = fixture.debugElement.query(By.css('.ui-button-text'));
+        const labelEl = fixture.debugElement.query(By.css('.ng-button-text'));
         expect(labelEl.nativeElement.textContent).toBe('NO');
     });
 
     it('should display the ON label when clicked', () => {
         toggleButton.onLabel = 'YES';
         fixture.detectChanges();
-        const clickEl = fixture.nativeElement.querySelector('.ui-togglebutton')
+        const clickEl = fixture.nativeElement.querySelector('.ng-togglebutton')
         clickEl.click();
         fixture.detectChanges();
 
-        const labelEl = fixture.debugElement.query(By.css('.ui-button-text'));
+        const labelEl = fixture.debugElement.query(By.css('.ng-button-text'));
         expect(labelEl.nativeElement.textContent).toBe('YES')
     });
 

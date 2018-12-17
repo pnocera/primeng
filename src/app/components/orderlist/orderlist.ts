@@ -8,33 +8,33 @@ import {ObjectUtils} from '../utils/objectutils';
 @Component({
     selector: 'p-orderList',
     template: `
-        <div [ngClass]="{'ui-orderlist ui-widget': true, 'ui-orderlist-controls-left': controlsPosition === 'left',
-                    'ui-orderlist-controls-right': controlsPosition === 'right'}" [ngStyle]="style" [class]="styleClass">
-            <div class="ui-orderlist-controls">
+        <div [ngClass]="{'ng-orderlist ng-widget': true, 'ng-orderlist-controls-left': controlsPosition === 'left',
+                    'ng-orderlist-controls-right': controlsPosition === 'right'}" [ngStyle]="style" [class]="styleClass">
+            <div class="ng-orderlist-controls">
                 <button type="button" pButton icon="pi pi-angle-up" (click)="moveUp($event)"></button>
                 <button type="button" pButton icon="pi pi-angle-double-up" (click)="moveTop($event)"></button>
                 <button type="button" pButton icon="pi pi-angle-down" (click)="moveDown($event)"></button>
                 <button type="button" pButton icon="pi pi-angle-double-down" (click)="moveBottom($event)"></button>
             </div>
-            <div class="ui-orderlist-list-container">
-                <div class="ui-orderlist-caption ui-widget-header ui-corner-top" *ngIf="header">{{header}}</div>
-                <div class="ui-orderlist-filter-container ui-widget-content" *ngIf="filterBy">
-                    <input type="text" role="textbox" (keyup)="onFilterKeyup($event)" class="ui-inputtext ui-widget ui-state-default ui-corner-all" [attr.placeholder]="filterPlaceholder">
-                    <span class="ui-orderlist-filter-icon pi pi-search"></span>
+            <div class="ng-orderlist-list-container">
+                <div class="ng-orderlist-caption ng-widget-header ng-corner-top" *ngIf="header">{{header}}</div>
+                <div class="ng-orderlist-filter-container ng-widget-content" *ngIf="filterBy">
+                    <input type="text" role="textbox" (keyup)="onFilterKeyup($event)" class="ng-inputtext ng-widget ng-state-default ng-corner-all" [attr.placeholder]="filterPlaceholder">
+                    <span class="ng-orderlist-filter-icon pi pi-search"></span>
                 </div>
-                <ul #listelement class="ui-widget-content ui-orderlist-list ui-corner-bottom" [ngStyle]="listStyle" (dragover)="onListMouseMove($event)">
+                <ul #listelement class="ng-widget-content ng-orderlist-list ng-corner-bottom" [ngStyle]="listStyle" (dragover)="onListMouseMove($event)">
                     <ng-template ngFor [ngForTrackBy]="trackBy" let-item [ngForOf]="value" let-i="index" let-l="last">
-                        <li class="ui-orderlist-droppoint" *ngIf="dragdrop && isItemVisible(item)" (dragover)="onDragOver($event, i)" (drop)="onDrop($event, i)" (dragleave)="onDragLeave($event)" 
-                            [ngClass]="{'ui-orderlist-droppoint-highlight': (i === dragOverItemIndex)}"></li>
-                        <li class="ui-orderlist-item" tabindex="0"
-                            [ngClass]="{'ui-state-highlight':isSelected(item)}" 
+                        <li class="ng-orderlist-droppoint" *ngIf="dragdrop && isItemVisible(item)" (dragover)="onDragOver($event, i)" (drop)="onDrop($event, i)" (dragleave)="onDragLeave($event)" 
+                            [ngClass]="{'ng-orderlist-droppoint-highlight': (i === dragOverItemIndex)}"></li>
+                        <li class="ng-orderlist-item" tabindex="0"
+                            [ngClass]="{'ng-state-highlight':isSelected(item)}" 
                             (click)="onItemClick($event,item,i)" (touchend)="onItemTouchEnd($event)" (keydown)="onItemKeydown($event,item,i)"
                             [style.display]="isItemVisible(item) ? 'block' : 'none'"
                             [draggable]="dragdrop" (dragstart)="onDragStart($event, i)" (dragend)="onDragEnd($event)">
                             <ng-container *ngTemplateOutlet="itemTemplate; context: {$implicit: item, index: i}"></ng-container>
                         </li>
-                        <li class="ui-orderlist-droppoint" *ngIf="dragdrop && l" (dragover)="onDragOver($event, i + 1)" (drop)="onDrop($event, i + 1)" (dragleave)="onDragLeave($event)" 
-                            [ngClass]="{'ui-orderlist-droppoint-highlight': (i + 1 === dragOverItemIndex)}"></li>
+                        <li class="ng-orderlist-droppoint" *ngIf="dragdrop && l" (dragover)="onDragOver($event, i + 1)" (drop)="onDrop($event, i + 1)" (dragleave)="onDragLeave($event)" 
+                            [ngClass]="{'ng-orderlist-droppoint-highlight': (i + 1 === dragOverItemIndex)}"></li>
                     </ng-template>
                 </ul>
             </div>
@@ -128,7 +128,7 @@ export class OrderList implements AfterViewChecked,AfterContentInit {
          
     ngAfterViewChecked() {
         if (this.movedUp||this.movedDown) {
-            let listItems = this.domHandler.find(this.listViewChild.nativeElement, 'li.ui-state-highlight');
+            let listItems = this.domHandler.find(this.listViewChild.nativeElement, 'li.ng-state-highlight');
             let listItem;
             
             if (listItems.length > 0) {
@@ -389,7 +389,7 @@ export class OrderList implements AfterViewChecked,AfterContentInit {
         let nextItem = item.nextElementSibling;
 
         if (nextItem)
-            return !this.domHandler.hasClass(nextItem, 'ui-orderlist-item') || this.domHandler.isHidden(nextItem) ? this.findNextItem(nextItem) : nextItem;
+            return !this.domHandler.hasClass(nextItem, 'ng-orderlist-item') || this.domHandler.isHidden(nextItem) ? this.findNextItem(nextItem) : nextItem;
         else
             return null;
     }
@@ -398,7 +398,7 @@ export class OrderList implements AfterViewChecked,AfterContentInit {
         let prevItem = item.previousElementSibling;
         
         if (prevItem)
-            return !this.domHandler.hasClass(prevItem, 'ui-orderlist-item') || this.domHandler.isHidden(prevItem) ? this.findPrevItem(prevItem) : prevItem;
+            return !this.domHandler.hasClass(prevItem, 'ng-orderlist-item') || this.domHandler.isHidden(prevItem) ? this.findPrevItem(prevItem) : prevItem;
         else
             return null;
     } 

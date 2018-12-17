@@ -11,20 +11,20 @@ let idx: number = 0;
 @Component({
     selector: 'p-accordionTab',
     template: `
-        <div class="ui-accordion-header ui-state-default ui-corner-all" [ngClass]="{'ui-state-active': selected,'ui-state-disabled':disabled}">
+        <div class="ng-accordion-header ng-state-default ng-corner-all" [ngClass]="{'ng-state-active': selected,'ng-state-disabled':disabled}">
             <a tabindex="0" [attr.id]="id" [attr.aria-controls]="id + '-content'" role="tab" [attr.aria-expanded]="selected" (click)="toggle($event)" 
                 (keydown.space)="toggle($event)" (keydown.enter)="toggle($event)">
-                <span class="ui-accordion-toggle-icon" [ngClass]="selected ? accordion.collapseIcon : accordion.expandIcon"></span>
-                <span class="ui-accordion-header-text" *ngIf="!hasHeaderFacet">
+                <span class="ng-accordion-toggle-icon" [ngClass]="selected ? accordion.collapseIcon : accordion.expandIcon"></span>
+                <span class="ng-accordion-header-text" *ngIf="!hasHeaderFacet">
                     {{header}}
                 </span>
                 <ng-content select="p-header" *ngIf="hasHeaderFacet"></ng-content>
             </a>
         </div>
-        <div [attr.id]="id + '-content'" class="ui-accordion-content-wrapper" [@tabContent]="selected ? {value: 'visible', params: {transitionParams: transitionOptions}} : {value: 'hidden', params: {transitionParams: transitionOptions}}" (@tabContent.done)="onToggleDone($event)"
-            [ngClass]="{'ui-accordion-content-wrapper-overflown': !selected||animating}" 
+        <div [attr.id]="id + '-content'" class="ng-accordion-content-wrapper" [@tabContent]="selected ? {value: 'visible', params: {transitionParams: transitionOptions}} : {value: 'hidden', params: {transitionParams: transitionOptions}}" (@tabContent.done)="onToggleDone($event)"
+            [ngClass]="{'ng-accordion-content-wrapper-overflown': !selected||animating}" 
             role="tabpanel" [attr.aria-hidden]="!selected" [attr.aria-labelledby]="id">
-            <div class="ui-accordion-content ui-widget-content" *ngIf="lazy ? selected : true">
+            <div class="ng-accordion-content ng-widget-content" *ngIf="lazy ? selected : true">
                 <ng-content></ng-content>
             </div>
         </div>
@@ -57,7 +57,7 @@ export class AccordionTab implements OnDestroy {
 
     animating: boolean;
 
-    id: string = `ui-accordiontab-${idx++}`;
+    id: string = `ng-accordiontab-${idx++}`;
 
     constructor( @Inject(forwardRef(() => Accordion)) public accordion: Accordion) {}
 
@@ -121,7 +121,7 @@ export class AccordionTab implements OnDestroy {
 @Component({
     selector: 'p-accordion',
     template: `
-        <div [ngClass]="'ui-accordion ui-widget ui-helper-reset'" [ngStyle]="style" [class]="styleClass" role="tablist">
+        <div [ngClass]="'ng-accordion ng-widget ng-helper-reset'" [ngStyle]="style" [class]="styleClass" role="tablist">
             <ng-content></ng-content>
         </div>
     `

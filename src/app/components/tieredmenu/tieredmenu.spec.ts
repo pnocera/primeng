@@ -353,7 +353,7 @@ describe('TieredMenu', () => {
       fixture.detectChanges();
 
       expect(onItemMouseEnter).toHaveBeenCalled();
-      expect(fileItemEl.className).toContain("ui-menuitem-active");
+      expect(fileItemEl.className).toContain("ng-menuitem-active");
       expect(secondSubMenu.children.length).toEqual(3);
       expect(subMenuComponent.activeItem).toBeTruthy();
     });
@@ -396,7 +396,7 @@ describe('TieredMenu', () => {
       fixture.detectChanges();
 
       expect(onItemMouseEnter).toHaveBeenCalled();
-      expect(fileItemEl.className).not.toContain("ui-menuitem-active");
+      expect(fileItemEl.className).not.toContain("ng-menuitem-active");
       expect(subMenuComponent.activeItem).toBeUndefined();
     });
 
@@ -442,12 +442,12 @@ describe('TieredMenu', () => {
       fixture.detectChanges();
 
       expect(onItemMouseLeave).toHaveBeenCalled();
-      expect(fileItemEl.className).not.toContain("ui-menuitem-active");
+      expect(fileItemEl.className).not.toContain("ng-menuitem-active");
       expect(subMenuComponent.activeItem).toEqual(null);
       fileItemEl.dispatchEvent(mouseenter);
       fixture.detectChanges();
 
-      expect(fileItemEl.className).toContain("ui-menuitem-active");
+      expect(fileItemEl.className).toContain("ng-menuitem-active");
       expect(subMenuComponent.activeItem).toBeTruthy();
     }));
 

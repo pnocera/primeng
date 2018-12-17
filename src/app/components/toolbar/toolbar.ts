@@ -5,7 +5,7 @@ import {BlockableUI} from '../common/blockableui';
 @Component({
     selector: 'p-toolbar',
     template: `
-        <div [ngClass]="'ui-toolbar ui-widget ui-widget-header ui-corner-all ui-helper-clearfix'" [ngStyle]="style" [class]="styleClass">
+        <div [ngClass]="'ng-toolbar ng-widget ng-widget-header ng-corner-all ng-helper-clearfix'" [ngStyle]="style" [class]="styleClass">
             <ng-content></ng-content>
         </div>
     `

@@ -1,34 +1,34 @@
-.ui-datagrid .ui-paginator {
+.ng-datagrid .ng-paginator {
 	text-align: center;
 }
 
-.ui-datagrid-column {
+.ng-datagrid-column {
 	padding: .25em;
 }
 
-.ui-datagrid-content-empty {
+.ng-datagrid-content-empty {
     padding: .25em .625em;
 }
 
-.ui-datagrid .ui-datagrid-header,
-.ui-datagrid .ui-datagrid-footer {
+.ng-datagrid .ng-datagrid-header,
+.ng-datagrid .ng-datagrid-footer {
     text-align:center;
 	padding: .5em .75em;
 }
 
-.ui-datagrid .ui-datagrid-header {
+.ng-datagrid .ng-datagrid-header {
     border-bottom: 0 none;
 }
 
-.ui-datagrid .ui-datagrid-footer {
+.ng-datagrid .ng-datagrid-footer {
     border-top: 0 none;
 }
 
-.ui-datagrid .ui-paginator-top {
+.ng-datagrid .ng-paginator-top {
     border-bottom: 0 none;
 }
 
-.ui-datagrid .ui-paginator-bottom {
+.ng-datagrid .ng-paginator-bottom {
     border-top: 0 none;
 }
 

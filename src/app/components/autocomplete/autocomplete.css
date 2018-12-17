@@ -1,4 +1,4 @@
-.ui-autocomplete {
+.ng-autocomplete {
     width: auto;
     zoom: 1;
     cursor: pointer;
@@ -9,43 +9,43 @@
     display: inline-block;
 }
 
-.ui-autocomplete .ui-autocomplete-dropdown {
+.ng-autocomplete .ng-autocomplete-dropdown {
     height: 100%;
     width: 2em;
     margin-right: 0;
     vertical-align: top;
 }
 
-.ui-autocomplete .ui-autocomplete-input {
+.ng-autocomplete .ng-autocomplete-input {
     padding-right: 1.5em;
 }
 
-.ui-autocomplete-loader {
+.ng-autocomplete-loader {
     position: absolute;
     right: .25em;
     top: 50%;
     margin-top: -.5em;
 }
 
-.ui-autocomplete-query {
+.ng-autocomplete-query {
     font-weight: bold;
 }
 
-.ui-autocomplete .ui-autocomplete-panel {
+.ng-autocomplete .ng-autocomplete-panel {
     min-width: 100%;
 }
 
-.ui-autocomplete-panel {
+.ng-autocomplete-panel {
     position: absolute;
     overflow: auto;
 }
 
-.ui-autocomplete-panel .ui-autocomplete-list {
+.ng-autocomplete-panel .ng-autocomplete-list {
     padding: 0.4em;
     border: 0 none;
 }
 
-.ui-autocomplete-panel .ui-autocomplete-list-item {
+.ng-autocomplete-panel .ng-autocomplete-list-item {
     border: 0 none;
     cursor: pointer;
     font-weight: normal;
@@ -54,20 +54,20 @@
     text-align: left;
 }
 
-.ui-autocomplete .ui-button-icon-only,
-.ui-autocomplete .ui-button-icon-only:enabled:hover,
-.ui-autocomplete .ui-button-icon-only:enabled:focus,
-.ui-autocomplete .ui-button-icon-only:enabled:active {
+.ng-autocomplete .ng-button-icon-only,
+.ng-autocomplete .ng-button-icon-only:enabled:hover,
+.ng-autocomplete .ng-button-icon-only:enabled:focus,
+.ng-autocomplete .ng-button-icon-only:enabled:active {
     border-left: 0 none;
 }
 
 /* Multiple Selection */
-.ui-autocomplete-multiple-container {
+.ng-autocomplete-multiple-container {
     display: inline-block;
     vertical-align: middle;
 }
 
-.ui-autocomplete-multiple-container.ui-inputtext {
+.ng-autocomplete-multiple-container.ng-inputtext {
     clear: left;
     cursor: text;
     list-style-type: none;
@@ -76,7 +76,7 @@
     padding: 0 1.5em 0 .25em;
 }
 
-.ui-autocomplete-token {
+.ng-autocomplete-token {
     cursor: default;
     display: inline-block;
     vertical-align: middle;
@@ -89,12 +89,12 @@
     font-size: .9em;
 }
 
-.ui-autocomplete-token-label {
+.ng-autocomplete-token-label {
     display: block;
     margin-right: 2em;
 }
 
-.ui-autocomplete-token-icon {
+.ng-autocomplete-token-icon {
     margin-top: -.5em;
     position: absolute;
     right: 0.2em;
@@ -102,7 +102,7 @@
     cursor: pointer;
 }
 
-.ui-autocomplete-input-token {
+.ng-autocomplete-input-token {
     display: inline-block;
     vertical-align: middle;
     list-style-type: none;
@@ -110,7 +110,7 @@
     padding: .25em .25em .25em 0;
 }
 
-.ui-autocomplete-input-token input {
+.ng-autocomplete-input-token input {
     border: 0 none;
     width: 10em;
     outline: medium none;
@@ -123,12 +123,12 @@
     border-radius: 0;
 }
 
-.ui-autocomplete-dd .ui-autocomplete-loader {
+.ng-autocomplete-dd .ng-autocomplete-loader {
     right: 2.25em;
 }
 
-.ui-autocomplete-dd input.ui-corner-all ,
-.ui-autocomplete-dd .ui-autocomplete-multiple-container.ui-corner-all {
+.ng-autocomplete-dd input.ng-corner-all ,
+.ng-autocomplete-dd .ng-autocomplete-multiple-container.ng-corner-all {
      -moz-border-radius-topright: 0px; 
      -webkit-border-top-right-radius: 0px;
      border-top-right-radius: 0px;
@@ -137,7 +137,7 @@
      border-bottom-right-radius: 0px;
  }
  
-.ui-autocomplete-dd .ui-autocomplete-dropdown.ui-corner-all {
+.ng-autocomplete-dd .ng-autocomplete-dropdown.ng-corner-all {
      -moz-border-radius-topleft: 0px; 
      -webkit-border-top-left-radius: 0px;
      border-top-left-radius: 0px;
@@ -147,17 +147,17 @@
 }
 
 /** AutoComplete **/
-.ui-fluid p-autocomplete,
-.ui-fluid .ui-autocomplete,
-.ui-fluid .ui-autocomplete-input {
+.ng-fluid p-autocomplete,
+.ng-fluid .ng-autocomplete,
+.ng-fluid .ng-autocomplete-input {
     width: 100%;
 }
 
-.ui-fluid .ui-autocomplete.ui-autocomplete-dd .ui-autocomplete-input,
-.ui-fluid .ui-autocomplete.ui-autocomplete-dd .ui-autocomplete-multiple-container {
+.ng-fluid .ng-autocomplete.ng-autocomplete-dd .ng-autocomplete-input,
+.ng-fluid .ng-autocomplete.ng-autocomplete-dd .ng-autocomplete-multiple-container {
     width: calc(100% - 2em);
 }
 
-.ui-fluid .ui-autocomplete .ui-autocomplete-dropdown.ui-button {
+.ng-fluid .ng-autocomplete .ng-autocomplete-dropdown.ng-button {
     width: 2em;
 }

@@ -14,14 +14,14 @@ export const CHIPS_VALUE_ACCESSOR: any = {
 @Component({
     selector: 'p-chips',
     template: `
-        <div [ngClass]="'ui-chips ui-widget'" [ngStyle]="style" [class]="styleClass" (click)="onClick($event)">
-            <ul [ngClass]="{'ui-inputtext ui-state-default ui-corner-all':true,'ui-state-focus':focus,'ui-state-disabled':disabled}">
-                <li #token *ngFor="let item of value; let i = index;" class="ui-chips-token ui-state-highlight ui-corner-all" (click)="onItemClick($event, item)">
-                    <span *ngIf="!disabled" class="ui-chips-token-icon pi pi-fw pi-times" (click)="removeItem($event,i)"></span>
-                    <span *ngIf="!itemTemplate" class="ui-chips-token-label">{{field ? resolveFieldData(item,field) : item}}</span>
+        <div [ngClass]="'ng-chips ng-widget'" [ngStyle]="style" [class]="styleClass" (click)="onClick($event)">
+            <ul [ngClass]="{'ng-inputtext ng-state-default ng-corner-all':true,'ng-state-focus':focus,'ng-state-disabled':disabled}">
+                <li #token *ngFor="let item of value; let i = index;" class="ng-chips-token ng-state-highlight ng-corner-all" (click)="onItemClick($event, item)">
+                    <span *ngIf="!disabled" class="ng-chips-token-icon pi pi-fw pi-times" (click)="removeItem($event,i)"></span>
+                    <span *ngIf="!itemTemplate" class="ng-chips-token-label">{{field ? resolveFieldData(item,field) : item}}</span>
                     <ng-container *ngTemplateOutlet="itemTemplate; context: {$implicit: item}"></ng-container>
                 </li>
-                <li class="ui-chips-input-token">
+                <li class="ng-chips-input-token">
                     <input #inputtext type="text" [attr.id]="inputId" [attr.placeholder]="(value && value.length ? null : placeholder)" [attr.tabindex]="tabindex" (keydown)="onKeydown($event)" 
                         (focus)="onInputFocus($event)" (blur)="onInputBlur($event)" [disabled]="disabled" [ngStyle]="inputStyle" [class]="inputStyleClass">
                 </li>

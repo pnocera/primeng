@@ -66,10 +66,10 @@ describe('TabView', () => {
       tabview.orientation="left"
       fixture.detectChanges();
       
-      const tabPanelEl=fixture.debugElement.children[0].query(By.css('.ui-tabview')).nativeElement;
-      const tabviewEl=fixture.debugElement.children[0].query(By.css('.ui-tabview')).nativeElement;
-      expect(tabviewEl.className).toContain("ui-tabview-left");
-      expect(tabPanelEl.className).toContain("ui-tabview-left");
+      const tabPanelEl=fixture.debugElement.children[0].query(By.css('.ng-tabview')).nativeElement;
+      const tabviewEl=fixture.debugElement.children[0].query(By.css('.ng-tabview')).nativeElement;
+      expect(tabviewEl.className).toContain("ng-tabview-left");
+      expect(tabPanelEl.className).toContain("ng-tabview-left");
     });
 
     it('should change the header', () => {
@@ -92,7 +92,7 @@ describe('TabView', () => {
       fixture.detectChanges();
 
       const firstTabViewNavEl = fixture.debugElement.children[0].children[0].children[0].children[0].nativeElement;
-      expect(firstTabViewNavEl.className).toContain("ui-state-disabled");
+      expect(firstTabViewNavEl.className).toContain("ng-state-disabled");
     });
 
     it('should closable and element count should be 2', () => {
@@ -101,8 +101,8 @@ describe('TabView', () => {
       firstTabPanel.closable = true;
       fixture.detectChanges();
 
-      const firstTabViewNavEl = fixture.debugElement.children[0].children[0].children[0].children[0].query(By.css('.ui-tabview-close')).nativeElement;
-      expect(firstTabViewNavEl.className).toContain("ui-tabview-close");
+      const firstTabViewNavEl = fixture.debugElement.children[0].children[0].children[0].children[0].query(By.css('.ng-tabview-close')).nativeElement;
+      expect(firstTabViewNavEl.className).toContain("ng-tabview-close");
       firstTabViewNavEl.click();
       fixture.detectChanges();
 
@@ -118,8 +118,8 @@ describe('TabView', () => {
       firstTabPanel.rightIcon = "ALWAYS BET ON PRIME";
       fixture.detectChanges();
 
-      const firstTabViewLeftIconEl = fixture.debugElement.children[0].children[0].children[0].children[0].query(By.css('.ui-tabview-left-icon')).nativeElement;
-      const firstTabViewRightIconEl = fixture.debugElement.children[0].children[0].children[0].children[0].query(By.css('.ui-tabview-right-icon')).nativeElement;
+      const firstTabViewLeftIconEl = fixture.debugElement.children[0].children[0].children[0].children[0].query(By.css('.ng-tabview-left-icon')).nativeElement;
+      const firstTabViewRightIconEl = fixture.debugElement.children[0].children[0].children[0].children[0].query(By.css('.ng-tabview-right-icon')).nativeElement;
       expect(firstTabViewLeftIconEl.className).toContain("PrimeNg ROCKS!");
       expect(firstTabViewRightIconEl.className).toContain("ALWAYS BET ON PRIME");
     });
@@ -163,9 +163,9 @@ describe('TabView', () => {
       const firstTabViewNavEl=fixture.debugElement.children[0].children[0].children[0].children[0].nativeElement;
       const secondTabViewNavEl=fixture.debugElement.children[0].children[0].children[0].children[1].nativeElement;
       const thirdTabViewNavEl=fixture.debugElement.children[0].children[0].children[0].children[2].nativeElement;
-      expect(firstTabViewNavEl.className).not.toContain('ui-tabview-selected ui-state-active');
-      expect(secondTabViewNavEl.className).toContain('ui-tabview-selected ui-state-active');
-      expect(thirdTabViewNavEl.className).not.toContain('ui-tabview-selected ui-state-active');
+      expect(firstTabViewNavEl.className).not.toContain('ng-tabview-selected ng-state-active');
+      expect(secondTabViewNavEl.className).toContain('ng-tabview-selected ng-state-active');
+      expect(thirdTabViewNavEl.className).not.toContain('ng-tabview-selected ng-state-active');
     });
 
     it('should change activeIndex', () => {

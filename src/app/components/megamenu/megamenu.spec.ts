@@ -75,8 +75,8 @@ describe('MegaMenu', () => {
         
         const megaMenuEl = fixture.debugElement.query(By.css('div')).nativeElement;
         const spanIconEl = fixture.debugElement.query(By.css('a')).children[2].nativeElement;
-        const menuItemCustomEl = fixture.debugElement.query(By.css('.ui-menuitem.ui-menuitem-custom'));
-        expect(megaMenuEl.className).toContain("ui-megamenu-horizontal");
+        const menuItemCustomEl = fixture.debugElement.query(By.css('.ng-menuitem.ng-menuitem-custom'));
+        expect(megaMenuEl.className).toContain("ng-megamenu-horizontal");
         expect(spanIconEl.className).toContain("pi-caret-down");
         expect(menuItemCustomEl).toBeTruthy();
     });
@@ -114,8 +114,8 @@ describe('MegaMenu', () => {
         
         const megaMenuEl = fixture.debugElement.query(By.css('div')).nativeElement;
         const spanIconEl = fixture.debugElement.query(By.css('a')).children[2].nativeElement;
-        const menuItemCustomEl = fixture.debugElement.query(By.css('.ui-menuitem.ui-menuitem-custom'));
-        expect(megaMenuEl.className).toContain("ui-megamenu-vertical");
+        const menuItemCustomEl = fixture.debugElement.query(By.css('.ng-menuitem.ng-menuitem-custom'));
+        expect(megaMenuEl.className).toContain("ng-megamenu-vertical");
         expect(spanIconEl.className).toContain("pi-caret-right");
         expect(menuItemCustomEl).toBeFalsy();
     });
@@ -158,7 +158,7 @@ describe('MegaMenu', () => {
         
         const tvEl = fixture.debugElement.query(By.css('ul')).children[0].nativeElement;
         const sportsEl = fixture.debugElement.query(By.css('ul')).children[1].nativeElement;
-        const submenuEl = fixture.debugElement.query(By.css('.ui-g')).queryAll(By.css('ul'));
+        const submenuEl = fixture.debugElement.query(By.css('.ng-g')).queryAll(By.css('ul'));
         const event = new Event('mouseenter');
         const mouseLeaveEvent = new Event('mouseleave');
         tvEl.dispatchEvent(event);
@@ -213,13 +213,13 @@ describe('MegaMenu', () => {
         fixture.detectChanges();
         
         const tvEl = fixture.debugElement.query(By.css('ul')).children[0].nativeElement;
-        const submenuEl = fixture.debugElement.query(By.css('.ui-g')).queryAll(By.css('ul'));
+        const submenuEl = fixture.debugElement.query(By.css('.ng-g')).queryAll(By.css('ul'));
         const event = new Event('mouseenter');
         tvEl.dispatchEvent(event);
         fixture.detectChanges();
 
-        const tv1HeaderEl = submenuEl[0].query(By.css('.ui-widget-header')).nativeElement;
-        const tv1FirstItemLabelEl = submenuEl[0].query(By.css('.ui-menuitem-text')).nativeElement;
+        const tv1HeaderEl = submenuEl[0].query(By.css('.ng-widget-header')).nativeElement;
+        const tv1FirstItemLabelEl = submenuEl[0].query(By.css('.ng-menuitem-text')).nativeElement;
         expect(mouseenterSpy).toHaveBeenCalled();
         expect(submenuEl.length).toEqual(2);
         expect(tv1HeaderEl.textContent).toContain("TV 1");
@@ -316,7 +316,7 @@ describe('MegaMenu', () => {
         fixture.detectChanges();
         
         const tvEl = fixture.debugElement.query(By.css('ul')).children[0].nativeElement;
-        const submenuEl = fixture.debugElement.query(By.css('.ui-g')).queryAll(By.css('ul'));
+        const submenuEl = fixture.debugElement.query(By.css('.ng-g')).queryAll(By.css('ul'));
         const event = new Event('mouseenter');
         tvEl.dispatchEvent(event);
         fixture.detectChanges();
@@ -372,7 +372,7 @@ describe('MegaMenu', () => {
         tvEl.dispatchEvent(event);
         fixture.detectChanges();
 
-        const disabledItems = fixture.debugElement.queryAll(By.css('.ui-state-disabled'));
+        const disabledItems = fixture.debugElement.queryAll(By.css('.ng-state-disabled'));
         expect(megamenu.activeItem).toEqual(undefined);
         expect(disabledItems.length).toEqual(2);
         expect(mouseenterSpy).toHaveBeenCalled();
@@ -421,7 +421,7 @@ describe('MegaMenu', () => {
         tvEl.dispatchEvent(event);
         fixture.detectChanges();
         
-        const unVisibleItems = fixture.debugElement.queryAll(By.css('.ui-helper-hidden'));
+        const unVisibleItems = fixture.debugElement.queryAll(By.css('.ng-helper-hidden'));
         expect(unVisibleItems.length).toEqual(2);
     });
 });

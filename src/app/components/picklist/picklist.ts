@@ -8,67 +8,67 @@ import {ObjectUtils} from '../utils/objectutils';
 @Component({
     selector: 'p-pickList',
     template: `
-        <div [class]="styleClass" [ngStyle]="style" [ngClass]="{'ui-picklist ui-widget ui-helper-clearfix': true,'ui-picklist-responsive': responsive}">
-            <div class="ui-picklist-source-controls ui-picklist-buttons" *ngIf="showSourceControls">
-                <div class="ui-picklist-buttons-cell">
+        <div [class]="styleClass" [ngStyle]="style" [ngClass]="{'ng-picklist ng-widget ng-helper-clearfix': true,'ng-picklist-responsive': responsive}">
+            <div class="ng-picklist-source-controls ng-picklist-buttons" *ngIf="showSourceControls">
+                <div class="ng-picklist-buttons-cell">
                     <button type="button" pButton icon="pi pi-angle-up" [disabled]="disabled" (click)="moveUp(sourcelist,source,selectedItemsSource,onSourceReorder)"></button>
                     <button type="button" pButton icon="pi pi-angle-double-up" [disabled]="disabled" (click)="moveTop(sourcelist,source,selectedItemsSource,onSourceReorder)"></button>
                     <button type="button" pButton icon="pi pi-angle-down" [disabled]="disabled" (click)="moveDown(sourcelist,source,selectedItemsSource,onSourceReorder)"></button>
                     <button type="button" pButton icon="pi pi-angle-double-down" [disabled]="disabled" (click)="moveBottom(sourcelist,source,selectedItemsSource,onSourceReorder)"></button>
                 </div>
             </div>
-            <div class="ui-picklist-listwrapper ui-picklist-source-wrapper" [ngClass]="{'ui-picklist-listwrapper-nocontrols':!showSourceControls}">
-                <div class="ui-picklist-caption ui-widget-header ui-corner-tl ui-corner-tr" *ngIf="sourceHeader">{{sourceHeader}}</div>
-                <div class="ui-picklist-filter-container ui-widget-content" *ngIf="filterBy && showSourceFilter !== false">
-                    <input #sourceFilter type="text" role="textbox" (keyup)="onFilter($event,source,SOURCE_LIST)" class="ui-picklist-filter ui-inputtext ui-widget ui-state-default ui-corner-all" [disabled]="disabled" [attr.placeholder]="sourceFilterPlaceholder">
-                    <span class="ui-picklist-filter-icon pi pi-search"></span>
+            <div class="ng-picklist-listwrapper ng-picklist-source-wrapper" [ngClass]="{'ng-picklist-listwrapper-nocontrols':!showSourceControls}">
+                <div class="ng-picklist-caption ng-widget-header ng-corner-tl ng-corner-tr" *ngIf="sourceHeader">{{sourceHeader}}</div>
+                <div class="ng-picklist-filter-container ng-widget-content" *ngIf="filterBy && showSourceFilter !== false">
+                    <input #sourceFilter type="text" role="textbox" (keyup)="onFilter($event,source,SOURCE_LIST)" class="ng-picklist-filter ng-inputtext ng-widget ng-state-default ng-corner-all" [disabled]="disabled" [attr.placeholder]="sourceFilterPlaceholder">
+                    <span class="ng-picklist-filter-icon pi pi-search"></span>
                 </div>
-                <ul #sourcelist class="ui-widget-content ui-picklist-list ui-picklist-source ui-corner-bottom" [ngClass]="{'ui-picklist-highlight': listHighlightSource}" [ngStyle]="sourceStyle" (dragover)="onListMouseMove($event,SOURCE_LIST)" (dragleave)="onListDragLeave()" (drop)="onListDrop($event, SOURCE_LIST)">
+                <ul #sourcelist class="ng-widget-content ng-picklist-list ng-picklist-source ng-corner-bottom" [ngClass]="{'ng-picklist-highlight': listHighlightSource}" [ngStyle]="sourceStyle" (dragover)="onListMouseMove($event,SOURCE_LIST)" (dragleave)="onListDragLeave()" (drop)="onListDrop($event, SOURCE_LIST)">
                     <ng-template ngFor let-item [ngForOf]="source" [ngForTrackBy]="sourceTrackBy || trackBy" let-i="index" let-l="last">
-                        <li class="ui-picklist-droppoint" *ngIf="dragdrop" (dragover)="onDragOver($event, i, SOURCE_LIST)" (drop)="onDrop($event, i, SOURCE_LIST)" (dragleave)="onDragLeave($event, SOURCE_LIST)"
-                        [ngClass]="{'ui-picklist-droppoint-highlight': (i === dragOverItemIndexSource)}" [style.display]="isItemVisible(item, SOURCE_LIST) ? 'block' : 'none'"></li>
-                        <li [ngClass]="{'ui-picklist-item':true,'ui-state-highlight':isSelected(item,selectedItemsSource), 'ui-state-disabled': disabled}"
+                        <li class="ng-picklist-droppoint" *ngIf="dragdrop" (dragover)="onDragOver($event, i, SOURCE_LIST)" (drop)="onDrop($event, i, SOURCE_LIST)" (dragleave)="onDragLeave($event, SOURCE_LIST)"
+                        [ngClass]="{'ng-picklist-droppoint-highlight': (i === dragOverItemIndexSource)}" [style.display]="isItemVisible(item, SOURCE_LIST) ? 'block' : 'none'"></li>
+                        <li [ngClass]="{'ng-picklist-item':true,'ng-state-highlight':isSelected(item,selectedItemsSource), 'ng-state-disabled': disabled}"
                             (click)="onItemClick($event,item,selectedItemsSource,onSourceSelect)" (dblclick)="onSourceItemDblClick()" (touchend)="onItemTouchEnd($event)" (keydown)="onItemKeydown($event,item,selectedItemsSource,onSourceSelect)"
                             [style.display]="isItemVisible(item, SOURCE_LIST) ? 'block' : 'none'" tabindex="0"
                             [draggable]="dragdrop" (dragstart)="onDragStart($event, i, SOURCE_LIST)" (dragend)="onDragEnd($event)">
                             <ng-container *ngTemplateOutlet="itemTemplate; context: {$implicit: item, index: i}"></ng-container>
                         </li>
-                        <li class="ui-picklist-droppoint" *ngIf="dragdrop&&l" (dragover)="onDragOver($event, i + 1, SOURCE_LIST)" (drop)="onDrop($event, i + 1, SOURCE_LIST)" (dragleave)="onDragLeave($event, SOURCE_LIST)"
-                        [ngClass]="{'ui-picklist-droppoint-highlight': (i + 1 === dragOverItemIndexSource)}"></li>
+                        <li class="ng-picklist-droppoint" *ngIf="dragdrop&&l" (dragover)="onDragOver($event, i + 1, SOURCE_LIST)" (drop)="onDrop($event, i + 1, SOURCE_LIST)" (dragleave)="onDragLeave($event, SOURCE_LIST)"
+                        [ngClass]="{'ng-picklist-droppoint-highlight': (i + 1 === dragOverItemIndexSource)}"></li>
                     </ng-template>
                 </ul>
             </div>
-            <div class="ui-picklist-buttons">
-                <div class="ui-picklist-buttons-cell">
+            <div class="ng-picklist-buttons">
+                <div class="ng-picklist-buttons-cell">
                     <button type="button" pButton icon="pi pi-angle-right" [disabled]="disabled" (click)="moveRight()"></button>
                     <button type="button" pButton icon="pi pi-angle-double-right" [disabled]="disabled" (click)="moveAllRight()"></button>
                     <button type="button" pButton icon="pi pi-angle-left" [disabled]="disabled" (click)="moveLeft()"></button>
                     <button type="button" pButton icon="pi pi-angle-double-left" [disabled]="disabled" (click)="moveAllLeft()"></button>
                 </div>
             </div>
-            <div class="ui-picklist-listwrapper ui-picklist-target-wrapper" [ngClass]="{'ui-picklist-listwrapper-nocontrols':!showTargetControls}">
-                <div class="ui-picklist-caption ui-widget-header ui-corner-tl ui-corner-tr" *ngIf="targetHeader">{{targetHeader}}</div>
-                <div class="ui-picklist-filter-container ui-widget-content" *ngIf="filterBy && showTargetFilter !== false">
-                    <input #targetFilter type="text" role="textbox" (keyup)="onFilter($event,target,TARGET_LIST)" class="ui-picklist-filter ui-inputtext ui-widget ui-state-default ui-corner-all" [disabled]="disabled" [attr.placeholder]="targetFilterPlaceholder">
-                    <span class="ui-picklist-filter-icon pi pi-search"></span>
+            <div class="ng-picklist-listwrapper ng-picklist-target-wrapper" [ngClass]="{'ng-picklist-listwrapper-nocontrols':!showTargetControls}">
+                <div class="ng-picklist-caption ng-widget-header ng-corner-tl ng-corner-tr" *ngIf="targetHeader">{{targetHeader}}</div>
+                <div class="ng-picklist-filter-container ng-widget-content" *ngIf="filterBy && showTargetFilter !== false">
+                    <input #targetFilter type="text" role="textbox" (keyup)="onFilter($event,target,TARGET_LIST)" class="ng-picklist-filter ng-inputtext ng-widget ng-state-default ng-corner-all" [disabled]="disabled" [attr.placeholder]="targetFilterPlaceholder">
+                    <span class="ng-picklist-filter-icon pi pi-search"></span>
                 </div>
-                <ul #targetlist class="ui-widget-content ui-picklist-list ui-picklist-target ui-corner-bottom" [ngClass]="{'ui-picklist-highlight': listHighlightTarget}" [ngStyle]="targetStyle" (dragover)="onListMouseMove($event,TARGET_LIST)" (dragleave)="onListDragLeave()" (drop)="onListDrop($event,TARGET_LIST)">
+                <ul #targetlist class="ng-widget-content ng-picklist-list ng-picklist-target ng-corner-bottom" [ngClass]="{'ng-picklist-highlight': listHighlightTarget}" [ngStyle]="targetStyle" (dragover)="onListMouseMove($event,TARGET_LIST)" (dragleave)="onListDragLeave()" (drop)="onListDrop($event,TARGET_LIST)">
                     <ng-template ngFor let-item [ngForOf]="target" [ngForTrackBy]="targetTrackBy || trackBy" let-i="index" let-l="last">
-                        <li class="ui-picklist-droppoint" *ngIf="dragdrop" (dragover)="onDragOver($event, i, TARGET_LIST)" (drop)="onDrop($event, i, TARGET_LIST)" (dragleave)="onDragLeave($event, TARGET_LIST)"
-                        [ngClass]="{'ui-picklist-droppoint-highlight': (i === dragOverItemIndexTarget)}" [style.display]="isItemVisible(item, TARGET_LIST) ? 'block' : 'none'"></li>
-                        <li [ngClass]="{'ui-picklist-item':true,'ui-state-highlight':isSelected(item,selectedItemsTarget), 'ui-state-disabled': disabled}"
+                        <li class="ng-picklist-droppoint" *ngIf="dragdrop" (dragover)="onDragOver($event, i, TARGET_LIST)" (drop)="onDrop($event, i, TARGET_LIST)" (dragleave)="onDragLeave($event, TARGET_LIST)"
+                        [ngClass]="{'ng-picklist-droppoint-highlight': (i === dragOverItemIndexTarget)}" [style.display]="isItemVisible(item, TARGET_LIST) ? 'block' : 'none'"></li>
+                        <li [ngClass]="{'ng-picklist-item':true,'ng-state-highlight':isSelected(item,selectedItemsTarget), 'ng-state-disabled': disabled}"
                             (click)="onItemClick($event,item,selectedItemsTarget,onTargetSelect)" (dblclick)="onTargetItemDblClick()" (touchend)="onItemTouchEnd($event)" (keydown)="onItemKeydown($event,item,selectedItemsTarget,onTargetSelect)"
                             [style.display]="isItemVisible(item, TARGET_LIST) ? 'block' : 'none'" tabindex="0"
                             [draggable]="dragdrop" (dragstart)="onDragStart($event, i, TARGET_LIST)" (dragend)="onDragEnd($event)">
                             <ng-container *ngTemplateOutlet="itemTemplate; context: {$implicit: item, index: i}"></ng-container>
                         </li>
-                        <li class="ui-picklist-droppoint" *ngIf="dragdrop&&l" (dragover)="onDragOver($event, i + 1, TARGET_LIST)" (drop)="onDrop($event, i + 1, TARGET_LIST)" (dragleave)="onDragLeave($event, TARGET_LIST)"
-                        [ngClass]="{'ui-picklist-droppoint-highlight': (i + 1 === dragOverItemIndexTarget)}"></li>
+                        <li class="ng-picklist-droppoint" *ngIf="dragdrop&&l" (dragover)="onDragOver($event, i + 1, TARGET_LIST)" (drop)="onDrop($event, i + 1, TARGET_LIST)" (dragleave)="onDragLeave($event, TARGET_LIST)"
+                        [ngClass]="{'ng-picklist-droppoint-highlight': (i + 1 === dragOverItemIndexTarget)}"></li>
                     </ng-template>
                 </ul>
             </div>
-            <div class="ui-picklist-target-controls ui-picklist-buttons" *ngIf="showTargetControls">
-                <div class="ui-picklist-buttons-cell">
+            <div class="ng-picklist-target-controls ng-picklist-buttons" *ngIf="showTargetControls">
+                <div class="ng-picklist-buttons-cell">
                     <button type="button" pButton icon="pi pi-angle-up" [disabled]="disabled" (click)="moveUp(targetlist,target,selectedItemsTarget,onTargetReorder)"></button>
                     <button type="button" pButton icon="pi pi-angle-double-up" [disabled]="disabled" (click)="moveTop(targetlist,target,selectedItemsTarget,onTargetReorder)"></button>
                     <button type="button" pButton icon="pi pi-angle-down" [disabled]="disabled" (click)="moveDown(targetlist,target,selectedItemsTarget,onTargetReorder)"></button>
@@ -221,7 +221,7 @@ export class PickList implements AfterViewChecked,AfterContentInit {
         
     ngAfterViewChecked() {
         if(this.movedUp||this.movedDown) {
-            let listItems = this.domHandler.find(this.reorderedListElement, 'li.ui-state-highlight');
+            let listItems = this.domHandler.find(this.reorderedListElement, 'li.ng-state-highlight');
             let listItem;
             
             if(this.movedUp)
@@ -706,7 +706,7 @@ export class PickList implements AfterViewChecked,AfterContentInit {
         let nextItem = item.nextElementSibling;
 
         if (nextItem)
-            return !this.domHandler.hasClass(nextItem, 'ui-picklist-item') || this.domHandler.isHidden(nextItem) ? this.findNextItem(nextItem) : nextItem;
+            return !this.domHandler.hasClass(nextItem, 'ng-picklist-item') || this.domHandler.isHidden(nextItem) ? this.findNextItem(nextItem) : nextItem;
         else
             return null;
     }
@@ -715,7 +715,7 @@ export class PickList implements AfterViewChecked,AfterContentInit {
         let prevItem = item.previousElementSibling;
         
         if (prevItem)
-            return !this.domHandler.hasClass(prevItem, 'ui-picklist-item') || this.domHandler.isHidden(prevItem) ? this.findPrevItem(prevItem) : prevItem;
+            return !this.domHandler.hasClass(prevItem, 'ng-picklist-item') || this.domHandler.isHidden(prevItem) ? this.findPrevItem(prevItem) : prevItem;
         else
             return null;
     } 

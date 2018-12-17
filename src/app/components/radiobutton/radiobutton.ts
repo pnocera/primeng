@@ -11,19 +11,19 @@ export const RADIO_VALUE_ACCESSOR: any = {
 @Component({
     selector: 'p-radioButton',
     template: `
-        <div [ngStyle]="style" [ngClass]="'ui-radiobutton ui-widget'" [class]="styleClass">
-            <div class="ui-helper-hidden-accessible">
+        <div [ngStyle]="style" [ngClass]="'ng-radiobutton ng-widget'" [class]="styleClass">
+            <div class="ng-helper-hidden-accessible">
                 <input #rb type="radio" [attr.id]="inputId" [attr.name]="name" [attr.value]="value" [attr.tabindex]="tabindex" 
                     [checked]="checked" (change)="onChange($event)" (focus)="onFocus($event)" (blur)="onBlur($event)" [disabled]="disabled">
             </div>
             <div (click)="handleClick($event, rb, true)"
-                [ngClass]="{'ui-radiobutton-box ui-widget ui-state-default':true,
-                'ui-state-active':rb.checked,'ui-state-disabled':disabled,'ui-state-focus':focused}">
-                <span class="ui-radiobutton-icon ui-clickable" [ngClass]="{'pi pi-circle-on':rb.checked}"></span>
+                [ngClass]="{'ng-radiobutton-box ng-widget ng-state-default':true,
+                'ng-state-active':rb.checked,'ng-state-disabled':disabled,'ng-state-focus':focused}">
+                <span class="ng-radiobutton-icon ng-clickable" [ngClass]="{'pi pi-circle-on':rb.checked}"></span>
             </div>
         </div>
         <label (click)="select()" [class]="labelStyleClass"
-            [ngClass]="{'ui-radiobutton-label':true, 'ui-label-active':rb.checked, 'ui-label-disabled':disabled, 'ui-label-focus':focused}"
+            [ngClass]="{'ng-radiobutton-label':true, 'ng-label-active':rb.checked, 'ng-label-disabled':disabled, 'ng-label-focus':focused}"
             *ngIf="label" [attr.for]="inputId">{{label}}</label>
     `,
     providers: [RADIO_VALUE_ACCESSOR]

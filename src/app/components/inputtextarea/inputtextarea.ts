@@ -5,12 +5,12 @@ import {CommonModule} from '@angular/common';
 @Directive({
     selector: '[pInputTextarea]',
     host: {
-        '[class.ui-inputtext]': 'true',
-        '[class.ui-corner-all]': 'true',
-        '[class.ui-inputtextarea-resizable]': 'autoResize',
-        '[class.ui-state-default]': 'true',
-        '[class.ui-widget]': 'true',
-        '[class.ui-state-filled]': 'filled'
+        '[class.ng-inputtext]': 'true',
+        '[class.ng-corner-all]': 'true',
+        '[class.ng-inputtextarea-resizable]': 'autoResize',
+        '[class.ng-state-default]': 'true',
+        '[class.ng-widget]': 'true',
+        '[class.ng-state-filled]': 'filled'
     }
 })
 export class InputTextarea implements DoCheck {
@@ -33,7 +33,7 @@ export class InputTextarea implements DoCheck {
         }
     }
     
-    //To trigger change detection to manage ui-state-filled for material labels when there is no value binding
+    //To trigger change detection to manage ng-state-filled for material labels when there is no value binding
     @HostListener('input', ['$event'])
     onInput(e) {
         this.updateFilledState();

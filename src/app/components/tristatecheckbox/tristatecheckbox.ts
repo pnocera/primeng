@@ -11,17 +11,17 @@ export const TRISTATECHECKBOX_VALUE_ACCESSOR: any = {
 @Component({
     selector: 'p-triStateCheckbox',
     template: `
-        <div [ngStyle]="style" [ngClass]="'ui-chkbox ui-tristatechkbox ui-widget'" [class]="styleClass">
-            <div class="ui-helper-hidden-accessible">
+        <div [ngStyle]="style" [ngClass]="'ng-chkbox ng-tristatechkbox ng-widget'" [class]="styleClass">
+            <div class="ng-helper-hidden-accessible">
                 <input #input type="text" [attr.id]="inputId" [name]="name" [attr.tabindex]="tabindex" readonly [disabled]="disabled" (keyup)="onKeyup($event)" (keydown)="onKeydown($event)" (focus)="onFocus()" (blur)="onBlur()">
             </div>
-            <div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default" (click)="onClick($event,input)"
-                [ngClass]="{'ui-state-active':value!=null,'ui-state-disabled':disabled,'ui-state-focus':focus}">
-                <span class="ui-chkbox-icon pi ui-clickable" [ngClass]="{'pi-check':value==true,'pi-times':value==false}"></span>
+            <div class="ng-chkbox-box ng-widget ng-corner-all ng-state-default" (click)="onClick($event,input)"
+                [ngClass]="{'ng-state-active':value!=null,'ng-state-disabled':disabled,'ng-state-focus':focus}">
+                <span class="ng-chkbox-icon pi ng-clickable" [ngClass]="{'pi-check':value==true,'pi-times':value==false}"></span>
             </div>
         </div>
-        <label class="ui-chkbox-label" (click)="onClick($event,input)"
-               [ngClass]="{'ui-label-active':value!=null, 'ui-label-disabled':disabled, 'ui-label-focus':focus}"
+        <label class="ng-chkbox-label" (click)="onClick($event,input)"
+               [ngClass]="{'ng-label-active':value!=null, 'ng-label-disabled':disabled, 'ng-label-focus':focus}"
                *ngIf="label" [attr.for]="inputId">{{label}}</label>
     `,
     providers: [TRISTATECHECKBOX_VALUE_ACCESSOR]

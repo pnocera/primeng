@@ -91,9 +91,9 @@ describe('Steps', () => {
 
       for(let x =0; x < testComponent.items.length; x++ ){
         if(x==0)
-          expect(items[x].nativeElement.className).not.toContain("ui-state-disabled ui-steps-incomplete");
+          expect(items[x].nativeElement.className).not.toContain("ng-state-disabled ng-steps-incomplete");
         else
-          expect(items[x].nativeElement.className).toContain("ui-state-disabled ui-steps-incomplete");
+          expect(items[x].nativeElement.className).toContain("ng-state-disabled ng-steps-incomplete");
       }
     });
 
@@ -103,9 +103,9 @@ describe('Steps', () => {
 
       const stepsEl = fixture.debugElement.children[0].query(By.css('div')).nativeElement;
       const items = fixture.debugElement.children[0].queryAll(By.css('li'));
-      expect(stepsEl.className).not.toContain("ui-steps-readonly");
+      expect(stepsEl.className).not.toContain("ng-steps-readonly");
       for(let x =0; x < testComponent.items.length; x++ ){
-          expect(items[x].nativeElement.className).not.toContain("ui-state-disabled ui-steps-incomplete");
+          expect(items[x].nativeElement.className).not.toContain("ng-state-disabled ng-steps-incomplete");
       }
     });
 
@@ -115,7 +115,7 @@ describe('Steps', () => {
       const stepsEl = fixture.debugElement.children[0].query(By.css('div')).nativeElement;
       const items = fixture.debugElement.children[0].queryAll(By.css('li'));
       for(let x =0; x < testComponent.items.length; x++ ){
-          expect(items[x].query(By.css('.ui-steps-number')).nativeElement.textContent).toEqual((x+1).toString());
+          expect(items[x].query(By.css('.ng-steps-number')).nativeElement.textContent).toEqual((x+1).toString());
       }
     });
 
@@ -125,9 +125,9 @@ describe('Steps', () => {
       const items = fixture.debugElement.children[0].queryAll(By.css('li'));
       for(let x =0; x < testComponent.items.length; x++ ){
         if(x==0)
-          expect(items[x].nativeElement.className).toContain("ui-state-highlight ui-steps-current");
+          expect(items[x].nativeElement.className).toContain("ng-state-highlight ng-steps-current");
         else
-          expect(items[x].nativeElement.className).toContain("ui-state-default");
+          expect(items[x].nativeElement.className).toContain("ng-state-default");
       }
     });
 
@@ -138,9 +138,9 @@ describe('Steps', () => {
       const items = fixture.debugElement.children[0].queryAll(By.css('li'));
       for(let x =0; x < testComponent.items.length; x++ ){
         if(x==2)
-          expect(items[x].nativeElement.className).toContain("ui-state-highlight ui-steps-current");
+          expect(items[x].nativeElement.className).toContain("ng-state-highlight ng-steps-current");
         else
-          expect(items[x].nativeElement.className).toContain("ui-state-default");
+          expect(items[x].nativeElement.className).toContain("ng-state-default");
       }
     });
 
@@ -157,9 +157,9 @@ describe('Steps', () => {
       expect(itemClickSpy).toHaveBeenCalled();
       for(let x =0; x < testComponent.items.length; x++ ){
         if(x==2)
-          expect(items[x].nativeElement.className).toContain("ui-state-highlight ui-steps-current");
+          expect(items[x].nativeElement.className).toContain("ng-state-highlight ng-steps-current");
         else
-          expect(items[x].nativeElement.className).toContain("ui-state-default");
+          expect(items[x].nativeElement.className).toContain("ng-state-default");
       }
     });
 

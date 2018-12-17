@@ -1,114 +1,114 @@
-.ui-table {
+.ng-table {
     position: relative;
 }
 
-.ui-table table {
+.ng-table table {
     border-collapse: collapse;
     width: 100%;
     table-layout: fixed;
 }
 
-.ui-table .ui-table-thead > tr > th,
-.ui-table .ui-table-tbody > tr > td,
-.ui-table .ui-table-tfoot > tr > td {
+.ng-table .ng-table-thead > tr > th,
+.ng-table .ng-table-tbody > tr > td,
+.ng-table .ng-table-tfoot > tr > td {
     padding: .25em .5em;
 }
 
-.ui-table .ui-sortable-column {
+.ng-table .ng-sortable-column {
     cursor: pointer;
 }
 
-.ui-table p-sorticon {
+.ng-table p-sorticon {
     vertical-align: middle;
 }
 
-.ui-table-auto-layout > .ui-table-wrapper {
+.ng-table-auto-layout > .ng-table-wrapper {
     overflow-x: auto;
 }
 
-.ui-table-auto-layout > .ui-table-wrapper > table {
+.ng-table-auto-layout > .ng-table-wrapper > table {
     table-layout: auto;
 }
 
 /* Sections */
-.ui-table-caption,
-.ui-table-summary {
+.ng-table-caption,
+.ng-table-summary {
     padding: .25em .5em;
     text-align: center;
     font-weight: bold;
 }
 
-.ui-table-caption {
+.ng-table-caption {
     border-bottom: 0 none;
 }
 
-.ui-table-summary {
+.ng-table-summary {
     border-top: 0 none;
 }
 
 /* Paginator */
-.ui-table .ui-paginator-top {
+.ng-table .ng-paginator-top {
     border-bottom: 0 none;
 }
 
-.ui-table .ui-paginator-bottom {
+.ng-table .ng-paginator-bottom {
     border-top: 0 none;
 }
 
 /* Scrollable */
-.ui-table-scrollable-wrapper {
+.ng-table-scrollable-wrapper {
     position: relative;
 }
-.ui-table-scrollable-header,
-.ui-table-scrollable-footer {
+.ng-table-scrollable-header,
+.ng-table-scrollable-footer {
     overflow: hidden;
     border: 0 none;
 }
 
-.ui-table-scrollable-body {
+.ng-table-scrollable-body {
     overflow: auto;
     position: relative;
 }
 
-.ui-table-virtual-table {
+.ng-table-virtual-table {
     position: absolute;
 }
 
 /* Frozen Columns */
-.ui-table-frozen-view .ui-table-scrollable-body {
+.ng-table-frozen-view .ng-table-scrollable-body {
     overflow: hidden;
 }
 
-.ui-table-frozen-view > .ui-table-scrollable-body > table > .ui-table-tbody > tr > td:last-child {
+.ng-table-frozen-view > .ng-table-scrollable-body > table > .ng-table-tbody > tr > td:last-child {
     border-right: 0 none;
 }
 
-.ui-table-unfrozen-view {
+.ng-table-unfrozen-view {
     position: absolute;
     top: 0px;
 }
 
 /* Resizable */
-.ui-table-resizable > .ui-table-wrapper {
+.ng-table-resizable > .ng-table-wrapper {
     overflow-x: auto;
 }
 
-.ui-table-resizable .ui-table-thead > tr > th,
-.ui-table-resizable .ui-table-tfoot > tr > td,
-.ui-table-resizable .ui-table-tbody > tr > td {
+.ng-table-resizable .ng-table-thead > tr > th,
+.ng-table-resizable .ng-table-tfoot > tr > td,
+.ng-table-resizable .ng-table-tbody > tr > td {
     overflow: hidden;
 }
 
-.ui-table-resizable .ui-resizable-column {
+.ng-table-resizable .ng-resizable-column {
     background-clip: padding-box;
     position: relative;
 }
 
-.ui-table-resizable-fit .ui-resizable-column:last-child .ui-column-resizer {
+.ng-table-resizable-fit .ng-resizable-column:last-child .ng-column-resizer {
     display: none;
 }
 
-.ui-table .ui-column-resizer {
+.ng-table .ng-column-resizer {
     display: block;
     position: absolute !important;
     top: 0;
@@ -121,7 +121,7 @@
     border: 1px solid transparent;
 }
 
-.ui-table .ui-column-resizer-helper {
+.ng-table .ng-column-resizer-helper {
     width: 1px;
     position: absolute;
     z-index: 10;
@@ -129,33 +129,33 @@
 }
 
 /* Edit */
-.ui-table .ui-table-tbody > tr > td.ui-editing-cell {
+.ng-table .ng-table-tbody > tr > td.ng-editing-cell {
     padding: 0;
 }
 
-.ui-table .ui-table-tbody > tr > td.ui-editing-cell p-celleditor >  * {
+.ng-table .ng-table-tbody > tr > td.ng-editing-cell p-celleditor >  * {
     width: 100%;
 }
 
 /* Reorder */
-.ui-table-reorder-indicator-up,
-.ui-table-reorder-indicator-down {
+.ng-table-reorder-indicator-up,
+.ng-table-reorder-indicator-down {
     position: absolute;
     display: none;
 }
 
 /* Responsive */
-.ui-table-responsive .ui-table-tbody > tr > td .ui-column-title {
+.ng-table-responsive .ng-table-tbody > tr > td .ng-column-title {
     display: none;
 }
 
 @media screen and (max-width: 40em) {
-    .ui-table-responsive .ui-table-thead > tr > th,
-    .ui-table-responsive .ui-table-tfoot > tr > td {
+    .ng-table-responsive .ng-table-thead > tr > th,
+    .ng-table-responsive .ng-table-tfoot > tr > td {
         display: none !important;
     }
 
-    .ui-table-responsive .ui-table-tbody > tr > td {
+    .ng-table-responsive .ng-table-tbody > tr > td {
         text-align: left;
         display: block;
         border: 0 none;
@@ -167,7 +167,7 @@
 		clear: left;
     }
 
-    .ui-table-responsive .ui-table-tbody > tr > td .ui-column-title {
+    .ng-table-responsive .ng-table-tbody > tr > td .ng-column-title {
         padding: .4em;
         min-width: 30%;
         display: inline-block;
@@ -177,7 +177,7 @@
 }
 
 /* Loader */
-.ui-table-loading {
+.ng-table-loading {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -186,7 +186,7 @@
     z-index: 1;
 }
 
-.ui-table-loading-content {
+.ng-table-loading-content {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -195,6 +195,6 @@
     margin-left: -1em;
 }
 
-.ui-table .ui-table-loading-icon {
+.ng-table .ng-table-loading-icon {
     font-size: 2em;
 }

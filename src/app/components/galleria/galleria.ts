@@ -5,27 +5,27 @@ import {DomHandler} from '../dom/domhandler';
 @Component({
     selector: 'p-galleria',
     template: `
-        <div [ngClass]="{'ui-galleria ui-widget ui-widget-content ui-corner-all':true}" [ngStyle]="style" [class]="styleClass" [style.width.px]="panelWidth">
-            <ul class="ui-galleria-panel-wrapper" [style.width.px]="panelWidth" [style.height.px]="panelHeight">
-                <li *ngFor="let image of images;let i=index" class="ui-galleria-panel" [ngClass]="{'ui-helper-hidden':i!=activeIndex}"
+        <div [ngClass]="{'ng-galleria ng-widget ng-widget-content ng-corner-all':true}" [ngStyle]="style" [class]="styleClass" [style.width.px]="panelWidth">
+            <ul class="ng-galleria-panel-wrapper" [style.width.px]="panelWidth" [style.height.px]="panelHeight">
+                <li *ngFor="let image of images;let i=index" class="ng-galleria-panel" [ngClass]="{'ng-helper-hidden':i!=activeIndex}"
                     [style.width.px]="panelWidth" [style.height.px]="panelHeight" (click)="clickImage($event,image,i)">
-                    <img class="ui-panel-images" [src]="image.source" [alt]="image.alt" [title]="image.title"/>
+                    <img class="ng-panel-images" [src]="image.source" [alt]="image.alt" [title]="image.title"/>
                 </li>
             </ul>
-            <div [ngClass]="{'ui-galleria-filmstrip-wrapper':true}" *ngIf="showFilmstrip">
-                <ul class="ui-galleria-filmstrip" style="transition:left 1s" [style.left.px]="stripLeft">
-                    <li #frame *ngFor="let image of images;let i=index" [ngClass]="{'ui-galleria-frame-active':i==activeIndex}" class="ui-galleria-frame" (click)="frameClick(frame)"
+            <div [ngClass]="{'ng-galleria-filmstrip-wrapper':true}" *ngIf="showFilmstrip">
+                <ul class="ng-galleria-filmstrip" style="transition:left 1s" [style.left.px]="stripLeft">
+                    <li #frame *ngFor="let image of images;let i=index" [ngClass]="{'ng-galleria-frame-active':i==activeIndex}" class="ng-galleria-frame" (click)="frameClick(frame)"
                         [style.width.px]="frameWidth" [style.height.px]="frameHeight" [style.transition]="'opacity 0.75s ease'">
-                        <div class="ui-galleria-frame-content">
-                            <img [src]="image.source" [alt]="image.alt" [title]="image.title" class="ui-galleria-frame-image"
+                        <div class="ng-galleria-frame-content">
+                            <img [src]="image.source" [alt]="image.alt" [title]="image.title" class="ng-galleria-frame-image"
                                 [style.width.px]="frameWidth" [style.height.px]="frameHeight">
                         </div>
                     </li>
                 </ul>
             </div>
-            <div class="ui-galleria-nav-prev pi pi-fw pi-chevron-left" (click)="clickNavLeft()" [style.bottom.px]="frameHeight/2" *ngIf="activeIndex !== 0"></div>
-            <div class="ui-galleria-nav-next pi pi-fw pi-chevron-right" (click)="clickNavRight()" [style.bottom.px]="frameHeight/2"></div>
-            <div class="ui-galleria-caption" *ngIf="showCaption&&images" style="display:block">
+            <div class="ng-galleria-nav-prev pi pi-fw pi-chevron-left" (click)="clickNavLeft()" [style.bottom.px]="frameHeight/2" *ngIf="activeIndex !== 0"></div>
+            <div class="ng-galleria-nav-next pi pi-fw pi-chevron-right" (click)="clickNavRight()" [style.bottom.px]="frameHeight/2"></div>
+            <div class="ng-galleria-caption" *ngIf="showCaption&&images" style="display:block">
                 <h4>{{images[activeIndex]?.title}}</h4><p>{{images[activeIndex]?.alt}}</p>
             </div>
         </div>
@@ -110,12 +110,12 @@ export class Galleria implements AfterViewChecked,AfterViewInit,OnDestroy {
         
     ngAfterViewInit() {
         this.container = this.el.nativeElement.children[0];
-        this.panelWrapper = this.domHandler.findSingle(this.el.nativeElement, 'ul.ui-galleria-panel-wrapper');
+        this.panelWrapper = this.domHandler.findSingle(this.el.nativeElement, 'ul.ng-galleria-panel-wrapper');
         this.initialized = true;
         
         if(this.showFilmstrip) {
-            this.stripWrapper = this.domHandler.findSingle(this.container,'div.ui-galleria-filmstrip-wrapper');
-            this.strip = this.domHandler.findSingle(this.stripWrapper,'ul.ui-galleria-filmstrip');
+            this.stripWrapper = this.domHandler.findSingle(this.container,'div.ng-galleria-filmstrip-wrapper');
+            this.strip = this.domHandler.findSingle(this.stripWrapper,'ul.ng-galleria-filmstrip');
         }
         
         if(this.images && this.images.length) {
@@ -124,16 +124,16 @@ export class Galleria implements AfterViewChecked,AfterViewInit,OnDestroy {
     }
     
     render() {
-        this.panels = this.domHandler.find(this.panelWrapper, 'li.ui-galleria-panel'); 
+        this.panels = this.domHandler.find(this.panelWrapper, 'li.ng-galleria-panel'); 
         
         if(this.showFilmstrip) {
-            this.frames = this.domHandler.find(this.strip,'li.ui-galleria-frame');
+            this.frames = this.domHandler.find(this.strip,'li.ng-galleria-frame');
             this.stripWrapper.style.width = this.domHandler.width(this.panelWrapper) - 50 + 'px';
             this.stripWrapper.style.height = this.frameHeight + 'px';
         }
         
         if(this.showCaption) {
-            this.caption = this.domHandler.findSingle(this.container,'div.ui-galleria-caption');
+            this.caption = this.domHandler.findSingle(this.container,'div.ng-galleria-caption');
             this.caption.style.bottom = this.showFilmstrip ? this.domHandler.getOuterHeight(this.stripWrapper,true) + 'px' : 0 + 'px';
             this.caption.style.width = this.domHandler.width(this.panelWrapper) + 'px';
         }

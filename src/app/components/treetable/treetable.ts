@@ -43,48 +43,48 @@ export class TreeTableService {
     selector: 'p-treeTable',
     template: `
         <div #container [ngStyle]="style" [class]="styleClass"
-                [ngClass]="{'ui-treetable ui-widget': true, 'ui-treetable-auto-layout': autoLayout, 'ui-treetable-hoverable-rows': (rowHover||(selectionMode === 'single' || selectionMode === 'multiple')),
-                'ui-treetable-resizable': resizableColumns, 'ui-treetable-resizable-fit': (resizableColumns && columnResizeMode === 'fit')}">
-            <div class="ui-treetable-loading ui-widget-overlay" *ngIf="loading"></div>
-            <div class="ui-treetable-loading-content" *ngIf="loading">
-                <i [class]="'ui-treetable-loading-icon pi-spin ' + loadingIcon"></i>
+                [ngClass]="{'ng-treetable ng-widget': true, 'ng-treetable-auto-layout': autoLayout, 'ng-treetable-hoverable-rows': (rowHover||(selectionMode === 'single' || selectionMode === 'multiple')),
+                'ng-treetable-resizable': resizableColumns, 'ng-treetable-resizable-fit': (resizableColumns && columnResizeMode === 'fit')}">
+            <div class="ng-treetable-loading ng-widget-overlay" *ngIf="loading"></div>
+            <div class="ng-treetable-loading-content" *ngIf="loading">
+                <i [class]="'ng-treetable-loading-icon pi-spin ' + loadingIcon"></i>
             </div>
-            <div *ngIf="captionTemplate" class="ui-treetable-caption ui-widget-header">
+            <div *ngIf="captionTemplate" class="ng-treetable-caption ng-widget-header">
                 <ng-container *ngTemplateOutlet="captionTemplate"></ng-container>
             </div>
-            <p-paginator [rows]="rows" [first]="first" [totalRecords]="totalRecords" [pageLinkSize]="pageLinks" styleClass="ui-paginator-top" [alwaysShow]="alwaysShowPaginator"
+            <p-paginator [rows]="rows" [first]="first" [totalRecords]="totalRecords" [pageLinkSize]="pageLinks" styleClass="ng-paginator-top" [alwaysShow]="alwaysShowPaginator"
                 (onPageChange)="onPageChange($event)" [rowsPerPageOptions]="rowsPerPageOptions" *ngIf="paginator && (paginatorPosition === 'top' || paginatorPosition =='both')"
                 [templateLeft]="paginatorLeftTemplate" [templateRight]="paginatorRightTemplate" [dropdownAppendTo]="paginatorDropdownAppendTo"></p-paginator>
             
-            <div class="ui-treetable-wrapper" *ngIf="!scrollable">
-                <table #table class="ui-treetable-table">
+            <div class="ng-treetable-wrapper" *ngIf="!scrollable">
+                <table #table class="ng-treetable-table">
                     <ng-container *ngTemplateOutlet="colGroupTemplate; context {$implicit: columns}"></ng-container>
-                    <thead class="ui-treetable-thead">
+                    <thead class="ng-treetable-thead">
                         <ng-container *ngTemplateOutlet="headerTemplate; context: {$implicit: columns}"></ng-container>
                     </thead>
-                    <tfoot class="ui-treetable-tfoot">
+                    <tfoot class="ng-treetable-tfoot">
                         <ng-container *ngTemplateOutlet="footerTemplate; context {$implicit: columns}"></ng-container>
                     </tfoot>
-                    <tbody class="ui-treetable-tbody" [pTreeTableBody]="columns" [pTreeTableBodyTemplate]="bodyTemplate"></tbody>
+                    <tbody class="ng-treetable-tbody" [pTreeTableBody]="columns" [pTreeTableBodyTemplate]="bodyTemplate"></tbody>
                 </table>
             </div>
 
-            <div class="ui-treetable-scrollable-wrapper" *ngIf="scrollable">
-               <div class="ui-treetable-scrollable-view ui-treetable-frozen-view" *ngIf="frozenColumns||frozenBodyTemplate" [ttScrollableView]="frozenColumns" [frozen]="true" [ngStyle]="{width: frozenWidth}" [scrollHeight]="scrollHeight"></div>
-               <div class="ui-treetable-scrollable-view" [ttScrollableView]="columns" [frozen]="false" [scrollHeight]="scrollHeight"></div>
+            <div class="ng-treetable-scrollable-wrapper" *ngIf="scrollable">
+               <div class="ng-treetable-scrollable-view ng-treetable-frozen-view" *ngIf="frozenColumns||frozenBodyTemplate" [ttScrollableView]="frozenColumns" [frozen]="true" [ngStyle]="{width: frozenWidth}" [scrollHeight]="scrollHeight"></div>
+               <div class="ng-treetable-scrollable-view" [ttScrollableView]="columns" [frozen]="false" [scrollHeight]="scrollHeight"></div>
             </div>
 
-            <p-paginator [rows]="rows" [first]="first" [totalRecords]="totalRecords" [pageLinkSize]="pageLinks" styleClass="ui-paginator-bottom" [alwaysShow]="alwaysShowPaginator"
+            <p-paginator [rows]="rows" [first]="first" [totalRecords]="totalRecords" [pageLinkSize]="pageLinks" styleClass="ng-paginator-bottom" [alwaysShow]="alwaysShowPaginator"
                 (onPageChange)="onPageChange($event)" [rowsPerPageOptions]="rowsPerPageOptions" *ngIf="paginator && (paginatorPosition === 'bottom' || paginatorPosition =='both')"
                 [templateLeft]="paginatorLeftTemplate" [templateRight]="paginatorRightTemplate" [dropdownAppendTo]="paginatorDropdownAppendTo"></p-paginator>
-            <div *ngIf="summaryTemplate" class="ui-treetable-summary ui-widget-header">
+            <div *ngIf="summaryTemplate" class="ng-treetable-summary ng-widget-header">
                 <ng-container *ngTemplateOutlet="summaryTemplate"></ng-container>
             </div>
 
-            <div #resizeHelper class="ui-column-resizer-helper ui-state-highlight" style="display:none" *ngIf="resizableColumns"></div>
+            <div #resizeHelper class="ng-column-resizer-helper ng-state-highlight" style="display:none" *ngIf="resizableColumns"></div>
 
-            <span #reorderIndicatorUp class="pi pi-arrow-down ui-table-reorder-indicator-up" *ngIf="reorderableColumns"></span>
-            <span #reorderIndicatorDown class="pi pi-arrow-up ui-table-reorder-indicator-down" *ngIf="reorderableColumns"></span>
+            <span #reorderIndicatorUp class="pi pi-arrow-down ng-table-reorder-indicator-up" *ngIf="reorderableColumns"></span>
+            <span #reorderIndicatorDown class="pi pi-arrow-up ng-table-reorder-indicator-down" *ngIf="reorderableColumns"></span>
         </div>
     `,
     providers: [DomHandler,ObjectUtils,TreeTableService]
@@ -708,7 +708,7 @@ export class TreeTable implements AfterContentInit, OnInit, OnDestroy, Blockable
 
     onColumnResize(event) {
         let containerLeft = this.domHandler.getOffset(this.containerViewChild.nativeElement).left;
-        this.domHandler.addClass(this.containerViewChild.nativeElement, 'ui-unselectable-text');
+        this.domHandler.addClass(this.containerViewChild.nativeElement, 'ng-unselectable-text');
         this.resizeHelperViewChild.nativeElement.style.height = this.containerViewChild.nativeElement.offsetHeight + 'px';
         this.resizeHelperViewChild.nativeElement.style.top = 0 + 'px';
         this.resizeHelperViewChild.nativeElement.style.left = (event.pageX - containerLeft + this.containerViewChild.nativeElement.scrollLeft) + 'px';
@@ -736,9 +736,9 @@ export class TreeTable implements AfterContentInit, OnInit, OnDestroy, Blockable
                     if (newColumnWidth > 15 && nextColumnWidth > parseInt(nextColumnMinWidth)) {
                         if (this.scrollable) {
                             let scrollableView = this.findParentScrollableView(column);
-                            let scrollableBodyTable = this.domHandler.findSingle(scrollableView, 'table.ui-treetable-scrollable-body-table');
-                            let scrollableHeaderTable = this.domHandler.findSingle(scrollableView, 'table.ui-treetable-scrollable-header-table');
-                            let scrollableFooterTable = this.domHandler.findSingle(scrollableView, 'table.ui-treetable-scrollable-footer-table');
+                            let scrollableBodyTable = this.domHandler.findSingle(scrollableView, 'table.ng-treetable-scrollable-body-table');
+                            let scrollableHeaderTable = this.domHandler.findSingle(scrollableView, 'table.ng-treetable-scrollable-header-table');
+                            let scrollableFooterTable = this.domHandler.findSingle(scrollableView, 'table.ng-treetable-scrollable-footer-table');
                             let resizeColumnIndex = this.domHandler.index(column);
 
                             this.resizeColGroup(scrollableHeaderTable, resizeColumnIndex, newColumnWidth, nextColumnWidth);
@@ -757,9 +757,9 @@ export class TreeTable implements AfterContentInit, OnInit, OnDestroy, Blockable
             else if (this.columnResizeMode === 'expand') {
                 if (this.scrollable) {
                     let scrollableView = this.findParentScrollableView(column);
-                    let scrollableBodyTable = this.domHandler.findSingle(scrollableView, 'table.ui-treetable-scrollable-body-table');
-                    let scrollableHeaderTable = this.domHandler.findSingle(scrollableView, 'table.ui-treetable-scrollable-header-table');
-                    let scrollableFooterTable = this.domHandler.findSingle(scrollableView, 'table.ui-treetable-scrollable-footer-table');
+                    let scrollableBodyTable = this.domHandler.findSingle(scrollableView, 'table.ng-treetable-scrollable-body-table');
+                    let scrollableHeaderTable = this.domHandler.findSingle(scrollableView, 'table.ng-treetable-scrollable-header-table');
+                    let scrollableFooterTable = this.domHandler.findSingle(scrollableView, 'table.ng-treetable-scrollable-footer-table');
                     scrollableBodyTable.style.width = scrollableBodyTable.offsetWidth + delta + 'px';
                     scrollableHeaderTable.style.width = scrollableHeaderTable.offsetWidth + delta + 'px';
                     if(scrollableFooterTable) {
@@ -786,13 +786,13 @@ export class TreeTable implements AfterContentInit, OnInit, OnDestroy, Blockable
         }
 
         this.resizeHelperViewChild.nativeElement.style.display = 'none';
-        this.domHandler.removeClass(this.containerViewChild.nativeElement, 'ui-unselectable-text');
+        this.domHandler.removeClass(this.containerViewChild.nativeElement, 'ng-unselectable-text');
     }
 
     findParentScrollableView(column) {
         if (column) {
             let parent = column.parentElement;
-            while (parent && !this.domHandler.hasClass(parent, 'ui-treetable-scrollable-view')) {
+            while (parent && !this.domHandler.hasClass(parent, 'ng-treetable-scrollable-view')) {
                 parent = parent.parentElement;
             }
 
@@ -901,7 +901,7 @@ export class TreeTable implements AfterContentInit, OnInit, OnDestroy, Blockable
 
     handleRowClick(event) {
         let targetNode = (<HTMLElement> event.originalEvent.target).nodeName;
-        if (targetNode == 'INPUT' || targetNode == 'BUTTON' || targetNode == 'A' || (this.domHandler.hasClass(event.originalEvent.target, 'ui-clickable'))) {
+        if (targetNode == 'INPUT' || targetNode == 'BUTTON' || targetNode == 'A' || (this.domHandler.hasClass(event.originalEvent.target, 'ng-clickable'))) {
             return;
         }
 
@@ -1232,7 +1232,7 @@ export class TreeTable implements AfterContentInit, OnInit, OnDestroy, Blockable
         if (!this.documentEditListener) {
             this.documentEditListener = (event) => {
                 if (this.editingCell && !this.editingCellClick && this.isEditingCellValid()) {
-                    this.domHandler.removeClass(this.editingCell, 'ui-editing-cell');
+                    this.domHandler.removeClass(this.editingCell, 'ng-editing-cell');
                     this.editingCell = null;
                     this.unbindDocumentEditListener();
                 }
@@ -1284,27 +1284,27 @@ export class TTBody {
 @Component({
     selector: '[ttScrollableView]',
     template: `
-        <div #scrollHeader class="ui-treetable-scrollable-header ui-widget-header">
-            <div #scrollHeaderBox class="ui-treetable-scrollable-header-box">
-                <table class="ui-treetable-scrollable-header-table">
+        <div #scrollHeader class="ng-treetable-scrollable-header ng-widget-header">
+            <div #scrollHeaderBox class="ng-treetable-scrollable-header-box">
+                <table class="ng-treetable-scrollable-header-table">
                     <ng-container *ngTemplateOutlet="frozen ? tt.frozenColGroupTemplate||tt.colGroupTemplate : tt.colGroupTemplate; context {$implicit: columns}"></ng-container>
-                    <thead class="ui-treetable-thead">
+                    <thead class="ng-treetable-thead">
                         <ng-container *ngTemplateOutlet="frozen ? tt.frozenHeaderTemplate||tt.headerTemplate : tt.headerTemplate; context {$implicit: columns}"></ng-container>
                     </thead>
                 </table>
             </div>
         </div>
-        <div #scrollBody class="ui-treetable-scrollable-body">
-            <table #scrollTable class="ui-treetable-scrollable-body-table">
+        <div #scrollBody class="ng-treetable-scrollable-body">
+            <table #scrollTable class="ng-treetable-scrollable-body-table">
                 <ng-container *ngTemplateOutlet="frozen ? tt.frozenColGroupTemplate||tt.colGroupTemplate : tt.colGroupTemplate; context {$implicit: columns}"></ng-container>
-                <tbody class="ui-treetable-tbody" [pTreeTableBody]="columns" [pTreeTableBodyTemplate]="frozen ? tt.frozenBodyTemplate||tt.bodyTemplate : tt.bodyTemplate"></tbody>
+                <tbody class="ng-treetable-tbody" [pTreeTableBody]="columns" [pTreeTableBodyTemplate]="frozen ? tt.frozenBodyTemplate||tt.bodyTemplate : tt.bodyTemplate"></tbody>
             </table>
         </div>
-        <div #scrollFooter *ngIf="tt.footerTemplate" class="ui-treetable-scrollable-footer ui-widget-header">
-            <div #scrollFooterBox class="ui-treetable-scrollable-footer-box">
-                <table class="ui-treetable-scrollable-footer-table">
+        <div #scrollFooter *ngIf="tt.footerTemplate" class="ng-treetable-scrollable-footer ng-widget-header">
+            <div #scrollFooterBox class="ng-treetable-scrollable-footer-box">
+                <table class="ng-treetable-scrollable-footer-table">
                     <ng-container *ngTemplateOutlet="frozen ? tt.frozenColGroupTemplate||tt.colGroupTemplate : tt.colGroupTemplate; context {$implicit: columns}"></ng-container>
-                    <tfoot class="ui-treetable-tfoot">
+                    <tfoot class="ng-treetable-tfoot">
                         <ng-container *ngTemplateOutlet="frozen ? tt.frozenFooterTemplate||tt.footerTemplate : tt.footerTemplate; context {$implicit: columns}"></ng-container>
                     </tfoot>
                 </table>
@@ -1378,7 +1378,7 @@ export class TTScrollableView implements AfterViewInit, OnDestroy, AfterViewChec
 
         if(!this.frozen) {
             if (this.tt.frozenColumns || this.tt.frozenBodyTemplate) {
-                this.domHandler.addClass(this.el.nativeElement, 'ui-treetable-unfrozen-view');
+                this.domHandler.addClass(this.el.nativeElement, 'ng-treetable-unfrozen-view');
             }
 
             if(this.tt.frozenWidth) {
@@ -1388,7 +1388,7 @@ export class TTScrollableView implements AfterViewInit, OnDestroy, AfterViewChec
 
             let frozenView = this.el.nativeElement.previousElementSibling;
             if (frozenView) {
-                this.frozenSiblingBody = this.domHandler.findSingle(frozenView, '.ui-treetable-scrollable-body');
+                this.frozenSiblingBody = this.domHandler.findSingle(frozenView, '.ng-treetable-scrollable-body');
             }
         }
         else {
@@ -1521,8 +1521,8 @@ export class TTScrollableView implements AfterViewInit, OnDestroy, AfterViewChec
     selector: '[ttSortableColumn]',
     providers: [DomHandler],
     host: {
-        '[class.ui-sortable-column]': 'isEnabled()',
-        '[class.ui-state-highlight]': 'sorted',
+        '[class.ng-sortable-column]': 'isEnabled()',
+        '[class.ng-state-highlight]': 'sorted',
         '[attr.tabindex]': 'isEnabled() ? "0" : null'
     }
 })
@@ -1586,7 +1586,7 @@ export class TTSortableColumn implements OnInit, OnDestroy {
 @Component({
     selector: 'p-treeTableSortIcon',
     template: `
-        <i class="ui-sortable-column-icon pi pi-fw" [ngClass]="{'pi-sort-up': sortOrder === 1, 'pi-sort-down': sortOrder === -1, 'pi-sort': sortOrder === 0}"></i>
+        <i class="ng-sortable-column-icon pi pi-fw" [ngClass]="{'pi-sort-up': sortOrder === 1, 'pi-sort-down': sortOrder === -1, 'pi-sort': sortOrder === 0}"></i>
     `
 })
 export class TTSortIcon implements OnInit, OnDestroy {
@@ -1651,9 +1651,9 @@ export class TTResizableColumn implements AfterViewInit, OnDestroy {
 
     ngAfterViewInit() {
         if (this.isEnabled()) {
-            this.domHandler.addClass(this.el.nativeElement, 'ui-resizable-column');
+            this.domHandler.addClass(this.el.nativeElement, 'ng-resizable-column');
             this.resizer = document.createElement('span');
-            this.resizer.className = 'ui-column-resizer ui-clickable';
+            this.resizer.className = 'ng-column-resizer ng-clickable';
             this.el.nativeElement.appendChild(this.resizer);
     
             this.zone.runOutsideAngular(() => {
@@ -1784,7 +1784,7 @@ export class TTReorderableColumn implements AfterViewInit, OnDestroy {
     }
 
     onMouseDown(event) {
-        if (event.target.nodeName === 'INPUT' || this.domHandler.hasClass(event.target, 'ui-column-resizer'))
+        if (event.target.nodeName === 'INPUT' || this.domHandler.hasClass(event.target, 'ng-column-resizer'))
             this.el.nativeElement.draggable = false;
         else
             this.el.nativeElement.draggable = true;
@@ -1827,7 +1827,7 @@ export class TTReorderableColumn implements AfterViewInit, OnDestroy {
     selector: '[ttSelectableRow]',
     providers: [DomHandler],
     host: {
-        '[class.ui-state-highlight]': 'selected'
+        '[class.ng-state-highlight]': 'selected'
     }
 })
 export class TTSelectableRow implements OnInit, OnDestroy {
@@ -1892,7 +1892,7 @@ export class TTSelectableRow implements OnInit, OnDestroy {
     selector: '[ttSelectableRowDblClick]',
     providers: [DomHandler],
     host: {
-        '[class.ui-state-highlight]': 'selected'
+        '[class.ng-state-highlight]': 'selected'
     }
 })
 export class TTSelectableRowDblClick implements OnInit, OnDestroy {
@@ -1944,7 +1944,7 @@ export class TTSelectableRowDblClick implements OnInit, OnDestroy {
 @Directive({
     selector: '[ttContextMenuRow]',
     host: {
-        '[class.ui-contextmenu-selected]': 'selected'
+        '[class.ng-contextmenu-selected]': 'selected'
     }
 })
 export class TTContextMenuRow {
@@ -1992,13 +1992,13 @@ export class TTContextMenuRow {
 @Component({
     selector: 'p-treeTableCheckbox',
     template: `
-        <div class="ui-chkbox ui-treetable-chkbox ui-widget" (click)="onClick($event)">
-            <div class="ui-helper-hidden-accessible">
+        <div class="ng-chkbox ng-treetable-chkbox ng-widget" (click)="onClick($event)">
+            <div class="ng-helper-hidden-accessible">
                 <input type="checkbox" [checked]="checked" (focus)="onFocus()" (blur)="onBlur()">
             </div>
-            <div #box [ngClass]="{'ui-chkbox-box ui-widget ui-state-default':true,
-                'ui-state-active':checked, 'ui-state-disabled':disabled}">
-                <span class="ui-chkbox-icon ui-clickable pi" [ngClass]="{'pi-check':checked, 'pi-minus': rowNode.node.partialSelected}"></span>
+            <div #box [ngClass]="{'ng-chkbox-box ng-widget ng-state-default':true,
+                'ng-state-active':checked, 'ng-state-disabled':disabled}">
+                <span class="ng-chkbox-icon ng-clickable pi" [ngClass]="{'pi-check':checked, 'pi-minus': rowNode.node.partialSelected}"></span>
             </div>
         </div>
     `
@@ -2036,11 +2036,11 @@ export class TTCheckbox  {
     }
 
     onFocus() {
-        this.domHandler.addClass(this.boxViewChild.nativeElement, 'ui-state-focus');
+        this.domHandler.addClass(this.boxViewChild.nativeElement, 'ng-state-focus');
     }
 
     onBlur() {
-        this.domHandler.removeClass(this.boxViewChild.nativeElement, 'ui-state-focus');
+        this.domHandler.removeClass(this.boxViewChild.nativeElement, 'ng-state-focus');
     }
 
     ngOnDestroy() {
@@ -2054,13 +2054,13 @@ export class TTCheckbox  {
 @Component({
     selector: 'p-treeTableHeaderCheckbox',
     template: `
-        <div class="ui-chkbox ui-treetable-header-chkbox ui-widget" (click)="onClick($event, cb.checked)">
-            <div class="ui-helper-hidden-accessible">
+        <div class="ng-chkbox ng-treetable-header-chkbox ng-widget" (click)="onClick($event, cb.checked)">
+            <div class="ng-helper-hidden-accessible">
                 <input #cb type="checkbox" [checked]="checked" (focus)="onFocus()" (blur)="onBlur()" [disabled]="!tt.value||tt.value.length === 0">
             </div>
-            <div #box [ngClass]="{'ui-chkbox-box ui-widget ui-state-default':true,
-                'ui-state-active':checked, 'ui-state-disabled': (!tt.value || tt.value.length === 0)}">
-                <span class="ui-chkbox-icon ui-clickable" [ngClass]="{'pi pi-check':checked}"></span>
+            <div #box [ngClass]="{'ng-chkbox-box ng-widget ng-state-default':true,
+                'ng-state-active':checked, 'ng-state-disabled': (!tt.value || tt.value.length === 0)}">
+                <span class="ng-chkbox-icon ng-clickable" [ngClass]="{'pi pi-check':checked}"></span>
             </div>
         </div>
     `
@@ -2100,11 +2100,11 @@ export class TTHeaderCheckbox  {
     }
 
     onFocus() {
-        this.domHandler.addClass(this.boxViewChild.nativeElement, 'ui-state-focus');
+        this.domHandler.addClass(this.boxViewChild.nativeElement, 'ng-state-focus');
     }
 
     onBlur() {
-        this.domHandler.removeClass(this.boxViewChild.nativeElement, 'ui-state-focus');
+        this.domHandler.removeClass(this.boxViewChild.nativeElement, 'ng-state-focus');
     }
 
     ngOnDestroy() {
@@ -2155,7 +2155,7 @@ export class TTEditableColumn implements AfterViewInit {
 
     ngAfterViewInit() {
         if (this.isEnabled()) {
-            this.domHandler.addClass(this.el.nativeElement, 'ui-editable-column');
+            this.domHandler.addClass(this.el.nativeElement, 'ng-editable-column');
         }
     }
 
@@ -2170,7 +2170,7 @@ export class TTEditableColumn implements AfterViewInit {
                         return;
                     }
         
-                    this.domHandler.removeClass(this.tt.editingCell, 'ui-editing-cell');
+                    this.domHandler.removeClass(this.tt.editingCell, 'ng-editing-cell');
                     this.openCell();
                 }
             }
@@ -2182,7 +2182,7 @@ export class TTEditableColumn implements AfterViewInit {
 
     openCell() {
         this.tt.updateEditingCell(this.el.nativeElement);
-        this.domHandler.addClass(this.el.nativeElement, 'ui-editing-cell');
+        this.domHandler.addClass(this.el.nativeElement, 'ng-editing-cell');
         this.tt.onEditInit.emit({ field: this.field, data: this.data});
         this.zone.runOutsideAngular(() => {
             setTimeout(() => {
@@ -2195,7 +2195,7 @@ export class TTEditableColumn implements AfterViewInit {
     }
 
     closeEditingCell() {
-        this.domHandler.removeClass(this.tt.editingCell, 'ui-editing-cell');
+        this.domHandler.removeClass(this.tt.editingCell, 'ng-editing-cell');
         this.tt.editingCell = null;
         this.tt.unbindDocumentEditListener();
     }
@@ -2206,7 +2206,7 @@ export class TTEditableColumn implements AfterViewInit {
             //enter
             if (event.keyCode == 13) {
                 if (this.tt.isEditingCellValid()) {
-                    this.domHandler.removeClass(this.tt.editingCell, 'ui-editing-cell');
+                    this.domHandler.removeClass(this.tt.editingCell, 'ng-editing-cell');
                     this.closeEditingCell();
                     this.tt.onEditComplete.emit({ field: this.field, data: this.data });
                 }
@@ -2217,7 +2217,7 @@ export class TTEditableColumn implements AfterViewInit {
             //escape
             else if (event.keyCode == 27) {
                 if (this.tt.isEditingCellValid()) {
-                    this.domHandler.removeClass(this.tt.editingCell, 'ui-editing-cell');
+                    this.domHandler.removeClass(this.tt.editingCell, 'ng-editing-cell');
                     this.closeEditingCell();
                     this.tt.onEditCancel.emit({ field: this.field, data: this.data });
                 }
@@ -2240,7 +2240,7 @@ export class TTEditableColumn implements AfterViewInit {
     findCell(element) {
         if (element) {
             let cell = element;
-            while (cell && !this.domHandler.hasClass(cell, 'ui-editing-cell')) {
+            while (cell && !this.domHandler.hasClass(cell, 'ng-editing-cell')) {
                 cell = cell.parentElement;
             }
 
@@ -2284,7 +2284,7 @@ export class TTEditableColumn implements AfterViewInit {
         }
 
         if (prevCell) {
-            if (this.domHandler.hasClass(prevCell, 'ui-editable-column'))
+            if (this.domHandler.hasClass(prevCell, 'ng-editable-column'))
                 return prevCell;
             else
                 return this.findPreviousEditableColumn(prevCell);
@@ -2305,7 +2305,7 @@ export class TTEditableColumn implements AfterViewInit {
         }
 
         if (nextCell) {
-            if (this.domHandler.hasClass(nextCell, 'ui-editable-column'))
+            if (this.domHandler.hasClass(nextCell, 'ng-editable-column'))
                 return nextCell;
             else
                 return this.findNextEditableColumn(nextCell);
@@ -2433,7 +2433,7 @@ export class TTRow {
     restoreFocus() {
         this.zone.runOutsideAngular(() => {
             setTimeout(() => {
-                let row = this.domHandler.findSingle(this.tt.containerViewChild.nativeElement, '.ui-treetable-tbody').children[this.tt.toggleRowIndex];
+                let row = this.domHandler.findSingle(this.tt.containerViewChild.nativeElement, '.ng-treetable-tbody').children[this.tt.toggleRowIndex];
                 if (row) {
                     row.focus();
                 }
@@ -2445,7 +2445,7 @@ export class TTRow {
 @Component({
     selector: 'p-treeTableToggler',
     template: `
-        <a class="ui-treetable-toggler ui-unselectable-text" *ngIf="rowNode.node.leaf === false || rowNode.level !== 0 || rowNode.node.children && rowNode.node.children.length" (click)="onClick($event)"
+        <a class="ng-treetable-toggler ng-unselectable-text" *ngIf="rowNode.node.leaf === false || rowNode.level !== 0 || rowNode.node.children && rowNode.node.children.length" (click)="onClick($event)"
             [style.visibility]="rowNode.node.leaf === false || (rowNode.node.children && rowNode.node.children.length) ? 'visible' : 'hidden'" [style.marginLeft]="rowNode.level * 16 + 'px'">
             <i [ngClass]="rowNode.node.expanded ? 'pi pi-fw pi-chevron-down' : 'pi pi-fw pi-chevron-right'"></i>
         </a>

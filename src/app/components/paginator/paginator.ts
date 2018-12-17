@@ -8,34 +8,34 @@ import {SharedModule} from '../common/shared';
 @Component({
     selector: 'p-paginator',
     template: `
-        <div [class]="styleClass" [ngStyle]="style" [ngClass]="'ui-paginator ui-widget ui-widget-header ui-unselectable-text ui-helper-clearfix'"
+        <div [class]="styleClass" [ngStyle]="style" [ngClass]="'ng-paginator ng-widget ng-widget-header ng-unselectable-text ng-helper-clearfix'"
             *ngIf="alwaysShow ? true : (pageLinks && pageLinks.length > 1)">
-            <div class="ui-paginator-left-content" *ngIf="templateLeft">
+            <div class="ng-paginator-left-content" *ngIf="templateLeft">
                 <ng-container *ngTemplateOutlet="templateLeft; context: {$implicit: paginatorState}"></ng-container>
             </div>
-            <a [attr.tabindex]="isFirstPage() ? null : '0'" class="ui-paginator-first ui-paginator-element ui-state-default ui-corner-all"
-                    (click)="changePageToFirst($event)" (keydown.enter)="changePageToFirst($event)" [ngClass]="{'ui-state-disabled':isFirstPage()}" [tabindex]="isFirstPage() ? -1 : null">
-                <span class="ui-paginator-icon pi pi-step-backward"></span>
+            <a [attr.tabindex]="isFirstPage() ? null : '0'" class="ng-paginator-first ng-paginator-element ng-state-default ng-corner-all"
+                    (click)="changePageToFirst($event)" (keydown.enter)="changePageToFirst($event)" [ngClass]="{'ng-state-disabled':isFirstPage()}" [tabindex]="isFirstPage() ? -1 : null">
+                <span class="ng-paginator-icon pi pi-step-backward"></span>
             </a>
-            <a tabindex="0" [attr.tabindex]="isFirstPage() ? null : '0'" class="ui-paginator-prev ui-paginator-element ui-state-default ui-corner-all"
-                    (click)="changePageToPrev($event)" (keydown.enter)="changePageToPrev($event)" [ngClass]="{'ui-state-disabled':isFirstPage()}" [tabindex]="isFirstPage() ? -1 : null">
-                <span class="ui-paginator-icon pi pi-caret-left"></span>
+            <a tabindex="0" [attr.tabindex]="isFirstPage() ? null : '0'" class="ng-paginator-prev ng-paginator-element ng-state-default ng-corner-all"
+                    (click)="changePageToPrev($event)" (keydown.enter)="changePageToPrev($event)" [ngClass]="{'ng-state-disabled':isFirstPage()}" [tabindex]="isFirstPage() ? -1 : null">
+                <span class="ng-paginator-icon pi pi-caret-left"></span>
             </a>
-            <span class="ui-paginator-pages">
-                <a tabindex="0" *ngFor="let pageLink of pageLinks" class="ui-paginator-page ui-paginator-element ui-state-default ui-corner-all"
-                    (click)="onPageLinkClick($event, pageLink - 1)" (keydown.enter)="onPageLinkClick($event, pageLink - 1)" [ngClass]="{'ui-state-active': (pageLink-1 == getPage())}">{{pageLink}}</a>
+            <span class="ng-paginator-pages">
+                <a tabindex="0" *ngFor="let pageLink of pageLinks" class="ng-paginator-page ng-paginator-element ng-state-default ng-corner-all"
+                    (click)="onPageLinkClick($event, pageLink - 1)" (keydown.enter)="onPageLinkClick($event, pageLink - 1)" [ngClass]="{'ng-state-active': (pageLink-1 == getPage())}">{{pageLink}}</a>
             </span>
-            <a [attr.tabindex]="isLastPage() ? null : '0'" class="ui-paginator-next ui-paginator-element ui-state-default ui-corner-all"
-                    (click)="changePageToNext($event)" (keydown.enter)="changePageToNext($event)" [ngClass]="{'ui-state-disabled':isLastPage()}" [tabindex]="isLastPage() ? -1 : null">
-                <span class="ui-paginator-icon pi pi-caret-right"></span>
+            <a [attr.tabindex]="isLastPage() ? null : '0'" class="ng-paginator-next ng-paginator-element ng-state-default ng-corner-all"
+                    (click)="changePageToNext($event)" (keydown.enter)="changePageToNext($event)" [ngClass]="{'ng-state-disabled':isLastPage()}" [tabindex]="isLastPage() ? -1 : null">
+                <span class="ng-paginator-icon pi pi-caret-right"></span>
             </a>
-            <a [attr.tabindex]="isLastPage() ? null : '0'" class="ui-paginator-last ui-paginator-element ui-state-default ui-corner-all"
-                    (click)="changePageToLast($event)" (keydown.enter)="changePageToLast($event)" [ngClass]="{'ui-state-disabled':isLastPage()}" [tabindex]="isLastPage() ? -1 : null">
-                <span class="ui-paginator-icon pi pi-step-forward"></span>
+            <a [attr.tabindex]="isLastPage() ? null : '0'" class="ng-paginator-last ng-paginator-element ng-state-default ng-corner-all"
+                    (click)="changePageToLast($event)" (keydown.enter)="changePageToLast($event)" [ngClass]="{'ng-state-disabled':isLastPage()}" [tabindex]="isLastPage() ? -1 : null">
+                <span class="ng-paginator-icon pi pi-step-forward"></span>
             </a>
             <p-dropdown [options]="rowsPerPageItems" [(ngModel)]="rows" *ngIf="rowsPerPageOptions" 
                 (onChange)="onRppChange($event)" [autoWidth]="false" [appendTo]="dropdownAppendTo"></p-dropdown>
-            <div class="ui-paginator-right-content" *ngIf="templateRight">
+            <div class="ng-paginator-right-content" *ngIf="templateRight">
                 <ng-container *ngTemplateOutlet="templateRight; context: {$implicit: paginatorState}"></ng-container>
             </div>
         </div>

@@ -1,13 +1,13 @@
-.ui-picklist > div {
+.ng-picklist > div {
     float: left;
 }
 
-.ui-picklist .ui-picklist-buttons {
+.ng-picklist .ng-picklist-buttons {
     height: 12.5em;
     padding: 0 .25em;
 }
 
-.ui-picklist .ui-picklist-list {
+.ng-picklist .ng-picklist-list {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -16,188 +16,188 @@
     width: 12.5em;
 }
 
-.ui-picklist .ui-picklist-list li {
+.ng-picklist .ng-picklist-list li {
     margin: 1px;
     padding: .125em;
 }
 
-.ui-picklist .ui-button {
+.ng-picklist .ng-button {
     display:block;
     margin-bottom: 0.25em;
 }
 
-.ui-picklist .ui-button-text-icon-left {
+.ng-picklist .ng-button-text-icon-left {
     width: 100%;
 }
 
-.ui-picklist .ui-picklist-item {
+.ng-picklist .ng-picklist-item {
     cursor: pointer;
     border: 0 none;
     font-weight: inherit;
 }
 
-.ui-picklist .ui-picklist-caption {
+.ng-picklist .ng-picklist-caption {
     text-align: center;
 	padding: .5em .75em;
     border-bottom:0 none;
 }
 
-.ui-picklist table {
+.ng-picklist table {
     width: 100%;
     border-collapse:collapse;
 }
 
-.ui-picklist .ui-picklist-filter-container {
+.ng-picklist .ng-picklist-filter-container {
     position: relative;
     width: 100%;
     padding: .5em .6em;
     border-bottom: 0 none;
 }
 
-.ui-picklist .ui-picklist-filter-container .ui-picklist-filter {
+.ng-picklist .ng-picklist-filter-container .ng-picklist-filter {
     text-indent: 1.1em;
     width: 100%;
 }
 
-.ui-picklist .ui-picklist-filter-container .ui-picklist-filter-icon {
+.ng-picklist .ng-picklist-filter-container .ng-picklist-filter-icon {
     position: absolute;
     top: 50%;
     left: 1em;
     margin-top: -.6em;
 }
 
-.ui-picklist {
+.ng-picklist {
     display: table;
 }
 
-.ui-picklist > div {
+.ng-picklist > div {
     float: none;
     display: table-cell;
     vertical-align: top;
 }
 
-.ui-picklist .ui-picklist-buttons {
+.ng-picklist .ng-picklist-buttons {
     vertical-align: middle;
 }
 
 /* Vertical */
-.ui-picklist.ui-picklist-vertical {
+.ng-picklist.ng-picklist-vertical {
     display: table;
 }
 
-.ui-picklist.ui-picklist-vertical > div {
+.ng-picklist.ng-picklist-vertical > div {
     float: none;
     display: table-row;
     vertical-align: top;
 }
 
-.ui-picklist.ui-picklist-vertical .ui-picklist-buttons {
+.ng-picklist.ng-picklist-vertical .ng-picklist-buttons {
     text-align:center;
     height: auto;
 }
 
-.ui-picklist.ui-picklist-vertical .ui-picklist-buttons .ui-button {
+.ng-picklist.ng-picklist-vertical .ng-picklist-buttons .ng-button {
     display: inline-block;
 }
 
-.ui-picklist.ui-picklist-vertical .ui-button {
+.ng-picklist.ng-picklist-vertical .ng-button {
     margin-top: 0.25em;
 }
 
-.ui-picklist-outline {
+.ng-picklist-outline {
     outline: 1px dotted black;
     z-index: 1;
 }
 
-.ui-picklist .ui-picklist-droppoint {
+.ng-picklist .ng-picklist-droppoint {
     height: 6px;
     list-style-type: none;
 }
 
-.ui-picklist .ui-picklist-list .ui-picklist-droppoint-empty {
+.ng-picklist .ng-picklist-list .ng-picklist-droppoint-empty {
     height: 100%;
     list-style-type: none;
 }
 
-.ui-picklist-list.ui-picklist-source,
-.ui-picklist-list.ui-picklist-target {
+.ng-picklist-list.ng-picklist-source,
+.ng-picklist-list.ng-picklist-target {
     outline: none;
 }
 
 /* Responsive */
-.ui-picklist.ui-picklist-responsive * {
+.ng-picklist.ng-picklist-responsive * {
     box-sizing: border-box;
 }
 
-.ui-picklist.ui-picklist-responsive {
+.ng-picklist.ng-picklist-responsive {
     width: 100%;
 }
 
-.ui-picklist.ui-picklist-responsive .ui-picklist-listwrapper {
+.ng-picklist.ng-picklist-responsive .ng-picklist-listwrapper {
     width: 35%;
 }
 
-.ui-picklist.ui-picklist-responsive .ui-picklist-listwrapper.ui-picklist-listwrapper-nocontrols {
+.ng-picklist.ng-picklist-responsive .ng-picklist-listwrapper.ng-picklist-listwrapper-nocontrols {
     width: 45%;
 }
 
-.ui-picklist.ui-picklist-responsive .ui-picklist-buttons {
+.ng-picklist.ng-picklist-responsive .ng-picklist-buttons {
     width: 10%;
 }
 
-.ui-picklist.ui-picklist-responsive .ui-picklist-buttons button {
+.ng-picklist.ng-picklist-responsive .ng-picklist-buttons button {
     width: 100%;
 }
 
-.ui-picklist.ui-picklist-responsive .ui-picklist-list {
+.ng-picklist.ng-picklist-responsive .ng-picklist-list {
     width: auto;
 }
         
 /* Responsive */
 @media (max-width: 40em) {
-    .ui-picklist.ui-picklist-responsive {
+    .ng-picklist.ng-picklist-responsive {
         display: block;
     }
     
-    .ui-picklist.ui-picklist-responsive > div {
+    .ng-picklist.ng-picklist-responsive > div {
         display: block;
         width: 100% !important;
     }
     
-    .ui-picklist.ui-picklist-responsive .ui-picklist-buttons {
+    .ng-picklist.ng-picklist-responsive .ng-picklist-buttons {
         text-align: center;
         height: auto;
         padding: .4em 0;
     }
     
-    .ui-picklist.ui-picklist-responsive .ui-picklist-buttons button {
+    .ng-picklist.ng-picklist-responsive .ng-picklist-buttons button {
         display: inline-block;
         width: 20%;
         margin-bottom: 0;
         margin-right: .25em;
     }
     
-    .ui-picklist.ui-picklist-responsive .ui-picklist-source-controls.ui-picklist-buttons {
+    .ng-picklist.ng-picklist-responsive .ng-picklist-source-controls.ng-picklist-buttons {
         padding-bottom: .4em;
     }
     
-    .ui-picklist.ui-picklist-responsive .ui-picklist-target-controls.ui-picklist-buttons {
+    .ng-picklist.ng-picklist-responsive .ng-picklist-target-controls.ng-picklist-buttons {
         padding-top: .4em;
     }
     
-    .ui-picklist.ui-picklist-responsive .ui-picklist-buttons .pi-angle-right::before {
+    .ng-picklist.ng-picklist-responsive .ng-picklist-buttons .pi-angle-right::before {
         content: "\e930";
     }
     
-    .ui-picklist.ui-picklist-responsive .ui-picklist-buttons .pi-angle-double-right::before {
+    .ng-picklist.ng-picklist-responsive .ng-picklist-buttons .pi-angle-double-right::before {
         content: "\e92c";
     }
     
-    .ui-picklist.ui-picklist-responsive .ui-picklist-buttons .pi-angle-left::before {
+    .ng-picklist.ng-picklist-responsive .ng-picklist-buttons .pi-angle-left::before {
         content: "\e933";
     }
     
-    .ui-picklist.ui-picklist-responsive .ui-picklist-buttons .pi-angle-double-left::before {
+    .ng-picklist.ng-picklist-responsive .ng-picklist-buttons .pi-angle-double-left::before {
         content: "\e92f";
     }
 }

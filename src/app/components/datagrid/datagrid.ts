@@ -7,23 +7,23 @@ import {BlockableUI} from '../common/blockableui';
 @Component({
     selector: 'p-dataGrid',
     template: `
-        <div [ngClass]="'ui-datagrid ui-widget'" [ngStyle]="style" [class]="styleClass">
-            <div class="ui-datagrid-header ui-widget-header ui-corner-top" *ngIf="header">
+        <div [ngClass]="'ng-datagrid ng-widget'" [ngStyle]="style" [class]="styleClass">
+            <div class="ng-datagrid-header ng-widget-header ng-corner-top" *ngIf="header">
                 <ng-content select="p-header"></ng-content>
             </div>
             <p-paginator [rows]="rows" [first]="first" [totalRecords]="totalRecords" [pageLinkSize]="pageLinks" [alwaysShow]="alwaysShowPaginator"
-                (onPageChange)="paginate($event)" styleClass="ui-paginator-top" [rowsPerPageOptions]="rowsPerPageOptions" *ngIf="paginator && (paginatorPosition === 'top' || paginatorPosition =='both')"
+                (onPageChange)="paginate($event)" styleClass="ng-paginator-top" [rowsPerPageOptions]="rowsPerPageOptions" *ngIf="paginator && (paginatorPosition === 'top' || paginatorPosition =='both')"
                 [dropdownAppendTo]="paginatorDropdownAppendTo"></p-paginator>
-            <div class="ui-datagrid-content ui-widget-content">
-                <div class="ui-g">
+            <div class="ng-datagrid-content ng-widget-content">
+                <div class="ng-g">
                     <ng-template ngFor [ngForOf]="dataToRender" [ngForTemplate]="itemTemplate" [ngForTrackBy]="trackBy"></ng-template>
-                    <div *ngIf="isEmpty()" class="ui-widget-content ui-g-12">{{emptyMessage}}</div>
+                    <div *ngIf="isEmpty()" class="ng-widget-content ng-g-12">{{emptyMessage}}</div>
                 </div>
             </div>
             <p-paginator [rows]="rows" [first]="first" [totalRecords]="totalRecords" [pageLinkSize]="pageLinks" [alwaysShow]="alwaysShowPaginator"
-                (onPageChange)="paginate($event)" styleClass="ui-paginator-bottom" [rowsPerPageOptions]="rowsPerPageOptions" *ngIf="paginator && (paginatorPosition === 'bottom' || paginatorPosition =='both')"
+                (onPageChange)="paginate($event)" styleClass="ng-paginator-bottom" [rowsPerPageOptions]="rowsPerPageOptions" *ngIf="paginator && (paginatorPosition === 'bottom' || paginatorPosition =='both')"
                 [dropdownAppendTo]="paginatorDropdownAppendTo"></p-paginator>
-            <div class="ui-datagrid-footer ui-widget-footer ui-corner-bottom" *ngIf="footer">
+            <div class="ng-datagrid-footer ng-widget-footer ng-corner-bottom" *ngIf="footer">
                 <ng-content select="p-footer"></ng-content>
             </div>
         </div>

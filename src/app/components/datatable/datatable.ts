@@ -19,13 +19,13 @@ import {BlockableUI} from '../common/blockableui';
 @Component({
     selector: 'p-dtRadioButton',
     template: `
-        <div class="ui-radiobutton ui-widget">
-            <div class="ui-helper-hidden-accessible">
+        <div class="ng-radiobutton ng-widget">
+            <div class="ng-helper-hidden-accessible">
                 <input type="radio" [checked]="checked">
             </div>
-            <div class="ui-radiobutton-box ui-widget ui-radiobutton-relative ui-state-default" (click)="handleClick($event)"
-                        [ngClass]="{'ui-state-active':checked}">
-                <span class="ui-radiobutton-icon ui-clickable" [ngClass]="{'fa fa-circle':checked}"></span>
+            <div class="ng-radiobutton-box ng-widget ng-radiobutton-relative ng-state-default" (click)="handleClick($event)"
+                        [ngClass]="{'ng-state-active':checked}">
+                <span class="ng-radiobutton-icon ng-clickable" [ngClass]="{'fa fa-circle':checked}"></span>
             </div>
         </div>
     `
@@ -46,13 +46,13 @@ export class DTRadioButton {
 @Component({
     selector: 'p-dtCheckbox',
     template: `
-        <div class="ui-chkbox ui-widget">
-            <div class="ui-helper-hidden-accessible">
+        <div class="ng-chkbox ng-widget">
+            <div class="ng-helper-hidden-accessible">
                 <input type="checkbox" [checked]="checked">
             </div>
-            <div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default" (click)="handleClick($event)"
-                        [ngClass]="{'ui-state-active':checked&&!disabled,'ui-state-disabled':disabled}">
-                <span class="ui-chkbox-icon ui-clickable" [ngClass]="{'fa fa-check':checked}"></span>
+            <div class="ng-chkbox-box ng-widget ng-corner-all ng-state-default" (click)="handleClick($event)"
+                        [ngClass]="{'ng-state-active':checked&&!disabled,'ng-state-disabled':disabled}">
+                <span class="ng-chkbox-icon ng-clickable" [ngClass]="{'fa fa-check':checked}"></span>
             </div>
         </div>
     `
@@ -79,19 +79,19 @@ export class DTCheckbox {
     template: `
         <ng-template ngFor let-col [ngForOf]="columns" let-lastCol="last">
             <th #headerCell [attr.id]="col.colId" [ngStyle]="col.headerStyle||col.style" [class]="col.headerStyleClass||col.styleClass" (click)="dt.sort($event,col)" [attr.colspan]="col.colspan" [attr.rowspan]="col.rowspan"
-                [ngClass]="{'ui-state-default ui-unselectable-text':true, 'ui-sortable-column': col.sortable, 'ui-state-active': dt.isSorted(col), 'ui-resizable-column': dt.resizableColumns, 'ui-selection-column':col.selectionMode,
-                            'ui-helper-hidden': col.hidden}"
+                [ngClass]="{'ng-state-default ng-unselectable-text':true, 'ng-sortable-column': col.sortable, 'ng-state-active': dt.isSorted(col), 'ng-resizable-column': dt.resizableColumns, 'ng-selection-column':col.selectionMode,
+                            'ng-helper-hidden': col.hidden}"
                 (dragstart)="dt.onColumnDragStart($event)" (dragleave)="dt.onColumnDragleave($event)" (drop)="dt.onColumnDrop($event)" (mousedown)="dt.onHeaderMousedown($event,headerCell)"
                 [attr.tabindex]="col.sortable ? dt.tabindex : null" (keydown)="dt.onHeaderKeydown($event,col)"
                 [attr.scope]="col.scope||(col.colspan ? 'colgroup' : 'col')">
-                <span class="ui-column-resizer ui-clickable" *ngIf="dt.resizableColumns && col.resizable && ((dt.columnResizeMode == 'fit' && !lastCol) || dt.columnResizeMode == 'expand')" (mousedown)="dt.initColumnResize($event)"></span>
-                <span class="ui-column-title" *ngIf="!col.selectionMode&&!col.headerTemplate">{{col.header}}</span>
-                <span class="ui-column-title" *ngIf="col.headerTemplate">
+                <span class="ng-column-resizer ng-clickable" *ngIf="dt.resizableColumns && col.resizable && ((dt.columnResizeMode == 'fit' && !lastCol) || dt.columnResizeMode == 'expand')" (mousedown)="dt.initColumnResize($event)"></span>
+                <span class="ng-column-title" *ngIf="!col.selectionMode&&!col.headerTemplate">{{col.header}}</span>
+                <span class="ng-column-title" *ngIf="col.headerTemplate">
                     <ng-container *ngTemplateOutlet="col.headerTemplate; context: {$implicit: col}"></ng-container>
                 </span>
-                <span class="ui-sortable-column-icon fa fa-fw fa-sort" *ngIf="col.sortable"
+                <span class="ng-sortable-column-icon fa fa-fw fa-sort" *ngIf="col.sortable"
                      [ngClass]="{'fa-sort-desc': (dt.getSortOrder(col) == -1),'fa-sort-asc': (dt.getSortOrder(col) == 1)}"></span>
-                <input [attr.type]="col.filterType" class="ui-column-filter ui-inputtext ui-widget ui-state-default ui-corner-all" [attr.maxlength]="col.filterMaxlength" [attr.placeholder]="col.filterPlaceholder" *ngIf="col.filter&&!col.filterTemplate" [value]="dt.filters[col.filterField||col.field] ? dt.filters[col.filterField||col.field].value : ''"
+                <input [attr.type]="col.filterType" class="ng-column-filter ng-inputtext ng-widget ng-state-default ng-corner-all" [attr.maxlength]="col.filterMaxlength" [attr.placeholder]="col.filterPlaceholder" *ngIf="col.filter&&!col.filterTemplate" [value]="dt.filters[col.filterField||col.field] ? dt.filters[col.filterField||col.field].value : ''"
                     (click)="dt.onFilterInputClick($event)" (input)="dt.onFilterKeyup($event.target.value, col.filterField||col.field, col.filterMatchMode)"/>
                 <ng-container *ngIf="col.filter && col.filterTemplate">
                     <ng-container *ngTemplateOutlet="col.filterTemplate; context: {$implicit: col}"></ng-container>
@@ -113,9 +113,9 @@ export class ColumnHeaders {
     template: `
         <td *ngFor="let col of columns" [ngStyle]="col.footerStyle||col.style" [class]="col.footerStyleClass||col.styleClass"
             [attr.colspan]="col.colspan" [attr.rowspan]="col.rowspan"
-            [ngClass]="{'ui-state-default':true, 'ui-helper-hidden': col.hidden}">
-            <span class="ui-column-footer" *ngIf="!col.footerTemplate">{{col.footer}}</span>
-            <span class="ui-column-footer" *ngIf="col.footerTemplate">
+            [ngClass]="{'ng-state-default':true, 'ng-helper-hidden': col.hidden}">
+            <span class="ng-column-footer" *ngIf="!col.footerTemplate">{{col.footer}}</span>
+            <span class="ng-column-footer" *ngIf="col.footerTemplate">
                 <ng-container *ngTemplateOutlet="col.footerTemplate; context: {$implicit: col}"></ng-container>
             </span>
         </td>
@@ -132,65 +132,65 @@ export class ColumnFooters {
     selector: '[pTableBody]',
     template: `
         <ng-template ngFor let-rowData [ngForOf]="data" let-even="even" let-odd="odd" let-rowIndex="index" [ngForTrackBy]="dt.rowTrackBy">
-            <tr #rowGroupElement class="ui-widget-header ui-rowgroup-header"
+            <tr #rowGroupElement class="ng-widget-header ng-rowgroup-header"
                 *ngIf="dt.rowGroupMode=='subheader' && (rowIndex === 0||(dt.resolveFieldData(rowData,dt.groupField) !== dt.resolveFieldData(dt.dataToRender[rowIndex - 1], dt.groupField)))"
                 (click)="dt.onRowGroupClick($event)" [ngStyle]="{'cursor': dt.sortableRowGroup ? 'pointer' : 'auto'}">
                 <td [attr.colspan]="dt.visibleColumns().length">
                     <a href="#" *ngIf="dt.expandableRowGroups" (click)="dt.toggleRowGroup($event,rowData)">
                         <span class="fa fa-fw" [ngClass]="dt.isRowGroupExpanded(rowData) ? dt.expandedIcon : dt.collapsedIcon"></span>
                     </a>
-                    <span class="ui-rowgroup-header-name">
+                    <span class="ng-rowgroup-header-name">
                         <ng-container *ngTemplateOutlet="dt.rowGroupHeaderTemplate; context: {$implicit: rowData}"></ng-container>
                     </span>
                 </td>
             </tr>
             <tr #rowElement *ngIf="!dt.expandableRowGroups||dt.isRowGroupExpanded(rowData)"
                     (click)="dt.handleRowClick($event, rowData, rowIndex)" (dblclick)="dt.rowDblclick($event,rowData)" (contextmenu)="dt.onRowRightClick($event,rowData)" (touchend)="dt.handleRowTouchEnd($event)"
-                    [ngClass]="[even&&dt.rowGroupMode!='rowspan'? 'ui-datatable-even':'',
-                                odd&&dt.rowGroupMode!='rowspan'?'ui-datatable-odd':'',
-                                dt.isSelected(rowData)? 'ui-state-highlight': '',
-                                dt.isRowExpanded(rowData) ? 'ui-expanded-row': '',
+                    [ngClass]="[even&&dt.rowGroupMode!='rowspan'? 'ng-datatable-even':'',
+                                odd&&dt.rowGroupMode!='rowspan'?'ng-datatable-odd':'',
+                                dt.isSelected(rowData)? 'ng-state-highlight': '',
+                                dt.isRowExpanded(rowData) ? 'ng-expanded-row': '',
                                 dt.getRowStyleClass(rowData,rowIndex)]">
                 <ng-template ngFor let-col [ngForOf]="columns" let-colIndex="index">
                     <td #cell *ngIf="!dt.rowGroupMode || (dt.rowGroupMode == 'subheader') ||
                         (dt.rowGroupMode=='rowspan' && ((dt.sortField==col.field && dt.rowGroupMetadata[dt.resolveFieldData(rowData,dt.sortField)].index == rowIndex) || (dt.sortField!=col.field)))"
                         [ngStyle]="col.bodyStyle||col.style" [class]="col.bodyStyleClass||col.styleClass" (click)="dt.switchCellToEditMode(cell,col,rowData)"
-                        [ngClass]="{'ui-editable-column':col.editable,'ui-selection-column':col.selectionMode, 'ui-helper-hidden': col.hidden}"
+                        [ngClass]="{'ng-editable-column':col.editable,'ng-selection-column':col.selectionMode, 'ng-helper-hidden': col.hidden}"
                         [attr.rowspan]="(dt.rowGroupMode=='rowspan' && dt.sortField == col.field && dt.rowGroupMetadata[dt.resolveFieldData(rowData,dt.sortField)].index == rowIndex) ? dt.rowGroupMetadata[dt.resolveFieldData(rowData,dt.sortField)].size : null">
-                        <span class="ui-column-title" *ngIf="dt.responsive">{{col.header}}</span>
-                        <span class="ui-cell-data" *ngIf="!col.bodyTemplate && !col.expander && !col.selectionMode">{{dt.resolveFieldData(rowData,col.field)}}</span>
-                        <span class="ui-cell-data" *ngIf="col.bodyTemplate">
+                        <span class="ng-column-title" *ngIf="dt.responsive">{{col.header}}</span>
+                        <span class="ng-cell-data" *ngIf="!col.bodyTemplate && !col.expander && !col.selectionMode">{{dt.resolveFieldData(rowData,col.field)}}</span>
+                        <span class="ng-cell-data" *ngIf="col.bodyTemplate">
                             <ng-container *ngTemplateOutlet="col.bodyTemplate; context: {$implicit: col, rowData: rowData, rowIndex: (rowIndex + dt.first)}"></ng-container>
                         </span>
-                        <div class="ui-cell-editor" *ngIf="col.editable">
+                        <div class="ng-cell-editor" *ngIf="col.editable">
                             <input *ngIf="!col.editorTemplate" type="text" [(ngModel)]="rowData[col.field]"
                                 (keydown)="dt.onCellEditorKeydown($event, col, rowData, rowIndex)" (blur)="dt.onCellEditorBlur($event, col, rowData, rowIndex)"
                                 (input)="dt.onCellEditorInput($event, col, rowData, rowIndex)" (change)="dt.onCellEditorChange($event, col, rowData, rowIndex)"
-                                class="ui-inputtext ui-widget ui-state-default ui-corner-all"/>
-                            <a *ngIf="col.editorTemplate" class="ui-cell-editor-proxy-focus" href="#" (focus)="dt.onCustomEditorFocusPrev($event)"></a>
+                                class="ng-inputtext ng-widget ng-state-default ng-corner-all"/>
+                            <a *ngIf="col.editorTemplate" class="ng-cell-editor-proxy-focus" href="#" (focus)="dt.onCustomEditorFocusPrev($event)"></a>
                             <ng-container *ngTemplateOutlet="col.editorTemplate; context: {$implicit: col, rowData: rowData, rowIndex: rowIndex}"></ng-container>
-                            <a *ngIf="col.editorTemplate" class="ui-cell-editor-proxy-focus" href="#" (focus)="dt.onCustomEditorFocusNext($event)"></a>
+                            <a *ngIf="col.editorTemplate" class="ng-cell-editor-proxy-focus" href="#" (focus)="dt.onCustomEditorFocusNext($event)"></a>
                         </div>
                         <a href="#" *ngIf="col.expander" (click)="dt.toggleRow(rowData,$event)">
-                            <span class="ui-row-toggler fa fa-fw ui-clickable" [ngClass]="dt.isRowExpanded(rowData) ? dt.expandedIcon : dt.collapsedIcon"></span>
+                            <span class="ng-row-toggler fa fa-fw ng-clickable" [ngClass]="dt.isRowExpanded(rowData) ? dt.expandedIcon : dt.collapsedIcon"></span>
                         </a>
                         <p-dtRadioButton *ngIf="col.selectionMode=='single'" (onClick)="dt.selectRowWithRadio($event, rowData)" [checked]="dt.isSelected(rowData)"></p-dtRadioButton>
                         <p-dtCheckbox *ngIf="col.selectionMode=='multiple'" (onChange)="dt.toggleRowWithCheckbox($event,rowData)" [checked]="dt.isSelected(rowData)"></p-dtCheckbox>
                     </td>
                 </ng-template>
             </tr>
-            <tr *ngIf="dt.expandableRows && dt.isRowExpanded(rowData)" class="ui-expanded-row-content">
+            <tr *ngIf="dt.expandableRows && dt.isRowExpanded(rowData)" class="ng-expanded-row-content">
                 <td [attr.colspan]="dt.visibleColumns().length">
                     <ng-container *ngTemplateOutlet="dt.rowExpansionTemplate; context: {$implicit: rowData, rowIndex: rowIndex}"></ng-container>
                 </td>
             </tr>
-            <tr class="ui-widget-header ui-rowgroup-footer" *ngIf="dt.rowGroupFooterTemplate && dt.rowGroupMode=='subheader' && ((rowIndex === dt.dataToRender.length - 1)||(dt.resolveFieldData(rowData,dt.groupField) !== dt.resolveFieldData(dt.dataToRender[rowIndex + 1],dt.groupField))) && (!dt.expandableRowGroups || dt.isRowGroupExpanded(rowData))">
+            <tr class="ng-widget-header ng-rowgroup-footer" *ngIf="dt.rowGroupFooterTemplate && dt.rowGroupMode=='subheader' && ((rowIndex === dt.dataToRender.length - 1)||(dt.resolveFieldData(rowData,dt.groupField) !== dt.resolveFieldData(dt.dataToRender[rowIndex + 1],dt.groupField))) && (!dt.expandableRowGroups || dt.isRowGroupExpanded(rowData))">
                 <ng-container *ngTemplateOutlet="dt.rowGroupFooterTemplate; context: {$implicit: rowData}"></ng-container>
             </tr>
         </ng-template>
 
-        <tr *ngIf="dt.isEmpty()" class="ui-widget-content ui-datatable-emptymessage-row" [style.visibility]="dt.loading ? 'hidden' : 'visible'">
-            <td [attr.colspan]="dt.visibleColumns().length" class="ui-datatable-emptymessage">
+        <tr *ngIf="dt.isEmpty()" class="ng-widget-content ng-datatable-emptymessage-row" [style.visibility]="dt.loading ? 'hidden' : 'visible'">
+            <td [attr.colspan]="dt.visibleColumns().length" class="ng-datatable-emptymessage">
                 <span *ngIf="!dt.emptyMessageTemplate">{{dt.emptyMessage}}</span>
                 <ng-container *ngIf="dt.emptyMessageTemplate">
                     <ng-container *ngTemplateOutlet="dt.emptyMessageTemplate"></ng-container>
@@ -215,36 +215,36 @@ export class TableBody {
 @Component({
     selector: '[pScrollableView]',
     template: `
-        <div #scrollHeader class="ui-widget-header ui-datatable-scrollable-header" [ngStyle]="{'width': width}">
-            <div #scrollHeaderBox  class="ui-datatable-scrollable-header-box">
+        <div #scrollHeader class="ng-widget-header ng-datatable-scrollable-header" [ngStyle]="{'width': width}">
+            <div #scrollHeaderBox  class="ng-datatable-scrollable-header-box">
                 <table [ngClass]="dt.tableStyleClass" [ngStyle]="dt.tableStyle">
-                    <thead class="ui-datatable-thead">
-                        <tr *ngIf="!headerColumnGroup" class="ui-state-default" [pColumnHeaders]="columns"></tr>
+                    <thead class="ng-datatable-thead">
+                        <tr *ngIf="!headerColumnGroup" class="ng-state-default" [pColumnHeaders]="columns"></tr>
                         <ng-template [ngIf]="headerColumnGroup">
-                            <tr *ngFor="let headerRow of headerColumnGroup.rows" class="ui-state-default" [pColumnHeaders]="headerRow.columns"></tr>
+                            <tr *ngFor="let headerRow of headerColumnGroup.rows" class="ng-state-default" [pColumnHeaders]="headerRow.columns"></tr>
                         </ng-template>
                     </thead>
-                    <tbody *ngIf="dt.frozenValue" [ngClass]="{'ui-datatable-data ui-widget-content': true, 'ui-datatable-hoverable-rows': (dt.rowHover||dt.selectionMode)}" [pTableBody]="columns" [data]="dt.frozenValue"></tbody>
+                    <tbody *ngIf="dt.frozenValue" [ngClass]="{'ng-datatable-data ng-widget-content': true, 'ng-datatable-hoverable-rows': (dt.rowHover||dt.selectionMode)}" [pTableBody]="columns" [data]="dt.frozenValue"></tbody>
                 </table>
             </div>
         </div>
-        <div #scrollBody class="ui-datatable-scrollable-body" [ngStyle]="{'width': width}">
-            <div #scrollTableWrapper class="ui-datatable-scrollable-table-wrapper" style="position:relative">
-                <table #scrollTable [class]="dt.tableStyleClass" [ngStyle]="dt.tableStyle" [ngClass]="{'ui-datatable-virtual-table':virtualScroll}" style="top:0px">
-                    <colgroup class="ui-datatable-scrollable-colgroup">
-                        <col *ngFor="let col of columns" [ngStyle]="col.headerStyle||col.style" [ngClass]="{'ui-helper-hidden': col.hidden}"/>
+        <div #scrollBody class="ng-datatable-scrollable-body" [ngStyle]="{'width': width}">
+            <div #scrollTableWrapper class="ng-datatable-scrollable-table-wrapper" style="position:relative">
+                <table #scrollTable [class]="dt.tableStyleClass" [ngStyle]="dt.tableStyle" [ngClass]="{'ng-datatable-virtual-table':virtualScroll}" style="top:0px">
+                    <colgroup class="ng-datatable-scrollable-colgroup">
+                        <col *ngFor="let col of columns" [ngStyle]="col.headerStyle||col.style" [ngClass]="{'ng-helper-hidden': col.hidden}"/>
                     </colgroup>
-                    <tbody [ngClass]="{'ui-datatable-data ui-widget-content': true, 'ui-datatable-hoverable-rows': (dt.rowHover||dt.selectionMode)}" [pTableBody]="columns" [data]="dt.dataToRender"></tbody>
+                    <tbody [ngClass]="{'ng-datatable-data ng-widget-content': true, 'ng-datatable-hoverable-rows': (dt.rowHover||dt.selectionMode)}" [pTableBody]="columns" [data]="dt.dataToRender"></tbody>
                 </table>
             </div>
         </div>
-        <div #scrollFooter class="ui-widget-header ui-datatable-scrollable-footer" [ngStyle]="{'width': width}" *ngIf="dt.hasFooter()">
-            <div #scrollFooterBox  class="ui-datatable-scrollable-footer-box">
+        <div #scrollFooter class="ng-widget-header ng-datatable-scrollable-footer" [ngStyle]="{'width': width}" *ngIf="dt.hasFooter()">
+            <div #scrollFooterBox  class="ng-datatable-scrollable-footer-box">
                 <table [ngClass]="dt.tableStyleClass" [ngStyle]="dt.tableStyle">
-                    <tfoot class="ui-datatable-tfoot">
-                        <tr *ngIf="!footerColumnGroup" [pColumnFooters]="columns" class="ui-state-default"></tr>
+                    <tfoot class="ng-datatable-tfoot">
+                        <tr *ngIf="!footerColumnGroup" [pColumnFooters]="columns" class="ng-state-default"></tr>
                         <ng-template [ngIf]="footerColumnGroup">
-                            <tr *ngFor="let footerRow of footerColumnGroup.rows" class="ui-state-default" [pColumnFooters]="footerRow.columns"></tr>
+                            <tr *ngFor="let footerRow of footerColumnGroup.rows" class="ng-state-default" [pColumnFooters]="footerRow.columns"></tr>
                         </ng-template>
                     </tfoot>
                 </table>
@@ -316,7 +316,7 @@ export class ScrollableView implements AfterViewInit,AfterViewChecked,OnDestroy 
     
     ngAfterViewChecked() {
         if(this.virtualScroll && !this.rowHeight) {
-             let row = this.domHandler.findSingle(this.scrollTable, 'tr.ui-widget-content:not(.ui-datatable-emptymessage-row)');
+             let row = this.domHandler.findSingle(this.scrollTable, 'tr.ng-widget-content:not(.ng-datatable-emptymessage-row)');
              if(row) {
                  this.rowHeight = this.domHandler.getOuterHeight(row);
              }
@@ -360,7 +360,7 @@ export class ScrollableView implements AfterViewInit,AfterViewChecked,OnDestroy 
     onBodyScroll(event) {
         let frozenView = this.el.nativeElement.previousElementSibling;
         if(frozenView) {
-            var frozenScrollBody = this.domHandler.findSingle(frozenView, '.ui-datatable-scrollable-body');
+            var frozenScrollBody = this.domHandler.findSingle(frozenView, '.ng-datatable-scrollable-body');
         }
         
         this.scrollHeaderBox.style.marginLeft = -1 * this.scrollBody.scrollLeft + 'px';
@@ -437,57 +437,57 @@ export class ScrollableView implements AfterViewInit,AfterViewChecked,OnDestroy 
     selector: 'p-dataTable',
     template: `
         <div [ngStyle]="style" [class]="styleClass" [style.width]="containerWidth"
-            [ngClass]="{'ui-datatable ui-widget':true,'ui-datatable-reflow':responsive,'ui-datatable-stacked':stacked,'ui-datatable-resizable':resizableColumns,'ui-datatable-scrollable':scrollable}">
-            <div class="ui-datatable-loading ui-widget-overlay" *ngIf="loading"></div>
-            <div class="ui-datatable-loading-content" *ngIf="loading">
+            [ngClass]="{'ng-datatable ng-widget':true,'ng-datatable-reflow':responsive,'ng-datatable-stacked':stacked,'ng-datatable-resizable':resizableColumns,'ng-datatable-scrollable':scrollable}">
+            <div class="ng-datatable-loading ng-widget-overlay" *ngIf="loading"></div>
+            <div class="ng-datatable-loading-content" *ngIf="loading">
                 <i [class]="'fa fa-spin fa-2x ' + loadingIcon"></i>
             </div>
-            <div class="ui-datatable-header ui-widget-header" *ngIf="header">
+            <div class="ng-datatable-header ng-widget-header" *ngIf="header">
                 <ng-content select="p-header"></ng-content>
             </div>
-            <p-paginator [rows]="rows" [first]="first" [totalRecords]="totalRecords" [pageLinkSize]="pageLinks" styleClass="ui-paginator-top" [alwaysShow]="alwaysShowPaginator"
+            <p-paginator [rows]="rows" [first]="first" [totalRecords]="totalRecords" [pageLinkSize]="pageLinks" styleClass="ng-paginator-top" [alwaysShow]="alwaysShowPaginator"
                 (onPageChange)="onPageChange($event)" [rowsPerPageOptions]="rowsPerPageOptions" *ngIf="paginator && (paginatorPosition === 'top' || paginatorPosition =='both')"
                 [templateLeft]="paginatorLeftTemplate" [templateRight]="paginatorRightTemplate"></p-paginator>
-            <div class="ui-datatable-tablewrapper" *ngIf="!scrollable">
+            <div class="ng-datatable-tablewrapper" *ngIf="!scrollable">
                 <table [ngClass]="tableStyleClass" [ngStyle]="tableStyle">
-                    <thead class="ui-datatable-thead">
-                        <tr *ngIf="!headerColumnGroups || !headerColumnGroups.first" class="ui-state-default" [pColumnHeaders]="columns"></tr>
+                    <thead class="ng-datatable-thead">
+                        <tr *ngIf="!headerColumnGroups || !headerColumnGroups.first" class="ng-state-default" [pColumnHeaders]="columns"></tr>
                         <ng-template [ngIf]="headerColumnGroups && headerColumnGroups.first">
-                            <tr *ngFor="let headerRow of headerColumnGroups.first.rows" class="ui-state-default" [pColumnHeaders]="headerRow.columns"></tr>
+                            <tr *ngFor="let headerRow of headerColumnGroups.first.rows" class="ng-state-default" [pColumnHeaders]="headerRow.columns"></tr>
                         </ng-template>
                     </thead>
-                    <tfoot *ngIf="hasFooter()" class="ui-datatable-tfoot">
-                        <tr *ngIf="!footerColumnGroups.first" class="ui-state-default" [pColumnFooters]="columns"></tr>
+                    <tfoot *ngIf="hasFooter()" class="ng-datatable-tfoot">
+                        <tr *ngIf="!footerColumnGroups.first" class="ng-state-default" [pColumnFooters]="columns"></tr>
                         <ng-template [ngIf]="footerColumnGroups.first">
-                            <tr *ngFor="let footerRow of footerColumnGroups.first.rows" class="ui-state-default" [pColumnFooters]="footerRow.columns"></tr>
+                            <tr *ngFor="let footerRow of footerColumnGroups.first.rows" class="ng-state-default" [pColumnFooters]="footerRow.columns"></tr>
                         </ng-template>
                     </tfoot>
-                    <tbody [ngClass]="{'ui-datatable-data ui-widget-content': true, 'ui-datatable-hoverable-rows': (rowHover||selectionMode)}" [pTableBody]="columns" [data]="dataToRender"></tbody>
+                    <tbody [ngClass]="{'ng-datatable-data ng-widget-content': true, 'ng-datatable-hoverable-rows': (rowHover||selectionMode)}" [pTableBody]="columns" [data]="dataToRender"></tbody>
                 </table>
             </div>
             
             <ng-template [ngIf]="scrollable">
-                <div class="ui-datatable-scrollable-wrapper ui-helper-clearfix">
+                <div class="ng-datatable-scrollable-wrapper ng-helper-clearfix">
                     <div *ngIf="hasFrozenColumns()" [pScrollableView]="frozenColumns" frozen="true"
                         [headerColumnGroup]="frozenHeaderColumnGroup" [footerColumnGroup]="frozenFooterColumnGroup"
-                        [ngStyle]="{'width':this.frozenWidth}" class="ui-datatable-scrollable-view ui-datatable-frozen-view"></div>
+                        [ngStyle]="{'width':this.frozenWidth}" class="ng-datatable-scrollable-view ng-datatable-frozen-view"></div>
                     <div [pScrollableView]="scrollableColumns" [ngStyle]="{'width':this.unfrozenWidth, 'left': this.frozenWidth}"
                         [headerColumnGroup]="scrollableHeaderColumnGroup" [footerColumnGroup]="scrollableFooterColumnGroup"
-                        class="ui-datatable-scrollable-view" [virtualScroll]="virtualScroll" (onVirtualScroll)="onVirtualScroll($event)"
-                        [ngClass]="{'ui-datatable-unfrozen-view': hasFrozenColumns()}"></div>
+                        class="ng-datatable-scrollable-view" [virtualScroll]="virtualScroll" (onVirtualScroll)="onVirtualScroll($event)"
+                        [ngClass]="{'ng-datatable-unfrozen-view': hasFrozenColumns()}"></div>
                 </div>
             </ng-template>
             
-            <p-paginator [rows]="rows" [first]="first" [totalRecords]="totalRecords" [pageLinkSize]="pageLinks" styleClass="ui-paginator-bottom" [alwaysShow]="alwaysShowPaginator"
+            <p-paginator [rows]="rows" [first]="first" [totalRecords]="totalRecords" [pageLinkSize]="pageLinks" styleClass="ng-paginator-bottom" [alwaysShow]="alwaysShowPaginator"
                 (onPageChange)="onPageChange($event)" [rowsPerPageOptions]="rowsPerPageOptions" *ngIf="paginator && (paginatorPosition === 'bottom' || paginatorPosition =='both')"
                 [templateLeft]="paginatorLeftTemplate" [templateRight]="paginatorRightTemplate"></p-paginator>
-            <div class="ui-datatable-footer ui-widget-header" *ngIf="footer">
+            <div class="ng-datatable-footer ng-widget-header" *ngIf="footer">
                 <ng-content select="p-footer"></ng-content>
             </div>
             
-            <div class="ui-column-resizer-helper ui-state-highlight" style="display:none"></div>
-            <span class="fa fa-arrow-down ui-datatable-reorder-indicator-up" style="position: absolute; display: none;"></span>
-            <span class="fa fa-arrow-up ui-datatable-reorder-indicator-down" style="position: absolute; display: none;"></span>
+            <div class="ng-column-resizer-helper ng-state-highlight" style="display:none"></div>
+            <span class="fa fa-arrow-down ng-datatable-reorder-indicator-up" style="position: absolute; display: none;"></span>
+            <span class="fa fa-arrow-up ng-datatable-reorder-indicator-down" style="position: absolute; display: none;"></span>
         </div>
     `,
     providers: [DomHandler,ObjectUtils]
@@ -858,7 +858,7 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
         }
         
         if(this.totalRecordsChanged && this.virtualScroll && this.virtualScrollableTableWrapper && this.virtualScrollableTableWrapper.offsetParent) {
-            let row = this.domHandler.findSingle(this.virtualScrollableTableWrapper,'tr.ui-widget-content');
+            let row = this.domHandler.findSingle(this.virtualScrollableTableWrapper,'tr.ng-widget-content');
             let rowHeight = this.domHandler.getOuterHeight(row);
             this.virtualTableHeight = this._totalRecords * rowHeight;
             this.virtualScrollableTableWrapper.style.height = this.virtualTableHeight + 'px';
@@ -879,7 +879,7 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
             });
         }
 
-        this.virtualScrollableTableWrapper = this.domHandler.findSingle(this.el.nativeElement, 'div.ui-datatable-scrollable-table-wrapper');
+        this.virtualScrollableTableWrapper = this.domHandler.findSingle(this.el.nativeElement, 'div.ng-datatable-scrollable-table-wrapper');
 
         this.initialized = true;
     }
@@ -1182,7 +1182,7 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
             return;
         }
         let targetNode = event.target;
-        if(this.domHandler.hasClass(targetNode, 'ui-sortable-column') || this.domHandler.hasClass(targetNode, 'ui-column-title') || this.domHandler.hasClass(targetNode, 'ui-sortable-column-icon')) {
+        if(this.domHandler.hasClass(targetNode, 'ng-sortable-column') || this.domHandler.hasClass(targetNode, 'ng-column-title') || this.domHandler.hasClass(targetNode, 'ng-sortable-column-icon')) {
             if(!this.immutable) {
                 this.preventSortPropagation = true;
             }
@@ -1362,7 +1362,7 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
         
         if(this.sortableRowGroup) {
             let targetNode = event.target.nodeName;
-            if((targetNode == 'TD' || (targetNode == 'SPAN' && !this.domHandler.hasClass(event.target, 'ui-clickable')))) {
+            if((targetNode == 'TD' || (targetNode == 'SPAN' && !this.domHandler.hasClass(event.target, 'ng-clickable')))) {
                 if(this.sortField != this.groupField) {
                     this._sortField = this.groupField;
                     this.sortSingle();
@@ -1439,7 +1439,7 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
         
         let targetNode = (<HTMLElement> event.target).nodeName;
         
-        if(targetNode == 'INPUT' || targetNode == 'BUTTON' || targetNode == 'A' || (this.domHandler.hasClass(event.target, 'ui-clickable'))) {
+        if(targetNode == 'INPUT' || targetNode == 'BUTTON' || targetNode == 'A' || (this.domHandler.hasClass(event.target, 'ng-clickable'))) {
             return;
         }
         
@@ -1919,13 +1919,13 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
             
             if(cell != this.editingCell) {
                 if(this.editingCell && this.domHandler.find(this.editingCell, '.ng-invalid.ng-dirty').length == 0) {
-                    this.domHandler.removeClass(this.editingCell, 'ui-cell-editing');
+                    this.domHandler.removeClass(this.editingCell, 'ng-cell-editing');
                 }
                 
                 this.editingCell = cell;
                 this.onEditInit.emit({column: column, data: rowData});
-                this.domHandler.addClass(cell, 'ui-cell-editing');
-                let focusable = this.domHandler.findSingle(cell, '.ui-cell-editor input, .ui-cell-editor textarea');
+                this.domHandler.addClass(cell, 'ng-cell-editing');
+                let focusable = this.domHandler.findSingle(cell, '.ng-cell-editor input, .ng-cell-editor textarea');
                 if(focusable) {
                     setTimeout(() => this.domHandler.invokeElementMethod(focusable, 'focus'), 50);
                 }
@@ -1936,13 +1936,13 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
     switchCellToViewMode(element: any) {
         this.editingCell = null;
         let cell = this.findCell(element);
-        this.domHandler.removeClass(cell, 'ui-cell-editing');
+        this.domHandler.removeClass(cell, 'ng-cell-editing');
         this.unbindDocumentEditListener();
     }
     
     closeCell() {
         if(this.editingCell) {
-            this.domHandler.removeClass(this.editingCell, 'ui-cell-editing');
+            this.domHandler.removeClass(this.editingCell, 'ng-cell-editing');
             this.editingCell = null;
             this.unbindDocumentEditListener();
         }
@@ -2048,7 +2048,7 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
         }
         
         if(prevCell) {
-            if(this.domHandler.hasClass(prevCell, 'ui-editable-column'))
+            if(this.domHandler.hasClass(prevCell, 'ng-editable-column'))
                 return prevCell;
             else
                 return this.findPreviousEditableColumn(prevCell);
@@ -2069,7 +2069,7 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
         }
         
         if(nextCell) {
-            if(this.domHandler.hasClass(nextCell, 'ui-editable-column'))
+            if(this.domHandler.hasClass(nextCell, 'ng-editable-column'))
                 return nextCell;
             else
                 return this.findNextEditableColumn(nextCell);
@@ -2102,8 +2102,8 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
     }
 
     initResizableColumns() {
-        this.tbody = this.domHandler.findSingle(this.el.nativeElement, 'tbody.ui-datatable-data');
-        this.resizerHelper = this.domHandler.findSingle(this.el.nativeElement, 'div.ui-column-resizer-helper');
+        this.tbody = this.domHandler.findSingle(this.el.nativeElement, 'tbody.ng-datatable-data');
+        this.resizerHelper = this.domHandler.findSingle(this.el.nativeElement, 'div.ng-column-resizer-helper');
         this.fixColumnWidths();
     }
     
@@ -2155,7 +2155,7 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
     onColumnResize(event) {
         let container = this.el.nativeElement.children[0];
         let containerLeft = this.domHandler.getOffset(container).left;
-        this.domHandler.addClass(container, 'ui-unselectable-text');
+        this.domHandler.addClass(container, 'ng-unselectable-text');
         this.resizerHelper.style.height = container.offsetHeight + 'px';
         this.resizerHelper.style.top = 0 + 'px';
         this.resizerHelper.style.left = (event.pageX - containerLeft + container.scrollLeft) + 'px';
@@ -2172,7 +2172,7 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
         if(columnWidth + delta > parseInt(minWidth)) {
             if(this.columnResizeMode === 'fit') {
                 let nextColumn = this.resizeColumn.nextElementSibling;
-                while (this.domHandler.hasClass(nextColumn, 'ui-helper-hidden')) {
+                while (this.domHandler.hasClass(nextColumn, 'ng-helper-hidden')) {
                     nextColumn = nextColumn.nextElementSibling;
                 }
 
@@ -2187,7 +2187,7 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
                         }
 
                         if (this.scrollable) {
-                            let colGroup = this.domHandler.findSingle(this.el.nativeElement, 'colgroup.ui-datatable-scrollable-colgroup');
+                            let colGroup = this.domHandler.findSingle(this.el.nativeElement, 'colgroup.ng-datatable-scrollable-colgroup');
                             let resizeColumnIndex = this.domHandler.index(this.resizeColumn);
                             colGroup.children[resizeColumnIndex].style.width = newColumnWidth + 'px';
 
@@ -2204,8 +2204,8 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
                 let containerWidth = this.tbody.parentElement.style.width;
                 
                 if(this.scrollable) {
-                    this.domHandler.findSingle(this.el.nativeElement, '.ui-datatable-scrollable-header-box').children[0].style.width = containerWidth;
-                    let colGroup = this.domHandler.findSingle(this.el.nativeElement, 'colgroup.ui-datatable-scrollable-colgroup');
+                    this.domHandler.findSingle(this.el.nativeElement, '.ng-datatable-scrollable-header-box').children[0].style.width = containerWidth;
+                    let colGroup = this.domHandler.findSingle(this.el.nativeElement, 'colgroup.ng-datatable-scrollable-colgroup');
                     let resizeColumnIndex = this.domHandler.index(this.resizeColumn);
                     colGroup.children[resizeColumnIndex].style.width = newColumnWidth + 'px';
                 }
@@ -2222,12 +2222,12 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
         
         this.resizerHelper.style.display = 'none';
         this.resizeColumn = null;
-        this.domHandler.removeClass(this.el.nativeElement.children[0], 'ui-unselectable-text');
+        this.domHandler.removeClass(this.el.nativeElement.children[0], 'ng-unselectable-text');
         this.unbindColumnResizeEvents();
     }
     
     fixColumnWidths() {
-        let columns = this.domHandler.find(this.el.nativeElement, 'th.ui-resizable-column');
+        let columns = this.domHandler.find(this.el.nativeElement, 'th.ng-resizable-column');
         let bodyCols;
         
         for(let i = 0; i < columns.length; i++) {
@@ -2235,7 +2235,7 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
         }
         
         if(this.scrollable) {
-            let colGroup = this.domHandler.findSingle(this.el.nativeElement, 'colgroup.ui-datatable-scrollable-colgroup');
+            let colGroup = this.domHandler.findSingle(this.el.nativeElement, 'colgroup.ng-datatable-scrollable-colgroup');
             bodyCols = colGroup.children;
             
             if(bodyCols) {
@@ -2336,8 +2336,8 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
     }
 
     initColumnReordering() {
-        this.reorderIndicatorUp = this.domHandler.findSingle(this.el.nativeElement.children[0], 'span.ui-datatable-reorder-indicator-up');
-        this.reorderIndicatorDown = this.domHandler.findSingle(this.el.nativeElement.children[0], 'span.ui-datatable-reorder-indicator-down');
+        this.reorderIndicatorUp = this.domHandler.findSingle(this.el.nativeElement.children[0], 'span.ng-datatable-reorder-indicator-up');
+        this.reorderIndicatorDown = this.domHandler.findSingle(this.el.nativeElement.children[0], 'span.ng-datatable-reorder-indicator-down');
         this.iconWidth = this.domHandler.getHiddenElementOuterWidth(this.reorderIndicatorUp);
         this.iconHeight = this.domHandler.getHiddenElementOuterHeight(this.reorderIndicatorUp);
     }
@@ -2575,7 +2575,7 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
     }
     
     getRowStyleClass(rowData: any, rowIndex: number) {
-        let styleClass = 'ui-widget-content';
+        let styleClass = 'ng-widget-content';
         if(this.rowStyleClass) {
             let rowClass = this.rowStyleClass.call(this, rowData, rowIndex);
             if(rowClass) {

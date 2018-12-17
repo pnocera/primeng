@@ -27,13 +27,13 @@ describe('SplitButton', () => {
     });
     
     it('should open dropdown menu when click dropdown button and call onDropdownButtonClick', () => {
-      const dropDownEl = fixture.debugElement.query(By.css('.ui-splitbutton-menubutton')).nativeElement;
+      const dropDownEl = fixture.debugElement.query(By.css('.ng-splitbutton-menubutton')).nativeElement;
       const dropdownClickSpy = spyOn(splitbutton, 'onDropdownButtonClick').and.callThrough();
       const showSpy = spyOn(splitbutton, 'show').and.callThrough();
       dropDownEl.click();
       fixture.detectChanges();
 
-      const dropdownMenuEl=fixture.debugElement.query(By.css('.ui-menu-dynamic')).nativeElement;
+      const dropdownMenuEl=fixture.debugElement.query(By.css('.ng-menu-dynamic')).nativeElement;
       expect(splitbutton.dropdownClick).toEqual(true);
       expect(splitbutton.overlayVisible).toEqual(true);
       expect (dropdownClickSpy).toHaveBeenCalled();
@@ -42,14 +42,14 @@ describe('SplitButton', () => {
     });
 
     it('should close dropdown menu when click dropdown button and call onDropdownButtonClick', () => {
-      const dropDownEl = fixture.debugElement.query(By.css('.ui-splitbutton-menubutton')).nativeElement;
+      const dropDownEl = fixture.debugElement.query(By.css('.ng-splitbutton-menubutton')).nativeElement;
       const dropdownClickSpy = spyOn(splitbutton, 'onDropdownButtonClick').and.callThrough();
       const showSpy = spyOn(splitbutton, 'show').and.callThrough();
       dropDownEl.click();
       dropDownEl.click();
       fixture.detectChanges();
 
-      const dropdownMenuEl=fixture.debugElement.query(By.css('.ui-menu-dynamic'));
+      const dropdownMenuEl=fixture.debugElement.query(By.css('.ng-menu-dynamic'));
       expect(splitbutton.dropdownClick).toEqual(true);
       expect(splitbutton.overlayVisible).toEqual(false);
       expect (dropdownClickSpy).toHaveBeenCalledTimes(2);
@@ -59,16 +59,16 @@ describe('SplitButton', () => {
 
     it('should close dropdown menu when click dropdown menu item and call itemClick', () => {
       splitbutton.model = [{label: 'Update', icon: 'fa fa-refresh', command: () => {}}];
-      const dropDownEl = fixture.debugElement.query(By.css('.ui-splitbutton-menubutton')).nativeElement;
+      const dropDownEl = fixture.debugElement.query(By.css('.ng-splitbutton-menubutton')).nativeElement;
       const itemClickSpy = spyOn(splitbutton, 'itemClick').and.callThrough();
       dropDownEl.click();
       fixture.detectChanges();
 
-      const menuEl = fixture.debugElement.query(By.css('.ui-menuitem')).children[0].nativeElement;
+      const menuEl = fixture.debugElement.query(By.css('.ng-menuitem')).children[0].nativeElement;
       menuEl.click();
       fixture.detectChanges();
 
-      const dropdownMenuEl = fixture.debugElement.query(By.css('.ui-menu-dynamic'));
+      const dropdownMenuEl = fixture.debugElement.query(By.css('.ng-menu-dynamic'));
       expect (itemClickSpy).toHaveBeenCalled();
       expect(splitbutton.overlayVisible).toEqual(false);
       expect(dropdownMenuEl).toBeFalsy();
@@ -81,13 +81,13 @@ describe('SplitButton', () => {
       fixture.detectChanges();
       
       const defaultButtonEl=fixture.debugElement.query(By.css('button')).nativeElement;
-      const dropdownEl=fixture.debugElement.query(By.css('.ui-splitbutton-menubutton')).nativeElement;
-      const containerEl=fixture.debugElement.query(By.css('.ui-splitbutton')).nativeElement;
+      const dropdownEl=fixture.debugElement.query(By.css('.ng-splitbutton-menubutton')).nativeElement;
+      const containerEl=fixture.debugElement.query(By.css('.ng-splitbutton')).nativeElement;
       defaultButtonEl.click();
       dropdownEl.click();
       fixture.detectChanges();
 
-      expect(containerEl.className).toContain("ui-state-disabled");
+      expect(containerEl.className).toContain("ng-state-disabled");
       expect(dropdownEl.disabled).toBeTruthy();
       expect(defaultButtonEl.disabled).toBeTruthy();
       expect (dropdownClickSpy).not.toHaveBeenCalled();
@@ -111,7 +111,7 @@ describe('SplitButton', () => {
       splitbutton.styleClass = "Primeng ROCKS!";
       fixture.detectChanges();
 
-      const containerEl=fixture.debugElement.query(By.css('.ui-splitbutton')).nativeElement;
+      const containerEl=fixture.debugElement.query(By.css('.ng-splitbutton')).nativeElement;
       expect(containerEl.className).toContain("Primeng ROCKS!");
       expect(containerEl.style.primeng).toContain("rock");
     });
@@ -121,11 +121,11 @@ describe('SplitButton', () => {
       splitbutton.menuStyleClass="Primeng ROCKS!";
       fixture.detectChanges();
 
-      const dropdownEl=fixture.debugElement.query(By.css('.ui-splitbutton-menubutton')).nativeElement;
+      const dropdownEl=fixture.debugElement.query(By.css('.ng-splitbutton-menubutton')).nativeElement;
       dropdownEl.click();
       fixture.detectChanges();
 
-      const containerEl=fixture.debugElement.query(By.css('.ui-menu')).nativeElement;
+      const containerEl=fixture.debugElement.query(By.css('.ng-menu')).nativeElement;
       expect(containerEl.className).toContain("Primeng ROCKS!");
       expect(containerEl.style.primeng).toContain("rock");
     });
@@ -134,10 +134,10 @@ describe('SplitButton', () => {
       splitbutton.dir="ltr"
       fixture.detectChanges();
 
-      const dropdownButton = fixture.debugElement.query(By.css('.ui-splitbutton-menubutton'));
+      const dropdownButton = fixture.debugElement.query(By.css('.ng-splitbutton-menubutton'));
       const defaultButton = fixture.debugElement.query(By.css('button'));
-      expect(defaultButton.attributes["ng-reflect-corner-style-class"]).toEqual("ui-corner-left");
-      expect(dropdownButton.attributes["ng-reflect-corner-style-class"]).toEqual("ui-corner-right");
+      expect(defaultButton.attributes["ng-reflect-corner-style-class"]).toEqual("ng-corner-left");
+      expect(dropdownButton.attributes["ng-reflect-corner-style-class"]).toEqual("ng-corner-right");
     });
 
     it('should have a tabindex', () => {

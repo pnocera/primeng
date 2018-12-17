@@ -11,18 +11,18 @@ export const CHECKBOX_VALUE_ACCESSOR: any = {
 @Component({
     selector: 'p-checkbox',
     template: `
-        <div [ngStyle]="style" [ngClass]="'ui-chkbox ui-widget'" [class]="styleClass">
-            <div class="ui-helper-hidden-accessible">
+        <div [ngStyle]="style" [ngClass]="'ng-chkbox ng-widget'" [class]="styleClass">
+            <div class="ng-helper-hidden-accessible">
                 <input #cb type="checkbox" [attr.id]="inputId" [name]="name" [value]="value" [checked]="checked" (focus)="onFocus($event)" (blur)="onBlur($event)"
-                [ngClass]="{'ui-state-focus':focused}" (change)="handleChange($event)" [disabled]="disabled" [attr.tabindex]="tabindex">
+                [ngClass]="{'ng-state-focus':focused}" (change)="handleChange($event)" [disabled]="disabled" [attr.tabindex]="tabindex">
             </div>
-            <div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default" (click)="onClick($event,cb,true)"
-                        [ngClass]="{'ui-state-active':checked,'ui-state-disabled':disabled,'ui-state-focus':focused}">
-                <span class="ui-chkbox-icon ui-clickable" [ngClass]="{'pi pi-check':checked}"></span>
+            <div class="ng-chkbox-box ng-widget ng-corner-all ng-state-default" (click)="onClick($event,cb,true)"
+                        [ngClass]="{'ng-state-active':checked,'ng-state-disabled':disabled,'ng-state-focus':focused}">
+                <span class="ng-chkbox-icon ng-clickable" [ngClass]="{'pi pi-check':checked}"></span>
             </div>
         </div>
         <label (click)="onClick($event,cb,true)" [class]="labelStyleClass"
-                [ngClass]="{'ui-chkbox-label': true, 'ui-label-active':checked, 'ui-label-disabled':disabled, 'ui-label-focus':focused}"
+                [ngClass]="{'ng-chkbox-label': true, 'ng-label-active':checked, 'ng-label-disabled':disabled, 'ng-label-focus':focused}"
                 *ngIf="label" [attr.for]="inputId">{{label}}</label>
     `,
     providers: [CHECKBOX_VALUE_ACCESSOR]

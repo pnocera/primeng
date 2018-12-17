@@ -3,53 +3,53 @@
 */
 @charset "UTF-8";
 
-body .ui-widget,
-body .ui-widget .ui-widget,
-body .ui-widget input, body .ui-widget select, body .ui-widget textarea, body .ui-widget button {
+body .ng-widget,
+body .ng-widget .ng-widget,
+body .ng-widget input, body .ng-widget select, body .ng-widget textarea, body .ng-widget button {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     text-decoration: none;
     font-size: 1em;
 }
-body .ui-widget-content {
+body .ng-widget-content {
     background-color: #ffffff;
     border: 1px solid #c7c7c7;
 }
-body .ui-widget-header {
+body .ng-widget-header {
     background: #ffffff;
     color: #2d353c;
     border: 1px solid #cdcdcd;
 }
-body .ui-state-active,
-body .ui-state-highlight {
+body .ng-state-active,
+body .ng-state-highlight {
     background-color: #0275d8;
     color: #ffffff;
 }
-body .ui-state-error,
-body .ui-state-default.ui-state-error {
+body .ng-state-error,
+body .ng-state-default.ng-state-error {
     border-bottom-color: #e13131;
 }
-body .ui-icon {
+body .ng-icon {
     width: 1em;
     height: 1em;
     line-height: 1em;
 }
-body .ui-state-disabled,
-body .ui-widget:disabled {
+body .ng-state-disabled,
+body .ng-widget:disabled {
     opacity: .35; 
     filter: Alpha(Opacity= 35); 
     background-image: none; 
     cursor: default !important;
 }
-body .ui-state-disabled *,
-body .ui-widget:disabled * {
+body .ng-state-disabled *,
+body .ng-widget:disabled * {
     cursor: default !important;
 }
-body .ui-corner-all {
+body .ng-corner-all {
     -moz-border-radius: 0.25em;
     -webkit-border-radius: 0.25em;
     border-radius: 0.25em;
 }
-body .ui-corner-top {
+body .ng-corner-top {
     -moz-border-radius-topleft: 0.25em;
     -webkit-border-top-left-radius: 0.25em;
     border-top-left-radius: 0.25em;
@@ -57,7 +57,7 @@ body .ui-corner-top {
     -webkit-border-top-right-radius: 0.25em;
     border-top-right-radius: 0.25em;
 }
-body .ui-corner-bottom {
+body .ng-corner-bottom {
     -moz-border-radius-bottomleft: 0.25em;
     -webkit-border-bottom-left-radius: 0.25em;
     border-bottom-left-radius: 0.25em;
@@ -65,7 +65,7 @@ body .ui-corner-bottom {
     -webkit-border-bottom-right-radius: 0.25em;
     border-bottom-right-radius: 0.25em;
 }
-body .ui-corner-left {
+body .ng-corner-left {
     -moz-border-radius-topleft: 0.25em;
     -webkit-border-top-left-radius: 0.25em;
     border-top-left-radius: 0.25em;
@@ -73,7 +73,7 @@ body .ui-corner-left {
     -webkit-border-bottom-left-radius: 0.25em;
     border-bottom-left-radius: 0.25em;
 }
-body .ui-corner-right {
+body .ng-corner-right {
     -moz-border-radius-topright: 0.25em;
     -webkit-border-top-right-radius: 0.25em;
     border-top-right-radius: 0.25em;
@@ -81,12 +81,12 @@ body .ui-corner-right {
     -webkit-border-bottom-right-radius: 0.25em;
     border-bottom-right-radius: 0.25em;
 }
-body .ui-widget-overlay {
+body .ng-widget-overlay {
     background-color: #424242;
     opacity: 0.7;
     filter: alpha(opacity=70);
 }
-body .ui-inputtext {
+body .ng-inputtext {
     background: #ffffff;
     padding: 0.5em 0.75em;
     border: 1px solid rgba(0, 0, 0, 0.15);
@@ -97,11 +97,11 @@ body .ui-inputtext {
     color: #55595c;
     line-height: 1.25;
 }
-body .ui-inputtext.ui-state-focus,
-body .ui-inputtext:focus {
+body .ng-inputtext.ng-state-focus,
+body .ng-inputtext:focus {
     border: 1px solid #66afe9;
 }
-body .ui-button {
+body .ng-button {
     color: #ffffff;
     background-color: #0275d8;
     border: 1px solid transparent;
@@ -112,54 +112,54 @@ body .ui-button {
     -webkit-transition: background-color 0.3s;
     transition: background-color 0.3s;
 }
-body .ui-button:focus,
-body .ui-button:enabled:hover {
+body .ng-button:focus,
+body .ng-button:enabled:hover {
     outline: 0 none;
     background-color: #0267bf;
 }
-body .ui-button:enabled:active {
+body .ng-button:enabled:active {
     background-color: #025aa5;
     -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
-body .ui-fileupload-choose:not(.ui-state-disabled):hover,
-body .ui-fileupload-choose.ui-state-focus {
+body .ng-fileupload-choose:not(.ng-state-disabled):hover,
+body .ng-fileupload-choose.ng-state-focus {
     outline: 0 none;
     background-color: #0267bf;
 }
 
-body .ui-fileupload-choose:not(.ui-state-disabled):active {
+body .ng-fileupload-choose:not(.ng-state-disabled):active {
     background-color: #025aa5;
     -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
-body .ui-button.raised-btn {
+body .ng-button.raised-btn {
     -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
     -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
     box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
 }
-body .ui-togglebutton.ui-button.ui-state-focus {
+body .ng-togglebutton.ng-button.ng-state-focus {
     -moz-box-shadow: 0px 0px 5px #1f89ce;
 	-webkit-box-shadow: 0px 0px 5px #1f89ce;
 	box-shadow: 0px 0px 5px #1f89ce;
 }
-body .ui-togglebutton:not(.ui-state-disabled):not(.ui-state-active):hover {
+body .ng-togglebutton:not(.ng-state-disabled):not(.ng-state-active):hover {
     background-color: #0267bf;
 }
-body .ui-togglebutton:not(.ui-state-disabled).ui-state-active {
+body .ng-togglebutton:not(.ng-state-disabled).ng-state-active {
     background-color: #025aa5;
 }
-body .ui-chips .ui-chips-token .ui-chips-token-label {
+body .ng-chips .ng-chips-token .ng-chips-token-label {
     padding: 0.125em;
 }
-body .ui-chips .ui-chips-input-token input:focus {
+body .ng-chips .ng-chips-input-token input:focus {
     border: none;
 }
-body .ui-chkbox .ui-chkbox-box {
+body .ng-chkbox .ng-chkbox-box {
     border: 1px solid rgba(0, 0, 0, 0.15);
     background-color: #ffffff;
     -moz-transition: background-color 0.3s;
@@ -167,140 +167,140 @@ body .ui-chkbox .ui-chkbox-box {
     -webkit-transition: background-color 0.3s;
     transition: background-color 0.3s;
 }
-body .ui-chkbox .ui-chkbox-box:not(.ui-state-disabled):not(.ui-state-active):hover {
+body .ng-chkbox .ng-chkbox-box:not(.ng-state-disabled):not(.ng-state-active):hover {
     border: 1px solid #b3b3b3;
 }
-body .ui-chkbox .ui-chkbox-box.ui-state-active {
+body .ng-chkbox .ng-chkbox-box.ng-state-active {
     border: 1px solid #0275d8;
     background-color: #0275d8;
     color: #ffffff;
 }
-body .ui-chkbox .ui-chkbox-box.ui-state-focus {
+body .ng-chkbox .ng-chkbox-box.ng-state-focus {
     border: 1px solid #0275d8;
     -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
 }
-body .ui-radiobutton {
+body .ng-radiobutton {
     display: inline-block;
 }
-body .ui-radiobutton .ui-radiobutton-box {
+body .ng-radiobutton .ng-radiobutton-box {
     border: 1px solid rgba(0, 0, 0, 0.15);
     background-color: #ffffff;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
 }
-body .ui-radiobutton .ui-radiobutton-box:not(.ui-state-disabled):not(.ui-state-active):hover {
+body .ng-radiobutton .ng-radiobutton-box:not(.ng-state-disabled):not(.ng-state-active):hover {
     border: 1px solid #b3b3b3;
 }
-body .ui-radiobutton .ui-radiobutton-box.ui-state-active {
+body .ng-radiobutton .ng-radiobutton-box.ng-state-active {
     border: 1px solid #0275d8;
     background-color: #0275d8;
     color: #ffffff;
 }
-body .ui-radiobutton .ui-radiobutton-box.ui-state-active .ui-radiobutton-icon.fa-circle {
+body .ng-radiobutton .ng-radiobutton-box.ng-state-active .ng-radiobutton-icon.fa-circle {
     color: #ffffff;
 }
-body .ui-radiobutton .ui-radiobutton-box.ui-state-focus {
+body .ng-radiobutton .ng-radiobutton-box.ng-state-focus {
     border: 1px solid #0275d8;
     -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
 }
-body .ui-radiobutton .ui-radiobutton-box .ui-radiobutton-icon {
+body .ng-radiobutton .ng-radiobutton-box .ng-radiobutton-icon {
     font-size: 0.5em;
     overflow: hidden;
     position: relative;
     top: -0.15em;
 }
-body .ui-inputswitch {
+body .ng-inputswitch {
     background-color: #0275d8;
     text-transform: uppercase;
 }
-body .ui-inputswitch .ui-inputswitch-handle {
+body .ng-inputswitch .ng-inputswitch-handle {
     background-color: #ffffff;
     border: 1px solid transparent;
     box-sizing: border-box;
 }
-body .ui-inputswitch .ui-inputswitch-handle.ui-state-focus {
+body .ng-inputswitch .ng-inputswitch-handle.ng-state-focus {
     -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
 }
-body .ui-inputswitch .ui-inputswitch-on,
-body .ui-inputswitch .ui-inputswitch-off {
+body .ng-inputswitch .ng-inputswitch-on,
+body .ng-inputswitch .ng-inputswitch-off {
     color: #fff;
 }
-body .ui-inputswitch .ui-inputswitch-on span,
-body .ui-inputswitch .ui-inputswitch-off span {
+body .ng-inputswitch .ng-inputswitch-on span,
+body .ng-inputswitch .ng-inputswitch-off span {
     margin-right: 0.2em;
     position: relative;
     top: -0.1em;
     font-weight: 700;
 }
-body .ui-selectbutton.ui-buttonset .ui-button {
+body .ng-selectbutton.ng-buttonset .ng-button {
     background-color: #ffffff;
     border-color: #cccccc;
 }
-body .ui-selectbutton.ui-buttonset .ui-button:not(.ui-state-disabled):not(.ui-state-active):hover {
+body .ng-selectbutton.ng-buttonset .ng-button:not(.ng-state-disabled):not(.ng-state-active):hover {
     background-color: #e6e6e6;
     color: #373a3c;
 }
-body .ui-selectbutton.ui-buttonset .ui-button.ui-state-active {
+body .ng-selectbutton.ng-buttonset .ng-button.ng-state-active {
     background-color: #0275d8;
     color: #ffffff;
 }
-body .ui-autocomplete .ui-autocomplete-dropdown .ui-button-text {
+body .ng-autocomplete .ng-autocomplete-dropdown .ng-button-text {
     padding: 0.35em;
 }
-body .ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-multiple-container {
+body .ng-autocomplete.ng-autocomplete-multiple .ng-autocomplete-multiple-container {
     padding: 0.5em 0.75em;
 }
-body .ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-multiple-container .ui-autocomplete-input-token input:focus {
+body .ng-autocomplete.ng-autocomplete-multiple .ng-autocomplete-multiple-container .ng-autocomplete-input-token input:focus {
     border: none;
 }
-body .ui-autocomplete-panel {
+body .ng-autocomplete-panel {
     -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
 }
-body .ui-autocomplete-panel .ui-autocomplete-items {
+body .ng-autocomplete-panel .ng-autocomplete-items {
     padding: 0;
 }
-body .ui-autocomplete-panel .ui-autocomplete-items .ui-autocomplete-list-item {
+body .ng-autocomplete-panel .ng-autocomplete-items .ng-autocomplete-list-item {
     margin: 0;
     padding: 0.375em 0.75em;
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
 }
-body .ui-autocomplete-panel .ui-autocomplete-items .ui-autocomplete-group {
+body .ng-autocomplete-panel .ng-autocomplete-items .ng-autocomplete-group {
     padding: 0.375em 0.75em;
     background-color: #e6e6e6;
     color: #373a3c;
 }
-body .ui-dropdown {
+body .ng-dropdown {
     border: 1px solid #d6d6d6;
 }
-body .ui-dropdown:not(.ui-state-disabled):hover {
+body .ng-dropdown:not(.ng-state-disabled):hover {
     background-color: #d9d9d9;
     border-color: #cccccc;
 }
-body .ui-dropdown .ui-dropdown-label {
+body .ng-dropdown .ng-dropdown-label {
     background: #ffffff;
 }
-body .ui-dropdown .ui-dropdown-trigger {
+body .ng-dropdown .ng-dropdown-trigger {
     background-color: #ffffff;
 }
-body .ui-dropdown .ui-dropdown-trigger .fa {
+body .ng-dropdown .ng-dropdown-trigger .fa {
     color: #55595c;
     margin-top: .65em;
 }
-body .ui-dropdown:not(.ui-state-disabled):hover .ui-dropdown-trigger,
-body .ui-dropdown.ui-state-focus .ui-dropdown-trigger,
-body .ui-dropdown.ui-state-focus .ui-dropdown-label,
-body .ui-dropdown:not(.ui-state-disabled):hover .ui-dropdown-label {
+body .ng-dropdown:not(.ng-state-disabled):hover .ng-dropdown-trigger,
+body .ng-dropdown.ng-state-focus .ng-dropdown-trigger,
+body .ng-dropdown.ng-state-focus .ng-dropdown-label,
+body .ng-dropdown:not(.ng-state-disabled):hover .ng-dropdown-label {
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
@@ -312,46 +312,46 @@ body .ui-dropdown:not(.ui-state-disabled):hover .ui-dropdown-label {
     border-bottom-left-radius: 0;
     background-color: #d9d9d9;
 }
-body .ui-dropdown.ui-state-focus .ui-dropdown-label.ui-inputtext {
+body .ng-dropdown.ng-state-focus .ng-dropdown-label.ng-inputtext {
     border: 0 none;
 }
-body .ui-dropdown-panel .ui-dropdown-filter-container {
+body .ng-dropdown-panel .ng-dropdown-filter-container {
     padding: 0.375em 0.75em;
 }
-body .ui-dropdown-panel .ui-dropdown-filter-container .ui-dropdown-filter {
+body .ng-dropdown-panel .ng-dropdown-filter-container .ng-dropdown-filter {
     width: 100%;
     box-sizing: border-box;
     padding-right: 1.250em;
 }
-body .ui-dropdown-panel .ui-dropdown-filter-container .fa {
+body .ng-dropdown-panel .ng-dropdown-filter-container .fa {
     top: 1.05em;
     right: 1.25em;
 }
-body .ui-dropdown-panel .ui-dropdown-items {
+body .ng-dropdown-panel .ng-dropdown-items {
     padding: 0;
 }
-body .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item {
+body .ng-dropdown-panel .ng-dropdown-items .ng-dropdown-item {
     padding: 0.375em 0.75em;
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
 }
-body .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item:not(.ui-state-highlight):hover {
+body .ng-dropdown-panel .ng-dropdown-items .ng-dropdown-item:not(.ng-state-highlight):hover {
     background-color: #f4f3f4;
     color: #373a3c;
 }
-body .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item.ui-state-highlight {
+body .ng-dropdown-panel .ng-dropdown-items .ng-dropdown-item.ng-state-highlight {
     background-color: #0275d8;
     color: #ffffff;
 }
-body .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item > td {
+body .ng-dropdown-panel .ng-dropdown-items .ng-dropdown-item > td {
     padding: 0.375em 0.75em;
 }
-body .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item-group {
+body .ng-dropdown-panel .ng-dropdown-items .ng-dropdown-item-group {
     padding: 0.375em 0.75em;
     background-color: #e6e6e6;
 }
-body .ui-multiselect {
+body .ng-multiselect {
     background: #ffffff;
     padding: 0.5em 0.75em;
     border: 1px solid #e6e6e6;
@@ -359,7 +359,7 @@ body .ui-multiselect {
     -webkit-border-radius: 0.25em;
     border-radius: 0.25em;
 }
-body .ui-multiselect .ui-multiselect-trigger {
+body .ng-multiselect .ng-multiselect-trigger {
      -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
@@ -370,22 +370,22 @@ body .ui-multiselect .ui-multiselect-trigger {
     -webkit-border-bottom-left-radius: 0;
     border-bottom-left-radius: 0;
 }
-body .ui-multiselect:not(.ui-state-disabled):hover {
+body .ng-multiselect:not(.ng-state-disabled):hover {
     color: #212121;
 }
-body .ui-multiselect:not(.ui-state-disabled):hover .ui-multiselect-trigger {
+body .ng-multiselect:not(.ng-state-disabled):hover .ng-multiselect-trigger {
     background-color: #d9d9d9;
 }
-body .ui-multiselect .ui-multiselect-trigger .fa {
+body .ng-multiselect .ng-multiselect-trigger .fa {
     margin-top: .8em;
 }
-body .ui-multiselect:not(.ui-state-disabled) .ui-multiselect-trigger:hover {
+body .ng-multiselect:not(.ng-state-disabled) .ng-multiselect-trigger:hover {
     background-color: #d9d9d9;
 }
-body .ui-multiselect .ui-multiselect-panel {
+body .ng-multiselect .ng-multiselect-panel {
     padding: 0;
 }
-body .ui-multiselect .ui-multiselect-header {
+body .ng-multiselect .ng-multiselect-header {
     border-top: 0 none;
     border-left: 0 none;
     border-right: 0 none;
@@ -394,63 +394,63 @@ body .ui-multiselect .ui-multiselect-header {
     border-radius: 0;
     padding: 0.375em 0.75em;
 }
-body .ui-multiselect .ui-multiselect-header .ui-multiselect-close {
+body .ng-multiselect .ng-multiselect-header .ng-multiselect-close {
     color: #373a3c;
 }
-body .ui-multiselect .ui-multiselect-item {
+body .ng-multiselect .ng-multiselect-item {
     margin: 0;
     padding: 0.375em 0.75em;
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
 }
-body .ui-multiselect .ui-multiselect-item:not(.ui-state-highlight):hover {
+body .ng-multiselect .ng-multiselect-item:not(.ng-state-highlight):hover {
     background-color: #f4f3f4;
     color: #373a3c;
 }
-body .ui-multiselect .ui-multiselect-item.ui-state-highlight {
+body .ng-multiselect .ng-multiselect-item.ng-state-highlight {
     background-color: #0275d8;
     color: #ffffff;
 }
-body .ui-multiselect .ui-multiselect-item.ui-state-highlight .ui-chkbox {
+body .ng-multiselect .ng-multiselect-item.ng-state-highlight .ng-chkbox {
     border: 1px solid #108ffd;
 }
-body .ui-multiselect .ui-multiselect-item > td {
+body .ng-multiselect .ng-multiselect-item > td {
     padding: 0.375em 0.75em;
 }
-body .ui-listbox {
+body .ng-listbox {
     padding: 0;
     width: 12.5em;
 }
-body .ui-listbox .ui-listbox-item {
+body .ng-listbox .ng-listbox-item {
     margin: 0;
     padding: 0.375em 0.75em;
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
 }
-body .ui-listbox .ui-listbox-item:last-child {
+body .ng-listbox .ng-listbox-item:last-child {
     border-bottom: none;
 }
-body .ui-listbox:not(.ui-state-disabled) .ui-listbox-item:hover {
+body .ng-listbox:not(.ng-state-disabled) .ng-listbox-item:hover {
     background-color: #f4f3f4;
     color: #373a3c;
 }
-body .ui-listbox .ui-listbox-item.ui-state-highlight {
+body .ng-listbox .ng-listbox-item.ng-state-highlight {
     background-color: #0275d8;
     color: #ffffff;
 }
-body .ui-listbox .ui-listbox-item.ui-state-highlight .ui-chkbox {
+body .ng-listbox .ng-listbox-item.ng-state-highlight .ng-chkbox {
     border: 1px solid #108ffd;
 }
-body .ui-listbox.ui-state-disabled .ui-chkbox-box:not(.ui-state-active):hover {
+body .ng-listbox.ng-state-disabled .ng-chkbox-box:not(.ng-state-active):hover {
     border: 1px solid rgba(0, 0, 0, 0.15);
     background-color: #ffffff;
 }
-body .ui-listbox .ui-listbox-item > td {
+body .ng-listbox .ng-listbox-item > td {
     padding: 0.375em 0.75em;
 }
-body .ui-listbox .ui-listbox-header {
+body .ng-listbox .ng-listbox-header {
     padding: 0.375em 0.75em;
     border-top: 0 none;
     border-right: 0 none;
@@ -459,34 +459,34 @@ body .ui-listbox .ui-listbox-header {
     -webkit-border-radius: 0;
     border-radius: 0;
 }
-body .ui-listbox .ui-listbox-header .ui-listbox-filter-container {
+body .ng-listbox .ng-listbox-header .ng-listbox-filter-container {
     width: 8em;
 }
-body .ui-multiselectlistbox {
+body .ng-multiselectlistbox {
     padding: 0;
 }
-body .ui-multiselectlistbox .ui-multiselectlistbox-header {
+body .ng-multiselectlistbox .ng-multiselectlistbox-header {
     padding: 0.375em 0.75em;
 }
-body .ui-multiselectlistbox .ui-multiselectlistbox-item {
+body .ng-multiselectlistbox .ng-multiselectlistbox-item {
     margin: 0;
     padding: 0.375em 0.75em;
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
 }
-body .ui-multiselectlistbox .ui-multiselectlistbox-item:not(.ui-state-highlight):hover {
+body .ng-multiselectlistbox .ng-multiselectlistbox-item:not(.ng-state-highlight):hover {
     background-color: #f4f3f4;
     color: #373a3c;
 }
-body .ui-multiselectlistbox .ui-multiselectlistbox-item.ui-state-highlight {
+body .ng-multiselectlistbox .ng-multiselectlistbox-item.ng-state-highlight {
     background-color: #0275d8;
     color: #ffffff;
 }
-body .ui-rating .ui-rating-cancel {
+body .ng-rating .ng-rating-cancel {
     display: inline-block;
 }
-body .ui-rating .ui-rating-cancel a {
+body .ng-rating .ng-rating-cancel a {
     background: none !important;
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -503,16 +503,16 @@ body .ui-rating .ui-rating-cancel a {
     transition: color 0.3s;
     color: #e42a7b;
 }
-body .ui-rating .ui-rating-cancel a::before {
+body .ng-rating .ng-rating-cancel a::before {
     content: "";
 }
-body .ui-rating .ui-rating-cancel a:hover {
+body .ng-rating .ng-rating-cancel a:hover {
     color: #e74189;
 }
-body .ui-rating .ui-rating-star {
+body .ng-rating .ng-rating-star {
     display: inline-block;
 }
-body .ui-rating .ui-rating-star a {
+body .ng-rating .ng-rating-star a {
     background: none !important;
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -525,13 +525,13 @@ body .ui-rating .ui-rating-star a {
     display: block;
     color: #373a3c;
 }
-body .ui-rating .ui-rating-star a::before {
+body .ng-rating .ng-rating-star a::before {
     content: "";
 }
-body .ui-rating .ui-rating-star a:hover {
+body .ng-rating .ng-rating-star a:hover {
     color: #0275d8;
 }
-body .ui-rating .ui-rating-star-on a {
+body .ng-rating .ng-rating-star-on a {
     color: #0275d8;
     background: none !important;
     display: inline-block;
@@ -544,32 +544,32 @@ body .ui-rating .ui-rating-star-on a {
     text-align: center;
     display: block;
 }
-body .ui-rating .ui-rating-star-on a::before {
+body .ng-rating .ng-rating-star-on a::before {
     content: "";
 }
-body .ui-spinner .ui-spinner-button {
+body .ng-spinner .ng-spinner-button {
     z-index: auto;
     box-sizing: border-box;
 }
-body .ui-spinner:not(.ui-state-disabled) .ui-spinner-button:hover {
+body .ng-spinner:not(.ng-state-disabled) .ng-spinner-button:hover {
     background-color: #0267bf;
     color: #ffffff;
 }
-body .ui-spinner:not(.ui-state-disabled) .ui-spinner-button:active {
+body .ng-spinner:not(.ng-state-disabled) .ng-spinner-button:active {
     background-color: #025aa5;
     color: #ffffff;
 }
-body .ui-slider {
+body .ng-slider {
     background-color: #e6e6e6;
     border-color: #e6e6e6;
 }
-body .ui-slider.ui-slider-horizontal .ui-slider-handle {
+body .ng-slider.ng-slider-horizontal .ng-slider-handle {
     top: -.2em;
 }
-body .ui-slider.ui-slider-vertical .ui-slider-handle {
+body .ng-slider.ng-slider-vertical .ng-slider-handle {
     left: -.2em;
 }
-body .ui-slider .ui-slider-handle {
+body .ng-slider .ng-slider-handle {
     background-color: #0275d8;
     -moz-transition: background-color 0.3s;
     -o-transition: background-color 0.3s;
@@ -579,25 +579,25 @@ body .ui-slider .ui-slider-handle {
     -webkit-border-radius: 100%;
     border-radius: 100%;
 }
-body .ui-slider.ui-slider-animate .ui-slider-handle {
+body .ng-slider.ng-slider-animate .ng-slider-handle {
     -moz-transition: background-color 0.3s,left 0.3s;
     -o-transition: background-color 0.3s,left 0.3s;
     -webkit-transition: background-color 0.3s,left 0.3s;
     transition: background-color 0.3s,left 0.3s;
 }
-body .ui-slider .ui-slider-handle:hover {
+body .ng-slider .ng-slider-handle:hover {
     background-color: #0267bf;
 }
-body .ui-slider .ui-slider-range {
+body .ng-slider .ng-slider-range {
     background: #43a7fd;
 }
-body .ui-buttonset.ui-selectbutton .ui-button:first-child {
+body .ng-buttonset.ng-selectbutton .ng-button:first-child {
     border-right: none;
 }
-body .ui-buttonset.ui-selectbutton .ui-button:last-child {
+body .ng-buttonset.ng-selectbutton .ng-button:last-child {
     border-left: none;
 }
-body .ui-buttonset .ui-button {
+body .ng-buttonset .ng-button {
     background-color: #e6e6e6;
     color: #373a3c;
     border: 1px solid transparent;
@@ -605,10 +605,10 @@ body .ui-buttonset .ui-button {
     -webkit-border-radius: 0px;
     border-radius: 0px;
 }
-body .ui-buttonset .ui-button:hover {
+body .ng-buttonset .ng-button:hover {
     background-color: #cdcdcd;
 }
-body .ui-buttonset .ui-button:focus {
+body .ng-buttonset .ng-button:focus {
     background-color: #e6e6e6;
     color: #373a3c;
     -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
@@ -616,18 +616,18 @@ body .ui-buttonset .ui-button:focus {
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
     border: 1px solid #0275d8;
 }
-body .ui-buttonset .ui-button:active {
+body .ng-buttonset .ng-button:active {
     background-color: #0275d8;
     color: #ffffff;
 }
-body .ui-buttonset .ui-button:active:focus {
+body .ng-buttonset .ng-button:active:focus {
     background-color: #0275d8;
     color: #ffffff;
     -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
 }
-body .ui-buttonset .ui-button:first-child {
+body .ng-buttonset .ng-button:first-child {
     -moz-border-radius-topleft: 0.25em;
     -webkit-border-top-left-radius: 0.25em;
     border-top-left-radius: 0.25em;
@@ -635,7 +635,7 @@ body .ui-buttonset .ui-button:first-child {
     -webkit-border-bottom-left-radius: 0.25em;
     border-bottom-left-radius: 0.25em;
 }
-body .ui-buttonset .ui-button:last-child {
+body .ng-buttonset .ng-button:last-child {
     -moz-border-radius-topright: 0.25em;
     -webkit-border-top-right-radius: 0.25em;
     border-top-right-radius: 0.25em;
@@ -644,19 +644,19 @@ body .ui-buttonset .ui-button:last-child {
     border-bottom-right-radius: 0.25em;
 }
 @media (max-width: 640px) {
-    body .ui-buttonset .ui-button {
+    body .ng-buttonset .ng-button {
         margin-bottom: 0.063em;
         -moz-border-radius: 0.25em;
         -webkit-border-radius: 0.25em;
         border-radius: 0.25em;
     }
 }
-body .ui-splitbutton.ui-buttonset .ui-button {
+body .ng-splitbutton.ng-buttonset .ng-button {
     color: #ffffff;
     background-color: #0275d8;
     border: 1px solid transparent;
 }
-body .ui-splitbutton.ui-buttonset .ui-button.ui-splitbutton-menubutton {
+body .ng-splitbutton.ng-buttonset .ng-button.ng-splitbutton-menubutton {
     -moz-border-radius-topright: 0.25em;
     -webkit-border-top-right-radius: 0.25em;
     border-top-right-radius: 0.25em;
@@ -664,25 +664,25 @@ body .ui-splitbutton.ui-buttonset .ui-button.ui-splitbutton-menubutton {
     -webkit-border-bottom-right-radius: 0.25em;
     border-bottom-right-radius: 0.25em;
 }
-body .ui-splitbutton.ui-buttonset .ui-button.ui-splitbutton-menubutton .fa {
+body .ng-splitbutton.ng-buttonset .ng-button.ng-splitbutton-menubutton .fa {
     margin-left: -.65em;
 }
-body .ui-splitbutton.ui-buttonset .ui-button:hover {
+body .ng-splitbutton.ng-buttonset .ng-button:hover {
     background-color: #0267bf;
     color: #ffffff;
 }
-body .ui-splitbutton.ui-buttonset .ui-button.ui-state-focus {
+body .ng-splitbutton.ng-buttonset .ng-button.ng-state-focus {
     background-color: #0267bf;
     color: #ffffff;
 }
-body .ui-splitbutton.ui-buttonset .ui-button.ui-state-active {
+body .ng-splitbutton.ng-buttonset .ng-button.ng-state-active {
     background-color: #025aa5;
     color: #ffffff;
 }
-body .ui-datepicker {
+body .ng-datepicker {
     padding: 0;
 }
-body .ui-datepicker .ui-datepicker-header {
+body .ng-datepicker .ng-datepicker-header {
     padding: .75em 0;
     background-color: #f5f5f5;
     border: 0;
@@ -690,7 +690,7 @@ body .ui-datepicker .ui-datepicker-header {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
-body .ui-datepicker .ui-datepicker-header .ui-datepicker-prev {
+body .ng-datepicker .ng-datepicker-header .ng-datepicker-prev {
     cursor: pointer;
     color: #767b7f;
     background: none !important;
@@ -708,16 +708,16 @@ body .ui-datepicker .ui-datepicker-header .ui-datepicker-prev {
     transition: color 0.3s;
     top: 1.25em;
 }
-body .ui-datepicker .ui-datepicker-header .ui-datepicker-prev::before {
+body .ng-datepicker .ng-datepicker-header .ng-datepicker-prev::before {
     content: "";
 }
-body .ui-datepicker .ui-datepicker-header .ui-datepicker-prev span {
+body .ng-datepicker .ng-datepicker-header .ng-datepicker-prev span {
     display: none;
 }
-body .ui-datepicker .ui-datepicker-header .ui-datepicker-prev.ui-datepicker-prev-hover {
+body .ng-datepicker .ng-datepicker-header .ng-datepicker-prev.ng-datepicker-prev-hover {
     color: #2d353c;
 }
-body .ui-datepicker .ui-datepicker-header .ui-datepicker-next {
+body .ng-datepicker .ng-datepicker-header .ng-datepicker-next {
     cursor: pointer;
     color: #767b7f;
     background: none !important;
@@ -735,51 +735,51 @@ body .ui-datepicker .ui-datepicker-header .ui-datepicker-next {
     transition: color 0.3s;
     top: 1.25em;
 }
-body .ui-datepicker .ui-datepicker-header .ui-datepicker-next::before {
+body .ng-datepicker .ng-datepicker-header .ng-datepicker-next::before {
     content: "";
 }
-body .ui-datepicker .ui-datepicker-header .ui-datepicker-next span {
+body .ng-datepicker .ng-datepicker-header .ng-datepicker-next span {
     display: none;
 }
-body .ui-datepicker .ui-datepicker-header .ui-datepicker-next.ui-datepicker-next-hover {
+body .ng-datepicker .ng-datepicker-header .ng-datepicker-next.ng-datepicker-next-hover {
     color: #2d353c;
 }
-body .ui-datepicker table {
+body .ng-datepicker table {
     font-size: 1em;
 }
-body .ui-datepicker table td a {
+body .ng-datepicker table td a {
     min-width: 1em;
     text-align: center;
     color: #373a3c;
     font-size: .9em;
 }
-body .ui-datepicker .ui-datepicker-calendar td:not(.ui-state-disabled) a:hover {
+body .ng-datepicker .ng-datepicker-calendar td:not(.ng-state-disabled) a:hover {
     background-color: #f4f3f4;
 }
-body .ui-datepicker table.ui-datepicker-calendar td:not(.ui-state-disabled) a.ui-state-highlight {
+body .ng-datepicker table.ng-datepicker-calendar td:not(.ng-state-disabled) a.ng-state-highlight {
     color: #373a3c;
     background-color: #e6e6e6;
 }
-body .ui-datepicker table.ui-datepicker-calendar td:not(.ui-state-disabled) a.ui-state-active {
+body .ng-datepicker table.ng-datepicker-calendar td:not(.ng-state-disabled) a.ng-state-active {
     color: #ffffff;
     background-color: #0275d8;
 }
-body .ui-organizationchart .ui-organizationchart-line-down{
+body .ng-organizationchart .ng-organizationchart-line-down{
     background-color: #bcbcbc;
 }
-body .ui-organizationchart .ui-organizationchart-line-left{
+body .ng-organizationchart .ng-organizationchart-line-left{
     border-right: 1px solid #bcbcbc;
 }
-body .ui-organizationchart .ui-organizationchart-line-top{
+body .ng-organizationchart .ng-organizationchart-line-top{
     border-top: 1px solid #bcbcbc;
 }
-body .ui-organizationchart .ui-organizationchart-node-content{
+body .ng-organizationchart .ng-organizationchart-node-content{
     border-color: #bcbcbc;
 }
-body .ui-organizationchart .ui-organizationchart-node-content .ui-node-toggler{
+body .ng-organizationchart .ng-organizationchart-node-content .ng-node-toggler{
     color: #bcbcbc;
 }
-body .ui-trigger-calendar .ui-datepicker-trigger.ui-button {
+body .ng-trigger-calendar .ng-datepicker-trigger.ng-button {
     -moz-border-radius-topleft: 0;
     -webkit-border-top-left-radius: 0;
     border-top-left-radius: 0;
@@ -787,28 +787,28 @@ body .ui-trigger-calendar .ui-datepicker-trigger.ui-button {
     -webkit-border-bottom-left-radius: 0;
     border-bottom-left-radius: 0;
 }
-body .ui-inplace .ui-inplace-display {
+body .ng-inplace .ng-inplace-display {
     padding: 0.5em 0.75em;
     -moz-border-radius: 0.25em;
     -webkit-border-radius: 0.25em;
     border-radius: 0.25em;
 }
-body .ui-inplace .ui-inplace-display:hover {
+body .ng-inplace .ng-inplace-display:hover {
     background-color: #f4f3f4;
 }
-body .ui-fileupload .ui-fileupload-buttonbar {
+body .ng-fileupload .ng-fileupload-buttonbar {
     padding: .75em 1.25em;
     background-color: #f5f5f5;
     border-bottom: 0 none;
 }
-body .ui-fileupload .ui-fileupload-content {
+body .ng-fileupload .ng-fileupload-content {
     padding: 1.25em;
 }
-body .ui-panel {
+body .ng-panel {
     padding: 0;
     border-color: rgba(0, 0, 0, 0.125);
 }
-body .ui-panel .ui-panel-titlebar {
+body .ng-panel .ng-panel-titlebar {
     border: 0 none;
     border-bottom: 1px solid #e6e6e6;
     padding: .75em 1.25em;
@@ -826,7 +826,7 @@ body .ui-panel .ui-panel-titlebar {
     -webkit-border-bottom-right-radius: 0px;
     border-bottom-right-radius: 0px;
 }
-body .ui-panel .ui-panel-titlebar .ui-panel-titlebar-icon {
+body .ng-panel .ng-panel-titlebar .ng-panel-titlebar-icon {
     position: relative;
     color: #767b7f;
     top: 0.125em;
@@ -835,24 +835,24 @@ body .ui-panel .ui-panel-titlebar .ui-panel-titlebar-icon {
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
 }
-body .ui-panel .ui-panel-titlebar .ui-panel-titlebar-icon:hover {
+body .ng-panel .ng-panel-titlebar .ng-panel-titlebar-icon:hover {
     color: #2d353c;
 }
-body .ui-panel .ui-panel-content {
+body .ng-panel .ng-panel-content {
     height: 100%;
     box-sizing: border-box;
     padding: 1.25em;
 }
-body .ui-panel .ui-panel-footer {
+body .ng-panel .ng-panel-footer {
     padding: 0.375em 0.75em;
     border: 0 none;
     border-top: 1px solid #c7c7c7;
     margin: 0;
 }
-body .ui-fieldset {
+body .ng-fieldset {
     border-color: #e6e6e6;
 }
-body .ui-fieldset .ui-fieldset-legend {
+body .ng-fieldset .ng-fieldset-legend {
     color: #2d353c;
     background-color: #ffffff;
     border: 1px solid #e6e6e6;
@@ -861,27 +861,27 @@ body .ui-fieldset .ui-fieldset-legend {
     -webkit-transition: background-color 0.3s;
     transition: background-color 0.3s;
 }
-body .ui-fieldset .ui-fieldset-legend .ui-fieldset-toggler {
+body .ng-fieldset .ng-fieldset-legend .ng-fieldset-toggler {
     display: inline-block;
     color: #767b7f;
 }
-body .ui-fieldset .ui-fieldset-legend:hover {
+body .ng-fieldset .ng-fieldset-legend:hover {
     background-color: #f4f3f4;
 }
-body .ui-fieldset .ui-fieldset-legend:hover .ui-fieldset-toggler {
+body .ng-fieldset .ng-fieldset-legend:hover .ng-fieldset-toggler {
     color: #2d353c;
 }
-body .ui-fieldset .ui-fieldset-legend.ui-state-focus {
+body .ng-fieldset .ng-fieldset-legend.ng-state-focus {
     background-color: #e6e6e6;
 }
-body .ui-fieldset .ui-fieldset-content {
+body .ng-fieldset .ng-fieldset-content {
     padding: 0.375em 0.75em;
 }
-body .ui-notificationbar {
+body .ng-notificationbar {
     background-color: #0275d8;
     color: #ffffff;
 }
-body .ui-accordion .ui-accordion-header {
+body .ng-accordion .ng-accordion-header {
     background-color: #ffffff;
     border: 1px solid #e6e6e6;
     color: #0275d8;
@@ -891,48 +891,48 @@ body .ui-accordion .ui-accordion-header {
     transition: background-color 0.3s;
 }
 
-body .ui-accordion .ui-accordion-header a {
+body .ng-accordion .ng-accordion-header a {
     padding: .75em 1.25em .75em 2em;
 }
 
-body .ui-accordion .ui-accordion-header:not(.ui-state-active):not(.ui-state-disabled):hover {
+body .ng-accordion .ng-accordion-header:not(.ng-state-active):not(.ng-state-disabled):hover {
     background-color: #f4f3f4;
 }
-body .ui-accordion .ui-accordion-header:not(.ui-state-active):not(.ui-state-disabled):hover .ui-icon {
+body .ng-accordion .ng-accordion-header:not(.ng-state-active):not(.ng-state-disabled):hover .ng-icon {
     color: #2d353c;
 }
-body .ui-accordion .ui-accordion-header.ui-state-active {
+body .ng-accordion .ng-accordion-header.ng-state-active {
     background-color: #0275d8;
     color: #ffffff;
 }
-body .ui-accordion .ui-accordion-header.ui-state-active a {
+body .ng-accordion .ng-accordion-header.ng-state-active a {
     color: #ffffff;
 }
-body .ui-accordion .ui-accordion-header.ui-tabview-outline {
+body .ng-accordion .ng-accordion-header.ng-tabview-outline {
     border: 0 none;
     outline: 0 none;
     background-color: #e6e6e6;
 }
-body .ui-accordion .ui-accordion-header.ui-tabview-outline.ui-state-active {
+body .ng-accordion .ng-accordion-header.ng-tabview-outline.ng-state-active {
     background-color: #0283f1;
 }
-body .ui-accordion .ui-accordion-content {
+body .ng-accordion .ng-accordion-content {
     padding: 1.25em;
 }
-body .ui-tabview {
+body .ng-tabview {
     padding: 0;
     border-bottom: 1px solid #c7c7c7;
 }
-body .ui-tabview.ui-tabview-top,
-body .ui-tabview.ui-tabview-bottom,
-body .ui-tabview.ui-tabview-left,
-body .ui-tabview.ui-tabview-right {
+body .ng-tabview.ng-tabview-top,
+body .ng-tabview.ng-tabview-bottom,
+body .ng-tabview.ng-tabview-left,
+body .ng-tabview.ng-tabview-right {
     border: 0 none;
 }
-body .ui-tabview.ui-tabview-top .ui-tabview-nav,
-body .ui-tabview.ui-tabview-bottom .ui-tabview-nav,
-body .ui-tabview.ui-tabview-left .ui-tabview-nav,
-body .ui-tabview.ui-tabview-right .ui-tabview-nav {
+body .ng-tabview.ng-tabview-top .ng-tabview-nav,
+body .ng-tabview.ng-tabview-bottom .ng-tabview-nav,
+body .ng-tabview.ng-tabview-left .ng-tabview-nav,
+body .ng-tabview.ng-tabview-right .ng-tabview-nav {
     padding: 0;
     border: 0 none;
     background: #ffffff;
@@ -941,10 +941,10 @@ body .ui-tabview.ui-tabview-right .ui-tabview-nav {
     border-radius: 0;
     border-bottom: 1px solid #cccccc;
 }
-body .ui-tabview.ui-tabview-top .ui-tabview-nav li,
-body .ui-tabview.ui-tabview-bottom .ui-tabview-nav li,
-body .ui-tabview.ui-tabview-left .ui-tabview-nav li,
-body .ui-tabview.ui-tabview-right .ui-tabview-nav li {
+body .ng-tabview.ng-tabview-top .ng-tabview-nav li,
+body .ng-tabview.ng-tabview-bottom .ng-tabview-nav li,
+body .ng-tabview.ng-tabview-left .ng-tabview-nav li,
+body .ng-tabview.ng-tabview-right .ng-tabview-nav li {
     position: static;
     -moz-transition: background-color 0.3s;
     -o-transition: background-color 0.3s;
@@ -959,86 +959,86 @@ body .ui-tabview.ui-tabview-right .ui-tabview-nav li {
     border: 1px solid transparent;
     border-bottom: none;
 }
-body .ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-default a,
-body .ui-tabview.ui-tabview-bottom .ui-tabview-nav li.ui-state-default a,
-body .ui-tabview.ui-tabview-left .ui-tabview-nav li.ui-state-default a,
-body .ui-tabview.ui-tabview-right .ui-tabview-nav li.ui-state-default a {
+body .ng-tabview.ng-tabview-top .ng-tabview-nav li.ng-state-default a,
+body .ng-tabview.ng-tabview-bottom .ng-tabview-nav li.ng-state-default a,
+body .ng-tabview.ng-tabview-left .ng-tabview-nav li.ng-state-default a,
+body .ng-tabview.ng-tabview-right .ng-tabview-nav li.ng-state-default a {
     padding: 0.375em 0.75em;
     color: #2d353c;
 }
-body .ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-default a:focus,
-body .ui-tabview.ui-tabview-bottom .ui-tabview-nav li.ui-state-default a:focus,
-body .ui-tabview.ui-tabview-left .ui-tabview-nav li.ui-state-default a:focus,
-body .ui-tabview.ui-tabview-right .ui-tabview-nav li.ui-state-default a:focus {
+body .ng-tabview.ng-tabview-top .ng-tabview-nav li.ng-state-default a:focus,
+body .ng-tabview.ng-tabview-bottom .ng-tabview-nav li.ng-state-default a:focus,
+body .ng-tabview.ng-tabview-left .ng-tabview-nav li.ng-state-default a:focus,
+body .ng-tabview.ng-tabview-right .ng-tabview-nav li.ng-state-default a:focus {
     outline: 0 none;
 }
-body .ui-tabview.ui-tabview-top .ui-tabview-nav li:not(.ui-state-active):not(.ui-state-disabled):hover,
-body .ui-tabview.ui-tabview-bottom .ui-tabview-nav li:not(.ui-state-active):not(.ui-state-disabled):hover,
-body .ui-tabview.ui-tabview-left .ui-tabview-nav li:not(.ui-state-active):not(.ui-state-disabled):hover,
-body .ui-tabview.ui-tabview-right .ui-tabview-nav li:not(.ui-state-active):not(.ui-state-disabled):hover {
+body .ng-tabview.ng-tabview-top .ng-tabview-nav li:not(.ng-state-active):not(.ng-state-disabled):hover,
+body .ng-tabview.ng-tabview-bottom .ng-tabview-nav li:not(.ng-state-active):not(.ng-state-disabled):hover,
+body .ng-tabview.ng-tabview-left .ng-tabview-nav li:not(.ng-state-active):not(.ng-state-disabled):hover,
+body .ng-tabview.ng-tabview-right .ng-tabview-nav li:not(.ng-state-active):not(.ng-state-disabled):hover {
     border-color: #dedede;
     border-bottom: none;
     background-color: #ffffff;
 }
-body .ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-tabview-outline,
-body .ui-tabview.ui-tabview-bottom .ui-tabview-nav li.ui-tabview-outline,
-body .ui-tabview.ui-tabview-left .ui-tabview-nav li.ui-tabview-outline,
-body .ui-tabview.ui-tabview-right .ui-tabview-nav li.ui-tabview-outline {
+body .ng-tabview.ng-tabview-top .ng-tabview-nav li.ng-tabview-outline,
+body .ng-tabview.ng-tabview-bottom .ng-tabview-nav li.ng-tabview-outline,
+body .ng-tabview.ng-tabview-left .ng-tabview-nav li.ng-tabview-outline,
+body .ng-tabview.ng-tabview-right .ng-tabview-nav li.ng-tabview-outline {
     outline: 0 none;
     background-color: #e6e6e6;
 }
-body .ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-active,
-body .ui-tabview.ui-tabview-bottom .ui-tabview-nav li.ui-state-active,
-body .ui-tabview.ui-tabview-left .ui-tabview-nav li.ui-state-active,
-body .ui-tabview.ui-tabview-right .ui-tabview-nav li.ui-state-active {
+body .ng-tabview.ng-tabview-top .ng-tabview-nav li.ng-state-active,
+body .ng-tabview.ng-tabview-bottom .ng-tabview-nav li.ng-state-active,
+body .ng-tabview.ng-tabview-left .ng-tabview-nav li.ng-state-active,
+body .ng-tabview.ng-tabview-right .ng-tabview-nav li.ng-state-active {
     background-color: #0275d8;
     border-color: #0275d8;
 }
-body .ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-active a,
-body .ui-tabview.ui-tabview-bottom .ui-tabview-nav li.ui-state-active a,
-body .ui-tabview.ui-tabview-left .ui-tabview-nav li.ui-state-active a,
-body .ui-tabview.ui-tabview-right .ui-tabview-nav li.ui-state-active a {
+body .ng-tabview.ng-tabview-top .ng-tabview-nav li.ng-state-active a,
+body .ng-tabview.ng-tabview-bottom .ng-tabview-nav li.ng-state-active a,
+body .ng-tabview.ng-tabview-left .ng-tabview-nav li.ng-state-active a,
+body .ng-tabview.ng-tabview-right .ng-tabview-nav li.ng-state-active a {
     color: #ffffff;
 }
-body .ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-active.ui-tabview-outline,
-body .ui-tabview.ui-tabview-bottom .ui-tabview-nav li.ui-state-active.ui-tabview-outline,
-body .ui-tabview.ui-tabview-left .ui-tabview-nav li.ui-state-active.ui-tabview-outline,
-body .ui-tabview.ui-tabview-right .ui-tabview-nav li.ui-state-active.ui-tabview-outline {
+body .ng-tabview.ng-tabview-top .ng-tabview-nav li.ng-state-active.ng-tabview-outline,
+body .ng-tabview.ng-tabview-bottom .ng-tabview-nav li.ng-state-active.ng-tabview-outline,
+body .ng-tabview.ng-tabview-left .ng-tabview-nav li.ng-state-active.ng-tabview-outline,
+body .ng-tabview.ng-tabview-right .ng-tabview-nav li.ng-state-active.ng-tabview-outline {
     background-color: #0283f1;
 }
-body .ui-tabview.ui-tabview-top .ui-tabview-navscroller-btn,
-body .ui-tabview.ui-tabview-bottom .ui-tabview-navscroller-btn,
-body .ui-tabview.ui-tabview-left .ui-tabview-navscroller-btn,
-body .ui-tabview.ui-tabview-right .ui-tabview-navscroller-btn {
+body .ng-tabview.ng-tabview-top .ng-tabview-navscroller-btn,
+body .ng-tabview.ng-tabview-bottom .ng-tabview-navscroller-btn,
+body .ng-tabview.ng-tabview-left .ng-tabview-navscroller-btn,
+body .ng-tabview.ng-tabview-right .ng-tabview-navscroller-btn {
     background-color: #ffffff;
 }
-body .ui-tabview.ui-tabview-top .ui-tabview-navscroller-btn:not(.ui-state-active):not(.ui-state-disabled):hover,
-body .ui-tabview.ui-tabview-bottom .ui-tabview-navscroller-btn:not(.ui-state-active):not(.ui-state-disabled):hover,
-body .ui-tabview.ui-tabview-left .ui-tabview-navscroller-btn:not(.ui-state-active):not(.ui-state-disabled):hover,
-body .ui-tabview.ui-tabview-right .ui-tabview-navscroller-btn:not(.ui-state-active):not(.ui-state-disabled):hover {
+body .ng-tabview.ng-tabview-top .ng-tabview-navscroller-btn:not(.ng-state-active):not(.ng-state-disabled):hover,
+body .ng-tabview.ng-tabview-bottom .ng-tabview-navscroller-btn:not(.ng-state-active):not(.ng-state-disabled):hover,
+body .ng-tabview.ng-tabview-left .ng-tabview-navscroller-btn:not(.ng-state-active):not(.ng-state-disabled):hover,
+body .ng-tabview.ng-tabview-right .ng-tabview-navscroller-btn:not(.ng-state-active):not(.ng-state-disabled):hover {
     background-color: #f4f3f4;
 }
-body .ui-tabview.ui-tabview-top .ui-tabview-navscroller-btn.ui-tabview-navscroller-btn-left,
-body .ui-tabview.ui-tabview-bottom .ui-tabview-navscroller-btn.ui-tabview-navscroller-btn-left,
-body .ui-tabview.ui-tabview-left .ui-tabview-navscroller-btn.ui-tabview-navscroller-btn-left,
-body .ui-tabview.ui-tabview-right .ui-tabview-navscroller-btn.ui-tabview-navscroller-btn-left {
+body .ng-tabview.ng-tabview-top .ng-tabview-navscroller-btn.ng-tabview-navscroller-btn-left,
+body .ng-tabview.ng-tabview-bottom .ng-tabview-navscroller-btn.ng-tabview-navscroller-btn-left,
+body .ng-tabview.ng-tabview-left .ng-tabview-navscroller-btn.ng-tabview-navscroller-btn-left,
+body .ng-tabview.ng-tabview-right .ng-tabview-navscroller-btn.ng-tabview-navscroller-btn-left {
     left: 0;
     height: 2.063em;
 }
-body .ui-tabview.ui-tabview-top .ui-tabview-navscroller-btn.ui-tabview-navscroller-btn-right,
-body .ui-tabview.ui-tabview-bottom .ui-tabview-navscroller-btn.ui-tabview-navscroller-btn-right,
-body .ui-tabview.ui-tabview-left .ui-tabview-navscroller-btn.ui-tabview-navscroller-btn-right,
-body .ui-tabview.ui-tabview-right .ui-tabview-navscroller-btn.ui-tabview-navscroller-btn-right {
+body .ng-tabview.ng-tabview-top .ng-tabview-navscroller-btn.ng-tabview-navscroller-btn-right,
+body .ng-tabview.ng-tabview-bottom .ng-tabview-navscroller-btn.ng-tabview-navscroller-btn-right,
+body .ng-tabview.ng-tabview-left .ng-tabview-navscroller-btn.ng-tabview-navscroller-btn-right,
+body .ng-tabview.ng-tabview-right .ng-tabview-navscroller-btn.ng-tabview-navscroller-btn-right {
     right: 0;
     height: 2.125em;
 }
-body .ui-tabview.ui-tabview-top .ui-tabview-navscroller-btn .ui-icon,
-body .ui-tabview.ui-tabview-bottom .ui-tabview-navscroller-btn .ui-icon,
-body .ui-tabview.ui-tabview-left .ui-tabview-navscroller-btn .ui-icon,
-body .ui-tabview.ui-tabview-right .ui-tabview-navscroller-btn .ui-icon {
+body .ng-tabview.ng-tabview-top .ng-tabview-navscroller-btn .ng-icon,
+body .ng-tabview.ng-tabview-bottom .ng-tabview-navscroller-btn .ng-icon,
+body .ng-tabview.ng-tabview-left .ng-tabview-navscroller-btn .ng-icon,
+body .ng-tabview.ng-tabview-right .ng-tabview-navscroller-btn .ng-icon {
     margin-top: 0.5em;
 }
-body .ui-tabview.ui-tabview-top .ui-tabview-nav li {
+body .ng-tabview.ng-tabview-top .ng-tabview-nav li {
     margin-right: 0.125em;
     -moz-border-radius-topleft: 0.25em;
     -webkit-border-top-left-radius: 0.25em;
@@ -1047,29 +1047,29 @@ body .ui-tabview.ui-tabview-top .ui-tabview-nav li {
     -webkit-border-top-right-radius: 0.25em;
     border-top-right-radius: 0.25em;
 }
-body .ui-tabview.ui-tabview-left .ui-tabview-nav,
-body .ui-tabview.ui-tabview-right .ui-tabview-nav {
+body .ng-tabview.ng-tabview-left .ng-tabview-nav,
+body .ng-tabview.ng-tabview-right .ng-tabview-nav {
     border-bottom: none;
 }
-body .ui-tabview.ui-tabview-left .ui-tabview-nav li,
-body .ui-tabview.ui-tabview-right .ui-tabview-nav li {
+body .ng-tabview.ng-tabview-left .ng-tabview-nav li,
+body .ng-tabview.ng-tabview-right .ng-tabview-nav li {
     border: 1px solid transparent;
     width: 100%;
 }
-body .ui-tabview.ui-tabview-left .ui-tabview-nav li:hover,
-body .ui-tabview.ui-tabview-right .ui-tabview-nav li:hover {
+body .ng-tabview.ng-tabview-left .ng-tabview-nav li:hover,
+body .ng-tabview.ng-tabview-right .ng-tabview-nav li:hover {
     border: 1px solid #dedede;
 }
-body .ui-tabview.ui-tabview-left .ui-tabview-nav li.ui-state-active,
-body .ui-tabview.ui-tabview-right .ui-tabview-nav li.ui-state-active {
+body .ng-tabview.ng-tabview-left .ng-tabview-nav li.ng-state-active,
+body .ng-tabview.ng-tabview-right .ng-tabview-nav li.ng-state-active {
     border-color: #0275d8;
     border-bottom: none;
 }
-body .ui-tabview.ui-tabview-bottom .ui-tabview-nav {
+body .ng-tabview.ng-tabview-bottom .ng-tabview-nav {
     border-bottom: none;
     border-top: 1px solid #cccccc;
 }
-body .ui-tabview.ui-tabview-bottom .ui-tabview-nav li {
+body .ng-tabview.ng-tabview-bottom .ng-tabview-nav li {
     -moz-border-radius-bottomleft: 4px;
     -webkit-border-bottom-left-radius: 4px;
     border-bottom-left-radius: 4px;
@@ -1078,14 +1078,14 @@ body .ui-tabview.ui-tabview-bottom .ui-tabview-nav li {
     border-bottom-right-radius: 4px;
     margin-right: 0.125em;
 }
-body .ui-tabview.ui-tabview-bottom .ui-tabview-nav li:hover {
+body .ng-tabview.ng-tabview-bottom .ng-tabview-nav li:hover {
     border-bottom: 1px solid #cccccc;
     border-top-color: transparent;
 }
-body .ui-tabview.ui-tabview-left .ui-tabview-nav {
+body .ng-tabview.ng-tabview-left .ng-tabview-nav {
     border-right: 1px solid #cccccc;
 }
-body .ui-tabview.ui-tabview-left .ui-tabview-nav li {
+body .ng-tabview.ng-tabview-left .ng-tabview-nav li {
     -moz-border-radius-topleft: 4px;
     -webkit-border-top-left-radius: 4px;
     border-top-left-radius: 4px;
@@ -1093,14 +1093,14 @@ body .ui-tabview.ui-tabview-left .ui-tabview-nav li {
     -webkit-border-bottom-left-radius: 4px;
     border-bottom-left-radius: 4px;
 }
-body .ui-tabview.ui-tabview-left .ui-tabview-nav li:hover {
+body .ng-tabview.ng-tabview-left .ng-tabview-nav li:hover {
     border-right: none;
 }
-body .ui-tabview.ui-tabview-right .ui-tabview-nav {
+body .ng-tabview.ng-tabview-right .ng-tabview-nav {
     border-left: 1px solid #cccccc;
     height: 9.375em;
 }
-body .ui-tabview.ui-tabview-right .ui-tabview-nav li {
+body .ng-tabview.ng-tabview-right .ng-tabview-nav li {
     -moz-border-radius-topright: 4px;
     -webkit-border-top-right-radius: 4px;
     border-top-right-radius: 4px;
@@ -1108,49 +1108,49 @@ body .ui-tabview.ui-tabview-right .ui-tabview-nav li {
     -webkit-border-bottom-right-radius: 4px;
     border-bottom-right-radius: 4px;
 }
-body .ui-tabview.ui-tabview-right .ui-tabview-nav li:hover {
+body .ng-tabview.ng-tabview-right .ng-tabview-nav li:hover {
     border-left-color: transparent;
 }
-body .ui-tabview .ui-tabview-panel {
+body .ng-tabview .ng-tabview-panel {
     padding: 0.375em 0.75em;
 }
-body .ui-scrollpanel .ui-scrollpanel-drag {
+body .ng-scrollpanel .ng-scrollpanel-drag {
     background-color: #e3e3e3;
 }
-body .ui-scrollpanel .ui-scrollpanel-track {
+body .ng-scrollpanel .ng-scrollpanel-track {
     background-color: #f7f7f7;
     border: 0 none;
 }
-body .ui-scrollpanel .ui-scrollpanel-corner {
+body .ng-scrollpanel .ng-scrollpanel-corner {
     background-color: #f7f7f7;
 }
-body .ui-toolbar {
+body .ng-toolbar {
     padding: 0.375em 0.75em;
 }
-body .ui-toolbar .fa-ellipsis-v {
+body .ng-toolbar .fa-ellipsis-v {
     color: #aaaaaa;
     margin: 0 0.5em;
 }
-body .ui-tooltip .ui-tooltip-arrow {
+body .ng-tooltip .ng-tooltip-arrow {
     color: #2d353c;
 }
-body .ui-tooltip .ui-tooltip-text {
+body .ng-tooltip .ng-tooltip-text {
     background-color: #2d353c;
 }
 @media (max-width: 640px) {
-    body .ui-panelgrid .ui-grid-responsive .ui-grid-row {
+    body .ng-panelgrid .ng-grid-responsive .ng-grid-row {
         border: 0 none;
     }
 }
-body .ui-paginator {
+body .ng-paginator {
     background-color: #ffffff;
     padding: 0;
     box-sizing: border-box;
 }
-body .ui-paginator .ui-paginator-first,
-body .ui-paginator .ui-paginator-prev,
-body .ui-paginator .ui-paginator-next,
-body .ui-paginator .ui-paginator-last {
+body .ng-paginator .ng-paginator-first,
+body .ng-paginator .ng-paginator-prev,
+body .ng-paginator .ng-paginator-next,
+body .ng-paginator .ng-paginator-last {
     color: #0275d8;
     -moz-transition: background-color 0.3s;
     -o-transition: background-color 0.3s;
@@ -1161,43 +1161,43 @@ body .ui-paginator .ui-paginator-last {
     padding: 0.5em 0.5em;
     vertical-align: top;
 }
-body .ui-paginator .ui-paginator-first:hover,
-body .ui-paginator .ui-paginator-prev:hover,
-body .ui-paginator .ui-paginator-next:hover,
-body .ui-paginator .ui-paginator-last:hover {
+body .ng-paginator .ng-paginator-first:hover,
+body .ng-paginator .ng-paginator-prev:hover,
+body .ng-paginator .ng-paginator-next:hover,
+body .ng-paginator .ng-paginator-last:hover {
     background-color: #f4f3f4;
 }
-body .ui-paginator .ui-paginator-first::before,
-body .ui-paginator .ui-paginator-prev::before,
-body .ui-paginator .ui-paginator-next::before,
-body .ui-paginator .ui-paginator-last::before {
+body .ng-paginator .ng-paginator-first::before,
+body .ng-paginator .ng-paginator-prev::before,
+body .ng-paginator .ng-paginator-next::before,
+body .ng-paginator .ng-paginator-last::before {
     position: relative;
     top: 0.063em;
 }
-body .ui-paginator .ui-paginator-first {
+body .ng-paginator .ng-paginator-first {
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
 }
-body .ui-paginator .ui-paginator-prev {
+body .ng-paginator .ng-paginator-prev {
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
 }
-body .ui-paginator .ui-paginator-next {
+body .ng-paginator .ng-paginator-next {
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
 }
-body .ui-paginator .ui-paginator-last {
+body .ng-paginator .ng-paginator-last {
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
 }
-body .ui-paginator .ui-paginator-pages {
+body .ng-paginator .ng-paginator-pages {
     padding: 0;
 }
-body .ui-paginator .ui-paginator-pages .ui-paginator-page {
+body .ng-paginator .ng-paginator-pages .ng-paginator-page {
     padding: 0.5em 0.625em;
     min-width: 2em;
     color: #0275d8;
@@ -1207,81 +1207,81 @@ body .ui-paginator .ui-paginator-pages .ui-paginator-page {
     transition: background-color 0.3s;
     border-radius: 0;
 }
-body .ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active {
+body .ng-paginator .ng-paginator-pages .ng-paginator-page.ng-state-active {
     color: #ffffff;
 }
-body .ui-paginator .ui-paginator-pages .ui-paginator-page:hover {
+body .ng-paginator .ng-paginator-pages .ng-paginator-page:hover {
     background-color: #f4f3f4;
 }
-body .ui-paginator .ui-paginator-pages .ui-paginator-page:hover.ui-state-active {
+body .ng-paginator .ng-paginator-pages .ng-paginator-page:hover.ng-state-active {
     background-color: #0275d8;
 }
-body .ui-datatable .ui-datatable-header,
-body .ui-datatable .ui-datatable-footer {
+body .ng-datatable .ng-datatable-header,
+body .ng-datatable .ng-datatable-footer {
     padding: .75em 1.25em;
     background-color: #f5f5f5;
 }
-body .ui-datatable .ui-editable-column.ui-cell-editing .ui-cell-editor {
+body .ng-datatable .ng-editable-column.ng-cell-editing .ng-cell-editor {
     font-size: medium;
 }
-body .ui-datatable .ui-paginator {
+body .ng-datatable .ng-paginator {
     padding: 0;
 }
-body .ui-datatable .ui-datatable-thead > tr > th,
-body .ui-datatable .ui-datatable-tfoot > tr > td {
+body .ng-datatable .ng-datatable-thead > tr > th,
+body .ng-datatable .ng-datatable-tfoot > tr > td {
     background-color: #ffffff;
     padding: .75em;
     border-color: #c7c7c7;
     color: #373a3c;
 }
-body .ui-datatable thead th.ui-sortable-column:not(.ui-state-active):hover {
+body .ng-datatable thead th.ng-sortable-column:not(.ng-state-active):hover {
     background-color: #e3e3e3;
 }
-body .ui-datatable thead th.ui-state-active {
+body .ng-datatable thead th.ng-state-active {
     background-color: #0275d8;
     border-color: #0267bf;
     color: #ffffff;
 }
-body .ui-datatable thead th.ui-state-active .ui-dropdown-item {
+body .ng-datatable thead th.ng-state-active .ng-dropdown-item {
     color: #373a3c;
 }
-body .ui-datatable thead th:focus {
+body .ng-datatable thead th:focus {
     outline: 0 none;
     background-color: #f0f3f5;
 }
-body .ui-datatable thead th:focus.ui-state-active {
+body .ng-datatable thead th:focus.ng-state-active {
     background-color: #0283f1;
 }
-body .ui-datatable tfoot th.ui-state-default {
+body .ng-datatable tfoot th.ng-state-default {
     background-color: #ffffff;
     padding: 0.375em 0.75em;
     border-color: #c7c7c7;
     color: #373a3c;
 }
-body .ui-datatable .ui-datatable-data tr.ui-datatable-even {
+body .ng-datatable .ng-datatable-data tr.ng-datatable-even {
     background-color: #f7f7f7;
 }
-body .ui-datatable .ui-datatable-data tr.ui-datatable-even.ui-state-highlight {
+body .ng-datatable .ng-datatable-data tr.ng-datatable-even.ng-state-highlight {
     background-color: #0275d8;
     color: #ffffff;
     border-color: #0267bf;
 }
-body .ui-datatable .ui-datatable-data tr.ui-state-highlight {
+body .ng-datatable .ng-datatable-data tr.ng-state-highlight {
     border-color: #0267bf;
 }
-body .ui-datatable .ui-datatable-data.ui-datatable-hoverable-rows > tr.ui-widget-content:not(.ui-state-highlight):hover {
+body .ng-datatable .ng-datatable-data.ng-datatable-hoverable-rows > tr.ng-widget-content:not(.ng-state-highlight):hover {
     background-color: #e3e3e3;
     cursor: pointer;
 }
-body .ui-datatable .ui-datatable-data tr.ui-row-editing.ui-datatable-odd,
-body .ui-datatable .ui-datatable-data tr.ui-row-editing.ui-datatable-even {
+body .ng-datatable .ng-datatable-data tr.ng-row-editing.ng-datatable-odd,
+body .ng-datatable .ng-datatable-data tr.ng-row-editing.ng-datatable-even {
     border-color: #c7c7c7;
     border-bottom-color: #0275d8;
 }
-body .ui-datatable .ui-datatable-data > tr > td {
+body .ng-datatable .ng-datatable-data > tr > td {
     padding: .75em;
 }
-body .ui-datatable .ui-datatable-data tr td.ui-editable-column input {
+body .ng-datatable .ng-datatable-data tr td.ng-editable-column input {
     width: 100%;
     box-sizing: border-box;
     border: 0 none;
@@ -1289,59 +1289,59 @@ body .ui-datatable .ui-datatable-data tr td.ui-editable-column input {
     -webkit-border-radius: 0;
     border-radius: 0;
 }
-body .ui-datatable .ui-datatable-scrollable-header,
-body .ui-datatable .ui-datatable-scrollable-footer {
+body .ng-datatable .ng-datatable-scrollable-header,
+body .ng-datatable .ng-datatable-scrollable-footer {
     background-color: #f5f5f5;
 }
-body .ui-datatable .ui-datatable-scrollable-header .ui-datatable-scrollable-header-box td,
-body .ui-datatable .ui-datatable-scrollable-footer .ui-datatable-scrollable-header-box td {
+body .ng-datatable .ng-datatable-scrollable-header .ng-datatable-scrollable-header-box td,
+body .ng-datatable .ng-datatable-scrollable-footer .ng-datatable-scrollable-header-box td {
     color: #373a3c;
 }
-body .ui-datatable .ui-datatable-data tr.ui-rowgroup-header {
+body .ng-datatable .ng-datatable-data tr.ng-rowgroup-header {
     font-weight: bold;
 }
-body .ui-datatable .ui-rowgroup-header {
+body .ng-datatable .ng-rowgroup-header {
     color: #2d353c;
 }
 
-body .ui-datatable .ui-rowgroup-header a {
+body .ng-datatable .ng-rowgroup-header a {
     color: #2d353c;
 }
 
-body .ui-datagrid .ui-datagrid-header {
+body .ng-datagrid .ng-datagrid-header {
     padding: .75em 1.25em;
     background-color: #f5f5f5;
 }
-body .ui-datagrid .ui-paginator {
+body .ng-datagrid .ng-paginator {
     padding: 0;
 }
-body .ui-datalist .ui-datalist-header {
+body .ng-datalist .ng-datalist-header {
     padding: .75em 1.25em;
     background-color: #f5f5f5;
 }
-body .ui-datalist .ui-paginator {
+body .ng-datalist .ng-paginator {
     padding: 0;
 }
-body .ui-datascroller .ui-datascroller-header {
+body .ng-datascroller .ng-datascroller-header {
     padding: .75em 1.25em;
     background-color: #f5f5f5;
 }
-body .ui-picklist .ui-picklist-buttons button {
+body .ng-picklist .ng-picklist-buttons button {
     font-size: 1.1em;
 }
-body .ui-picklist .ui-picklist-caption {
+body .ng-picklist .ng-picklist-caption {
     padding: .75em 1.25em;
     background-color: #f5f5f5;
 }
-body .ui-picklist .ui-picklist-filter-container {
+body .ng-picklist .ng-picklist-filter-container {
     margin-bottom: 0.063em;
 }
-body .ui-picklist .ui-picklist-filter-container .ui-icon {
+body .ng-picklist .ng-picklist-filter-container .ng-icon {
     top: 0.313em;
     right: 0.25em;
     color: #747a7f;
 }
-body .ui-picklist .ui-picklist-list .ui-picklist-item {
+body .ng-picklist .ng-picklist-list .ng-picklist-item {
     padding: 0.375em 0.75em;
     margin: 0;
     -moz-border-radius: 0;
@@ -1349,27 +1349,27 @@ body .ui-picklist .ui-picklist-list .ui-picklist-item {
     border-radius: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
-body .ui-picklist .ui-picklist-list .ui-picklist-item:not(.ui-state-highlight):hover {
+body .ng-picklist .ng-picklist-list .ng-picklist-item:not(.ng-state-highlight):hover {
     background-color: #f4f3f4;
     color: #373a3c;
 }
-body .ui-picklist .ui-picklist-list .ui-picklist-item.ui-state-highlight {
+body .ng-picklist .ng-picklist-list .ng-picklist-item.ng-state-highlight {
     background-color: #0275d8;
     color: #ffffff;
 }
-body .ui-orderlist .ui-orderlist-controls button {
+body .ng-orderlist .ng-orderlist-controls button {
     font-size: 1.1em;
 }
-body .ui-orderlist .ui-orderlist-caption {
+body .ng-orderlist .ng-orderlist-caption {
     padding: .75em 1.25em;
     background-color: #f5f5f5;
     box-sizing: border-box;
     width: 12.5em;
 }
-body .ui-orderlist .ui-orderlist-list {
+body .ng-orderlist .ng-orderlist-list {
     box-sizing: border-box;
 }
-body .ui-orderlist .ui-orderlist-list .ui-orderlist-item {
+body .ng-orderlist .ng-orderlist-list .ng-orderlist-item {
     padding: 0.375em 0.75em;
     margin: 0;
     -moz-border-radius: 0;
@@ -1377,25 +1377,25 @@ body .ui-orderlist .ui-orderlist-list .ui-orderlist-item {
     border-radius: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
-body .ui-orderlist .ui-orderlist-list .ui-orderlist-item:last-child {
+body .ng-orderlist .ng-orderlist-list .ng-orderlist-item:last-child {
     border-bottom: none;
 }
-body .ui-orderlist .ui-orderlist-list .ui-orderlist-item:not(.ui-state-highlight):hover {
+body .ng-orderlist .ng-orderlist-list .ng-orderlist-item:not(.ng-state-highlight):hover {
     background-color: #f4f3f4;
     color: #373a3c;
 }
-body .ui-orderlist .ui-orderlist-list .ui-orderlist-item.ui-state-highlight {
+body .ng-orderlist .ng-orderlist-list .ng-orderlist-item.ng-state-highlight {
     background-color: #0275d8;
     color: #ffffff;
 }
-body .ui-orderlist.ui-grid-responsive .ui-grid-row .ui-orderlist-controls {
+body .ng-orderlist.ng-grid-responsive .ng-grid-row .ng-orderlist-controls {
     margin-right: 0;
     padding-right: 0.5em;
 }
-body .ui-carousel {
+body .ng-carousel {
     padding: 0;
 }
-body .ui-carousel .ui-carousel-header {
+body .ng-carousel .ng-carousel-header {
     margin: 0;
     border: 0 none;
     border-bottom: 1px solid #e6e6e6;
@@ -1404,10 +1404,10 @@ body .ui-carousel .ui-carousel-header {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
-body .ui-carousel .ui-carousel-header .ui-carousel-header-title {
+body .ng-carousel .ng-carousel-header .ng-carousel-header-title {
     padding: 0;
 }
-body .ui-carousel .ui-carousel-footer {
+body .ng-carousel .ng-carousel-footer {
     border: 0 none;
     border-top: 1px solid #e6e6e6;
     margin: 0;
@@ -1417,7 +1417,7 @@ body .ui-carousel .ui-carousel-footer {
     padding: .75em 1.25em;
     background-color: #f5f5f5;
 }
-body .ui-carousel .ui-carousel-button {
+body .ng-carousel .ng-carousel-button {
     margin-top: 0.2em;
     -moz-transition: color 0.3s;
     -o-transition: color 0.3s;
@@ -1425,19 +1425,19 @@ body .ui-carousel .ui-carousel-button {
     transition: color 0.3s;
     color: #767b7f;
 }
-body .ui-carousel .ui-carousel-button:hover {
+body .ng-carousel .ng-carousel-button:hover {
     color: #2d353c;
 }
-body .ui-carousel .ui-carousel-button.ui-state-disabled:hover {
+body .ng-carousel .ng-carousel-button.ng-state-disabled:hover {
     color: #2d353c;
 }
-body .ui-carousel .ui-carousel-page-links {
+body .ng-carousel .ng-carousel-page-links {
     margin-top: 0.188em;
 }
-body .ui-carousel .ui-carousel-page-links .ui-carousel-page-link {
+body .ng-carousel .ng-carousel-page-links .ng-carousel-page-link {
     color: #767b7f;
 }
-body .ui-carousel .ui-carousel-page-links .ui-carousel-page-link.fa-circle-o {
+body .ng-carousel .ng-carousel-page-links .ng-carousel-page-link.fa-circle-o {
     background: none !important;
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -1448,10 +1448,10 @@ body .ui-carousel .ui-carousel-page-links .ui-carousel-page-link.fa-circle-o {
     text-indent: 0px !important;
     text-align: center;
 }
-body .ui-carousel .ui-carousel-page-links .ui-carousel-page-link.fa-circle-o::before {
+body .ng-carousel .ng-carousel-page-links .ng-carousel-page-link.fa-circle-o::before {
     content: "";
 }
-body .ui-carousel .ui-carousel-page-links .ui-carousel-page-link.fa-dot-circle-o {
+body .ng-carousel .ng-carousel-page-links .ng-carousel-page-link.fa-dot-circle-o {
     background: none !important;
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -1462,143 +1462,143 @@ body .ui-carousel .ui-carousel-page-links .ui-carousel-page-link.fa-dot-circle-o
     text-indent: 0px !important;
     text-align: center;
 }
-body .ui-carousel .ui-carousel-page-links .ui-carousel-page-link.fa-dot-circle-o::before {
+body .ng-carousel .ng-carousel-page-links .ng-carousel-page-link.fa-dot-circle-o::before {
     content: "";
 }
-body .ui-carousel .ui-carousel-page-links .ui-carousel-page-link.ui-icon-radio-on {
+body .ng-carousel .ng-carousel-page-links .ng-carousel-page-link.ng-icon-radio-on {
     color: #0275d8;
     background-color: #767b7f;
 }
-body .ui-treetable .ui-treetable-header {
+body .ng-treetable .ng-treetable-header {
     padding: .75em 1.25em;
     background-color: #f5f5f5;
 }
-body .ui-treetable .ui-treetable-footer {
+body .ng-treetable .ng-treetable-footer {
     padding: .75em 1.25em;
     background-color: #f5f5f5;
 }
-body .ui-treetable .ui-paginator {
+body .ng-treetable .ng-paginator {
     padding: 0.375em 0.75em;
 }
-body .ui-treetable thead th {
+body .ng-treetable thead th {
     background-color: #ffffff;
     padding: .75em;
     border-color: #c7c7c7;
     color: #373a3c;
 }
-body .ui-treetable thead th.ui-state-active {
+body .ng-treetable thead th.ng-state-active {
     border-color: #0267bf;
     background-color: #0275d8;
     color: #ffffff;
 }
-body .ui-treetable tfoot td {
+body .ng-treetable tfoot td {
     background-color: #ffffff;
     padding: .75em;
     border-color: #e6e6e6;
 }
-body .ui-treetable .ui-treetable-data tr:not(.ui-state-highlight):hover {
+body .ng-treetable .ng-treetable-data tr:not(.ng-state-highlight):hover {
     background-color: #e3e3e3;
 }
-body .ui-treetable .ui-treetable-row.ui-state-highlight .ui-chkbox-icon {
+body .ng-treetable .ng-treetable-row.ng-state-highlight .ng-chkbox-icon {
     color: #555555;
     margin: 0;
 }
-body .ui-treetable .ui-treetable-row.ui-state-highlight .ui-treetable-toggler {
+body .ng-treetable .ng-treetable-row.ng-state-highlight .ng-treetable-toggler {
     color: #ffffff;
 }
-body .ui-treetable .ui-treetable-row.ui-treetable-row-selectable:not(.ui-state-highlight):hover {
+body .ng-treetable .ng-treetable-row.ng-treetable-row-selectable:not(.ng-state-highlight):hover {
     background-color: #e3e3e3;
 }
-body .ui-treetable .ui-treetable-data tr.ui-state-highlight {
+body .ng-treetable .ng-treetable-data tr.ng-state-highlight {
     border-color: #0267bf;
 }
-body .ui-treetable .ui-treetable-data tr td .ui-treetable-toggler {
+body .ng-treetable .ng-treetable-data tr td .ng-treetable-toggler {
     font-size: 3em;
     vertical-align: middle;
     display: inline-block;
     position: relative;
 }
-body .ui-treetable .ui-treetable-data tr td .ui-chkbox {
+body .ng-treetable .ng-treetable-data tr td .ng-chkbox {
     vertical-align: middle;
     display: inline-block;
     position: relative;
 }
-body .ui-treetable tbody td{
+body .ng-treetable tbody td{
     padding: .75em;
 }
-body .ui-treetable .ui-treetable-data tr td .ui-chkbox .ui-chkbox-icon {
+body .ng-treetable .ng-treetable-data tr td .ng-chkbox .ng-chkbox-icon {
     color: #0275d8;
     left: 0px;
 }
-body .ui-treetable .ui-treetable-scrollable-header,
-body .ui-treetable .ui-treetable-scrollable-footer {
+body .ng-treetable .ng-treetable-scrollable-header,
+body .ng-treetable .ng-treetable-scrollable-footer {
     background-color: #f0f3f5;
 }
-body .ui-treetable .ui-treetable-scrollable-header .ui-treetable-scrollable-header-box td,
-body .ui-treetable .ui-treetable-scrollable-footer .ui-treetable-scrollable-header-box td {
+body .ng-treetable .ng-treetable-scrollable-header .ng-treetable-scrollable-header-box td,
+body .ng-treetable .ng-treetable-scrollable-footer .ng-treetable-scrollable-header-box td {
     color: #373a3c;
 }
-body .ui-treetable .ui-treetable-scrollable-body::-webkit-scrollbar {
+body .ng-treetable .ng-treetable-scrollable-body::-webkit-scrollbar {
     background-color: #f0f3f5;
 }
-body .ui-tree {
+body .ng-tree {
     box-sizing: border-box;
 }
-body .ui-tree .ui-treenode .ui-treenode-content .ui-tree-toggler {
+body .ng-tree .ng-treenode .ng-treenode-content .ng-tree-toggler {
     font-size: 1.1em;
     vertical-align: middle;
     display: inline-block;
     color: #747a7f;
     margin-top: 0.2em;
 }
-body .ui-tree .ui-treenode .ui-treenode-content .ui-treenode-icon {
+body .ng-tree .ng-treenode .ng-treenode-content .ng-treenode-icon {
     vertical-align: middle;
     display: inline-block;
     margin: 0.2em 0.375em 0 0;
     font-size: 1.1em;
     color: #747a7f;
 }
-body .ui-tree .ui-treenode .ui-treenode-content .ui-treenode-label {
+body .ng-tree .ng-treenode .ng-treenode-content .ng-treenode-label {
     margin: 0;
     vertical-align: middle;
     display: inline-block;
     padding: 0;
 }
-body .ui-tree.ui-tree-selectable .ui-treenode .ui-treenode-content .ui-treenode-label:not(.ui-state-highlight):hover {
+body .ng-tree.ng-tree-selectable .ng-treenode .ng-treenode-content .ng-treenode-label:not(.ng-state-highlight):hover {
     background-color: #f4f3f4;
     color: #373a3c;
 }
-body .ui-tree .ui-treenode .ui-treenode-content .ui-treenode-label.ui-state-highlight {
+body .ng-tree .ng-treenode .ng-treenode-content .ng-treenode-label.ng-state-highlight {
     background-color: #0275d8;
     color: #ffffff;
 }
-body .ui-tree .ui-tree-droppoint:hover {
+body .ng-tree .ng-tree-droppoint:hover {
     background-color: #0275d8;
 }
-body .ui-tree.ui-tree-horizontal .ui-treenode-content {
+body .ng-tree.ng-tree-horizontal .ng-treenode-content {
     background-color: #ffffff;
     border: 1px solid #c7c7c7;
 }
-body .ui-tree.ui-tree-horizontal .ui-treenode-content.ui-treenode-selectable .ui-treenode-label:not(.ui-state-highlight):hover {
+body .ng-tree.ng-tree-horizontal .ng-treenode-content.ng-treenode-selectable .ng-treenode-label:not(.ng-state-highlight):hover {
     background-color: inherit;
     color: inherit;
 }
-body .ui-tree.ui-tree-horizontal .ui-treenode-content.ui-treenode-selectable:not(.ui-state-highlight):hover {
+body .ng-tree.ng-tree-horizontal .ng-treenode-content.ng-treenode-selectable:not(.ng-state-highlight):hover {
     background-color: #f4f3f4;
     color: #373a3c;
 }
-body .ui-tree.ui-tree-horizontal .ui-treenode-content.ui-state-highlight {
+body .ng-tree.ng-tree-horizontal .ng-treenode-content.ng-state-highlight {
     background-color: #0275d8;
     color: #ffffff;
 }
-body .ui-tree.ui-tree-horizontal .ui-treenode-content.ui-state-highlight .ui-tree-toggler,
-body .ui-tree.ui-tree-horizontal .ui-treenode-content.ui-state-highlight .ui-treenode-icon {
+body .ng-tree.ng-tree-horizontal .ng-treenode-content.ng-state-highlight .ng-tree-toggler,
+body .ng-tree.ng-tree-horizontal .ng-treenode-content.ng-state-highlight .ng-treenode-icon {
     color: #ffffff;
 }
-body .ui-tree.ui-tree-horizontal .ui-treenode-content .ui-chkbox .ui-icon {
+body .ng-tree.ng-tree-horizontal .ng-treenode-content .ng-chkbox .ng-icon {
     color: #0275d8;
 }
-body .ui-tree-draghelper {
+body .ng-tree-draghelper {
     border: 1px solid #0275d8;
 }
 body .fc .fc-event {
@@ -1623,7 +1623,7 @@ body .fc .fc-toolbar .fc-prev-button span {
 body .fc .fc-toolbar .fc-prev-button span::before {
     content: "";
 }
-body .fc .fc-toolbar .fc-prev-button .ui-icon {
+body .fc .fc-toolbar .fc-prev-button .ng-icon {
     position: relative;
     top: 0.186em;
 }
@@ -1642,68 +1642,68 @@ body .fc .fc-toolbar .fc-next-button span {
 body .fc .fc-toolbar .fc-next-button span::before {
     content: "";
 }
-body .fc .fc-toolbar .fc-next-button .ui-icon {
+body .fc .fc-toolbar .fc-next-button .ng-icon {
     position: relative;
     top: 0.186em;
 }
 /* Messages */
 
-.ui-messages.ui-messages-success {
+.ng-messages.ng-messages-success {
     background-color: #dff0d8;
     border-color: #d0e9c6;
     color: #3c763d;
 }
-.ui-messages.ui-messages-success .ui-messages-close {
+.ng-messages.ng-messages-success .ng-messages-close {
     color: #3c763d;
 }
-.ui-messages.ui-messages-info {
+.ng-messages.ng-messages-info {
     background-color: #d9edf7;
     border-color: #bcdff1;
     color: #31708f;
 }
-.ui-messages.ui-messages-info .ui-messages-close {
+.ng-messages.ng-messages-info .ng-messages-close {
     color: #31708f;
 }
-.ui-messages.ui-messages-warn {
+.ng-messages.ng-messages-warn {
     background-color: #fcf8e3;
     border-color: #faf2cc;
     color: #8a6d3b;
 }
-.ui-messages.ui-messages-warn .ui-messages-close {
+.ng-messages.ng-messages-warn .ng-messages-close {
     color: #8a6d3b;
 }
-.ui-messages.ui-messages-error {
+.ng-messages.ng-messages-error {
     background-color: #f2dede;
     border-color: #ebcccc;
     color: #a94442;
 }
-.ui-messages.ui-messages-error .ui-messages-close {
+.ng-messages.ng-messages-error .ng-messages-close {
     color: #a94442;
 }
 /* Growl */
 
-.ui-growl .ui-growl-message-success {
+.ng-growl .ng-growl-message-success {
     background-color: #dff0d8;
     color: #3c763d;
 }
-.ui-growl .ui-growl-message-info {
+.ng-growl .ng-growl-message-info {
     background-color: #d9edf7;
     color: #31708f;
 }
-.ui-growl .ui-growl-message-warn {
+.ng-growl .ng-growl-message-warn {
     background-color: #fcf8e3;
     color: #8a6d3b;
 }
-.ui-growl .ui-growl-message-error {
+.ng-growl .ng-growl-message-error {
     background-color: #f2dede;
     color: #a94442;
 }
-body .ui-overlaypanel {
+body .ng-overlaypanel {
     -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
 }
-body .ui-overlaypanel .ui-overlaypanel-close {
+body .ng-overlaypanel .ng-overlaypanel-close {
     background-color: #ffffff;
     color: #373a3c;
     border: 1px solid #c7c7c7;
@@ -1714,28 +1714,28 @@ body .ui-overlaypanel .ui-overlaypanel-close {
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
 }
-body .ui-overlaypanel .ui-overlaypanel-close:hover {
+body .ng-overlaypanel .ng-overlaypanel-close:hover {
     color: #0275d8;
 }
-body .ui-overlaypanel .ui-overlaypanel-close span {
+body .ng-overlaypanel .ng-overlaypanel-close span {
     margin-left: 0.063em;
 }
-body .ui-dialog {
+body .ng-dialog {
     -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
 }
-body .ui-dialog .ui-dialog-titlebar {
+body .ng-dialog .ng-dialog-titlebar {
     padding: 1em;
     border-bottom: 1px solid #c7c7c7;
 }
-body .ui-dialog .ui-dialog-titlebar .ui-dialog-title {
+body .ng-dialog .ng-dialog-titlebar .ng-dialog-title {
     margin: 0;
     float: none;
     font-size: 1.5em;
     font-weight: bold;
 }
-body .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-icon {
+body .ng-dialog .ng-dialog-titlebar .ng-dialog-titlebar-icon {
     color: #767b7f;
     border: 0 none;
     -moz-transition: color 0.3s;
@@ -1744,43 +1744,43 @@ body .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-icon {
     transition: color 0.3s;
     padding: 0;
 }
-body .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-icon:hover {
+body .ng-dialog .ng-dialog-titlebar .ng-dialog-titlebar-icon:hover {
     color: #2d353c;
 }
-body .ui-dialog .ui-dialog-content {
+body .ng-dialog .ng-dialog-content {
     padding: 1em;
 }
-body .ui-dialog .ui-dialog-buttonpane {
+body .ng-dialog .ng-dialog-buttonpane {
     padding: 0.375em 0.75em;
     text-align: right;
 }
-body .ui-dialog.ui-confirm-dialog .ui-dialog-content > span {
+body .ng-dialog.ng-confirm-dialog .ng-dialog-content > span {
     display: inline-block;
     vertical-align: middle;
     line-height: 1em;
     margin: 0;
 }
-body .ui-tooltip .ui-tooltip-text {
+body .ng-tooltip .ng-tooltip-text {
     -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
 }
-body .ui-tooltip.ui-state-error {
+body .ng-tooltip.ng-state-error {
     border: 0 none;
 }
-body .ui-lightbox {
+body .ng-lightbox {
     -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
 }
-body .ui-lightbox .ui-lightbox-caption {
+body .ng-lightbox .ng-lightbox-caption {
     padding: 0.375em 0.75em;
 }
-body .ui-lightbox .ui-lightbox-caption .ui-lightbox-caption-text {
+body .ng-lightbox .ng-lightbox-caption .ng-lightbox-caption-text {
     color: #2d353c;
     margin: 0;
 }
-body .ui-lightbox .ui-lightbox-caption .ui-lightbox-close {
+body .ng-lightbox .ng-lightbox-caption .ng-lightbox-close {
     padding: 0;
     color: #2d353c;
     -moz-transition: color 0.3s;
@@ -1788,13 +1788,13 @@ body .ui-lightbox .ui-lightbox-caption .ui-lightbox-close {
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
 }
-body .ui-lightbox .ui-lightbox-caption .ui-lightbox-close:hover {
+body .ng-lightbox .ng-lightbox-caption .ng-lightbox-close:hover {
     color: #0275d8;
 }
-body .ui-lightbox .ui-lightbox-content-wrapper {
+body .ng-lightbox .ng-lightbox-content-wrapper {
     overflow: hidden;
 }
-body .ui-lightbox .ui-lightbox-content-wrapper .ui-lightbox-nav-left {
+body .ng-lightbox .ng-lightbox-content-wrapper .ng-lightbox-nav-left {
     background: none !important;
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -1811,20 +1811,20 @@ body .ui-lightbox .ui-lightbox-content-wrapper .ui-lightbox-nav-left {
     font-size: 1.5em;
     margin-left: 0.25em;
 }
-body .ui-lightbox .ui-lightbox-content-wrapper .ui-lightbox-nav-left::before {
+body .ng-lightbox .ng-lightbox-content-wrapper .ng-lightbox-nav-left::before {
     content: "";
 }
-body .ui-lightbox .ui-lightbox-content-wrapper .ui-lightbox-nav-left:hover {
+body .ng-lightbox .ng-lightbox-content-wrapper .ng-lightbox-nav-left:hover {
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
     -o-transform: scale(1.2);
     -ms-transform: scale(1.2);
     transform: scale(1.2);
 }
-body .ui-lightbox .ui-lightbox-content-wrapper .ui-lightbox-nav-left span {
+body .ng-lightbox .ng-lightbox-content-wrapper .ng-lightbox-nav-left span {
     display: none;
 }
-body .ui-lightbox .ui-lightbox-content-wrapper .ui-lightbox-nav-right {
+body .ng-lightbox .ng-lightbox-content-wrapper .ng-lightbox-nav-right {
     background: none !important;
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -1841,72 +1841,72 @@ body .ui-lightbox .ui-lightbox-content-wrapper .ui-lightbox-nav-right {
     font-size: 1.5em;
     margin-right: 0.25em;
 }
-body .ui-lightbox .ui-lightbox-content-wrapper .ui-lightbox-nav-right::before {
+body .ng-lightbox .ng-lightbox-content-wrapper .ng-lightbox-nav-right::before {
     content: "";
 }
-body .ui-lightbox .ui-lightbox-content-wrapper .ui-lightbox-nav-right:hover {
+body .ng-lightbox .ng-lightbox-content-wrapper .ng-lightbox-nav-right:hover {
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
     -o-transform: scale(1.2);
     -ms-transform: scale(1.2);
     transform: scale(1.2);
 }
-body .ui-lightbox .ui-lightbox-content-wrapper .ui-lightbox-nav-right span {
+body .ng-lightbox .ng-lightbox-content-wrapper .ng-lightbox-nav-right span {
     display: none;
 }
-body .ui-lightbox .ui-lightbox-content-wrapper .ui-lightbox-content.ui-lightbox-loading + a {
+body .ng-lightbox .ng-lightbox-content-wrapper .ng-lightbox-content.ng-lightbox-loading + a {
     display: none;
 }
-body .ui-breadcrumb {
+body .ng-breadcrumb {
     background-color: #ffffff;
     padding: 0.375em 0.75em;
 }
-body .ui-breadcrumb ul li {
+body .ng-breadcrumb ul li {
     float: none;
     display: inline-block;
     vertical-align: middle;
 }
-body .ui-breadcrumb ul li .ui-menuitem-link {
+body .ng-breadcrumb ul li .ng-menuitem-link {
     color: #0275d8;
     margin: 0;
     position: relative;
     top: 0;
 }
-body .ui-breadcrumb ul li.ui-breadcrumb-chevron {
+body .ng-breadcrumb ul li.ng-breadcrumb-chevron {
     font-size: 1em;
     margin: 0.25em 0.375em 0 0.375em;
     color: #767b7f;
 }
-body .ui-breadcrumb ul li.ui-breadcrumb-chevron.fa-chevron-right::before {
+body .ng-breadcrumb ul li.ng-breadcrumb-chevron.fa-chevron-right::before {
     content: "/";
     font-size: 1.375em;
     font-weight: 700;
 }
-body .ui-breadcrumb ul li:first-child {
+body .ng-breadcrumb ul li:first-child {
     font-size: 1.2em;
 }
-body .ui-breadcrumb ul li:first-child a.ui-icon-home {
+body .ng-breadcrumb ul li:first-child a.ng-icon-home {
     color: #767b7f;
     margin: 0;
 }
-body .ui-steps {
+body .ng-steps {
     position: relative;
 }
-body .ui-steps .ui-steps-item {
+body .ng-steps .ng-steps-item {
     background-color: transparent;
     text-align: center;
 }
-body .ui-steps .ui-steps-item.ui-state-disabled {
+body .ng-steps .ng-steps-item.ng-state-disabled {
     opacity: 1;
     filter: alpha(opacity=100);
 }
-body .ui-steps .ui-steps-item .ui-menuitem-link {
+body .ng-steps .ng-steps-item .ng-menuitem-link {
     display: inline-block;
     text-align: center;
     background-color: transparent;
     overflow: hidden;
 }
-body .ui-steps .ui-steps-item .ui-menuitem-link .ui-steps-number {
+body .ng-steps .ng-steps-item .ng-menuitem-link .ng-steps-number {
     display: inline-block;
     background-color: #ffffff;
     -moz-border-radius: 50%;
@@ -1922,27 +1922,27 @@ body .ui-steps .ui-steps-item .ui-menuitem-link .ui-steps-number {
     margin-bottom: 0.75em;
     border: 1px solid #cccccc;
 }
-body .ui-steps .ui-steps-item .ui-menuitem-link .ui-steps-title {
+body .ng-steps .ng-steps-item .ng-menuitem-link .ng-steps-title {
     display: block;
     margin-top: 0.375em;
     color: #747a7f;
 }
-body .ui-steps .ui-steps-item.ui-state-highlight .ui-steps-number {
+body .ng-steps .ng-steps-item.ng-state-highlight .ng-steps-number {
     background-color: #0275d8;
     color: #ffffff;
     border-color: #0275d8;
 }
-body .ui-steps .ui-steps-item:not(.ui-state-highlight) .ui-steps-number:hover {
+body .ng-steps .ng-steps-item:not(.ng-state-highlight) .ng-steps-number:hover {
     background-color: #e6e6e6;
 }
-body .ui-steps .ui-steps-item.ui-state-highlight .ui-steps-title {
+body .ng-steps .ng-steps-item.ng-state-highlight .ng-steps-title {
     font-weight: 700;
     color: #373a3c;
 }
-body .ui-steps .ui-steps-item:last-child .ui-menuitem-link {
+body .ng-steps .ng-steps-item:last-child .ng-menuitem-link {
     display: block;
 }
-body .ui-steps::before {
+body .ng-steps::before {
     content: ' ';
     border: 1px solid #0275d8;
     width: 100%;
@@ -1951,18 +1951,18 @@ body .ui-steps::before {
     display: block;
     position: absolute;
 }
-body .ui-menu {
+body .ng-menu {
     padding: 0;
 }
-body .ui-menu.ui-shadow {
+body .ng-menu.ng-shadow {
     -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
 }
-body .ui-menu .ui-menu-parent .ui-submenu-icon {
+body .ng-menu .ng-menu-parent .ng-submenu-icon {
     margin-top: 0.2em;
 }
-body .ui-menu .ui-menu-list .ui-widget-header {
+body .ng-menu .ng-menu-list .ng-widget-header {
     width: 100%;
     box-sizing: border-box;
     border: 0 none;
@@ -1971,30 +1971,30 @@ body .ui-menu .ui-menu-list .ui-widget-header {
     -webkit-border-radius: 0;
     border-radius: 0;
 }
-body .ui-menu .ui-menu-list .ui-widget-header h3 {
+body .ng-menu .ng-menu-list .ng-widget-header h3 {
     padding: 0.375em 0.75em;
     font-weight: 400;
 }
-body .ui-menu .ui-menu-list .ui-widget-header .ui-icon {
+body .ng-menu .ng-menu-list .ng-widget-header .ng-icon {
     color: #767b7f;
 }
-body .ui-menu .ui-menu-list .ui-widget-header:hover {
+body .ng-menu .ng-menu-list .ng-widget-header:hover {
     background-color: #e6e6e6;
 }
-body .ui-menu .ui-menu-list .ui-widget-header:hover .ui-icon {
+body .ng-menu .ng-menu-list .ng-widget-header:hover .ng-icon {
     color: #2d353c;
 }
-body .ui-menu .ui-menu-list .ui-widget-header:first-child {
+body .ng-menu .ng-menu-list .ng-widget-header:first-child {
     margin-top: 0;
 }
-body .ui-menu .ui-menu-list .ui-menuitem {
+body .ng-menu .ng-menu-list .ng-menuitem {
     margin: 0;
     box-sizing: border-box;
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
 }
-body .ui-menu .ui-menu-list .ui-menuitem .ui-menuitem-link {
+body .ng-menu .ng-menu-list .ng-menuitem .ng-menuitem-link {
     padding: 0.5em 0.75em;
     width: 100%;
     box-sizing: border-box;
@@ -2003,54 +2003,54 @@ body .ui-menu .ui-menu-list .ui-menuitem .ui-menuitem-link {
     border-radius: 0;
     color: #373a3c;
 }
-body .ui-menu .ui-menu-list .ui-menuitem .ui-menuitem-link:hover,
-body .ui-menu .ui-menu-list .ui-menuitem.ui-menuitem-active > .ui-menuitem-link {
+body .ng-menu .ng-menu-list .ng-menuitem .ng-menuitem-link:hover,
+body .ng-menu .ng-menu-list .ng-menuitem.ng-menuitem-active > .ng-menuitem-link {
     background-color: #0275d8;
     color: #ffffff;
 }
-body .ui-menu .ui-menu-list .ui-menu-child {
+body .ng-menu .ng-menu-list .ng-menu-child {
     padding: 0;
 }
-body .ui-menu .ui-menu-list .ui-menu-child.ui-shadow {
+body .ng-menu .ng-menu-list .ng-menu-child.ng-shadow {
     -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
 }
-body .ui-menu.ui-menubar {
+body .ng-menu.ng-menubar {
     background-color: #ffffff;
     border-color: #e6e6e6;
 }
-body .ui-menu.ui-menubar > .ui-menu-list > .ui-menuitem {
+body .ng-menu.ng-menubar > .ng-menu-list > .ng-menuitem {
     width: auto;
 }
-body .ui-menu.ui-menubar > .ui-menu-list > .ui-menuitem > .ui-menuitem-link {
+body .ng-menu.ng-menubar > .ng-menu-list > .ng-menuitem > .ng-menuitem-link {
     color: #2d353c;
 }
-body .ui-menu.ui-menubar > .ui-menu-list > .ui-menuitem > .ui-menuitem-link .ui-menuitem-icon {
+body .ng-menu.ng-menubar > .ng-menu-list > .ng-menuitem > .ng-menuitem-link .ng-menuitem-icon {
     color: #767b7f;
 }
-body .ui-menu.ui-menubar > .ui-menu-list > .ui-menuitem > .ui-menuitem-link:hover {
+body .ng-menu.ng-menubar > .ng-menu-list > .ng-menuitem > .ng-menuitem-link:hover {
     color: #ffffff;
 }
-body .ui-menu.ui-menubar > .ui-menu-list > .ui-menuitem > .ui-menuitem-link:hover .ui-menuitem-icon {
+body .ng-menu.ng-menubar > .ng-menu-list > .ng-menuitem > .ng-menuitem-link:hover .ng-menuitem-icon {
     color: #ffffff;
 }
-body .ui-menu.ui-menubar > .ui-menu-list > .ui-menuitem.ui-menubar-options {
+body .ng-menu.ng-menubar > .ng-menu-list > .ng-menuitem.ng-menubar-options {
     margin-right: 8px;
 }
-body .ui-menu.ui-megamenu .ui-menu-list > table > tbody > tr > td {
+body .ng-menu.ng-megamenu .ng-menu-list > table > tbody > tr > td {
     padding: 0;
 }
-body .ui-menu.ui-megamenu.ui-megamenu-vertical > .ui-menu-list .ui-menuitem {
+body .ng-menu.ng-megamenu.ng-megamenu-vertical > .ng-menu-list .ng-menuitem {
     width: 100%;
 }
-body .ui-tabmenu {
+body .ng-tabmenu {
     border: 0 none;
 }
-body .ui-tabmenu .ui-tabmenu-nav {
+body .ng-tabmenu .ng-tabmenu-nav {
     padding: 0;
 }
-body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem {
+body .ng-tabmenu .ng-tabmenu-nav .ng-tabmenuitem {
     margin: 0;
     position: static;
     -moz-transition: background-color 0.3s;
@@ -2061,46 +2061,46 @@ body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem {
     -webkit-border-radius: 0;
     border-radius: 0;
 }
-body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem .ui-menuitem-link {
+body .ng-tabmenu .ng-tabmenu-nav .ng-tabmenuitem .ng-menuitem-link {
     color: #2d353c;
     padding: 0.375em 0.75em;
 }
-body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem .ui-menuitem-link .ui-menuitem-icon,
-body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem .ui-menuitem-link .ui-menuitem-text {
+body .ng-tabmenu .ng-tabmenu-nav .ng-tabmenuitem .ng-menuitem-link .ng-menuitem-icon,
+body .ng-tabmenu .ng-tabmenu-nav .ng-tabmenuitem .ng-menuitem-link .ng-menuitem-text {
     vertical-align: middle;
     display: inline-block;
     float: none;
 }
-body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem .ui-menuitem-link .ui-menuitem-icon {
+body .ng-tabmenu .ng-tabmenu-nav .ng-tabmenuitem .ng-menuitem-link .ng-menuitem-icon {
     color: #767b7f;
 }
-body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem:not(.ui-state-active):hover {
+body .ng-tabmenu .ng-tabmenu-nav .ng-tabmenuitem:not(.ng-state-active):hover {
     background-color: #e6e6e6;
 }
-body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem:hover .ui-menuitem-icon {
+body .ng-tabmenu .ng-tabmenu-nav .ng-tabmenuitem:hover .ng-menuitem-icon {
     color: #2d353c;
 }
-body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem.ui-state-active .ui-menuitem-link {
+body .ng-tabmenu .ng-tabmenu-nav .ng-tabmenuitem.ng-state-active .ng-menuitem-link {
     background-color: #0275d8;
     color: #ffffff;
 }
-body .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem.ui-state-active .ui-menuitem-link .ui-menuitem-icon {
+body .ng-tabmenu .ng-tabmenu-nav .ng-tabmenuitem.ng-state-active .ng-menuitem-link .ng-menuitem-icon {
     color: #ffffff;
 }
-body .ui-menubutton .ui-button.ui-button-text-icon-left .ui-icon {
+body .ng-menubutton .ng-button.ng-button-text-icon-left .ng-icon {
     margin-top: -.625em;
 }
-body .ui-panelmenu .fa {
+body .ng-panelmenu .fa {
     position: static;
 }
-body .ui-panelmenu .ui-panelmenu-panel {
+body .ng-panelmenu .ng-panelmenu-panel {
     border: 1px solid #c7c7c7;
     border-bottom: none;
 }
-body .ui-panelmenu .ui-panelmenu-panel:last-child {
+body .ng-panelmenu .ng-panelmenu-panel:last-child {
     border-bottom: 1px solid #c7c7c7;
 }
-body .ui-panelmenu .ui-panelmenu-header {
+body .ng-panelmenu .ng-panelmenu-header {
     background-color: #ffffff;
     padding: 0;
     font-size: 1em;
@@ -2110,29 +2110,29 @@ body .ui-panelmenu .ui-panelmenu-header {
     -webkit-transition: background-color 0.3s;
     transition: background-color 0.3s;
 }
-body .ui-panelmenu .ui-panelmenu-header .fa {
+body .ng-panelmenu .ng-panelmenu-header .fa {
     color: #767b7f;
 }
-body .ui-panelmenu .ui-panelmenu-header a {
+body .ng-panelmenu .ng-panelmenu-header a {
     padding: 0.5em 0.75em;
     color: #2d353c;
 }
-body .ui-panelmenu .ui-panelmenu-header:not(.ui-state-active):hover {
+body .ng-panelmenu .ng-panelmenu-header:not(.ng-state-active):hover {
     background-color: #e6e6e6;
 }
-body .ui-panelmenu .ui-panelmenu-header:not(.ui-state-active):hover .fa {
+body .ng-panelmenu .ng-panelmenu-header:not(.ng-state-active):hover .fa {
     color: #2d353c;
 }
-body .ui-panelmenu .ui-panelmenu-header.ui-state-active {
+body .ng-panelmenu .ng-panelmenu-header.ng-state-active {
     background-color: #0275d8;
 }
-body .ui-panelmenu .ui-panelmenu-header.ui-state-active a {
+body .ng-panelmenu .ng-panelmenu-header.ng-state-active a {
     color: #ffffff;
 }
-body .ui-panelmenu .ui-panelmenu-header.ui-state-active .fa {
+body .ng-panelmenu .ng-panelmenu-header.ng-state-active .fa {
     color: #ffffff;
 }
-body .ui-panelmenu .ui-panelmenu-content .ui-menuitem-link {
+body .ng-panelmenu .ng-panelmenu-content .ng-menuitem-link {
     padding: 0.375em 0.75em;
     color: #373a3c;
     -moz-transition: background-color 0.3s;
@@ -2143,24 +2143,24 @@ body .ui-panelmenu .ui-panelmenu-content .ui-menuitem-link {
     -webkit-border-radius: 0;
     border-radius: 0;
 }
-body .ui-panelmenu .ui-panelmenu-content .ui-menuitem-link:hover {
+body .ng-panelmenu .ng-panelmenu-content .ng-menuitem-link:hover {
     background-color: #f4f3f4;
     color: #373a3c;
 }
-body .ui-panelmenu .ui-panelmenu-content .ui-menuitem-link > span.fa {
+body .ng-panelmenu .ng-panelmenu-content .ng-menuitem-link > span.fa {
     display: inline-block;
     vertical-align: middle;
     left: auto;
 }
-body .ui-panelmenu .ui-panelmenu-content .ui-menuitem-link .ui-menuitem-text {
+body .ng-panelmenu .ng-panelmenu-content .ng-menuitem-link .ng-menuitem-text {
     display: inline-block;
     vertical-align: middle;
 }
-body .ui-progressbar {
+body .ng-progressbar {
     border: 0 none;
     background-color: #e3e3e3;
 }
-body .ui-progressbar .ui-progressbar-value {
+body .ng-progressbar .ng-progressbar-value {
     border: 0 none;
     background: #299bfd;
     margin: 0;
@@ -2168,10 +2168,10 @@ body .ui-progressbar .ui-progressbar-value {
     -webkit-border-radius: 0;
     border-radius: 0;
 }
-body .ui-progressbar .ui-progressbar-label {
+body .ng-progressbar .ng-progressbar-label {
     margin-top: -0.063em;
 }
-body .ui-galleria .ui-galleria-nav-prev {
+body .ng-galleria .ng-galleria-nav-prev {
     font-size: 1em;
     color: #767b7f;
     -moz-transition: color 0.3s;
@@ -2179,10 +2179,10 @@ body .ui-galleria .ui-galleria-nav-prev {
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
 }
-body .ui-galleria .ui-galleria-nav-prev:hover {
+body .ng-galleria .ng-galleria-nav-prev:hover {
     color: #2d353c;
 }
-body .ui-galleria .ui-galleria-nav-next {
+body .ng-galleria .ng-galleria-nav-next {
     font-size: 1em;
     color: #767b7f;
     -moz-transition: color 0.3s;
@@ -2190,59 +2190,59 @@ body .ui-galleria .ui-galleria-nav-next {
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
 }
-body .ui-galleria .ui-galleria-nav-next:hover {
+body .ng-galleria .ng-galleria-nav-next:hover {
     color: #2d353c;
 }
 
-body .ui-slidemenu .ui-slidemenu-backward {
+body .ng-slidemenu .ng-slidemenu-backward {
     border: 0 none;
     background-color: #f5f5f5;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
 
-body .ui-inputgroup .ui-inputgroup-addon {
+body .ng-inputgroup .ng-inputgroup-addon {
   border-color: rgba(0,0,0,.15);
   background-color: #eceeef;
   color: #55595c;
   padding: 0.5em 0.75em;
 }
 
-body  .ui-inputgroup .ui-inputgroup-addon:first-child {
+body  .ng-inputgroup .ng-inputgroup-addon:first-child {
     border-top-left-radius: 0.25em;
     border-bottom-left-radius: 0.25em; 
 }
  
-body .ui-inputgroup .ui-inputgroup-addon:last-child {
+body .ng-inputgroup .ng-inputgroup-addon:last-child {
     border-top-right-radius: 0.25em;
     border-bottom-right-radius: 0.25em;
 }
 
-body .ui-inputgroup .ui-button:first-child {
+body .ng-inputgroup .ng-button:first-child {
   border-top-left-radius: 0.25em;
   border-bottom-left-radius: 0.25em;
 
 }
-.ui-inputgroup .ui-button:last-child {
+.ng-inputgroup .ng-button:last-child {
   border-top-right-radius: 0.25em;
   border-bottom-right-radius: 0.25em;
 }
 
 
 /* Validation */
-.ui-inputtext.ng-dirty.ng-invalid,
-p-dropdown.ng-dirty.ng-invalid > .ui-dropdown,
-p-autocomplete.ng-dirty.ng-invalid > .ui-autocomplete > .ui-inputtext,
-p-calendar.ng-dirty.ng-invalid > .ui-inputtext,
-p-chips.ng-dirty.ng-invalid > .ui-inputtext,
-p-inputmask.ng-dirty.ng-invalid > .ui-inputtext,
-p-checkbox.ng-dirty.ng-invalid .ui-chkbox-box,
-p-radiobutton.ng-dirty.ng-invalid .ui-radiobutton-box,
-p-inputswitch.ng-dirty.ng-invalid .ui-inputswitch,
-p-listbox.ng-dirty.ng-invalid .ui-inputtext,
-p-multiselect.ng-dirty.ng-invalid > .ui-multiselect,
-p-spinner.ng-dirty.ng-invalid > .ui-inputtext,
-p-selectbutton.ng-dirty.ng-invalid .ui-button,
-p-togglebutton.ng-dirty.ng-invalid .ui-button {
+.ng-inputtext.ng-dirty.ng-invalid,
+p-dropdown.ng-dirty.ng-invalid > .ng-dropdown,
+p-autocomplete.ng-dirty.ng-invalid > .ng-autocomplete > .ng-inputtext,
+p-calendar.ng-dirty.ng-invalid > .ng-inputtext,
+p-chips.ng-dirty.ng-invalid > .ng-inputtext,
+p-inputmask.ng-dirty.ng-invalid > .ng-inputtext,
+p-checkbox.ng-dirty.ng-invalid .ng-chkbox-box,
+p-radiobutton.ng-dirty.ng-invalid .ng-radiobutton-box,
+p-inputswitch.ng-dirty.ng-invalid .ng-inputswitch,
+p-listbox.ng-dirty.ng-invalid .ng-inputtext,
+p-multiselect.ng-dirty.ng-invalid > .ng-multiselect,
+p-spinner.ng-dirty.ng-invalid > .ng-inputtext,
+p-selectbutton.ng-dirty.ng-invalid .ng-button,
+p-togglebutton.ng-dirty.ng-invalid .ng-button {
     border-bottom-color: #e13131;
 }

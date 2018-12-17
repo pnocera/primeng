@@ -7,8 +7,8 @@ import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
 @Component({
   template: `<p-sidebar [(visible)]="visibleSidebar1">
   <h1 style="font-weight:normal">Full Screen Sidebar</h1>
-  <button type="button" (click)="visibleSidebar1 = false" label="Save" class="ui-button-success"></button>
-  <button type="button" (click)="visibleSidebar1 = false" label="Cancel" class="ui-button-secondary"></button>
+  <button type="button" (click)="visibleSidebar1 = false" label="Save" class="ng-button-success"></button>
+  <button type="button" (click)="visibleSidebar1 = false" label="Cancel" class="ng-button-secondary"></button>
   </p-sidebar>
   <button type="button" (click)="visibleSidebar1 = true" icon="pi pi-arrow-right"></button>`
 })
@@ -51,26 +51,26 @@ describe('Sidebar', () => {
       sidebar.showCloseIcon = false;
       fixture.detectChanges();
 
-      const closeEl = fixture.debugElement.query(By.css('.ui-sidebar-close'));
+      const closeEl = fixture.debugElement.query(By.css('.ng-sidebar-close'));
       expect(closeEl).toBeFalsy();
     });
 
     it('should set positions', () => {
       fixture.detectChanges();
       const containerEl = fixture.debugElement.query(By.css('div')).nativeElement;
-      expect(containerEl.className).toContain('ui-sidebar-left');
+      expect(containerEl.className).toContain('ng-sidebar-left');
       sidebar.position = 'right';
       fixture.detectChanges();
 
-      expect(containerEl.className).toContain('ui-sidebar-right');
+      expect(containerEl.className).toContain('ng-sidebar-right');
       sidebar.position = 'bottom';
       fixture.detectChanges();
 
-      expect(containerEl.className).toContain('ui-sidebar-bottom');
+      expect(containerEl.className).toContain('ng-sidebar-bottom');
       sidebar.position = 'top';
       fixture.detectChanges();
 
-      expect(containerEl.className).toContain('ui-sidebar-top');      
+      expect(containerEl.className).toContain('ng-sidebar-top');      
     });
 
     it('should open', () => {
@@ -94,7 +94,7 @@ describe('Sidebar', () => {
       const containerEl = fixture.debugElement.query(By.css('div'));
       expect(containerEl.nativeElement.style.opacity).toEqual('1');
       expect(sidebarOpenSpy).toHaveBeenCalled();
-      expect(containerEl.nativeElement.className).toContain('ui-sidebar-full');
+      expect(containerEl.nativeElement.className).toContain('ng-sidebar-full');
     });
 
     it('should close', () => {

@@ -11,22 +11,22 @@ import {Subscription}   from 'rxjs';
 @Component({
     selector: 'p-confirmDialog',
     template: `
-        <div [ngClass]="{'ui-dialog ui-confirmdialog ui-widget ui-widget-content ui-corner-all ui-shadow':true,'ui-dialog-rtl':rtl}" (mousedown)="moveOnTop()"
+        <div [ngClass]="{'ng-dialog ng-confirmdialog ng-widget ng-widget-content ng-corner-all ng-shadow':true,'ng-dialog-rtl':rtl}" (mousedown)="moveOnTop()"
             [@animation]="{value: 'visible', params: {transitionParams: transitionOptions}}" (@animation.start)="onAnimationStart($event)" *ngIf="visible">
-            <div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top">
-                <span class="ui-dialog-title" *ngIf="header">{{header}}</span>
-                <a *ngIf="closable" [ngClass]="{'ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all':true}" tabindex="0" role="button" (click)="close($event)" (keydown.enter)="close($event)">
+            <div class="ng-dialog-titlebar ng-widget-header ng-helper-clearfix ng-corner-top">
+                <span class="ng-dialog-title" *ngIf="header">{{header}}</span>
+                <a *ngIf="closable" [ngClass]="{'ng-dialog-titlebar-icon ng-dialog-titlebar-close ng-corner-all':true}" tabindex="0" role="button" (click)="close($event)" (keydown.enter)="close($event)">
                     <span class="pi pi-fw pi-times"></span>
                 </a>
             </div>
-            <div #content class="ui-dialog-content ui-widget-content">
-                <i [ngClass]="'ui-confirmdialog-icon'" [class]="icon" *ngIf="icon"></i>
-                <span class="ui-confirmdialog-message" [innerHTML]="message"></span>
+            <div #content class="ng-dialog-content ng-widget-content">
+                <i [ngClass]="'ng-confirmdialog-icon'" [class]="icon" *ngIf="icon"></i>
+                <span class="ng-confirmdialog-message" [innerHTML]="message"></span>
             </div>
-            <div class="ui-dialog-footer ui-widget-content" *ngIf="footer">
+            <div class="ng-dialog-footer ng-widget-content" *ngIf="footer">
                 <ng-content select="p-footer"></ng-content>
             </div>
-            <div class="ui-dialog-footer ui-widget-content" *ngIf="!footer">
+            <div class="ng-dialog-footer ng-widget-content" *ngIf="!footer">
                 <button type="button" pButton [icon]="acceptIcon" [label]="acceptLabel" (click)="accept()" [class]="acceptButtonStyleClass" *ngIf="acceptVisible"></button>
                 <button type="button" pButton [icon]="rejectIcon" [label]="rejectLabel" (click)="reject()" [class]="rejectButtonStyleClass" *ngIf="rejectVisible"></button>
             </div>
@@ -173,7 +173,7 @@ export class ConfirmDialog implements OnDestroy {
             case 'visible':
                 this.container = event.element;
                 this.setDimensions();
-                this.contentContainer = this.domHandler.findSingle(this.container, '.ui-dialog-content');
+                this.contentContainer = this.domHandler.findSingle(this.container, '.ng-dialog-content');
                 this.domHandler.findSingle(this.container, 'button').focus();
                 this.appendContainer();
                 this.moveOnTop();
@@ -278,16 +278,16 @@ export class ConfirmDialog implements OnDestroy {
         if (!this.mask) {
             this.mask = document.createElement('div');
             this.mask.style.zIndex = String(parseInt(this.container.style.zIndex) - 1);
-            this.domHandler.addMultipleClasses(this.mask, 'ui-widget-overlay ui-dialog-mask');
+            this.domHandler.addMultipleClasses(this.mask, 'ng-widget-overlay ng-dialog-mask');
             document.body.appendChild(this.mask);
-            this.domHandler.addClass(document.body, 'ui-overflow-hidden');
+            this.domHandler.addClass(document.body, 'ng-overflow-hidden');
         }
     }
     
     disableModality() {
         if (this.mask) {
             document.body.removeChild(this.mask);
-            this.domHandler.removeClass(document.body, 'ui-overflow-hidden');
+            this.domHandler.removeClass(document.body, 'ng-overflow-hidden');
             this.mask = null;
         }
     }

@@ -1,28 +1,28 @@
-.ui-slidemenu {
+.ng-slidemenu {
     width: 12.5em;
     padding: .25em;
 }
 
-.ui-slidemenu.ui-slidemenu-dynamic {
+.ng-slidemenu.ng-slidemenu-dynamic {
     position: absolute;
 }
 
-.ui-slidemenu .ui-menu-separator {
+.ng-slidemenu .ng-menu-separator {
     border-width: 1px 0 0 0;
 }
 
-.ui-slidemenu ul {
+.ng-slidemenu ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.ui-slidemenu .ui-slidemenu-rootlist {
+.ng-slidemenu .ng-slidemenu-rootlist {
     position: absolute;
     top: 0;
 }
 
-.ui-slidemenu .ui-submenu-list {
+.ng-slidemenu .ng-submenu-list {
     display: none;
     position: absolute;
     top: 0;
@@ -30,46 +30,46 @@
     padding: .25em;
 }
 
-.ui-slidemenu .ui-menuitem-link {
+.ng-slidemenu .ng-menuitem-link {
     padding: .25em;
     display: block;
     position: relative;
     text-decoration: none;
 }
 
-.ui-slidemenu .ui-menuitem-icon {
+.ng-slidemenu .ng-menuitem-icon {
     margin-right: .25em;
     vertical-align: middle;
 }
 
-.ui-slidemenu .ui-menuitem-text {
+.ng-slidemenu .ng-menuitem-text {
     vertical-align: middle;
 }
 
 
-.ui-slidemenu .ui-menuitem {
+.ng-slidemenu .ng-menuitem {
     position: relative;
     margin: .125em 0;
 }
 
-.ui-slidemenu .ui-menuitem-link .ui-submenu-icon {
+.ng-slidemenu .ng-menuitem-link .ng-submenu-icon {
     position: absolute;
     margin-top: -.5em;
     right: 0;
     top: 50%;
 }
 
-.ui-slidemenu .ui-slidemenu-wrapper {
+.ng-slidemenu .ng-slidemenu-wrapper {
     position: relative;
 }
 
-.ui-slidemenu .ui-slidemenu-content {
+.ng-slidemenu .ng-slidemenu-content {
     overflow-x: hidden;
     overflow-y: auto;
     position: relative;
 }
 
-.ui-slidemenu-backward {
+.ng-slidemenu-backward {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -78,27 +78,27 @@
     display: none;
 }
 
-.ui-slidemenu-backward .ui-slidemenu-backward-icon {
+.ng-slidemenu-backward .ng-slidemenu-backward-icon {
     vertical-align: middle;
 }
 
-.ui-slidemenu-backward span {
+.ng-slidemenu-backward span {
     vertical-align: middle;
 }
 
-.ui-slidemenu .ui-menuitem-active {
+.ng-slidemenu .ng-menuitem-active {
     position: static;
 }
 
-.ui-slidemenu .ui-menuitem-active > .ui-submenu > .ui-submenu-list {
+.ng-slidemenu .ng-menuitem-active > .ng-submenu > .ng-submenu-list {
     display: block;
 }
 
-.ui-slidemenu ul:not(.ui-active-submenu) > .ui-menuitem:not(.ui-menuitem-active),
-.ui-slidemenu .ui-active-submenu > .ui-menuitem-active > .ui-submenu > .ui-submenu-list {
+.ng-slidemenu ul:not(.ng-active-submenu) > .ng-menuitem:not(.ng-menuitem-active),
+.ng-slidemenu .ng-active-submenu > .ng-menuitem-active > .ng-submenu > .ng-submenu-list {
     display: none;
 }
 
-.ui-slidemenu .ui-active-submenu > .ui-menuitem-active ~ .ui-menuitem {
+.ng-slidemenu .ng-active-submenu > .ng-menuitem-active ~ .ng-menuitem {
     display: block;
 }

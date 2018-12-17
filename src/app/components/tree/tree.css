@@ -1,12 +1,12 @@
-.ui-tree {
+.ng-tree {
     width: 18em;
 }
 
-.ui-tree .ui-treenode-selectable.ui-treenode-content {
+.ng-tree .ng-treenode-selectable.ng-treenode-content {
     cursor: pointer;
 }
 
-.ui-tree .ui-tree-container {
+.ng-tree .ng-tree-container {
     height: 100%;
     margin: 0;
     overflow: auto;
@@ -14,16 +14,16 @@
     white-space: nowrap;
 }
 
-.ui-tree-empty-message {
+.ng-tree-empty-message {
     padding: .25em;
 }
 
-.ui-tree .ui-treenode-children {
+.ng-tree .ng-treenode-children {
     margin: 0;
     padding: 0 0 0 1em;
 }
 
-.ui-tree .ui-treenode {
+.ng-tree .ng-treenode {
     background-attachment: scroll;
     background-color: transparent;
     background-image: none;
@@ -34,140 +34,140 @@
     padding: .125em 0 0 0;
 }
 
-.ui-tree .ui-treenode-droppoint {
+.ng-tree .ng-treenode-droppoint {
     height: 4px;
     list-style-type: none;
 }
 
-.ui-tree .ui-treenode-droppoint-active {
+.ng-tree .ng-treenode-droppoint-active {
     border: 0 none;
 }
 
-.ui-tree .ui-tree-toggler {
+.ng-tree .ng-tree-toggler {
     cursor: pointer;
     display: inline-block;
     vertical-align: middle;
 }
 
-.ui-tree .ui-treenode-icon {
+.ng-tree .ng-treenode-icon {
     display: inline-block;
     vertical-align: middle;
 }
 
-.ui-tree .ui-treenode-label {
+.ng-tree .ng-treenode-label {
     display: inline-block;
     padding: 0 .25em;
     vertical-align: middle;
 }
 
-.ui-tree .ui-treenode-label.ui-state-hover,
-.ui-tree .ui-treenode-label.ui-state-highlight {
+.ng-tree .ng-treenode-label.ng-state-hover,
+.ng-tree .ng-treenode-label.ng-state-highlight {
     font-weight: normal;
     border: 0 none;
 }
 
-.ui-tree .ui-treenode.ui-treenode-leaf > .ui-treenode-content > .ui-tree-toggler {
+.ng-tree .ng-treenode.ng-treenode-leaf > .ng-treenode-content > .ng-tree-toggler {
     visibility: hidden;
 }
 
-.ui-tree .ui-chkbox-box {
+.ng-tree .ng-chkbox-box {
     cursor: pointer;
 }
 
-.ui-tree .ui-chkbox {
+.ng-tree .ng-chkbox {
     display: inline-block;
     vertical-align: middle;
 }
 
-.ui-tree .ui-chkbox .ui-chkbox-icon {
+.ng-tree .ng-chkbox .ng-chkbox-icon {
     margin-left: 1px;
 }
 
 /** Fluid **/
-.ui-fluid .ui-tree {
+.ng-fluid .ng-tree {
     width: 100%;
 }
 
 /** Horizontal Tree **/
-.ui-tree-horizontal {
+.ng-tree-horizontal {
     width:auto;
     padding: .5em 0;
     overflow:auto;
 }
 
-.ui-tree.ui-tree-horizontal table,
-.ui-tree.ui-tree-horizontal tr,
-.ui-tree.ui-tree-horizontal td {
+.ng-tree.ng-tree-horizontal table,
+.ng-tree.ng-tree-horizontal tr,
+.ng-tree.ng-tree-horizontal td {
     border-collapse: collapse;
     margin: 0;
     padding: 0;
     vertical-align: middle;
 }
 
-.ui-tree.ui-tree-horizontal .ui-tree-toggler {
+.ng-tree.ng-tree-horizontal .ng-tree-toggler {
     vertical-align: middle;
     margin: 0;
 }
 
-.ui-tree-horizontal .ui-treenode-content {
+.ng-tree-horizontal .ng-treenode-content {
     font-weight: normal;
     padding: 0.4em 1em 0.4em 0.2em;
 }
 
-.ui-tree.ui-tree-horizontal .ui-tree-node-label {
+.ng-tree.ng-tree-horizontal .ng-tree-node-label {
     margin: 0;
 }
 
-.ui-tree-horizontal .ui-treenode-parent .ui-treenode-content {
+.ng-tree-horizontal .ng-treenode-parent .ng-treenode-content {
     font-weight: normal;
     white-space: nowrap;
 }
 
-.ui-tree.ui-tree-horizontal .ui-treenode {
+.ng-tree.ng-tree-horizontal .ng-treenode {
     background: url("./images/line.gif") repeat-x scroll center center transparent;
     padding: .25em 2.5em;
 }
 
-.ui-tree.ui-tree-horizontal .ui-treenode.ui-treenode-leaf,
-.ui-tree.ui-tree-horizontal .ui-treenode.ui-treenode-collapsed {
+.ng-tree.ng-tree-horizontal .ng-treenode.ng-treenode-leaf,
+.ng-tree.ng-tree-horizontal .ng-treenode.ng-treenode-collapsed {
     padding-right: 0;
 }
 
-.ui-tree.ui-tree-horizontal .ui-treenode-children {
+.ng-tree.ng-tree-horizontal .ng-treenode-children {
     padding: 0;
     margin: 0;
 }
 
-.ui-tree.ui-tree-horizontal .ui-treenode-connector {
+.ng-tree.ng-tree-horizontal .ng-treenode-connector {
     width: 1px;
 }
 
-.ui-tree.ui-tree-horizontal .ui-treenode-connector-table {
+.ng-tree.ng-tree-horizontal .ng-treenode-connector-table {
     height: 100%;
     width: 1px;
 }
 
-.ui-tree.ui-tree-horizontal .ui-treenode-connector-line {
+.ng-tree.ng-tree-horizontal .ng-treenode-connector-line {
     background: url("./images/line.gif") repeat-y scroll 0 0 transparent;
     width: 1px;
 }
 
-.ui-tree.ui-tree-horizontal table {
+.ng-tree.ng-tree-horizontal table {
 	height: 0;
 }
 
-.ui-tree.ui-tree-horizontal .ui-chkbox {
+.ng-tree.ng-tree-horizontal .ng-chkbox {
     vertical-align: bottom;
     margin-right: .25em;
 }
 
 /** Loading **/
-.ui-tree.ui-tree-loading {
+.ng-tree.ng-tree-loading {
     position: relative;
     min-height: 4em;
 }
 
-.ui-tree .ui-tree-loading-mask {
+.ng-tree .ng-tree-loading-mask {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -176,7 +176,7 @@
     z-index: 1;
 }
 
-.ui-tree .ui-tree-loading-content {
+.ng-tree .ng-tree-loading-content {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -185,6 +185,6 @@
     margin-left: -1em;
 }
 
-.ui-tree .ui-tree-loading-content .ui-tree-loading-icon {
+.ng-tree .ng-tree-loading-content .ng-tree-loading-icon {
     font-size: 2em;
 } 

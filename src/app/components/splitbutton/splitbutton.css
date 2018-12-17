@@ -1,26 +1,26 @@
-.ui-splitbutton {
+.ng-splitbutton {
     position: relative;
     display: inline-block;
     zoom: 1;
 }
 
-.ui-splitbutton .ui-button.ui-splitbutton-menubutton {
+.ng-splitbutton .ng-button.ng-splitbutton-menubutton {
     width: 2em;
     vertical-align: top;
 }
 
-.ui-splitbutton.ui-state-disabled button {
+.ng-splitbutton.ng-state-disabled button {
     cursor: default;
 }
 
-.ui-fluid .ui-splitbutton {
+.ng-fluid .ng-splitbutton {
     width: 100%;
 }
 
-.ui-fluid .ui-splitbutton .ui-button:first-child {
+.ng-fluid .ng-splitbutton .ng-button:first-child {
     width: calc(100% - 2em);
 }
 
-.ui-fluid .ui-splitbutton .ui-button.ui-splitbutton-menubutton {
+.ng-fluid .ng-splitbutton .ng-button.ng-splitbutton-menubutton {
     width: 2em;
 }

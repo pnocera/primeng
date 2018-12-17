@@ -17,12 +17,12 @@ export class InplaceContent {}
 @Component({
     selector: 'p-inplace',
     template: `
-        <div [ngClass]="{'ui-inplace ui-widget': true, 'ui-inplace-closable': closable}" [ngStyle]="style" [class]="styleClass">
-            <div class="ui-inplace-display" (click)="activate($event)"
-                [ngClass]="{'ui-state-disabled':disabled}" *ngIf="!active">
+        <div [ngClass]="{'ng-inplace ng-widget': true, 'ng-inplace-closable': closable}" [ngStyle]="style" [class]="styleClass">
+            <div class="ng-inplace-display" (click)="activate($event)"
+                [ngClass]="{'ng-state-disabled':disabled}" *ngIf="!active">
                 <ng-content select="[pInplaceDisplay]"></ng-content>
             </div>
-            <div class="ui-inplace-content" *ngIf="active">
+            <div class="ng-inplace-content" *ngIf="active">
                 <ng-content select="[pInplaceContent]"></ng-content>
                 <button type="button" icon="pi pi-times" pButton (click)="deactivate($event)" *ngIf="closable"></button>
             </div>

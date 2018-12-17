@@ -1,42 +1,42 @@
-.ui-menu {
+.ng-menu {
     width: 12.5em;
     padding: .25em;
 }
 
-.ui-menu.ui-menu-dynamic {
+.ng-menu.ng-menu-dynamic {
     position: absolute;
 }
 
-.ui-menu .ui-menu-separator {
+.ng-menu .ng-menu-separator {
     border-width: 1px 0 0 0;
 }
 
-.ui-menu ul {
+.ng-menu ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.ui-menu .ui-submenu-header {
+.ng-menu .ng-submenu-header {
     padding: .25em .5em;
     margin: .125em 0;
 }
 
-.ui-menu .ui-menuitem {
+.ng-menu .ng-menuitem {
     margin: .125em 0;
 }
 
-.ui-menu .ui-menuitem-link {
+.ng-menu .ng-menuitem-link {
     padding: .25em;
     display: block;
     text-decoration: none;
 }
 
-.ui-menu .ui-menuitem-icon {
+.ng-menu .ng-menuitem-icon {
     margin-right: .25em;
     vertical-align: middle;
 }
 
-.ui-menu .ui-menuitem-text {
+.ng-menu .ng-menuitem-text {
     vertical-align: middle;
 }

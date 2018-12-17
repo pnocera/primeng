@@ -40,7 +40,7 @@ describe('Menu', () => {
     it('should display by default', () => {
       fixture.detectChanges();
       
-      const containerEl = fixture.debugElement.query(By.css('.ui-menu'));
+      const containerEl = fixture.debugElement.query(By.css('.ng-menu'));
       expect(containerEl).toBeTruthy();
     });
 
@@ -48,7 +48,7 @@ describe('Menu', () => {
       menu.popup = true;
       fixture.detectChanges();
       
-      const containerEl = fixture.debugElement.query(By.css('.ui-menu'));
+      const containerEl = fixture.debugElement.query(By.css('.ng-menu'));
       expect(containerEl).toBeFalsy();
     });
 
@@ -57,7 +57,7 @@ describe('Menu', () => {
       menu.styleClass = "Primeng ROCKS!";
       fixture.detectChanges();
       
-      const containerEl = fixture.debugElement.query(By.css('.ui-menu'));
+      const containerEl = fixture.debugElement.query(By.css('.ng-menu'));
       expect(containerEl.nativeElement.className).toContain("Primeng ROCKS!");      
       expect(containerEl.nativeElement.className).toContain(menu.styleClass);
       expect(containerEl.nativeElement.style.primeng).toEqual(menu.style.primeng);
@@ -115,10 +115,10 @@ describe('Menu', () => {
       }]; 
       fixture.detectChanges();
       
-      const menuItemsEl = fixture.debugElement.queryAll(By.css('.ui-menuitem'));
+      const menuItemsEl = fixture.debugElement.queryAll(By.css('.ng-menuitem'));
       expect(menuItemsEl.length).toEqual(2);
       for(let menuItem of menuItemsEl)
-        expect(menuItem.nativeElement.className).toContain("ui-helper-hidden");
+        expect(menuItem.nativeElement.className).toContain("ng-helper-hidden");
     });
 
     it('should not show items (subMenu visible false)', () => {
@@ -131,10 +131,10 @@ describe('Menu', () => {
       }]; 
       fixture.detectChanges();
       
-      const menuItemsEl = fixture.debugElement.queryAll(By.css('.ui-menuitem'));
+      const menuItemsEl = fixture.debugElement.queryAll(By.css('.ng-menuitem'));
       expect(menuItemsEl.length).toEqual(2);
       for(let menuItem of menuItemsEl)
-        expect(menuItem.nativeElement.className).toContain("ui-helper-hidden");
+        expect(menuItem.nativeElement.className).toContain("ng-helper-hidden");
     });
 
     it('should change menuItemStyle and menuItemStyleClass', () => {
@@ -147,7 +147,7 @@ describe('Menu', () => {
       }]; 
       fixture.detectChanges();
       
-      const menuItemsEl = fixture.debugElement.queryAll(By.css('.ui-menuitem'));
+      const menuItemsEl = fixture.debugElement.queryAll(By.css('.ng-menuitem'));
       expect(menuItemsEl.length).toEqual(2);
       for(let menuItem of menuItemsEl){
         expect(menuItem.nativeElement.className).toContain("Primeng ROCKS!");
@@ -166,7 +166,7 @@ describe('Menu', () => {
       }]; 
       fixture.detectChanges();
       
-      const seperatorEl = fixture.debugElement.query(By.css('.ui-menu-separator'));
+      const seperatorEl = fixture.debugElement.query(By.css('.ng-menu-separator'));
       const menuItemsEl = fixture.debugElement.queryAll(By.css('li'));
       expect(seperatorEl).toBeTruthy();
       expect(menuItemsEl.length).toEqual(4); 
@@ -181,8 +181,8 @@ describe('Menu', () => {
       }]; 
       fixture.detectChanges();
       
-      const menuItemLink = fixture.debugElement.query(By.css('.ui-menuitem-link'));
-      const iconEl = fixture.debugElement.query(By.css('.ui-menuitem-icon'));
+      const menuItemLink = fixture.debugElement.query(By.css('.ng-menuitem-link'));
+      const iconEl = fixture.debugElement.query(By.css('.ng-menuitem-icon'));
       expect(menuItemLink.nativeElement.href).toContain("primeng");
       expect(menuItemLink.nativeElement.target).toContain("primeng");
       expect(menuItemLink.nativeElement.title).toContain("primeng");
@@ -198,8 +198,8 @@ describe('Menu', () => {
       }]; 
       fixture.detectChanges();
       
-      const menuItemLink = fixture.debugElement.query(By.css('.ui-menuitem-link'));
-      expect(menuItemLink.nativeElement.className).toContain("ui-state-disabled");
+      const menuItemLink = fixture.debugElement.query(By.css('.ng-menuitem-link'));
+      expect(menuItemLink.nativeElement.className).toContain("ng-state-disabled");
     });
 
     it('should call itemClick', () => {
@@ -212,7 +212,7 @@ describe('Menu', () => {
       const itemClickSpy = spyOn(menu, 'itemClick').and.callThrough();
       fixture.detectChanges();
       
-      const menuItemLink = fixture.debugElement.query(By.css('.ui-menuitem-link'));
+      const menuItemLink = fixture.debugElement.query(By.css('.ng-menuitem-link'));
       menuItemLink.nativeElement.click();
       expect(itemClickSpy).toHaveBeenCalled();
     });
@@ -232,15 +232,15 @@ describe('Menu', () => {
       popupButtonEl.nativeElement.click();
       fixture.detectChanges();
 
-      const containerEl = fixture.debugElement.query(By.css('.ui-menu'));
-      const headerEl = fixture.debugElement.query(By.css('.ui-submenu-header'));
-      const menuItem = fixture.debugElement.query(By.css('.ui-menuitem-link'));
+      const containerEl = fixture.debugElement.query(By.css('.ng-menu'));
+      const headerEl = fixture.debugElement.query(By.css('.ng-submenu-header'));
+      const menuItem = fixture.debugElement.query(By.css('.ng-menuitem-link'));
       expect(toggleSpy).toHaveBeenCalled();
       expect(containerEl).toBeTruthy();
       expect(headerEl).toBeTruthy();
       expect(headerEl.nativeElement.textContent).toEqual("File");
       expect(menuItem).toBeTruthy();
-      expect(menuItem.query(By.css('.ui-menuitem-text')).nativeElement.textContent).toEqual('New');
+      expect(menuItem.query(By.css('.ng-menuitem-text')).nativeElement.textContent).toEqual('New');
     });
 
     it('should call hide when item click', () => {
@@ -259,7 +259,7 @@ describe('Menu', () => {
       popupButtonEl.nativeElement.click();
       fixture.detectChanges();
 
-      const menuItem = fixture.debugElement.query(By.css('.ui-menuitem-link'));
+      const menuItem = fixture.debugElement.query(By.css('.ng-menuitem-link'));
       menuItem.nativeElement.click();
       fixture.detectChanges();
 

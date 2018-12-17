@@ -47,7 +47,7 @@ describe('Breadcrumb', () => {
       breadcrumb.home = {icon: 'pi pi-home'};
       fixture.detectChanges();
       
-      const homeEl = fixture.debugElement.query(By.css('.ui-breadcrumb-home'));
+      const homeEl = fixture.debugElement.query(By.css('.ng-breadcrumb-home'));
       expect(homeEl).toBeTruthy();
     });
 
@@ -55,7 +55,7 @@ describe('Breadcrumb', () => {
       breadcrumb.home = {icon: 'primeng'};
       fixture.detectChanges();
       
-      const homeEl = fixture.debugElement.query(By.css('.ui-breadcrumb-home')).query(By.css('span')).nativeElement;
+      const homeEl = fixture.debugElement.query(By.css('.ng-breadcrumb-home')).query(By.css('span')).nativeElement;
       expect(homeEl.className).toContain('primeng');
     });
 
@@ -81,7 +81,7 @@ describe('Breadcrumb', () => {
     ];
       fixture.detectChanges();
       const itemClickSpy = spyOn(breadcrumb, 'itemClick').and.callThrough()
-      const homeEl = fixture.debugElement.query(By.css('.ui-breadcrumb-home')).query(By.css('a')).nativeElement;
+      const homeEl = fixture.debugElement.query(By.css('.ng-breadcrumb-home')).query(By.css('a')).nativeElement;
       homeEl.click();
       fixture.detectChanges();
 

@@ -13,24 +13,24 @@ export const SPINNER_VALUE_ACCESSOR: any = {
 @Component({
     selector: 'p-spinner',
     template: `
-        <span class="ui-spinner ui-widget ui-corner-all">
+        <span class="ng-spinner ng-widget ng-corner-all">
             <input #inputfield [attr.type]="type" [attr.id]="inputId" [value]="value === 0 ? '0' : value||null" [attr.name]="name"
             [attr.size]="size" [attr.maxlength]="maxlength" [attr.tabindex]="tabindex" [attr.placeholder]="placeholder" [disabled]="disabled" [attr.readonly]="readonly" [attr.required]="required"
             (keydown)="onInputKeydown($event)" (blur)="onInputBlur($event)" (input)="onInput($event)" (change)="onInputChange($event)" (focus)="onInputFocus($event)"
-            [ngStyle]="inputStyle" [class]="inputStyleClass" [ngClass]="'ui-spinner-input ui-inputtext ui-widget ui-state-default ui-corner-all'">
-            <button type="button" [ngClass]="{'ui-spinner-button ui-spinner-up ui-corner-tr ui-button ui-widget ui-state-default':true,'ui-state-disabled':disabled}" [disabled]="disabled" [attr.readonly]="readonly"
+            [ngStyle]="inputStyle" [class]="inputStyleClass" [ngClass]="'ng-spinner-input ng-inputtext ng-widget ng-state-default ng-corner-all'">
+            <button type="button" [ngClass]="{'ng-spinner-button ng-spinner-up ng-corner-tr ng-button ng-widget ng-state-default':true,'ng-state-disabled':disabled}" [disabled]="disabled" [attr.readonly]="readonly"
                 (mouseleave)="onUpButtonMouseleave($event)" (mousedown)="onUpButtonMousedown($event)" (mouseup)="onUpButtonMouseup($event)">
-                <span class="ui-spinner-button-icon pi pi-caret-up ui-clickable"></span>
+                <span class="ng-spinner-button-icon pi pi-caret-up ng-clickable"></span>
             </button>
-            <button type="button" [ngClass]="{'ui-spinner-button ui-spinner-down ui-corner-br ui-button ui-widget ui-state-default':true,'ui-state-disabled':disabled}" [disabled]="disabled" [attr.readonly]="readonly"
+            <button type="button" [ngClass]="{'ng-spinner-button ng-spinner-down ng-corner-br ng-button ng-widget ng-state-default':true,'ng-state-disabled':disabled}" [disabled]="disabled" [attr.readonly]="readonly"
                 (mouseleave)="onDownButtonMouseleave($event)" (mousedown)="onDownButtonMousedown($event)" (mouseup)="onDownButtonMouseup($event)">
-                <span class="ui-spinner-button-icon pi pi-caret-down ui-clickable"></span>
+                <span class="ng-spinner-button-icon pi pi-caret-down ng-clickable"></span>
             </button>
         </span>
     `,
     host: {
-        '[class.ui-inputwrapper-filled]': 'filled',
-        '[class.ui-inputwrapper-focus]': 'focus'
+        '[class.ng-inputwrapper-filled]': 'filled',
+        '[class.ng-inputwrapper-focus]': 'focus'
     },
     providers: [DomHandler,SPINNER_VALUE_ACCESSOR]
 })

@@ -36,8 +36,8 @@ describe('MultiSelect', () => {
 		fixture.detectChanges();
 		
 		expect(showSpy).toHaveBeenCalled();
-		expect(containerEl.className).toContain('ui-state-disabled');
-		expect(inputReadOnlyEl.className).toContain('ui-state-disabled');
+		expect(containerEl.className).toContain('ng-state-disabled');
+		expect(inputReadOnlyEl.className).toContain('ng-state-disabled');
 		expect(multiselect.overlayVisible).toEqual(undefined);
 	});
 
@@ -45,14 +45,14 @@ describe('MultiSelect', () => {
 		multiselect.name = "PrimeNG";
 		fixture.detectChanges();
 
-		const inputReadOnlyEl = fixture.debugElement.query(By.css('.ui-helper-hidden-accessible')).children[0].nativeElement;
+		const inputReadOnlyEl = fixture.debugElement.query(By.css('.ng-helper-hidden-accessible')).children[0].nativeElement;
 		expect(inputReadOnlyEl.name).toContain("PrimeNG");
 	});
 
 	it('should set dropdown icon by default and able to change', () => {
 		fixture.detectChanges();
 
-		const dropdownIcon = fixture.debugElement.query(By.css('.ui-multiselect-trigger-icon')).nativeElement;
+		const dropdownIcon = fixture.debugElement.query(By.css('.ng-multiselect-trigger-icon')).nativeElement;
 		expect(dropdownIcon.className).toContain('pi pi-caret-down');
 		fixture.detectChanges();
 
@@ -82,7 +82,7 @@ describe('MultiSelect', () => {
 		multiselect.overlayVisible=true;
 		fixture.detectChanges();
 		
-		const multiselectPanelEl = fixture.debugElement.query(By.css('.ui-multiselect-panel ')).nativeElement;
+		const multiselectPanelEl = fixture.debugElement.query(By.css('.ng-multiselect-panel ')).nativeElement;
 		expect(multiselectPanelEl.className).toContain('Primeng ROCKS!');
 		expect(multiselectPanelEl.style.primeng).toContain('rocks');
 	});
@@ -93,8 +93,8 @@ describe('MultiSelect', () => {
 		multiselectEl.click();
 		fixture.detectChanges();
 
-		const multiselectPanelEl = fixture.debugElement.query(By.css('.ui-multiselect-panel'));
-		expect(multiselectEl.className).toContain('ui-multiselect-open');
+		const multiselectPanelEl = fixture.debugElement.query(By.css('.ng-multiselect-panel'));
+		expect(multiselectEl.className).toContain('ng-multiselect-open');
 		expect(multiselect.overlayVisible).toEqual(true);
 		expect(multiselectPanelEl).toBeTruthy();
 		expect(clickSpy).toHaveBeenCalled();
@@ -108,8 +108,8 @@ describe('MultiSelect', () => {
 		multiselectEl.click();
 		fixture.detectChanges();
 
-		const multiselectPanelEl = fixture.debugElement.query(By.css('.ui-multiselect-panel'));
-		expect(multiselectEl.className).not.toContain('ui-multiselect-open');
+		const multiselectPanelEl = fixture.debugElement.query(By.css('.ng-multiselect-panel'));
+		expect(multiselectEl.className).not.toContain('ng-multiselect-open');
 		expect(multiselect.overlayVisible).toEqual(false);
 		expect(multiselectPanelEl).toBeFalsy();
 		expect(clickSpy).toHaveBeenCalled();
@@ -133,7 +133,7 @@ describe('MultiSelect', () => {
 		multiselectEl.click();
 		fixture.detectChanges();
 
-		const multiselectItemEl = fixture.debugElement.queryAll(By.css('.ui-multiselect-item'));
+		const multiselectItemEl = fixture.debugElement.queryAll(By.css('.ng-multiselect-item'));
 		expect(multiselectItemEl.length).toEqual(10);
 		const bmwEl = multiselectItemEl[1];
 		const onOptionClickSpy = spyOn(multiselect,'onOptionClick').and.callThrough();
@@ -141,7 +141,7 @@ describe('MultiSelect', () => {
 		fixture.detectChanges();
 
 		expect(multiselect.value[0]).toEqual('BMW');
-		expect(bmwEl.nativeElement.className).toContain('ui-state-highlight');
+		expect(bmwEl.nativeElement.className).toContain('ng-state-highlight');
 		expect(onOptionClickSpy).toBeTruthy();
 	});
 
@@ -166,7 +166,7 @@ describe('MultiSelect', () => {
 		multiselectEl.click();
 		fixture.detectChanges();
 
-		const multiselectItemEl = fixture.debugElement.queryAll(By.css('.ui-multiselect-item'));
+		const multiselectItemEl = fixture.debugElement.queryAll(By.css('.ng-multiselect-item'));
 		expect(multiselectItemEl.length).toEqual(10);
 		const audiEl = multiselectItemEl[0];
 		const bmwEl = multiselectItemEl[1];
@@ -178,7 +178,7 @@ describe('MultiSelect', () => {
 		expect(multiselect.value[0]).toEqual('BMW');
 		expect(multiselect.value[1]).toEqual('Audi');
 		expect(multiselect.value.length).toEqual(2);
-		expect(bmwEl.nativeElement.className).toContain('ui-state-highlight');
+		expect(bmwEl.nativeElement.className).toContain('ng-state-highlight');
 		expect(onOptionClickSpy).toBeTruthy();
 		audiEl.nativeElement.click();
 		fixture.detectChanges();
@@ -203,7 +203,7 @@ describe('MultiSelect', () => {
 		multiselectEl.click();
 		fixture.detectChanges();
 
-		const multiselectItemEl = fixture.debugElement.queryAll(By.css('.ui-multiselect-item'));
+		const multiselectItemEl = fixture.debugElement.queryAll(By.css('.ng-multiselect-item'));
 		expect(multiselectItemEl.length).toEqual(10);
 		const bmwEl = multiselectItemEl[1];
 		const audiEl = multiselectItemEl[0];
@@ -215,7 +215,7 @@ describe('MultiSelect', () => {
 		fixture.detectChanges();
 
 		expect(multiselect.value[0]).not.toEqual('BMW');
-		expect(bmwEl.nativeElement.className).not.toContain('ui-state-highlight');
+		expect(bmwEl.nativeElement.className).not.toContain('ng-state-highlight');
 		expect(onOptionClickSpy).toBeTruthy();
 	});
 
@@ -236,7 +236,7 @@ describe('MultiSelect', () => {
 		multiselectEl.click();
 		fixture.detectChanges();
 
-		const multiselectItemEl = fixture.debugElement.queryAll(By.css('.ui-multiselect-item'));
+		const multiselectItemEl = fixture.debugElement.queryAll(By.css('.ng-multiselect-item'));
 		expect(multiselectItemEl.length).toEqual(10);
 		const bmwEl = multiselectItemEl[1];
 		const fordEl = multiselectItemEl[3];
@@ -247,8 +247,8 @@ describe('MultiSelect', () => {
 
 		expect(multiselect.value[0]).toEqual('BMW');
 		expect(multiselect.value[1]).toEqual('Ford');
-		expect(fordEl.nativeElement.className).toContain('ui-state-highlight');
-		expect(bmwEl.nativeElement.className).toContain('ui-state-highlight');
+		expect(fordEl.nativeElement.className).toContain('ng-state-highlight');
+		expect(bmwEl.nativeElement.className).toContain('ng-state-highlight');
 		expect(onOptionClickSpy).toHaveBeenCalledTimes(2);
 	});
 
@@ -274,7 +274,7 @@ describe('MultiSelect', () => {
 		multiselectEl.click();
 		fixture.detectChanges();
 
-		const multiselectItemEl = fixture.debugElement.queryAll(By.css('.ui-multiselect-item'));
+		const multiselectItemEl = fixture.debugElement.queryAll(By.css('.ng-multiselect-item'));
 		expect(multiselectItemEl.length).toEqual(10);
 		const bmwEl = multiselectItemEl[1];
 		const fordEl = multiselectItemEl[3];
@@ -286,9 +286,9 @@ describe('MultiSelect', () => {
 		
 		expect(multiselect.value[0]).toEqual('BMW');
 		expect(multiselect.value[1]).toEqual('Ford');
-		expect(fordEl.nativeElement.className).toContain('ui-state-highlight');
-		expect(bmwEl.nativeElement.className).toContain('ui-state-highlight');
-		expect(fiatEl.nativeElement.className).not.toContain('ui-state-highlight');
+		expect(fordEl.nativeElement.className).toContain('ng-state-highlight');
+		expect(bmwEl.nativeElement.className).toContain('ng-state-highlight');
+		expect(fiatEl.nativeElement.className).not.toContain('ng-state-highlight');
 		expect(onOptionClickSpy).toHaveBeenCalledTimes(3);
 	});
 
@@ -312,8 +312,8 @@ describe('MultiSelect', () => {
 		multiselectEl.click();
 		fixture.detectChanges();
 
-		const allCheckedEl = fixture.debugElement.query(By.css('.ui-chkbox-box')).nativeElement;
-		const readOnlyEl = fixture.debugElement.query(By.css(".ui-chkbox")).children[0].children[0].nativeElement;
+		const allCheckedEl = fixture.debugElement.query(By.css('.ng-chkbox-box')).nativeElement;
+		const readOnlyEl = fixture.debugElement.query(By.css(".ng-chkbox")).children[0].children[0].nativeElement;
 		readOnlyEl.dispatchEvent(new Event('focus'));
 		allCheckedEl.click();
 		fixture.detectChanges();
@@ -349,12 +349,12 @@ describe('MultiSelect', () => {
 		fixture.detectChanges();
 
 		readOnlyEl.dispatchEvent(new Event('blur'));
-		const filterInputEl = fixture.debugElement.query(By.css('.ui-inputtext')).nativeElement;
+		const filterInputEl = fixture.debugElement.query(By.css('.ng-inputtext')).nativeElement;
 		filterInputEl.value = "v";
 		filterInputEl.dispatchEvent(new Event('input'));
 		fixture.detectChanges();
 
-		const allCheckedEl = fixture.debugElement.query(By.css('.ui-chkbox-box')).nativeElement;
+		const allCheckedEl = fixture.debugElement.query(By.css('.ng-chkbox-box')).nativeElement;
 		allCheckedEl.click();
 		fixture.detectChanges();
 		
@@ -381,7 +381,7 @@ describe('MultiSelect', () => {
 		multiselectEl.click();
 		fixture.detectChanges();
 
-		const allCheckedEl = fixture.debugElement.query(By.css('.ui-chkbox-box')).nativeElement;
+		const allCheckedEl = fixture.debugElement.query(By.css('.ng-chkbox-box')).nativeElement;
 		allCheckedEl.click();
 		fixture.detectChanges();
 
@@ -411,7 +411,7 @@ describe('MultiSelect', () => {
 		multiselectEl.click();
 		fixture.detectChanges();
 
-		const filterInputEl = fixture.debugElement.query(By.css('.ui-inputtext')).nativeElement;
+		const filterInputEl = fixture.debugElement.query(By.css('.ng-inputtext')).nativeElement;
 		filterInputEl.value = "f";
 		filterInputEl.dispatchEvent(new Event('input'));
 		fixture.detectChanges();
@@ -437,16 +437,16 @@ describe('MultiSelect', () => {
 		multiselectEl.click();
 		fixture.detectChanges();
 
-		const filterInputEl = fixture.debugElement.query(By.css('.ui-inputtext')).nativeElement;
+		const filterInputEl = fixture.debugElement.query(By.css('.ng-inputtext')).nativeElement;
 		filterInputEl.value = "f";
 		filterInputEl.dispatchEvent(new Event('input'));
 		fixture.detectChanges();
 
 		expect(multiselect.visibleOptions.length).toEqual(2);
-		const closeEl = fixture.debugElement.query(By.css(".ui-multiselect-close"));
+		const closeEl = fixture.debugElement.query(By.css(".ng-multiselect-close"));
 		closeEl.nativeElement.click();
 		fixture.detectChanges();
 
-		expect(fixture.debugElement.query(By.css("div")).nativeElement.className).not.toContain("ui-multiselect-open");
+		expect(fixture.debugElement.query(By.css("div")).nativeElement.className).not.toContain("ng-multiselect-open");
 	});
 });

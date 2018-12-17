@@ -27,42 +27,42 @@ export interface LocaleSettings {
 @Component({
     selector: 'p-calendar',
     template:  `
-        <span [ngClass]="{'ui-calendar':true, 'ui-calendar-w-btn': showIcon, 'ui-calendar-timeonly': timeOnly}" [ngStyle]="style" [class]="styleClass">
+        <span [ngClass]="{'ng-calendar':true, 'ng-calendar-w-btn': showIcon, 'ng-calendar-timeonly': timeOnly}" [ngStyle]="style" [class]="styleClass">
             <ng-template [ngIf]="!inline">
                 <input #inputfield type="text" [attr.id]="inputId" [attr.name]="name" [attr.required]="required" [value]="inputFieldValue" (focus)="onInputFocus($event)" (keydown)="onInputKeydown($event)" (click)="onInputClick($event)" (blur)="onInputBlur($event)"
                     [readonly]="readonlyInput" (input)="onUserInput($event)" [ngStyle]="inputStyle" [class]="inputStyleClass" [placeholder]="placeholder||''" [disabled]="disabled" [attr.tabindex]="tabindex"
-                    [ngClass]="'ui-inputtext ui-widget ui-state-default ui-corner-all'" autocomplete="off"
-                    ><button type="button" [icon]="icon" pButton *ngIf="showIcon" (click)="onButtonClick($event,inputfield)" class="ui-datepicker-trigger ui-calendar-button"
-                    [ngClass]="{'ui-state-disabled':disabled}" [disabled]="disabled" tabindex="-1"></button>
+                    [ngClass]="'ng-inputtext ng-widget ng-state-default ng-corner-all'" autocomplete="off"
+                    ><button type="button" [icon]="icon" pButton *ngIf="showIcon" (click)="onButtonClick($event,inputfield)" class="ng-datepicker-trigger ng-calendar-button"
+                    [ngClass]="{'ng-state-disabled':disabled}" [disabled]="disabled" tabindex="-1"></button>
             </ng-template>
-            <div [class]="panelStyleClass" [ngStyle]="panelStyle" [ngClass]="{'ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all': true, 'ui-datepicker-inline':inline,'ui-shadow':!inline,
-                'ui-state-disabled':disabled,'ui-datepicker-timeonly':timeOnly,'ui-datepicker-multiple-month': this.numberOfMonths > 1, 'ui-datepicker-monthpicker': (view === 'month'), 'ui-datepicker-touch-ui': touchUI}"
+            <div [class]="panelStyleClass" [ngStyle]="panelStyle" [ngClass]="{'ng-datepicker ng-widget ng-widget-content ng-helper-clearfix ng-corner-all': true, 'ng-datepicker-inline':inline,'ng-shadow':!inline,
+                'ng-state-disabled':disabled,'ng-datepicker-timeonly':timeOnly,'ng-datepicker-multiple-month': this.numberOfMonths > 1, 'ng-datepicker-monthpicker': (view === 'month'), 'ng-datepicker-touch-ui': touchUI}"
                 (click)="onDatePickerClick($event)" [@overlayAnimation]="touchUI ? {value: 'visibleTouchUI', params: {showTransitionParams: showTransitionOptions, hideTransitionParams: hideTransitionOptions}}: 
                                             {value: 'visible', params: {showTransitionParams: showTransitionOptions, hideTransitionParams: hideTransitionOptions}}" 
                                             [@.disabled]="inline === true" (@overlayAnimation.start)="onOverlayAnimationStart($event)" *ngIf="inline || overlayVisible">
                 <ng-container *ngIf="!timeOnly">
-                    <div class="ui-datepicker-group ui-widget-content" *ngFor="let month of months; let i = index;">
-                        <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">
+                    <div class="ng-datepicker-group ng-widget-content" *ngFor="let month of months; let i = index;">
+                        <div class="ng-datepicker-header ng-widget-header ng-helper-clearfix ng-corner-all">
                             <ng-content select="p-header"></ng-content>
-                            <a class="ui-datepicker-prev ui-corner-all" tabindex="0" (click)="navBackward($event)" *ngIf="i === 0">
+                            <a class="ng-datepicker-prev ng-corner-all" tabindex="0" (click)="navBackward($event)" *ngIf="i === 0">
                                 <span class="pi pi-chevron-left"></span>
                             </a>
-                            <a class="ui-datepicker-next ui-corner-all" tabindex="0" (click)="navForward($event)" *ngIf="numberOfMonths === 1 ? true : (i === numberOfMonths -1)">
+                            <a class="ng-datepicker-next ng-corner-all" tabindex="0" (click)="navForward($event)" *ngIf="numberOfMonths === 1 ? true : (i === numberOfMonths -1)">
                                 <span class="pi pi-chevron-right"></span>
                             </a>
-                            <div class="ui-datepicker-title">
-                                <span class="ui-datepicker-month" *ngIf="!monthNavigator && (view !== 'month')">{{locale.monthNames[month.month]}}</span>
-                                <select class="ui-datepicker-month" *ngIf="monthNavigator && (view !== 'month') && numberOfMonths === 1" (change)="onMonthDropdownChange($event.target.value)">
+                            <div class="ng-datepicker-title">
+                                <span class="ng-datepicker-month" *ngIf="!monthNavigator && (view !== 'month')">{{locale.monthNames[month.month]}}</span>
+                                <select class="ng-datepicker-month" *ngIf="monthNavigator && (view !== 'month') && numberOfMonths === 1" (change)="onMonthDropdownChange($event.target.value)">
                                     <option [value]="i" *ngFor="let monthName of locale.monthNames;let i = index" [selected]="i === month.month">{{monthName}}</option>
                                 </select>
-                                <select class="ui-datepicker-year" *ngIf="yearNavigator && numberOfMonths === 1" (change)="onYearDropdownChange($event.target.value)">
+                                <select class="ng-datepicker-year" *ngIf="yearNavigator && numberOfMonths === 1" (change)="onYearDropdownChange($event.target.value)">
                                     <option [value]="year" *ngFor="let year of yearOptions" [selected]="year === currentYear">{{year}}</option>
                                 </select>
-                                <span class="ui-datepicker-year" *ngIf="!yearNavigator">{{view === 'month' ? currentYear : month.year}}</span>
+                                <span class="ng-datepicker-year" *ngIf="!yearNavigator">{{view === 'month' ? currentYear : month.year}}</span>
                             </div>
                         </div>
-                        <div class="ui-datepicker-calendar-container" *ngIf="view ==='date'">
-                            <table class="ui-datepicker-calendar">
+                        <div class="ng-datepicker-calendar-container" *ngIf="view ==='date'">
+                            <table class="ng-datepicker-calendar">
                                 <thead>
                                     <tr>
                                         <th scope="col" *ngFor="let weekDay of weekDays;let begin = first; let end = last">
@@ -72,15 +72,15 @@ export interface LocaleSettings {
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let week of month.dates">
-                                        <td *ngFor="let date of week" [ngClass]="{'ui-datepicker-other-month': date.otherMonth,
-                                            'ui-datepicker-current-day':isSelected(date),'ui-datepicker-today':date.today}">
+                                        <td *ngFor="let date of week" [ngClass]="{'ng-datepicker-other-month': date.otherMonth,
+                                            'ng-datepicker-current-day':isSelected(date),'ng-datepicker-today':date.today}">
                                             <ng-container *ngIf="date.otherMonth ? showOtherMonths : true">
-                                                <a class="ui-state-default" *ngIf="date.selectable" [ngClass]="{'ui-state-active':isSelected(date), 'ui-state-highlight':date.today}"
+                                                <a class="ng-state-default" *ngIf="date.selectable" [ngClass]="{'ng-state-active':isSelected(date), 'ng-state-highlight':date.today}"
                                                     (click)="onDateSelect($event,date)" draggable="false">
                                                     <ng-container *ngIf="!dateTemplate">{{date.day}}</ng-container>
                                                     <ng-container *ngTemplateOutlet="dateTemplate; context: {$implicit: date}"></ng-container>
                                                 </a>
-                                                <span class="ui-state-default ui-state-disabled" *ngIf="!date.selectable">
+                                                <span class="ng-state-default ng-state-disabled" *ngIf="!date.selectable">
                                                     {{date.day}}
                                                 </span>
                                             </ng-container>
@@ -90,14 +90,14 @@ export interface LocaleSettings {
                             </table>
                         </div>
                     </div>
-                    <div class="ui-monthpicker" *ngIf="view === 'month'">
-                        <a tabindex="0" *ngFor="let m of monthPickerValues; let i = index" (click)="onMonthSelect($event, i)" class="ui-monthpicker-month" [ngClass]="{'ui-state-active': isMonthSelected(i)}">
+                    <div class="ng-monthpicker" *ngIf="view === 'month'">
+                        <a tabindex="0" *ngFor="let m of monthPickerValues; let i = index" (click)="onMonthSelect($event, i)" class="ng-monthpicker-month" [ngClass]="{'ng-state-active': isMonthSelected(i)}">
                             {{m}}
                         </a>
                     </div>
                 </ng-container>
-                <div class="ui-timepicker ui-widget-header ui-corner-all" *ngIf="showTime||timeOnly">
-                    <div class="ui-hour-picker">
+                <div class="ng-timepicker ng-widget-header ng-corner-all" *ngIf="showTime||timeOnly">
+                    <div class="ng-hour-picker">
                         <a tabindex="0" (mousedown)="onTimePickerElementMouseDown($event, 0, 1)" (mouseup)="onTimePickerElementMouseUp($event)">
                             <span class="pi pi-chevron-up"></span>
                         </a>
@@ -106,7 +106,7 @@ export interface LocaleSettings {
                             <span class="pi pi-chevron-down"></span>
                         </a>
                     </div>
-                    <div class="ui-separator">
+                    <div class="ng-separator">
                         <a tabindex="0">
                             <span class="pi pi-chevron-up"></span>
                         </a>
@@ -115,7 +115,7 @@ export interface LocaleSettings {
                             <span class="pi pi-chevron-down"></span>
                         </a>
                     </div>
-                    <div class="ui-minute-picker">
+                    <div class="ng-minute-picker">
                         <a tabindex="0" (mousedown)="onTimePickerElementMouseDown($event, 1, 1)" (mouseup)="onTimePickerElementMouseUp($event)">
                             <span class="pi pi-chevron-up"></span>
                         </a>
@@ -124,7 +124,7 @@ export interface LocaleSettings {
                             <span class="pi pi-chevron-down"></span>
                         </a>
                     </div>
-                    <div class="ui-separator" *ngIf="showSeconds">
+                    <div class="ng-separator" *ngIf="showSeconds">
                         <a tabindex="0">
                             <span class="pi pi-chevron-up"></span>
                         </a>
@@ -133,7 +133,7 @@ export interface LocaleSettings {
                             <span class="pi pi-chevron-down"></span>
                         </a>
                     </div>
-                    <div class="ui-second-picker" *ngIf="showSeconds">
+                    <div class="ng-second-picker" *ngIf="showSeconds">
                         <a tabindex="0" (mousedown)="onTimePickerElementMouseDown($event, 2, 1)" (mouseup)="onTimePickerElementMouseUp($event)">
                             <span class="pi pi-chevron-up"></span>
                         </a>
@@ -142,7 +142,7 @@ export interface LocaleSettings {
                             <span class="pi pi-chevron-down"></span>
                         </a>
                     </div>
-                    <div class="ui-ampm-picker" *ngIf="hourFormat=='12'">
+                    <div class="ng-ampm-picker" *ngIf="hourFormat=='12'">
                         <a tabindex="0" (click)="toggleAMPM($event)">
                             <span class="pi pi-chevron-up"></span>
                         </a>
@@ -152,12 +152,12 @@ export interface LocaleSettings {
                         </a>
                     </div>
                 </div>
-                <div class="ui-datepicker-buttonbar ui-widget-header" *ngIf="showButtonBar">
-                    <div class="ui-g">
-                        <div class="ui-g-6">
+                <div class="ng-datepicker-buttonbar ng-widget-header" *ngIf="showButtonBar">
+                    <div class="ng-g">
+                        <div class="ng-g-6">
                             <button type="button" [label]="_locale.today" (click)="onTodayButtonClick($event)" pButton [ngClass]="[todayButtonStyleClass]"></button>
                         </div>
-                        <div class="ui-g-6">
+                        <div class="ng-g-6">
                             <button type="button" [label]="_locale.clear" (click)="onClearButtonClick($event)" pButton [ngClass]="[clearButtonStyleClass]"></button>
                         </div>
                     </div>
@@ -201,8 +201,8 @@ export interface LocaleSettings {
         ])
     ],
     host: {
-        '[class.ui-inputwrapper-filled]': 'filled',
-        '[class.ui-inputwrapper-focus]': 'focus'
+        '[class.ng-inputwrapper-filled]': 'filled',
+        '[class.ng-inputwrapper-focus]': 'focus'
     },
     providers: [DomHandler,CALENDAR_VALUE_ACCESSOR]
 })
@@ -274,9 +274,9 @@ export class Calendar implements OnInit,OnDestroy,ControlValueAccessor {
     
     @Input() showButtonBar: boolean;
     
-    @Input() todayButtonStyleClass: string = 'ui-button-secondary';
+    @Input() todayButtonStyleClass: string = 'ng-button-secondary';
     
-    @Input() clearButtonStyleClass: string = 'ui-button-secondary';
+    @Input() clearButtonStyleClass: string = 'ng-button-secondary';
     
     @Input() autoZIndex: boolean = true;
     
@@ -1589,14 +1589,14 @@ export class Calendar implements OnInit,OnDestroy,ControlValueAccessor {
         if (!this.mask) {
             this.mask = document.createElement('div');
             this.mask.style.zIndex = String(parseInt(element.style.zIndex) - 1);
-            let maskStyleClass = 'ui-widget-overlay ui-datepicker-mask ui-datepicker-mask-scrollblocker';
+            let maskStyleClass = 'ng-widget-overlay ng-datepicker-mask ng-datepicker-mask-scrollblocker';
             this.domHandler.addMultipleClasses(this.mask, maskStyleClass);
             
 			this.maskClickListener = this.renderer.listen(this.mask, 'click', (event: any) => {
                 this.disableModality();
             });
             document.body.appendChild(this.mask);
-            this.domHandler.addClass(document.body, 'ui-overflow-hidden');
+            this.domHandler.addClass(document.body, 'ng-overflow-hidden');
         }
     }
     
@@ -1607,14 +1607,14 @@ export class Calendar implements OnInit,OnDestroy,ControlValueAccessor {
             let hasBlockerMasks: boolean;
             for (let i = 0; i < bodyChildren.length; i++) {
                 let bodyChild = bodyChildren[i];
-                if (this.domHandler.hasClass(bodyChild, 'ui-datepicker-mask-scrollblocker')) {
+                if (this.domHandler.hasClass(bodyChild, 'ng-datepicker-mask-scrollblocker')) {
                     hasBlockerMasks = true;
                     break;
                 }
             }
             
             if (!hasBlockerMasks) {
-                this.domHandler.removeClass(document.body, 'ui-overflow-hidden');
+                this.domHandler.removeClass(document.body, 'ng-overflow-hidden');
             }
 
             this.hideOverlay();

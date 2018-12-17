@@ -26,8 +26,8 @@ describe('ProgressBar', () => {
       progressbar.value=50;
       fixture.detectChanges();
       
-      const progressbarValueEl = fixture.debugElement.query(By.css('.ui-progressbar-value')).nativeElement;
-      const progressbarLabelEl = fixture.debugElement.query(By.css('.ui-progressbar-label')).nativeElement;
+      const progressbarValueEl = fixture.debugElement.query(By.css('.ng-progressbar-value')).nativeElement;
+      const progressbarLabelEl = fixture.debugElement.query(By.css('.ng-progressbar-label')).nativeElement;
       expect(progressbarValueEl.style.width).toEqual('50%');
       expect(progressbarLabelEl.textContent).toEqual('50%');
     });
@@ -37,8 +37,8 @@ describe('ProgressBar', () => {
       progressbar.showValue=false;
       fixture.detectChanges();
       
-      const progressbarValueEl = fixture.debugElement.query(By.css('.ui-progressbar-value')).nativeElement;
-      const progressbarLabelEl = fixture.debugElement.query(By.css('.ui-progressbar-label'));
+      const progressbarValueEl = fixture.debugElement.query(By.css('.ng-progressbar-value')).nativeElement;
+      const progressbarLabelEl = fixture.debugElement.query(By.css('.ng-progressbar-label'));
       expect(progressbarValueEl.style.width).toEqual('50%');
       expect(progressbarLabelEl).toBeFalsy();
     });
@@ -59,7 +59,7 @@ describe('ProgressBar', () => {
       progressbar.unit = '&';
       fixture.detectChanges();
 
-      const progressbarLabelEl = fixture.debugElement.query(By.css('.ui-progressbar-label')).nativeElement;
+      const progressbarLabelEl = fixture.debugElement.query(By.css('.ng-progressbar-label')).nativeElement;
       expect(progressbarLabelEl.textContent).toEqual('50&');
     });
 
@@ -69,6 +69,6 @@ describe('ProgressBar', () => {
       fixture.detectChanges();
 
       const progressbarLabelEl = fixture.debugElement.query(By.css('div')).nativeElement;
-      expect(progressbarLabelEl.className).toContain('ui-progressbar-indeterminate');
+      expect(progressbarLabelEl.className).toContain('ng-progressbar-indeterminate');
     });
 });

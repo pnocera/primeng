@@ -25,8 +25,8 @@ describe('SelectButton', () => {
   it('should display the label', () => {
     selectButton.options = [{label: 'Apartment', value: 'Apartment'},{label: 'House', value: 'House'},{label: 'Studio', value: 'Studio'}];
     fixture.detectChanges();
-    const labelEl = fixture.debugElement.query(By.css('.ui-selectbutton')).children[0];
-    expect(labelEl.nativeElement.querySelector('.ui-button-text').textContent).toContain('Apartment')
+    const labelEl = fixture.debugElement.query(By.css('.ng-selectbutton')).children[0];
+    expect(labelEl.nativeElement.querySelector('.ng-button-text').textContent).toContain('Apartment')
   });
   
   it('should display the preselected button', () => {
@@ -36,7 +36,7 @@ describe('SelectButton', () => {
     selectButton.writeValue({name:'Studio'});
     fixture.detectChanges();
    
-    const active = fixture.nativeElement.querySelector('.ui-state-active').children[0];
+    const active = fixture.nativeElement.querySelector('.ng-state-active').children[0];
     expect(active.textContent).toContain('Studio');
   });
 
@@ -44,12 +44,12 @@ describe('SelectButton', () => {
     selectButton.options = [{label: 'Apartment', value: 'Apartment'},{label: 'House', value: 'House'},{label: 'Studio', value: 'Studio'}];
     fixture.detectChanges();
   
-    const activeEl = fixture.nativeElement.querySelector('.ui-selectbutton').children[0];
+    const activeEl = fixture.nativeElement.querySelector('.ng-selectbutton').children[0];
     activeEl.click();
   
     fixture.detectChanges();
     
-    const active = fixture.nativeElement.querySelector('.ui-state-active').children[0];
+    const active = fixture.nativeElement.querySelector('.ng-state-active').children[0];
     expect(active.textContent).toContain('Apartment');
   }));
 
@@ -59,7 +59,7 @@ describe('SelectButton', () => {
     fixture.detectChanges();
 
     const onItemClickSpy = spyOn(selectButton,'onItemClick').and.callThrough();
-    const buttonEls = fixture.debugElement.queryAll(By.css('.ui-button'));
+    const buttonEls = fixture.debugElement.queryAll(By.css('.ng-button'));
     expect(buttonEls.length).toEqual(3);
     buttonEls[1].nativeElement.click();
     fixture.detectChanges();
@@ -78,7 +78,7 @@ describe('SelectButton', () => {
     selectButton.onOptionClick.subscribe(data => valueOptionClick = data);
     selectButton.onChange.subscribe(data => valueChange = data);
     const onItemClickSpy = spyOn(selectButton,'onItemClick').and.callThrough();
-    const buttonEls = fixture.debugElement.queryAll(By.css('.ui-button'));
+    const buttonEls = fixture.debugElement.queryAll(By.css('.ng-button'));
     expect(buttonEls.length).toEqual(3);
     buttonEls[0].nativeElement.click();
     buttonEls[1].nativeElement.click();

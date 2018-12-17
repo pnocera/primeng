@@ -6,18 +6,18 @@ import {DomHandler} from '../dom/domhandler';
 @Component({
     selector: 'p-dataScroller',
     template:`
-    <div [ngClass]="{'ui-datascroller ui-widget': true, 'ui-datascroller-inline': inline}" [ngStyle]="style" [class]="styleClass">
-        <div class="ui-datascroller-header ui-widget-header ui-corner-top" *ngIf="header">
+    <div [ngClass]="{'ng-datascroller ng-widget': true, 'ng-datascroller-inline': inline}" [ngStyle]="style" [class]="styleClass">
+        <div class="ng-datascroller-header ng-widget-header ng-corner-top" *ngIf="header">
             <ng-content select="p-header"></ng-content>
         </div>
-        <div #content class="ui-datascroller-content ui-widget-content" [ngStyle]="{'max-height': scrollHeight}">
-            <ul class="ui-datascroller-list">
+        <div #content class="ng-datascroller-content ng-widget-content" [ngStyle]="{'max-height': scrollHeight}">
+            <ul class="ng-datascroller-list">
                 <li *ngFor="let item of value | slice:first:(first + (page * rows)); trackBy: trackBy; let i = index">
                     <ng-container *ngTemplateOutlet="itemTemplate; context: {$implicit: item, index: i}"></ng-container>
                 </li>
             </ul>
         </div>
-        <div class="ui-datascroller-footer ui-widget-header ui-corner-bottom" *ngIf="footer">
+        <div class="ng-datascroller-footer ng-widget-header ng-corner-bottom" *ngIf="footer">
             <ng-content select="p-footer"></ng-content>
         </div>
     </div>

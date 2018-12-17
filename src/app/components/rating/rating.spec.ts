@@ -50,7 +50,7 @@ describe('Rating', () => {
       fixture.detectChanges();
 
       const starEl = fixture.debugElement.query(By.css('div')).nativeElement;
-      expect(starEl.className).toContain('ui-state-disabled');
+      expect(starEl.className).toContain('ng-state-disabled');
     });
 
     it('should change styles and icons', () => {
